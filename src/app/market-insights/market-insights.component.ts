@@ -22,7 +22,8 @@ export class MarketInsightsComponent implements OnInit {
   }
 
   getInsights(): void {
-    this.insights = this.insightService.getInsights();
+    this.insightService.getInsights()
+    .then(insights => this.insights = insights);
   }
 
 }

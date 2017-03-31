@@ -1,4 +1,6 @@
 <psp-mi-navbar></psp-mi-navbar>
 <div class="borderz">
-    market-insights works!
+    <li *ngFor="let insight of insights" [routerLink]="['/market-insights', insight.id]">
+        <span>{{insight.title}} - {{insight.id}}</span>
+    </li>
 </div>

@@ -7,7 +7,8 @@ import {
   AlertModule,
   ButtonsModule,
   TabsModule,
-  TooltipModule
+  TooltipModule,
+  BsDropdownModule
  } from 'ng2-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { PortfolioHealthCheckModule } from './portfolio-health-check/portfolio-h
     ButtonsModule.forRoot(),
     TabsModule.forRoot(),
     TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
     SharedModule,
     FixedHeaderModule,
     MarketInsightsModule,

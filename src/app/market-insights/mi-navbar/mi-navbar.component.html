@@ -1,19 +1,11 @@
 <nav class="borderz navbar navbar-light bg-faded">
     <h1 class="navbar-brand mb-0">MARKET INSIGHTS</h1>
 
-    <p>Marc Chaikin</p>
-
-    <!-- Example single info button -->
-    <div class="btn-group">
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Select a date
-  </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+    <div class="borderz" (mouseenter)="mouseOverBio = true" (mouseleave)="mouseOverBio = false">
+        Marc Chaikin
+        <div *ngIf="mouseOverBio">
+            I'm Marc Chaikin and I like stocks
         </div>
     </div>
+    <psp-date-dropdown></psp-date-dropdown>
 </nav>

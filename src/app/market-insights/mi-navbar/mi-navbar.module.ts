@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MiNavbarComponent } from './mi-navbar.component';
+import { DateDropdownComponent } from './date-dropdown/date-dropdown.component';
 
 @NgModule({
   imports: [
@@ -9,6 +10,6 @@ import { MiNavbarComponent } from './mi-navbar.component';
   exports: [
     MiNavbarComponent
   ],
-  declarations: [MiNavbarComponent]
+  declarations: [MiNavbarComponent, DateDropdownComponent]
 })
 export class MiNavbarModule { }

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mi-navbar.component.scss']
 })
 export class MiNavbarComponent implements OnInit {
+  mouseOverBio: Boolean;
 
   constructor() { }
 
