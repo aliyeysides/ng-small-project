@@ -5,7 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { MiNavbarModule } from './mi-navbar/mi-navbar.module';
 import { MarketInsightsComponent } from './market-insights.component';
-import { InsightService } from './shared/insight.service';
+import { InsightService } from '../shared/insights/insight.service';
 import { InsightDetailComponent } from './insight-detail/insight-detail.component';
 
 @NgModule({

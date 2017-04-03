@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { MarketInsightsComponent } from './market-insights/market-insights.component';
 import { PowerGaugeReportComponent } from './power-gauge-report/power-gauge-report.component';
 import { PortfolioHealthCheckComponent } from './portfolio-health-check/portfolio-health-check.component';
 import { InsightDetailComponent } from './market-insights/insight-detail/insight-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/market-insights', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'market-insights', component: MarketInsightsComponent },
   { path: 'power-gauge-report', component: PowerGaugeReportComponent },
   { path: 'portfolio-health-check', component: PortfolioHealthCheckComponent },

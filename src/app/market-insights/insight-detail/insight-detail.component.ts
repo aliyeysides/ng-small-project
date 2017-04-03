@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Insight } from '../shared/insight';
-import { InsightService } from '../shared/insight.service';
+import { Insight } from '../../shared/insights/insight';
+import { InsightService } from '../../shared/insights/insight.service';
 
 import 'rxjs/add/operator/switchMap';
 

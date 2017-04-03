@@ -1,13 +1,12 @@
-<!-- Example single info button -->
 <div class="btn-group" dropdown>
-    <button dropdownToggle type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Select a date
-    </button>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+    Select a date <span class="caret"></span>
+  </button>
     <ul *dropdownMenu class="dropdown-menu" role="menu">
-        <li class="dropdown-item" href="#"><a>Action</a></li>
-        <li class="dropdown-item" href="#"><a>Another action</a></li>
-        <li class="dropdown-item" href="#"><a>Something else here</a></li>
-        <li class="dropdown-divider"></li>
-        <li class="dropdown-item" href="#"><a>Separated link</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>
     </ul>
 </div>
