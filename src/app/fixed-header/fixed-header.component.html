@@ -1,18 +1,27 @@
-<nav class="navbar navbar-light bg-faded">
-    <a class="borderz" routerLink="/">
-        logo
-    </a>
+<div class="container-fluid">
+    <nav class="row navbar-light bg-faded">
+        <div class="col-1">
+            <a class="borderz" routerLink="/">
+                logo
+            </a>
+        </div>
 
-    <div *ngIf="!visible">
-        <psp-navbar></psp-navbar>
-        <psp-symbol-search></psp-symbol-search>
-    </div>
+        <div *ngIf="!visible" class="col-4">
+            <psp-navbar></psp-navbar>
+        </div>
 
-    <div *ngIf="visible">
-        <h2>Good Morning, Ali!</h2>
-        <psp-settings></psp-settings>
-    </div>
+        <div *ngIf="!visible" class="col">
+            <psp-symbol-search></psp-symbol-search>
+        </div>
 
-    <button [hidden]="visible" (click)="toggle()" class="borderz">Settings</button>
-    <button [hidden]="!visible" (click)="toggle()" class="borderz">Close</button>
-</nav>
+        <div *ngIf="visible" class="col">
+            <h2>Good Morning, Ali!</h2>
+            <psp-settings></psp-settings>
+        </div>
+
+        <div class="col-1">
+            <button [hidden]="visible" (click)="toggle()" class="borderz">Settings</button>
+            <button [hidden]="!visible" (click)="toggle()" class="borderz">Close</button>
+        </div>
+    </nav>
+</div>
