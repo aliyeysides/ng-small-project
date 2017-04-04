@@ -2,15 +2,17 @@
     <a class="borderz" routerLink="/">
         logo
     </a>
+
     <div *ngIf="!visible">
         <psp-navbar></psp-navbar>
         <psp-symbol-search></psp-symbol-search>
     </div>
+
     <div *ngIf="visible">
-        <a>Account </a>|
-        <a>Help </a>|
-        <a>Chaikin Analytics </a>
+        <h2>Good Morning, Ali!</h2>
+        <psp-settings></psp-settings>
     </div>
+
     <button [hidden]="visible" (click)="toggle()" class="borderz">Settings</button>
     <button [hidden]="!visible" (click)="toggle()" class="borderz">Close</button>
 </nav>

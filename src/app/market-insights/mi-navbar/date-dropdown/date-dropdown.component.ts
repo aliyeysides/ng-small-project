@@ -6,11 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./date-dropdown.component.scss']
 })
 export class DateDropdownComponent {
-  public status: {isopen: boolean} = {isopen: false};
-
-  public toggleDropdown($event: MouseEvent): void {
-    $event.preventDefault();
-    $event.stopPropagation();
-    this.status.isopen = !this.status.isopen;
-  }
 }

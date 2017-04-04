@@ -7,6 +7,7 @@ import { MarketInsightsComponent } from './market-insights/market-insights.compo
 import { PowerGaugeReportComponent } from './power-gauge-report/power-gauge-report.component';
 import { PortfolioHealthCheckComponent } from './portfolio-health-check/portfolio-health-check.component';
 import { InsightDetailComponent } from './market-insights/insight-detail/insight-detail.component';
+import { GlossaryComponent } from './fixed-header/settings/glossary/glossary.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'market-insights', component: MarketInsightsComponent },
   { path: 'power-gauge-report', component: PowerGaugeReportComponent },
   { path: 'portfolio-health-check', component: PortfolioHealthCheckComponent },
-  { path: 'market-insights/:id', component: InsightDetailComponent }
+  { path: 'market-insights/:id', component: InsightDetailComponent },
+  { path: 'glossary', component: GlossaryComponent }
 ];
 
 @NgModule({

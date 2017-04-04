@@ -1,23 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from '../shared/shared.module';
 
-import { MiNavbarModule } from './mi-navbar/mi-navbar.module';
-import { MarketInsightsComponent } from './market-insights.component';
+import { SharedModule } from '../shared/shared.module';
 import { InsightService } from '../shared/insights/insight.service';
+
+import { MiNavbarComponent } from './mi-navbar/mi-navbar.component';
+import { MarketInsightsComponent } from './market-insights.component';
 import { InsightDetailComponent } from './insight-detail/insight-detail.component';
+import { DateDropdownComponent } from './mi-navbar/date-dropdown/date-dropdown.component';
+
+import {
+  BsDropdownModule,
+  PopoverModule
+} from 'ng2-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    MiNavbarModule,
-    SharedModule
+    SharedModule,
+    BsDropdownModule,
+    PopoverModule
   ],
   exports: [
     MarketInsightsComponent
   ],
-  declarations: [MarketInsightsComponent, InsightDetailComponent],
+  declarations: [MiNavbarComponent, MarketInsightsComponent, InsightDetailComponent, DateDropdownComponent],
   providers: [InsightService]
 })
 export class MarketInsightsModule { }

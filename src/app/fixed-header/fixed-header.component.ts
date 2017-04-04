@@ -11,9 +11,7 @@ import {
   styleUrls: ['./fixed-header.component.scss']
 })
 export class FixedHeaderComponent implements OnInit {
-  public visible: boolean;
-  @Output() userSettingsOpen: EventEmitter<any> = new EventEmitter();
-  @Output() userSettingsClose: EventEmitter<any> = new EventEmitter();
+  visible: boolean;
 
   constructor() { }
 
@@ -23,10 +21,5 @@ export class FixedHeaderComponent implements OnInit {
 
   toggle() {
     this.visible = !this.visible;
-    if (this.visible) {
-      this.userSettingsOpen.emit(null);
-    } else {
-      this.userSettingsClose.emit(null);
-    }
   }
 }

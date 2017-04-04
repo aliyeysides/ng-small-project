@@ -1,0 +1,26 @@
+<span dropdown>
+    <a href dropdownToggle (click)="false">Account</a>
+    <ul *dropdownMenu class="dropdown-menu">
+        <li *ngFor="let choice of accountItems">
+            <img src="{{choice.icon}}"/><a class="dropdown-item" routerLink="{{choice.link}}">{{choice.desc}}</a>
+        </li>
+    </ul>
+</span>|
+
+<span dropdown>
+    <a href dropdownToggle (click)="false">Help</a>
+    <ul *dropdownMenu class="dropdown-menu">
+        <li *ngFor="let choice of helpItems">
+            <img src="{{choice.icon}}"/><a class="dropdown-item" routerLink="{{choice.link}}">{{choice.desc}}</a>
+        </li>
+    </ul>
+</span>|
+
+<span dropdown>
+    <a href dropdownToggle (click)="false">Chaikin Analytics</a>
+    <ul *dropdownMenu class="dropdown-menu">
+        <li *ngFor="let choice of chaikinItems">
+            <img src="{{choice.icon}}"/><a class="dropdown-item" routerLink="{{choice.link}}">{{choice.desc}}</a>
+        </li>
+    </ul>
+</span>
