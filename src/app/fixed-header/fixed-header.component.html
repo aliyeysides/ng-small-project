@@ -1,8 +1,16 @@
 <nav class="navbar navbar-light bg-faded">
-    <div>
-        <psp-logo class="navbar-brand" href="#"></psp-logo>
+    <a class="borderz" routerLink="/">
+        logo
+    </a>
+    <div *ngIf="!visible">
         <psp-navbar></psp-navbar>
         <psp-symbol-search></psp-symbol-search>
-        <psp-header-settings></psp-header-settings>
     </div>
+    <div *ngIf="visible">
+        <a>Account </a>|
+        <a>Help </a>|
+        <a>Chaikin Analytics </a>
+    </div>
+    <button [hidden]="visible" (click)="toggle()" class="borderz">Settings</button>
+    <button [hidden]="!visible" (click)="toggle()" class="borderz">Close</button>
 </nav>

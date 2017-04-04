@@ -1,11 +1,8 @@
 <nav class="borderz row navbar navbar-light bg-faded">
     <h1 class="navbar-brand mb-0">MARKET INSIGHTS</h1>
 
-    <div class="borderz" (mouseenter)="mouseOverBio = true" (mouseleave)="mouseOverBio = false">
-        Marc Chaikin
-        <div *ngIf="mouseOverBio">
-            I'm Marc Chaikin and I like stocks
-        </div>
-    </div>
+    <button type="button" class="btn btn-default btn-secondary" popover="I'm Marc Chaikin and I like stocks." popoverTitle="Marc Chaikin" placement="bottom" triggers="focus">
+        Marc Chaikin Bio
+    </button>
     <psp-date-dropdown></psp-date-dropdown>
 </nav>

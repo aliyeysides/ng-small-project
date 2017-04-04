@@ -3,15 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AppComponent } from './app.component';
+
 import {
   AlertModule,
   ButtonsModule,
   TabsModule,
   TooltipModule,
-  BsDropdownModule
+  BsDropdownModule,
+  PopoverModule
  } from 'ng2-bootstrap';
-
-import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
 import { FixedHeaderModule } from './fixed-header/fixed-header.module';
@@ -28,17 +29,18 @@ import { PortfolioHealthCheckModule } from './portfolio-health-check/portfolio-h
     BrowserModule,
     FormsModule,
     HttpModule,
-    AlertModule.forRoot(),
-    ButtonsModule.forRoot(),
-    TabsModule.forRoot(),
-    TooltipModule.forRoot(),
-    BsDropdownModule.forRoot(),
     SharedModule,
     DashboardModule,
     FixedHeaderModule,
     MarketInsightsModule,
     PowerGaugeReportModule,
-    PortfolioHealthCheckModule
+    PortfolioHealthCheckModule,
+    AlertModule.forRoot(),
+    ButtonsModule.forRoot(),
+    TabsModule.forRoot(),
+    TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    PopoverModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
