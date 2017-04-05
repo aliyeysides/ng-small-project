@@ -7,7 +7,7 @@ import { FixedHeaderComponent } from './fixed-header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SettingsComponent } from './settings/settings.component';
 
-import { BsDropdownModule } from 'ng2-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap';
 import { GlossaryComponent } from './settings/glossary/glossary.component';
 
 @NgModule({

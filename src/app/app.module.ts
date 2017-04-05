@@ -18,8 +18,9 @@ import {
   TabsModule,
   TooltipModule,
   BsDropdownModule,
-  PopoverModule
- } from 'ng2-bootstrap';
+  PopoverModule,
+  AccordionModule
+ } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {
     TabsModule.forRoot(),
     TooltipModule.forRoot(),
     BsDropdownModule.forRoot(),
-    PopoverModule.forRoot()
+    PopoverModule.forRoot(),
+    AccordionModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,13 @@
-<div class="borderz clearfix">
+<div class="borderz">
     <a routerLink="/market-insights">See All Insights >></a>
-    <div *ngFor="let insight of insights" class="float-left" [routerLink]="['/market-insights', insight.id ]">
-        <h4>{{insight.title}}</h4>
-        <img src="{{insight.image}}" />
+    <div *ngFor="let insight of insights">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="{{insight.image}}" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">{{insight.title}}</h4>
+                <p class="card-text">{{insight.content}}</p>
+                <a href="#" class="btn btn-primary" [routerLink]="['/market-insights', insight.id]">Read insight</a>
+            </div>
+        </div>
     </div>
 </div>

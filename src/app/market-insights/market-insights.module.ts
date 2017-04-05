@@ -13,7 +13,7 @@ import { DateDropdownComponent } from './mi-navbar/date-dropdown/date-dropdown.c
 import {
   BsDropdownModule,
   PopoverModule
-} from 'ng2-bootstrap';
+} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
