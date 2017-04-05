@@ -1,3 +1,5 @@
+import { Router, Event, NavigationEnd } from '@angular/router';
+
 import {
   Component,
   OnInit,
@@ -11,15 +13,33 @@ import {
   styleUrls: ['./fixed-header.component.scss']
 })
 export class FixedHeaderComponent implements OnInit {
-  visible: boolean;
+  settingsVisible: boolean;
+  isRouteDashboard: boolean;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ){ }
 
   ngOnInit() {
-    this.visible = false;
+    this.settingsVisible = false;
+
+    this.router.events
+        .subscribe(path => {
+          if (path instanceof NavigationEnd){
+            this.checkRouteDashboard(path.url);
+          }
+        })
+  }
+
+  checkRouteDashboard(url: String): void {
+    if (url == '/' || url == '/dashboard') {
+      this.isRouteDashboard = true;
+    } else {
+      this.isRouteDashboard = false;
+    }
   }
 
   toggle() {
-    this.visible = !this.visible;
+    this.settingsVisible = !this.settingsVisible;
   }
 }

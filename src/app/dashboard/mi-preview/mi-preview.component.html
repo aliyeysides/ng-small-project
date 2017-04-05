@@ -1,4 +1,7 @@
-<div class="borderz float-left">
+<div class="borderz clearfix">
     <a routerLink="/market-insights">See All Insights >></a>
-    <p>mi-preview component</p>
+    <div *ngFor="let insight of insights" class="float-left" [routerLink]="['/market-insights', insight.id ]">
+        <h4>{{insight.title}}</h4>
+        <img src="{{insight.image}}" />
+    </div>
 </div>

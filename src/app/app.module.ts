@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-
 import { SharedModule } from './shared/shared.module';
 import { FixedHeaderModule } from './fixed-header/fixed-header.module';
 import { DashboardModule } from './dashboard/dashboard.module';

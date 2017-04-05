@@ -4,22 +4,22 @@
             <img src="../../assets/imgs/logo.png" class="img-fluid" routerLink="/" />
         </div>
 
-        <div *ngIf="!visible" class="col-4">
+        <div *ngIf="!settingsVisible" class="col-4">
             <psp-navbar></psp-navbar>
         </div>
 
-        <div *ngIf="!visible" class="col">
+        <div *ngIf="!settingsVisible && !isRouteDashboard" class="col">
             <psp-symbol-search></psp-symbol-search>
         </div>
 
-        <div *ngIf="visible" class="col">
+        <div *ngIf="settingsVisible" class="col">
             <h2>Good Morning, Ali!</h2>
             <psp-settings></psp-settings>
         </div>
 
         <div class="col-1">
-            <button [hidden]="visible" (click)="toggle()" class="borderz">Settings</button>
-            <button [hidden]="!visible" (click)="toggle()" type="button" class="close" aria-label="Close">
+            <button [hidden]="settingsVisible" (click)="toggle()" class="borderz">Settings</button>
+            <button [hidden]="!settingsVisible" (click)="toggle()" type="button" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
