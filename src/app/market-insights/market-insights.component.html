@@ -1,6 +1,6 @@
 <psp-mi-navbar></psp-mi-navbar>
-<div class="borderz">
-    <li *ngFor="let insight of insights" [routerLink]="['/market-insights', insight.id]">
-        <span>{{insight.title}} - {{insight.id}}</span>
-    </li>
+<div class="borderz d-inline-block" *ngFor="let insight of insights" [routerLink]="['/market-insights', insight.id]">
+    <h4>{{insight.title}} - {{insight.id}}</h4>
+    <img src="{{insight.image}}" />
+    <p>{{insight.content}}</p>
 </div>

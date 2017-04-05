@@ -1,4 +1,7 @@
 <psp-mi-navbar></psp-mi-navbar>
-<a (click)="goBack()">Close</a>
+<button (click)="goBack()" type="button" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
 <h1>{{insight.title}}</h1><span>{{insight.id}}</span>
+<img src="{{insight.image}}" />
 <p>{{insight.content}}</p>
