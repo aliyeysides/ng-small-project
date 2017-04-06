@@ -1,9 +1,14 @@
-<div class="borderz">
-    <div class="d-inline-block">
-        <h4>PGR Learn More</h4>
-        <p>test</p>
-    </div>
-    <div class="d-inline-block">
-        <psp-pgr-accordion></psp-pgr-accordion>
+<div class="borderz container-fluid">
+    <div class="row">
+        <div [@slideInOut]="helpMenuOpen" class="d-inline-block">
+            <h5>PGR Learn More</h5>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        </div>
+
+        <div class="d-inline-block">
+            <psp-pgr-accordion></psp-pgr-accordion>
+            <button (click)="toggleHelpMenu()">help</button>
+        </div>
     </div>
 </div>
