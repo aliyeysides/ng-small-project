@@ -11,8 +11,8 @@ import { SymbolSearchComponent } from './symbol-search/symbol-search.component';
     AppRoutingModule
   ],
   exports: [
-    SymbolSearchComponent,
-    AppRoutingModule
+    AppRoutingModule,
+    SymbolSearchComponent
   ],
   declarations: [SymbolSearchComponent]
 })
