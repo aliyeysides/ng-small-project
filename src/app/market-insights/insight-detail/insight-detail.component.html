@@ -2,9 +2,9 @@
 <button (click)="goBack()" type="button" class="close" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button>
-<button (click)="printInsight()">print</button>
+<button (click)="printInsight()"><i class="fa fa-print" aria-hidden="true"></i></button>
 <div id="print-section">
-    <h1>{{insight.title}}</h1><span>{{insight.id}}</span>
+    <h1 id="insight-title">{{insight.title}}</h1><span>{{insight.id}}</span>
     <img src="{{insight.image}}" />
     <p>{{insight.content}}</p>
 </div>

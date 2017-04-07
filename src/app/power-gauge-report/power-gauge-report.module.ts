@@ -4,12 +4,16 @@ import { CommonModule } from '@angular/common';
 import { PowerGaugeReportComponent } from './power-gauge-report.component';
 import { PgrAccordionComponent } from './pgr-accordion/pgr-accordion.component';
 
-import { AccordionModule } from 'ngx-bootstrap';
+import {
+  AccordionModule,
+  PopoverModule
+} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    AccordionModule
+    AccordionModule,
+    PopoverModule
   ],
   exports: [
     PowerGaugeReportComponent

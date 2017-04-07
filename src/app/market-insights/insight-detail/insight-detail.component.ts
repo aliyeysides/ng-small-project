@@ -31,14 +31,16 @@ export class InsightDetailComponent implements OnInit {
   }
 
   printInsight(): void {
-    let printContents, popupWin;
+    let printContents, popupWin, insightTitle;
+
+    insightTitle = document.getElementById('insight-title').innerHTML;
     printContents = document.getElementById('print-section').innerHTML;
     popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
     popupWin.document.open();
     popupWin.document.write(`
       <html>
         <head>
-          <title>Print tab</title>
+          <title>${insightTitle}</title>
           <style>
           //........Customized style.......
           </style>
