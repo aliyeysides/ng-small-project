@@ -1,7 +1,5 @@
 import { Stock } from './stock';
 
-import { Observable } from 'rxjs/Observable';
-
 export const WATCHLIST: Stock[] = [
 {
     "EPSData": {
@@ -415,15 +413,15 @@ export const WATCHLIST: Stock[] = [
       "marketCap": 178992.84375,
       "industry_name": "Media",
       "liquidity": 1.4953712E7,
-      "Change": -0.33,
+      "Change": -0.43,
       "filter": 0,
-      "Last": 37.34,
+      "Last": 37.24,
       "signals": "000000000000",
       "name": "Comcast Corp A",
       "PGR": 3,
       "TechnicalRating ": 3,
       "listRating": 63,
-      "Percentage ": -0.88,
+      "Percentage ": -1.14,
       "industry_ListID ": 44359,
       "SummaryRating ": 1
     }
@@ -606,15 +604,15 @@ export const WATCHLIST: Stock[] = [
       "marketCap": 1277.23999,
       "industry_name": "Nonfood Retail-Wholesale",
       "liquidity": 1943970,
-      "Change": 1.25,
+      "Change": 1.31,
       "filter": 0,
-      "Last": 13.17,
+      "Last": 13.23,
       "signals": "000000000000",
       "name": "Sears Hldg Cp",
       "PGR": 3,
       "TechnicalRating ": 3,
       "listRating": 49,
-      "Percentage ": 10.49,
+      "Percentage ": 10.99,
       "industry_ListID ": 44346,
       "SummaryRating ": 1
     }
@@ -755,6 +753,199 @@ export const WATCHLIST: Stock[] = [
     "Yield": "0.00",
     "Price/Sales": "0.05769",
     "EPS_Previous ('15)": "-7.81"
+  },
+  "status": "success"
+},
+{
+  "EPSData": {
+    "symbol": "MSFT",
+    "time_icon": 0,
+    "earnings_report_info": 0,
+    "eps_12mo_pct_chg_category": 2,
+    "next_report_date": "Thu Apr 27",
+    "revenue_12mo_pct_chg": "+1%",
+    "eps_12mo_pct_chg": "+6%",
+    "last_report_date": "Thu Jan 26",
+    "warning_factor": "",
+    "revenue_12mo_pct_chg_category": 2,
+    "estimate_revision_info": 0,
+    "pre_report_info": 1,
+    "current_revision_estimate": "$0.60",
+    "warning_period": "",
+    "warning_impact": "",
+    "last_quarter_sales": "$24.09b",
+    "last_quarter_reported_eps": "$0.83",
+    "eps_diff_description": "beat by $0.04",
+    "current_quarter_consensus_estimate": "$0.69",
+    "warning_direction": 0,
+    "eps_diff_category": 2,
+    "warning_type": -1,
+    "last_quarter_consensus_estimate": "$0.79",
+    "time_icon_description": "",
+    "revision_quarter": "4",
+    "previous_revision_estimate": "$0.65",
+    "earings_report_category": 2,
+    "eps_year_ago": "$0.62",
+    "estimate_revision_category": 1,
+    "current_quarter": "3",
+    "last_quarter": "2"
+  },
+  "metaInfo": [
+    {
+      "symbol": "MSFT",
+      "raw_PGR": 3,
+      "marketCap": 506385.0625,
+      "industry_name": "Computer Software-Services",
+      "liquidity": 2.0315056E7,
+      "Change": -0.04,
+      "filter": 0,
+      "Last": 65.49,
+      "signals": "000000000000",
+      "name": "Microsoft Corp",
+      "PGR": 3,
+      "TechnicalRating ": 3,
+      "listRating": 57,
+      "Percentage ": -0.06,
+      "industry_ListID ": 44343,
+      "SummaryRating ": 1
+    }
+  ],
+  "pgr": [
+    {
+      "PGR Value": 3
+    },
+    {
+      "Financials": [
+        {
+          "Value": 2
+        },
+        {
+          "LT Debt to Equity": 2
+        },
+        {
+          "Price to Book": 2
+        },
+        {
+          "Return on Equity": 5
+        },
+        {
+          "Price to Sales": 2
+        },
+        {
+          "Free Cash Flow": 3
+        }
+      ]
+    },
+    {
+      "Earnings": [
+        {
+          "Value": 3
+        },
+        {
+          "Earnings Growth": 2
+        },
+        {
+          "Earnings Surprise": 4
+        },
+        {
+          "Earnings Trend": 5
+        },
+        {
+          "Projected P/E": 4
+        },
+        {
+          "Earnings Consistency": 2
+        }
+      ]
+    },
+    {
+      "Technicals": [
+        {
+          "Value": 2
+        },
+        {
+          "Rel Strength vs Market": 4
+        },
+        {
+          "Chaikin Money Flow": 4
+        },
+        {
+          "Price Strength": 3
+        },
+        {
+          "Price Trend ROC": 3
+        },
+        {
+          "Volume Trend": 2
+        }
+      ]
+    },
+    {
+      "Experts": [
+        {
+          "Value": 3
+        },
+        {
+          "Estimate Trend": 4
+        },
+        {
+          "Short Interest": 5
+        },
+        {
+          "Insider Activity": 1
+        },
+        {
+          "Analyst Rating Trend": 4
+        },
+        {
+          "Industry Rel Strength": 2
+        }
+      ]
+    },
+    {
+      "Corrected PGR Value": 3
+    },
+    {
+      "relative_strength": "",
+      "weight_avg_Pgr": "",
+      "divident_yield": "0.0",
+      "momentum": "",
+      "is_etf_symbol": false,
+      "assets": "0.0",
+      "management": "",
+      "expense_ratio": "0.0%",
+      "avg_daily_volume": "0.0",
+      "holdings": "",
+      "power_bar": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "",
+      "beta": "0.0"
+    }
+  ],
+  "fundamentalData": {
+    "52 Wk Lo": "48.43",
+    "Address": "ONE MICROSOFT WAY",
+    "52 Wk Hi": "65.86",
+    "Debt/Equity": "0.56645",
+    "P/E": "22.597",
+    "Analyst Revisions (%)": "-0.01",
+    "ROE": "32.115",
+    "Relative to S&P (%)": "4.5261",
+    "EPS_current ('17)": "2.96",
+    "is_optionable": true,
+    "ROI": "18.854",
+    "Price/Book": "7.40479",
+    "52 Wk Performance (%)": "20.659",
+    "Company Text Blurb": "Microsoft is a technology company. Their products include operating systems for computing devices, servers, phones, and other intelligent devices; server applications for distributed computing environments; cross-device productivity applications; business solution applications; desktop and server management tools; software development tools; video games; and online advertising. They also design and sell hardware including PCs, tablets, gaming and entertainment consoles, phones, other intelligent devices, and related accessories. They offer cloud-based solutions that provide customers with software, services, platforms, and content. They also provide consulting and product and solution support services, and they train and certify computer system integrators and developers.",
+    "5 Yr EPS Growth (%)": "0.68",
+    "EPS_Previous ('16)": "2.79",
+    "Mkt Capitalization": "506385.0625",
+    "Revenue": "85688",
+    "Yield": "2.38",
+    "Price/Sales": "5.93512"
   },
   "status": "success"
 }
