@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -23,7 +23,12 @@ export class InsightDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.insight = this.insightService.getInsight(1); // stub
+    this.route.params
+        .switchMap((params: Params) =>
+        this.insightService.getInsight(+params['id']))
+        .subscribe(insight => {
+            this.insight = insight;
+        });
   }
 
   goBack(): void {

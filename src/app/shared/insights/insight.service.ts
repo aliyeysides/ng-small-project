@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
+// import 'rxjs/add/operator/toPromise';
 
 import { Insight } from './insight';
 import { INSIGHTS } from './mock-insights';
@@ -9,8 +9,8 @@ import { INSIGHTS } from './mock-insights';
 @Injectable()
 export class InsightService {
 
-  // private insightsUrl = 'https://qa.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&count=20&id=2,10&_=1489485632440';
-  // private headers = new Headers({'Content-Type': 'text/html'});
+  private insightsUrl = 'https://qa.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&count=20&id=2,10&_=1489485632440';
+  private headers = new Headers({'Content-Type': 'application/json'});
 
   private handleError(error: any): Promise<any> {
     console.error('An error occured', error);
@@ -21,8 +21,6 @@ export class InsightService {
     private http: Http
   ) { }
 
-
-
   getInsights(): Promise<Insight[]> {
     return Promise.resolve(INSIGHTS); // stub
     // return this.http.get(this.insightsUrl)
@@ -31,8 +29,9 @@ export class InsightService {
     //           .catch(this.handleError);
   }
 
-  getInsight(id: number): Insight {
-    return INSIGHTS[id]; // stub
+  getInsight(id: number): Promise<Insight> {
+    return this.getInsights()
+               .then(insights => insights.find(insight => insight.id === id));
   }
 
 }

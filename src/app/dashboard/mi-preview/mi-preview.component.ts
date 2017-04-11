@@ -20,6 +20,10 @@ export class MiPreviewComponent implements OnInit {
     this.getInsights(2);
   }
 
+  /**
+   *
+   * @param {number} previewLimit Number of insights to display
+   */
   getInsights(previewLimit: Number): void {
     this.InsightService.getInsights()
         .then(insights => {

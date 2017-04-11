@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Insight } from '../../../shared/insights/insight';
+import { InsightService } from '../../../shared/insights/insight.service';
+
 import * as moment from 'moment';
 
 @Component({
@@ -10,16 +13,26 @@ import * as moment from 'moment';
 export class DateDropdownComponent implements OnInit {
   dates: any[] = [];
 
-  constructor(){ }
+  constructor(
+    private insightService: InsightService
+  ){ }
 
   ngOnInit() {
-    this.getDates(5);
+    this.getInsightDates(10);
   }
 
-  getDates(range: Number): void {
-    for (let counter = 0; counter < range; counter++){
-      let date = moment().format("dddd, MMMM Do YYYY");
-      this.dates.push(date);
-    }
+  /**
+   *
+   * @param {number} range Number representing the amount of days of insights to display
+   */
+  getInsightDates(range: Number): void {
+    this.insightService.getInsights()
+        .then(res => {
+          for (let counter = 0; counter < range; counter++) {
+            // format example: Monday, April 20th 2017
+            this.dates.push(moment(res[counter].date).format("dddd, MMMM Do YYYY"));
+          }
+        })
   }
+
 }

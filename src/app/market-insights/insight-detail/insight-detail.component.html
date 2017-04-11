@@ -3,7 +3,7 @@
   <span aria-hidden="true">&times;</span>
 </button>
 <button (click)="printInsight()"><i class="fa fa-print" aria-hidden="true"></i></button>
-<div id="print-section">
+<div *ngIf="insight" id="print-section">
     <h1 id="insight-title">{{insight.title}}</h1><span>{{insight.id}}</span>
     <img src="{{insight.image}}" />
     <p>{{insight.content}}</p>

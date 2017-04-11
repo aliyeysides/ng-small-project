@@ -23,6 +23,8 @@ import {
   AccordionModule
  } from 'ngx-bootstrap';
 
+ import { BusyModule } from 'angular2-busy';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -44,7 +46,8 @@ import {
     TooltipModule.forRoot(),
     BsDropdownModule.forRoot(),
     PopoverModule.forRoot(),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    BusyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
