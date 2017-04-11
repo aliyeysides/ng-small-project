@@ -6,9 +6,12 @@ import { PortfolioHealthCheckComponent } from './portfolio-health-check.componen
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { PowerbarComponent } from './watchlist/powerbar/powerbar.component';
 
+import { PopoverModule } from 'ngx-bootstrap';
+
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule,
+    PopoverModule
   ],
   exports: [
     PortfolioHealthCheckComponent

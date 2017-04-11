@@ -1,6 +1,9 @@
 <div>
     <div>
         <h3>Watchlist</h3>
+        <button type="button" class="pull-right btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right" placement="right" triggers="focus">
+          <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+        </button>
         <psp-powerbar></psp-powerbar>
     </div>
     <table class="table table-hover">
@@ -14,8 +17,23 @@
         <tbody>
             <tr *ngFor="let stock of watchlist">
                 <td>{{stock['metaInfo'][0]['listRating']}}</td>
-                <td>{{stock['metaInfo'][0]['symbol']}}</td>
-                <td>{{stock['metaInfo'][0]['Change']}}</td>
+                <td>
+                    <span>{{stock['metaInfo'][0]['symbol']}}</span>
+                    <span>{{stock['metaInfo'][0]['name']}}</span>
+                </td>
+                <td>
+                    <span>{{stock['metaInfo'][0]['Change']}}</span>
+                    <span *ngIf="stock['metaInfo'][0]['Percentage '] > 0">
+                      <i class="fa fa-chevron-up fa-1" aria-hidden="true"></i>
+                    </span>
+                    <span *ngIf="stock['metaInfo'][0]['Percentage '] < 0">
+                      <i class="fa fa-chevron-down fa-1" aria-hidden="true"></i>
+                    </span>
+                    <span *ngIf="stock['metaInfo'][0]['Percentage '] == 0">
+                      <span>UNCH%</span>
+                    </span>
+                    <span *ngIf="stock['metaInfo'][0]['Percentage '] != 0">{{stock['metaInfo'][0]['Percentage ']}}%</span>
+                </td>
             </tr>
         </tbody>
     </table>

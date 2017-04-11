@@ -566,5 +566,196 @@ export const WATCHLIST: Stock[] = [
     "Price/Sales": "2.22619"
   },
   "status": "success"
+},
+{
+  "EPSData": {
+    "symbol": "SHLD",
+    "time_icon": 0,
+    "earnings_report_info": 0,
+    "eps_12mo_pct_chg_category": 2,
+    "revenue_12mo_pct_chg": "-17%",
+    "eps_12mo_pct_chg": "+6%",
+    "last_report_date": "Thu Mar 09",
+    "warning_factor": "EPS Surprise factor is",
+    "revenue_12mo_pct_chg_category": 1,
+    "estimate_revision_info": 0,
+    "pre_report_info": 0,
+    "current_revision_estimate": "$-2.35",
+    "warning_period": "",
+    "warning_impact": "Very Bullish",
+    "last_quarter_sales": "$6.05b",
+    "last_quarter_reported_eps": "$-1.28",
+    "eps_diff_description": "",
+    "current_quarter_consensus_estimate": "N/A",
+    "warning_direction": 0,
+    "eps_diff_category": -1,
+    "warning_type": 2,
+    "last_quarter_consensus_estimate": "N/A",
+    "time_icon_description": "",
+    "previous_revision_estimate": "N/A",
+    "earings_report_category": -1,
+    "eps_year_ago": "$-0.34",
+    "estimate_revision_category": -1,
+    "current_quarter": "4",
+    "last_quarter": "4"
+  },
+  "metaInfo": [
+    {
+      "symbol": "SHLD",
+      "raw_PGR": 3,
+      "marketCap": 1277.23999,
+      "industry_name": "Nonfood Retail-Wholesale",
+      "liquidity": 1943970,
+      "Change": 1.25,
+      "filter": 0,
+      "Last": 13.17,
+      "signals": "000000000000",
+      "name": "Sears Hldg Cp",
+      "PGR": 3,
+      "TechnicalRating ": 3,
+      "listRating": 49,
+      "Percentage ": 10.49,
+      "industry_ListID ": 44346,
+      "SummaryRating ": 1
+    }
+  ],
+  "pgr": [
+    {
+      "PGR Value": 3
+    },
+    {
+      "Financials": [
+        {
+          "Value": 4
+        },
+        {
+          "LT Debt to Equity": 3
+        },
+        {
+          "Price to Book": 3
+        },
+        {
+          "Return on Equity": 3
+        },
+        {
+          "Price to Sales": 4
+        },
+        {
+          "Free Cash Flow": 3
+        }
+      ]
+    },
+    {
+      "Earnings": [
+        {
+          "Value": 1
+        },
+        {
+          "Earnings Growth": 1
+        },
+        {
+          "Earnings Surprise": 5
+        },
+        {
+          "Earnings Trend": 3
+        },
+        {
+          "Projected P/E": 3
+        },
+        {
+          "Earnings Consistency": 1
+        }
+      ]
+    },
+    {
+      "Technicals": [
+        {
+          "Value": 5
+        },
+        {
+          "Rel Strength vs Market": 3
+        },
+        {
+          "Chaikin Money Flow": 1
+        },
+        {
+          "Price Strength": 5
+        },
+        {
+          "Price Trend ROC": 5
+        },
+        {
+          "Volume Trend": 2
+        }
+      ]
+    },
+    {
+      "Experts": [
+        {
+          "Value": 1
+        },
+        {
+          "Estimate Trend": 1
+        },
+        {
+          "Short Interest": 1
+        },
+        {
+          "Insider Activity": 5
+        },
+        {
+          "Analyst Rating Trend": 4
+        },
+        {
+          "Industry Rel Strength": 1
+        }
+      ]
+    },
+    {
+      "Corrected PGR Value": 3
+    },
+    {
+      "relative_strength": "",
+      "weight_avg_Pgr": "",
+      "divident_yield": "0.0",
+      "momentum": "",
+      "is_etf_symbol": false,
+      "assets": "0.0",
+      "management": "",
+      "expense_ratio": "0.0%",
+      "avg_daily_volume": "0.0",
+      "holdings": "",
+      "power_bar": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "",
+      "beta": "0.0"
+    }
+  ],
+  "fundamentalData": {
+    "52 Wk Lo": "5.53999",
+    "Address": "3333 BEVERLY ROAD",
+    "52 Wk Hi": "18.64999",
+    "Debt/Equity": "-0.93437",
+    "P/E": "N/A",
+    "Analyst Revisions (%)": "N/A",
+    "ROE": "N/A",
+    "Relative to S&P (%)": "-28.48901",
+    "is_optionable": true,
+    "EPS_current ('16)": "N/A",
+    "ROI": "-636.266",
+    "Price/Book": "N/A",
+    "52 Wk Performance (%)": "-17.452",
+    "Company Text Blurb": "Sears Holdings Corporation, the parent of Kmart and Sears, Roebuck and Co., is the leading home appliance retailer in North America and is a retail sales leader in tools, lawn and garden, home electronics, and automotive repair and maintenance. Key proprietary brands include Kenmore, Craftsman and DieHard, and a broad apparel offering, including such well-known labels as Lands' End, Jaclyn Smith and Joe Boxer, as well as the Apostrophe and Covington brands.",
+    "5 Yr EPS Growth (%)": "-12.51",
+    "Mkt Capitalization": "1277.23999",
+    "Revenue": "22138",
+    "Yield": "0.00",
+    "Price/Sales": "0.05769",
+    "EPS_Previous ('15)": "-7.81"
+  },
+  "status": "success"
 }
 ]
