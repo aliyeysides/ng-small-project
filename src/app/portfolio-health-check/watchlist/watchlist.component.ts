@@ -30,6 +30,11 @@ export class WatchlistComponent implements OnInit {
     this.watchlist = this.watchlistService.getStocks();
   }
 
+  /**
+   * Returns PGR rating based on raw PGR and corrected PGR scores returned from getSymbolData call
+   * @param {Number} rawPGR
+   * @param {Number} correctedPGR
+   */
   displayRating(rawPGR: Number, correctedPGR: Number) {
     if (rawPGR >= 4 && correctedPGR === 3) {
       return PGRVALUES[5];
