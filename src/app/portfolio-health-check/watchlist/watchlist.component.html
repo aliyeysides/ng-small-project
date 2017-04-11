@@ -1,0 +1,21 @@
+<div>
+    <div>
+        <h3>Watchlist</h3>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Rating</th>
+                <th>Symbol</th>
+                <th>Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stock of watchlist">
+                <td>{{stock['metaInfo'][0]['listRating']}}</td>
+                <td>{{stock['metaInfo'][0]['symbol']}}</td>
+                <td>{{stock['metaInfo'][0]['Change']}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

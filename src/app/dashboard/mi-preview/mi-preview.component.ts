@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Insight } from '../../shared/insights/insight';
-import { InsightService } from '../../shared/insights/insight.service';
+import { Insight } from '../../market-insights/insights/insight';
+import { InsightService } from '../../market-insights/insights/insight.service';
 
 @Component({
   selector: 'psp-mi-preview',

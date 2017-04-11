@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 
 import { SharedModule } from '../shared/shared.module';
-import { InsightService } from '../shared/insights/insight.service';
 
 import { MiNavbarComponent } from './mi-navbar/mi-navbar.component';
 import { MarketInsightsComponent } from './market-insights.component';
@@ -17,7 +14,6 @@ import {
 
 @NgModule({
   imports: [
-    CommonModule,
     SharedModule,
     BsDropdownModule,
     PopoverModule
@@ -26,6 +22,6 @@ import {
     MarketInsightsComponent
   ],
   declarations: [MiNavbarComponent, MarketInsightsComponent, InsightDetailComponent, DateDropdownComponent],
-  providers: [InsightService]
+  providers: []
 })
 export class MarketInsightsModule { }

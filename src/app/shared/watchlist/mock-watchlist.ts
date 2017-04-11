@@ -1,5 +1,7 @@
 import { Stock } from './stock';
 
+import { Observable } from 'rxjs/Observable';
+
 export const WATCHLIST: Stock[] = [
 {
     "EPSData": {

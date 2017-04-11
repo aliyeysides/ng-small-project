@@ -8,9 +8,10 @@ import { SymbolSearchComponent } from './symbol-search/symbol-search.component';
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   exports: [
+    CommonModule,
     AppRoutingModule,
     SymbolSearchComponent
   ],

@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { SharedModule } from '../shared/shared.module';
 
 import { PortfolioHealthCheckComponent } from './portfolio-health-check.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    SharedModule
   ],
   exports: [
     PortfolioHealthCheckComponent
   ],
-  declarations: [PortfolioHealthCheckComponent]
+  declarations: [PortfolioHealthCheckComponent, WatchlistComponent]
 })
 export class PortfolioHealthCheckModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Insight } from '../shared/insights/insight';
-import { InsightService } from '../shared/insights/insight.service';
+import { Insight } from './insights/insight';
+import { InsightService } from './insights/insight.service';
 
 @Component({
   selector: 'psp-market-insights',

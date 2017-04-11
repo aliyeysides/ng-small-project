@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { SharedModule } from '../shared/shared.module';
 
 import { PowerGaugeReportComponent } from './power-gauge-report.component';
 import { PgrAccordionComponent } from './pgr-accordion/pgr-accordion.component';
@@ -11,7 +12,7 @@ import {
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     AccordionModule,
     PopoverModule
   ],
