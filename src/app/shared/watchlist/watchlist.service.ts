@@ -10,6 +10,7 @@ import { WATCHLIST } from './mock-watchlist';
 export class WatchlistService {
 
   stocks: Stock[];
+  sortedStocks: Stock[];
 
   private handleError(error: any): Promise<any> {
     console.error('An error occured', error);
@@ -21,7 +22,8 @@ export class WatchlistService {
   ) { }
 
   getStocks(): Stock[] {
-    return WATCHLIST;
+    this.stocks = WATCHLIST;
+    return this.stocks;
   }
 
   /**
@@ -31,5 +33,16 @@ export class WatchlistService {
   getStock(index: Number): Stock {
     return this.getStocks[+index]; // Stub
   }
+
+  // mergeSortStocks(): {
+  //   Array<Stock> let arr = this.stocks;
+  //   if (arr.length < 2) { return arr };
+
+  //   // let mid =
+  // }
+
+  // merge(a: Array<Stock>, b: Array<Stock>): {
+
+  // }
 
 }

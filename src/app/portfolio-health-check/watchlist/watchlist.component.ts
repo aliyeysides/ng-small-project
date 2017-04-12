@@ -21,6 +21,7 @@ const PGRVALUES = {
 export class WatchlistComponent implements OnInit {
 
   watchlist: Stock[];
+  sortWatchList: string = 'desc';
 
   constructor(
     private watchlistService: WatchlistService
@@ -28,6 +29,7 @@ export class WatchlistComponent implements OnInit {
 
   ngOnInit() {
     this.watchlist = this.watchlistService.getStocks();
+    console.log(this.sortWatchList);
   }
 
   /**
@@ -47,6 +49,14 @@ export class WatchlistComponent implements OnInit {
     } else {
       return PGRVALUES[+rawPGR];
     }
+  }
+
+  sortByDailyChange(): void {
+    if (this.sortWatchList === 'desc') {
+      this.sortWatchList = 'asc';
+      return;
+    }
+    this.sortWatchList = 'desc';
   }
 
 }
