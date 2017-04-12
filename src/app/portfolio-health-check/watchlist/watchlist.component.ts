@@ -21,15 +21,15 @@ const PGRVALUES = {
 export class WatchlistComponent implements OnInit {
 
   watchlist: Stock[];
-  sortWatchList: string = 'desc';
+  sortWatchList: string = 'up';
 
   constructor(
     private watchlistService: WatchlistService
   ) { }
 
   ngOnInit() {
-    this.watchlist = this.watchlistService.getStocks();
-    console.log(this.sortWatchList);
+    this.watchlist = this.watchlistService.sortedStocks.reverse();
+    console.log('on landing it is ', this.sortWatchList);
   }
 
   /**
@@ -52,11 +52,13 @@ export class WatchlistComponent implements OnInit {
   }
 
   sortByDailyChange(): void {
-    if (this.sortWatchList === 'desc') {
-      this.sortWatchList = 'asc';
+    if (this.sortWatchList === 'up') {
+      this.sortWatchList = 'down';
+      this.watchlist = this.watchlistService.sortedStocks.reverse();
       return;
     }
-    this.sortWatchList = 'desc';
+    this.sortWatchList = 'up';
+    this.watchlist = this.watchlistService.sortedStocks.reverse();
   }
 
 }

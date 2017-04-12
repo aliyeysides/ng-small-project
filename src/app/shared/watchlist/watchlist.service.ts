@@ -9,8 +9,8 @@ import { WATCHLIST } from './mock-watchlist';
 @Injectable()
 export class WatchlistService {
 
-  stocks: Stock[];
-  sortedStocks: Stock[];
+  stocks: Stock[] = this.getStocks();
+  sortedStocks: Stock[] = this.mergeSortStocks(this.stocks);
 
   private handleError(error: any): Promise<any> {
     console.error('An error occured', error);
@@ -34,15 +34,30 @@ export class WatchlistService {
     return this.getStocks[+index]; // Stub
   }
 
-  // mergeSortStocks(): {
-  //   Array<Stock> let arr = this.stocks;
-  //   if (arr.length < 2) { return arr };
+  mergeSortStocks(arr: Stock[]): Stock[] {
+    // Break point
+    if (arr.length < 2) { return arr };
 
-  //   // let mid =
-  // }
+    let mid = Math.floor(arr.length / 2),
+        left = this.mergeSortStocks(arr.slice(0, mid)),
+        right = this.mergeSortStocks(arr.slice(mid));
 
-  // merge(a: Array<Stock>, b: Array<Stock>): {
+    return this.merge(left, right);
 
-  // }
+  }
+
+  /**
+   * Returns a sorted array based on daily percentage change by merging two stock arrays with a length 1
+   * @param {Stock[]} a
+   * @param {Stock[]} b
+   */
+  merge(a: Stock[], b: Stock[]): Stock[] {
+    let result = [];
+
+    while (a.length > 0 && b.length > 0) {
+      result.push(a[0]['metaInfo'][0]['Percentage '] < b[0]['metaInfo'][0]['Percentage '] ? a.shift() : b.shift());
+    }
+    return result.concat(a.length ? a : b);
+  }
 
 }

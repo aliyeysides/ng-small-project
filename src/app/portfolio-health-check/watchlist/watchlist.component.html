@@ -13,10 +13,10 @@
                 <th>Symbol</th>
                 <th (click)="sortByDailyChange()">
                     <span>Change</span>
-                    <span *ngIf="sortWatchList === 'desc'">
+                    <span *ngIf="sortWatchList === 'up'">
                         <i class="fa fa-caret-up fa-1 float-right" aria-hidden="true"></i>
                     </span>
-                    <span *ngIf="sortWatchList === 'asc'">
+                    <span *ngIf="sortWatchList === 'down'">
                         <i class="fa fa-caret-down fa-1 float-right" aria-hidden="true"></i>
                     </span>
                 </th>
