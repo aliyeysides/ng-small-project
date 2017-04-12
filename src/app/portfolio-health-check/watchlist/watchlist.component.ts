@@ -4,13 +4,13 @@ import { Stock } from '../../shared/watchlist/stock';
 import { WatchlistService } from '../../shared/watchlist/watchlist.service';
 
 const PGRVALUES = {
-  1: 'VERY BEARISH',
+  1: 'VERY_BEARISH',
   2: 'BEARISH',
-  3: 'NEGATIVE NEUTRAL',
+  3: 'NEGATIVE_NEUTRAL',
   4: 'NEUTRAL',
-  5: 'POSITIVE NEUTRAL',
+  5: 'POSITIVE_NEUTRAL',
   6: 'BULLISH',
-  7: 'VERY BULLISH'
+  7: 'VERY_BULLISH'
 }
 
 @Component({
@@ -29,7 +29,6 @@ export class WatchlistComponent implements OnInit {
 
   ngOnInit() {
     this.watchlist = this.watchlistService.sortedStocks.reverse();
-    console.log('on landing it is ', this.sortWatchList);
   }
 
   /**

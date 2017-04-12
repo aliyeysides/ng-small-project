@@ -24,7 +24,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let stock of watchlist">
-                <td>{{displayRating(stock['metaInfo'][0]['raw_PGR'], stock['metaInfo'][0]['PGR'])}}</td>
+                <td><img src="../../../assets/imgs/{{displayRating(stock['metaInfo'][0]['raw_PGR'], stock['metaInfo'][0]['PGR'])}}.png" /></td>
                 <td>
                     <span>{{stock['metaInfo'][0]['symbol']}}</span>
                     <span>{{stock['metaInfo'][0]['name']}}</span>
