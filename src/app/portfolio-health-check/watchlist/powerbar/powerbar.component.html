@@ -1,4 +1,4 @@
 <div class="progress">
     <div *ngFor="let bar of stacked" [ngClass]="{'bg-success' : bar.type === 'success', 'bg-warning' : bar.type === 'warning', 'bg-danger' : bar.type === 'danger'}" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 33.33%"
-        aria-valuenow="33.33" aria-valuemin="0" aria-valuemax="99.99">{{bar.value}}</div>
+        aria-valuenow="33.33" aria-valuemin="0" aria-valuemax="99.99"><span class="font-weight-bold">{{bar.value}}</span></div>
 </div>

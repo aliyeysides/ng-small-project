@@ -45,8 +45,10 @@ export class WatchlistComponent implements OnInit {
       return PGRVALUES[4];
     } else if (rawPGR === -1 || correctedPGR === -1) {
       return 'NONE'
+    } else if (correctedPGR === 1 || correctedPGR === 2) {
+      return PGRVALUES[+correctedPGR];
     } else {
-      return PGRVALUES[+rawPGR];
+      return PGRVALUES[+correctedPGR+2];
     }
   }
 

@@ -948,5 +948,1163 @@ export const WATCHLIST: Stock[] = [
     "Price/Sales": "5.93512"
   },
   "status": "success"
+},
+{
+  "EPSData": {
+    "symbol": "AAPL",
+    "time_icon": 0,
+    "earnings_report_info": 0,
+    "eps_12mo_pct_chg_category": 2,
+    "next_report_date": "Tue May 02",
+    "revenue_12mo_pct_chg": "+3%",
+    "eps_12mo_pct_chg": "+2%",
+    "last_report_date": "Tue Jan 31",
+    "warning_factor": "Est Trend factor is",
+    "revenue_12mo_pct_chg_category": 2,
+    "estimate_revision_info": 0,
+    "pre_report_info": 1,
+    "current_revision_estimate": "$3.18",
+    "warning_period": "",
+    "warning_impact": "Very Bullish",
+    "last_quarter_sales": "$78.35b",
+    "last_quarter_reported_eps": "$3.36",
+    "eps_diff_description": "beat by $0.14",
+    "current_quarter_consensus_estimate": "$2.01",
+    "warning_direction": 0,
+    "eps_diff_category": 2,
+    "warning_type": 2,
+    "last_quarter_consensus_estimate": "$3.22",
+    "time_icon_description": "",
+    "revision_quarter": "1",
+    "previous_revision_estimate": "$3.11",
+    "earings_report_category": 2,
+    "eps_year_ago": "$1.90",
+    "estimate_revision_category": 2,
+    "current_quarter": "2",
+    "last_quarter": "1"
+  },
+  "metaInfo": [
+    {
+      "symbol": "AAPL",
+      "raw_PGR": 2,
+      "marketCap": 743067.5,
+      "industry_name": "Computer-Office Equipment",
+      "liquidity": 2.501102E7,
+      "Change": 0.07,
+      "filter": 0,
+      "Last": 141.7,
+      "signals": "000000000000",
+      "name": "Apple Inc",
+      "PGR": 3,
+      "TechnicalRating ": 3,
+      "listRating": 55,
+      "Percentage ": 0.05,
+      "industry_ListID ": 44366,
+      "SummaryRating ": 1
+    }
+  ],
+  "pgr": [
+    {
+      "PGR Value": 2
+    },
+    {
+      "Financials": [
+        {
+          "Value": 2
+        },
+        {
+          "LT Debt to Equity": 3
+        },
+        {
+          "Price to Book": 2
+        },
+        {
+          "Return on Equity": 5
+        },
+        {
+          "Price to Sales": 1
+        },
+        {
+          "Free Cash Flow": 4
+        }
+      ]
+    },
+    {
+      "Earnings": [
+        {
+          "Value": 2
+        },
+        {
+          "Earnings Growth": 4
+        },
+        {
+          "Earnings Surprise": 3
+        },
+        {
+          "Earnings Trend": 2
+        },
+        {
+          "Projected P/E": 2
+        },
+        {
+          "Earnings Consistency": 3
+        }
+      ]
+    },
+    {
+      "Technicals": [
+        {
+          "Value": 3
+        },
+        {
+          "Rel Strength vs Market": 4
+        },
+        {
+          "Chaikin Money Flow": 5
+        },
+        {
+          "Price Strength": 5
+        },
+        {
+          "Price Trend ROC": 1
+        },
+        {
+          "Volume Trend": 2
+        }
+      ]
+    },
+    {
+      "Experts": [
+        {
+          "Value": 3
+        },
+        {
+          "Estimate Trend": 5
+        },
+        {
+          "Short Interest": 5
+        },
+        {
+          "Insider Activity": 1
+        },
+        {
+          "Analyst Rating Trend": 1
+        },
+        {
+          "Industry Rel Strength": 2
+        }
+      ]
+    },
+    {
+      "Corrected PGR Value": 3
+    },
+    {
+      "relative_strength": "",
+      "weight_avg_Pgr": "",
+      "divident_yield": "0.0",
+      "momentum": "",
+      "is_etf_symbol": false,
+      "assets": "0.0",
+      "management": "",
+      "expense_ratio": "0.0%",
+      "avg_daily_volume": "0.0",
+      "holdings": "",
+      "power_bar": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "",
+      "beta": "0.0"
+    }
+  ],
+  "fundamentalData": {
+    "52 Wk Lo": "90.33999",
+    "Address": "ONE INFINITE LOOP",
+    "52 Wk Hi": "144.77",
+    "Debt/Equity": "0.58812",
+    "P/E": "16.96199",
+    "Analyst Revisions (%)": "0.02",
+    "ROE": "34.941",
+    "Relative to S&P (%)": "12.329",
+    "EPS_current ('17)": "8.94",
+    "is_optionable": true,
+    "ROI": "22.46999",
+    "Price/Book": "5.6248",
+    "52 Wk Performance (%)": "28.242",
+    "Company Text Blurb": "Apple Inc. is engaged in designing, manufacturing and marketing mobile communication and media devices, personal computers, and portable digital music players. The Company's products and services include iPhone, iPad, Mac, iPod, Apple TV, a portfolio of consumer and professional software applications, the iOS and Mac OS X operating systems, iCloud, and a range of accessory, service and support offerings. It sells its products worldwide through its online stores, its retail stores, its direct sales force, third-party wholesalers, and resellers. Apple Inc. is headquartered in Cupertino, California.",
+    "5 Yr EPS Growth (%)": "19.06",
+    "EPS_Previous ('16)": "8.31",
+    "Mkt Capitalization": "743067.5",
+    "Revenue": "218118",
+    "Yield": "1.61",
+    "Price/Sales": "3.44588"
+  },
+  "status": "success"
+},
+{
+  "EPSData": {
+    "symbol": "GCAP",
+    "time_icon": 0,
+    "earnings_report_info": 0,
+    "eps_12mo_pct_chg_category": 2,
+    "next_report_date": "Mon May 08",
+    "revenue_12mo_pct_chg": "+13%",
+    "eps_12mo_pct_chg": "+2%",
+    "last_report_date": "Thu Mar 09",
+    "warning_factor": "Est Trend factor is",
+    "revenue_12mo_pct_chg_category": 2,
+    "estimate_revision_info": 0,
+    "pre_report_info": 1,
+    "current_revision_estimate": "$0.15",
+    "warning_period": "",
+    "warning_impact": "Very Bullish",
+    "last_quarter_sales": "$115.80m",
+    "last_quarter_reported_eps": "$0.43",
+    "eps_diff_description": "beat by $0.01",
+    "current_quarter_consensus_estimate": "$0.15",
+    "warning_direction": 0,
+    "eps_diff_category": 2,
+    "warning_type": 2,
+    "last_quarter_consensus_estimate": "$0.42",
+    "time_icon_description": "",
+    "revision_quarter": "1",
+    "previous_revision_estimate": "$0.18",
+    "earings_report_category": 2,
+    "eps_year_ago": "$0.35",
+    "estimate_revision_category": 1,
+    "current_quarter": "1",
+    "last_quarter": "4"
+  },
+  "metaInfo": [
+    {
+      "symbol": "GCAP",
+      "raw_PGR": 5,
+      "marketCap": 385.37399,
+      "industry_name": "Invest BKRS-MGRS",
+      "liquidity": 297370,
+      "Change": -0.31,
+      "filter": 0,
+      "Last": 7.68,
+      "signals": "000000000000",
+      "name": "Gain Cap Hldgs",
+      "PGR": 5,
+      "TechnicalRating ": 3,
+      "listRating": 59,
+      "Percentage ": -3.88,
+      "industry_ListID ": 44344,
+      "SummaryRating ": 1
+    }
+  ],
+  "pgr": [
+    {
+      "PGR Value": 5
+    },
+    {
+      "Financials": [
+        {
+          "Value": 5
+        },
+        {
+          "LT Debt to Equity": 3
+        },
+        {
+          "Price to Book": 4
+        },
+        {
+          "Return on Equity": 4
+        },
+        {
+          "Price to Sales": 5
+        },
+        {
+          "Free Cash Flow": 5
+        }
+      ]
+    },
+    {
+      "Earnings": [
+        {
+          "Value": 5
+        },
+        {
+          "Earnings Growth": 4
+        },
+        {
+          "Earnings Surprise": 4
+        },
+        {
+          "Earnings Trend": 5
+        },
+        {
+          "Projected P/E": 5
+        },
+        {
+          "Earnings Consistency": 3
+        }
+      ]
+    },
+    {
+      "Technicals": [
+        {
+          "Value": 5
+        },
+        {
+          "Rel Strength vs Market": 5
+        },
+        {
+          "Chaikin Money Flow": 5
+        },
+        {
+          "Price Strength": 5
+        },
+        {
+          "Price Trend ROC": 1
+        },
+        {
+          "Volume Trend": 5
+        }
+      ]
+    },
+    {
+      "Experts": [
+        {
+          "Value": 5
+        },
+        {
+          "Estimate Trend": 5
+        },
+        {
+          "Short Interest": 3
+        },
+        {
+          "Insider Activity": 5
+        },
+        {
+          "Analyst Rating Trend": 4
+        },
+        {
+          "Industry Rel Strength": 4
+        }
+      ]
+    },
+    {
+      "Corrected PGR Value": 5
+    },
+    {
+      "relative_strength": "",
+      "weight_avg_Pgr": "",
+      "divident_yield": "0.0",
+      "momentum": "",
+      "is_etf_symbol": false,
+      "assets": "0.0",
+      "management": "",
+      "expense_ratio": "0.0%",
+      "avg_daily_volume": "0.0",
+      "holdings": "",
+      "power_bar": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "",
+      "beta": "0.0"
+    }
+  ],
+  "fundamentalData": {
+    "52 Wk Lo": "4.57",
+    "Address": "135 US Highway 202/206",
+    "52 Wk Hi": "8.68",
+    "Debt/Equity": "0.42409",
+    "P/E": "8.5914",
+    "Analyst Revisions (%)": "0.00",
+    "ROE": "15.02799",
+    "Relative to S&P (%)": "8.8428",
+    "EPS_current ('17)": "0.87",
+    "is_optionable": true,
+    "ROI": "10.376",
+    "Price/Book": "1.322",
+    "52 Wk Performance (%)": "24.26099",
+    "Company Text Blurb": "institutional foreign exchange, trading and related services providing direct access to the global OTC foreign exchange markets, where participants trade directly with one another. Its trading platforms provide information and analytical tools that allow customers to identify, analyze and execute their trading strategies. GAIN also offers retail customers located outside the United States access to other global markets on an OTC basis, including the spot gold and silver markets, as well as equity indices and commodities. Its forex trading activities are regulated in the US by the Commodity Futures Trading Commission and the National Futures Association, in the UK by the Financial Services Authority, in Japan by the Financial Services Agency, in Hong Kong by the Securities and Futures Commission and in Australia by the Australian Securities and Investments Commission. GAIN Capital Holdings, Inc is based in Bedminster, New Jersey.",
+    "5 Yr EPS Growth (%)": "200.56",
+    "EPS_Previous ('16)": "0.92",
+    "Mkt Capitalization": "385.37399",
+    "Revenue": "411.854",
+    "Yield": "3.00",
+    "Price/Sales": "0.93582"
+  },
+  "status": "success"
+},
+{
+  "EPSData": {
+    "symbol": "LPLA",
+    "time_icon": 0,
+    "earnings_report_info": 0,
+    "eps_12mo_pct_chg_category": 2,
+    "next_report_date": "Thu Apr 27",
+    "revenue_12mo_pct_chg": "-1%",
+    "eps_12mo_pct_chg": "+35%",
+    "last_report_date": "Thu Feb 09",
+    "warning_factor": "Consensus Est. has moved",
+    "revenue_12mo_pct_chg_category": 1,
+    "estimate_revision_info": 1,
+    "pre_report_info": 0,
+    "current_revision_estimate": "$0.42",
+    "warning_period": "",
+    "warning_impact": "down",
+    "last_quarter_sales": "$1.00b",
+    "last_quarter_reported_eps": "$0.46",
+    "eps_diff_description": "beat by $0.10",
+    "current_quarter_consensus_estimate": "$0.42",
+    "warning_direction": 1,
+    "eps_diff_category": 2,
+    "warning_type": 1,
+    "last_quarter_consensus_estimate": "$0.36",
+    "time_icon_description": "",
+    "revision_quarter": "1",
+    "previous_revision_estimate": "$0.45",
+    "earings_report_category": 2,
+    "eps_year_ago": "$0.56",
+    "estimate_revision_category": 1,
+    "current_quarter": "1",
+    "last_quarter": "4"
+  },
+  "metaInfo": [
+    {
+      "symbol": "LPLA",
+      "raw_PGR": 4,
+      "marketCap": 3507.32592,
+      "industry_name": "Invest BKRS-MGRS",
+      "liquidity": 651077,
+      "Change": -0.66,
+      "filter": 0,
+      "Last": 38.28,
+      "signals": "000000000000",
+      "name": "Lpl Finl Hldgs",
+      "PGR": 4,
+      "TechnicalRating ": 3,
+      "listRating": 59,
+      "Percentage ": -1.69,
+      "industry_ListID ": 44344,
+      "SummaryRating ": 1
+    }
+  ],
+  "pgr": [
+    {
+      "PGR Value": 4
+    },
+    {
+      "Financials": [
+        {
+          "Value": 3
+        },
+        {
+          "LT Debt to Equity": 1
+        },
+        {
+          "Price to Book": 2
+        },
+        {
+          "Return on Equity": 5
+        },
+        {
+          "Price to Sales": 5
+        },
+        {
+          "Free Cash Flow": 2
+        }
+      ]
+    },
+    {
+      "Earnings": [
+        {
+          "Value": 3
+        },
+        {
+          "Earnings Growth": 2
+        },
+        {
+          "Earnings Surprise": 5
+        },
+        {
+          "Earnings Trend": 4
+        },
+        {
+          "Projected P/E": 2
+        },
+        {
+          "Earnings Consistency": 2
+        }
+      ]
+    },
+    {
+      "Technicals": [
+        {
+          "Value": 1
+        },
+        {
+          "Rel Strength vs Market": 4
+        },
+        {
+          "Chaikin Money Flow": 3
+        },
+        {
+          "Price Strength": 4
+        },
+        {
+          "Price Trend ROC": 1
+        },
+        {
+          "Volume Trend": 2
+        }
+      ]
+    },
+    {
+      "Experts": [
+        {
+          "Value": 5
+        },
+        {
+          "Estimate Trend": 5
+        },
+        {
+          "Short Interest": 5
+        },
+        {
+          "Insider Activity": 1
+        },
+        {
+          "Analyst Rating Trend": 5
+        },
+        {
+          "Industry Rel Strength": 4
+        }
+      ]
+    },
+    {
+      "Corrected PGR Value": 4
+    },
+    {
+      "relative_strength": "",
+      "weight_avg_Pgr": "",
+      "divident_yield": "0.0",
+      "momentum": "",
+      "is_etf_symbol": false,
+      "assets": "0.0",
+      "management": "",
+      "expense_ratio": "0.0%",
+      "avg_daily_volume": "0.0",
+      "holdings": "",
+      "power_bar": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "",
+      "beta": "0.0"
+    }
+  ],
+  "fundamentalData": {
+    "52 Wk Lo": "21.14999",
+    "Address": "75 STATE STREET 22ND FLOOR",
+    "52 Wk Hi": "42.45",
+    "Debt/Equity": "2.64998",
+    "P/E": "18.28199",
+    "Analyst Revisions (%)": "-0.08",
+    "ROE": "24.85199",
+    "Relative to S&P (%)": "38.708",
+    "EPS_current ('17)": "2.16",
+    "is_optionable": true,
+    "ROI": "6.50019",
+    "Price/Book": "4.2287",
+    "52 Wk Performance (%)": "58.35699",
+    "Company Text Blurb": "LPL Financial Holdings Inc. is engaged in providing an integrated platform of brokerage and investment advisory services to independent financial advisors and financial advisors at financial institutions in the United States. Its brokerage offerings include variable and fixed annuities, mutual funds, general securities, alternative investments, retirement plans, fixed income, and insurance offerings. LPL Financial Holdings Inc., formerly known as LPL Investment Holdings Inc., is based in Boston, Massachusetts.",
+    "5 Yr EPS Growth (%)": "7.61",
+    "EPS_Previous ('16)": "2.13",
+    "Mkt Capitalization": "3507.32592",
+    "Revenue": "4049.38305",
+    "Yield": "2.57",
+    "Price/Sales": "0.86613"
+  },
+  "status": "success"
+},
+{
+  "EPSData": {
+    "symbol": "BLK",
+    "time_icon": 0,
+    "earnings_report_info": 0,
+    "eps_12mo_pct_chg_category": 2,
+    "next_report_date": "Wed Apr 19",
+    "revenue_12mo_pct_chg": "+1%",
+    "eps_12mo_pct_chg": "+8%",
+    "last_report_date": "Fri Jan 13",
+    "warning_factor": "Est Trend factor is",
+    "revenue_12mo_pct_chg_category": 2,
+    "estimate_revision_info": 0,
+    "pre_report_info": 1,
+    "current_revision_estimate": "$4.55",
+    "warning_period": "",
+    "warning_impact": "Very Bearish",
+    "last_quarter_sales": "$2.89b",
+    "last_quarter_reported_eps": "$5.14",
+    "eps_diff_description": "beat by $0.12",
+    "current_quarter_consensus_estimate": "$4.92",
+    "warning_direction": 0,
+    "eps_diff_category": 2,
+    "warning_type": 1,
+    "last_quarter_consensus_estimate": "$5.02",
+    "time_icon_description": "",
+    "revision_quarter": "1",
+    "previous_revision_estimate": "$4.66",
+    "earings_report_category": 2,
+    "eps_year_ago": "$4.25",
+    "estimate_revision_category": 1,
+    "current_quarter": "1",
+    "last_quarter": "4"
+  },
+  "metaInfo": [
+    {
+      "symbol": "BLK",
+      "raw_PGR": 1,
+      "marketCap": 62312.10937,
+      "industry_name": "Invest BKRS-MGRS",
+      "liquidity": 472368,
+      "Change": -2.76,
+      "filter": 0,
+      "Last": 381.29,
+      "signals": "000000000000",
+      "name": "Blackrock Inc",
+      "PGR": 1,
+      "TechnicalRating ": 1,
+      "listRating": 59,
+      "Percentage ": -0.72,
+      "industry_ListID ": 44344,
+      "SummaryRating ": 1
+    }
+  ],
+  "pgr": [
+    {
+      "PGR Value": 1
+    },
+    {
+      "Financials": [
+        {
+          "Value": 1
+        },
+        {
+          "LT Debt to Equity": 4
+        },
+        {
+          "Price to Book": 3
+        },
+        {
+          "Return on Equity": 4
+        },
+        {
+          "Price to Sales": 3
+        },
+        {
+          "Free Cash Flow": 1
+        }
+      ]
+    },
+    {
+      "Earnings": [
+        {
+          "Value": 2
+        },
+        {
+          "Earnings Growth": 2
+        },
+        {
+          "Earnings Surprise": 2
+        },
+        {
+          "Earnings Trend": 2
+        },
+        {
+          "Projected P/E": 2
+        },
+        {
+          "Earnings Consistency": 5
+        }
+      ]
+    },
+    {
+      "Technicals": [
+        {
+          "Value": 1
+        },
+        {
+          "Rel Strength vs Market": 3
+        },
+        {
+          "Chaikin Money Flow": 3
+        },
+        {
+          "Price Strength": 3
+        },
+        {
+          "Price Trend ROC": 3
+        },
+        {
+          "Volume Trend": 1
+        }
+      ]
+    },
+    {
+      "Experts": [
+        {
+          "Value": 2
+        },
+        {
+          "Estimate Trend": 1
+        },
+        {
+          "Short Interest": 5
+        },
+        {
+          "Insider Activity": 1
+        },
+        {
+          "Analyst Rating Trend": 4
+        },
+        {
+          "Industry Rel Strength": 4
+        }
+      ]
+    },
+    {
+      "Corrected PGR Value": 1
+    },
+    {
+      "relative_strength": "",
+      "weight_avg_Pgr": "",
+      "divident_yield": "0.0",
+      "momentum": "",
+      "is_etf_symbol": false,
+      "assets": "0.0",
+      "management": "",
+      "expense_ratio": "0.0%",
+      "avg_daily_volume": "0.0",
+      "holdings": "",
+      "power_bar": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "",
+      "beta": "0.0"
+    }
+  ],
+  "fundamentalData": {
+    "52 Wk Lo": "319.54",
+    "Address": "55 EAST 52ND STREET",
+    "52 Wk Hi": "398.45001",
+    "Debt/Equity": "1.12202",
+    "P/E": "19.88899",
+    "Analyst Revisions (%)": "-0.08",
+    "ROE": "11.15799",
+    "Relative to S&P (%)": "-0.85865",
+    "EPS_current ('17)": "21.55",
+    "is_optionable": true,
+    "ROI": "5.01739",
+    "Price/Book": "2.1282",
+    "52 Wk Performance (%)": "13.18599",
+    "Company Text Blurb": "BlackRock, Inc. is one of the largest investment management firms in the United States. The company offers a variety of investment products to institutional and individual investors in the U.S. and internationally. The company also offers a variety of risk management services to large institutional fixed income investors.",
+    "5 Yr EPS Growth (%)": "9.36",
+    "EPS_Previous ('16)": "19.29",
+    "Mkt Capitalization": "62312.10937",
+    "Revenue": "11155",
+    "Yield": "2.60",
+    "Price/Sales": "5.58602"
+  },
+  "status": "success"
+},
+{
+  "EPSData": {
+    "symbol": "FIG",
+    "time_icon": 0,
+    "earnings_report_info": 0,
+    "eps_12mo_pct_chg_category": 1,
+    "next_report_date": "Thu May 04",
+    "revenue_12mo_pct_chg": "+6%",
+    "eps_12mo_pct_chg": "-10%",
+    "last_report_date": "Tue Feb 28",
+    "warning_factor": "EPS Surprise factor is",
+    "revenue_12mo_pct_chg_category": 2,
+    "estimate_revision_info": 0,
+    "pre_report_info": 1,
+    "current_revision_estimate": "$0.21",
+    "warning_period": "",
+    "warning_impact": "Very Bullish",
+    "last_quarter_sales": "$438.33m",
+    "last_quarter_reported_eps": "$0.27",
+    "eps_diff_description": "beat by $0.03",
+    "current_quarter_consensus_estimate": "$0.22",
+    "warning_direction": 0,
+    "eps_diff_category": 2,
+    "warning_type": 2,
+    "last_quarter_consensus_estimate": "$0.24",
+    "time_icon_description": "",
+    "revision_quarter": "2",
+    "previous_revision_estimate": "$0.23",
+    "earings_report_category": 2,
+    "eps_year_ago": "$0.16",
+    "estimate_revision_category": 1,
+    "current_quarter": "1",
+    "last_quarter": "4"
+  },
+  "metaInfo": [
+    {
+      "symbol": "FIG",
+      "raw_PGR": 5,
+      "marketCap": 3086.104,
+      "industry_name": "Invest BKRS-MGRS",
+      "liquidity": 2434995,
+      "Change": 0,
+      "filter": 0,
+      "Last": 7.97,
+      "signals": "000000000000",
+      "name": "Fortress Invest",
+      "PGR": 5,
+      "TechnicalRating ": 3,
+      "listRating": 59,
+      "Percentage ": 0,
+      "industry_ListID ": 44344,
+      "SummaryRating ": 1
+    }
+  ],
+  "pgr": [
+    {
+      "PGR Value": 5
+    },
+    {
+      "Financials": [
+        {
+          "Value": 5
+        },
+        {
+          "LT Debt to Equity": 4
+        },
+        {
+          "Price to Book": 1
+        },
+        {
+          "Return on Equity": 4
+        },
+        {
+          "Price to Sales": 4
+        },
+        {
+          "Free Cash Flow": 4
+        }
+      ]
+    },
+    {
+      "Earnings": [
+        {
+          "Value": 3
+        },
+        {
+          "Earnings Growth": 2
+        },
+        {
+          "Earnings Surprise": 5
+        },
+        {
+          "Earnings Trend": 3
+        },
+        {
+          "Projected P/E": 4
+        },
+        {
+          "Earnings Consistency": 2
+        }
+      ]
+    },
+    {
+      "Technicals": [
+        {
+          "Value": 1
+        },
+        {
+          "Rel Strength vs Market": 5
+        },
+        {
+          "Chaikin Money Flow": 1
+        },
+        {
+          "Price Strength": 5
+        },
+        {
+          "Price Trend ROC": 1
+        },
+        {
+          "Volume Trend": 2
+        }
+      ]
+    },
+    {
+      "Experts": [
+        {
+          "Value": 5
+        },
+        {
+          "Estimate Trend": 3
+        },
+        {
+          "Short Interest": 5
+        },
+        {
+          "Insider Activity": 5
+        },
+        {
+          "Analyst Rating Trend": 4
+        },
+        {
+          "Industry Rel Strength": 4
+        }
+      ]
+    },
+    {
+      "Corrected PGR Value": 5
+    },
+    {
+      "relative_strength": "",
+      "weight_avg_Pgr": "",
+      "divident_yield": "0.0",
+      "momentum": "",
+      "is_etf_symbol": false,
+      "assets": "0.0",
+      "management": "",
+      "expense_ratio": "0.0%",
+      "avg_daily_volume": "0.0",
+      "holdings": "",
+      "power_bar": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "",
+      "beta": "0.0"
+    }
+  ],
+  "fundamentalData": {
+    "52 Wk Lo": "4.23",
+    "Address": "1345 AVENUE OF THE AMERICAS 46TH FLOOR",
+    "52 Wk Hi": "8",
+    "Debt/Equity": "0",
+    "P/E": "8.663",
+    "Analyst Revisions (%)": "0.00",
+    "ROE": "40.448",
+    "Relative to S&P (%)": "47.90399",
+    "EPS_current ('17)": "1.00",
+    "is_optionable": true,
+    "ROI": "40.448",
+    "Price/Book": "3.4663",
+    "52 Wk Performance (%)": "68.856",
+    "Company Text Blurb": "FORTRESS INVESTMENT Group is a leading global alternative asset manager with approximately $34.2 billion in assets under management as of March 31, 2008. Fortress is headquartered in New York and has affiliates with offices in Chicago, Dallas, Frankfurt, Geneva, Hong Kong, London, Los Angeles, Munich, New Canaan, Rome, San Francisco, San Diego, Sydney, Tokyo and Toronto.Fortress raises, invests and manages private equity funds and hedge funds. Fortress intends to grow its existing businesses, while continuing to create innovative products to meet the increasing demand by sophisticated investors for superior risk-adjusted investment returns.",
+    "5 Yr EPS Growth (%)": "49.87",
+    "EPS_Previous ('16)": "0.92",
+    "Mkt Capitalization": "3086.104",
+    "Revenue": "1163.80603",
+    "Yield": "4.52",
+    "Price/Sales": "2.65173"
+  },
+  "status": "success"
+},
+{
+  "EPSData": {
+    "symbol": "CAR",
+    "time_icon": 0,
+    "earnings_report_info": 0,
+    "eps_12mo_pct_chg_category": 1,
+    "next_report_date": "Wed May 03",
+    "revenue_12mo_pct_chg": "-1%",
+    "eps_12mo_pct_chg": "-17%",
+    "last_report_date": "Wed Feb 15",
+    "warning_factor": "Consensus Est. has moved",
+    "revenue_12mo_pct_chg_category": 1,
+    "estimate_revision_info": 1,
+    "pre_report_info": 0,
+    "current_revision_estimate": "$-0.46",
+    "warning_period": "",
+    "warning_impact": "down",
+    "last_quarter_sales": "$1.87b",
+    "last_quarter_reported_eps": "$0.15",
+    "eps_diff_description": "missed by $0.01",
+    "current_quarter_consensus_estimate": "$-0.46",
+    "warning_direction": 1,
+    "eps_diff_category": 1,
+    "warning_type": 1,
+    "last_quarter_consensus_estimate": "$0.16",
+    "time_icon_description": "",
+    "revision_quarter": "1",
+    "previous_revision_estimate": "$-0.43",
+    "earings_report_category": 1,
+    "eps_year_ago": "$-0.28",
+    "estimate_revision_category": 1,
+    "current_quarter": "1",
+    "last_quarter": "4"
+  },
+  "metaInfo": [
+    {
+      "symbol": "CAR",
+      "raw_PGR": 2,
+      "marketCap": 2439.62597,
+      "industry_name": "Business Service",
+      "liquidity": 2555763,
+      "Change": -0.67,
+      "filter": 0,
+      "Last": 27.88,
+      "signals": "000000000000",
+      "name": "Avis Budget Grp",
+      "PGR": 2,
+      "TechnicalRating ": 1,
+      "listRating": 61,
+      "Percentage ": -2.35,
+      "industry_ListID ": 44353,
+      "SummaryRating ": 1
+    }
+  ],
+  "pgr": [
+    {
+      "PGR Value": 2
+    },
+    {
+      "Financials": [
+        {
+          "Value": 4
+        },
+        {
+          "LT Debt to Equity": 1
+        },
+        {
+          "Price to Book": 1
+        },
+        {
+          "Return on Equity": 5
+        },
+        {
+          "Price to Sales": 3
+        },
+        {
+          "Free Cash Flow": 5
+        }
+      ]
+    },
+    {
+      "Earnings": [
+        {
+          "Value": 1
+        },
+        {
+          "Earnings Growth": 2
+        },
+        {
+          "Earnings Surprise": 1
+        },
+        {
+          "Earnings Trend": 1
+        },
+        {
+          "Projected P/E": 5
+        },
+        {
+          "Earnings Consistency": 3
+        }
+      ]
+    },
+    {
+      "Technicals": [
+        {
+          "Value": 3
+        },
+        {
+          "Rel Strength vs Market": 1
+        },
+        {
+          "Chaikin Money Flow": 2
+        },
+        {
+          "Price Strength": 1
+        },
+        {
+          "Price Trend ROC": 5
+        },
+        {
+          "Volume Trend": 5
+        }
+      ]
+    },
+    {
+      "Experts": [
+        {
+          "Value": 1
+        },
+        {
+          "Estimate Trend": 3
+        },
+        {
+          "Short Interest": 1
+        },
+        {
+          "Insider Activity": 2
+        },
+        {
+          "Analyst Rating Trend": 4
+        },
+        {
+          "Industry Rel Strength": 3
+        }
+      ]
+    },
+    {
+      "Corrected PGR Value": 2
+    },
+    {
+      "relative_strength": "",
+      "weight_avg_Pgr": "",
+      "divident_yield": "0.0",
+      "momentum": "",
+      "is_etf_symbol": false,
+      "assets": "0.0",
+      "management": "",
+      "expense_ratio": "0.0%",
+      "avg_daily_volume": "0.0",
+      "holdings": "",
+      "power_bar": [
+        0,
+        0,
+        0
+      ],
+      "strategy": "",
+      "beta": "0.0"
+    }
+  ],
+  "fundamentalData": {
+    "52 Wk Lo": "22.39999",
+    "Address": "6 SYLVAN WAY",
+    "52 Wk Hi": "41.02999",
+    "Debt/Equity": "54.85067",
+    "P/E": "9.61279",
+    "Analyst Revisions (%)": "-0.16",
+    "ROE": "77.722",
+    "Relative to S&P (%)": "11.64099",
+    "EPS_current ('17)": "3.24",
+    "is_optionable": true,
+    "ROI": "1.9785",
+    "Price/Book": "11.354",
+    "52 Wk Performance (%)": "27.45499",
+    "Company Text Blurb": "Avis Budget Group, Inc. is a leading provider of vehicle rental services, with operations in more than seventy countries. Through its Avis and Budget brands, the company is the largest general-use vehicle rental company in each of North America, Australia, New Zealand and certain other regions. Avis Budget Group is headquartered in Parsippany, N.J. Avis is a leading supplier to the premium commercial and leisure segments of the travel industry, and Budget is a leading supplier to price-conscious car rental segments. Avis Budget Group maintains the leading share of airport car rental revenue, and we operate the second largest consumer truck rental business in the United States. The company generate significant benefits from operating two distinctive car rental brands targeting different market segments but share the same fleet, maintenance facilities, technology and administrative infrastructure",
+    "5 Yr EPS Growth (%)": "482.54",
+    "EPS_Previous ('16)": "2.93",
+    "Mkt Capitalization": "2439.62597",
+    "Revenue": "8659",
+    "Yield": "0.00",
+    "Price/Sales": "0.28174"
+  },
+  "status": "success"
 }
 ]
