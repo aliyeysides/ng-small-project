@@ -10,7 +10,8 @@ import {InsightService} from './insights/insight.service';
 })
 export class MarketInsightsComponent implements OnInit {
 
-  insights: Insight[];
+  // insights: Insight[];
+  insights: any;
 
   constructor(private insightService: InsightService) {
   }

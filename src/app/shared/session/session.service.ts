@@ -1,33 +1,60 @@
 import {Injectable} from '@angular/core';
 import {Http, URLSearchParams} from '@angular/http';
 import {Observable} from "rxjs/Observable";
+
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise'
+
+import * as moment from 'moment';
 
 @Injectable()
 export class SessionService {
   private authUrl: string = 'https://qa.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
-  private params: URLSearchParams = new URLSearchParams;
+  private loginUrl: string = 'https://qa.chaikinanalytics.com/CPTRestSecure/app/user/login';
+  private authParams: URLSearchParams = new URLSearchParams;
+  private loginParams: URLSearchParams = new URLSearchParams;
 
   constructor(private http: Http) {
   }
 
   getAuthorization(email: string, password: string) {
-    this.params.set('email', email);
-    this.params.set('password', password);
+    this.authParams.set('email', email);
+    this.authParams.set('password', password);
     return this.http.get(this.authUrl, {
-      search: this.params
-    }).subscribe(
-      (res) => this.extractData,
-      (err) => this.handleError
-    )
+      search: this.authParams,
+      // withCredentials: true
+    }).toPromise()
+      .then((res) => SessionService.extractData)
+      .catch((err) => SessionService.handleError)
   }
 
-  private extractData(res: Response) {
+  login(environment: string) {
+    /* TODO: Cleanup */
+    // let date = moment().toString(),
+    //     time = moment().toString();
+
+    this.loginParams.set('deviceId', this.authParams.get('email'));
+
+    /* TODO: Detect environment dynamically */
+    // this.loginParams.set('environment', environment);
+    // this.loginParams.set('date', date);
+    // this.loginParams.set('time', time);
+    // this.loginParams.set('version', '1.3.4');
+
+    this.http.get(this.loginUrl, {
+      search: this.loginParams,
+      withCredentials: true
+    }).toPromise()
+      .then((res) => SessionService.extractData)
+      .catch((err) => SessionService.handleError)
+  }
+
+  private static extractData(res: Response) {
     let body = res.json();
     return body || {};
   }
 
-  private handleError(err: any) {
+  private static handleError(err: any) {
     let errMsg = (err.message) ? err.message :
       err.status ? `${err.status} - ${err.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead

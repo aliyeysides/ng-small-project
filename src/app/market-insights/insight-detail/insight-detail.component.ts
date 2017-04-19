@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
+import {Location} from '@angular/common';
 
-import { Insight } from '../insights/insight';
-import { InsightService } from '../insights/insight.service';
+import {Insight} from '../insights/insight';
+import {InsightService} from '../insights/insight.service';
 
-import { SharedModule } from '../../shared/shared.module';
+import {SharedModule} from '../../shared/shared.module';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -18,19 +18,18 @@ export class InsightDetailComponent implements OnInit {
 
   insight: Insight;
 
-  constructor(
-    private insightService: InsightService,
-    private route: ActivatedRoute,
-    private location: Location
-  ) { }
+  constructor(private insightService: InsightService,
+              private route: ActivatedRoute,
+              private location: Location) {
+  }
 
   ngOnInit(): void {
-    this.route.params
-        .switchMap((params: Params) =>
-        this.insightService.getInsight(+params['id']))
-        .subscribe(insight => {
-            this.insight = insight;
-        });
+    // this.route.params
+    //   .switchMap((params: Params) =>
+    //     this.insightService.getInsight(+params['id']))
+    //   .subscribe(insight => {
+    //     this.insight = insight;
+    //   });
   }
 
   goBack(): void {
