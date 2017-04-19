@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Stock } from '../../shared/watchlist/stock';
-import { WatchlistService } from '../../shared/watchlist/watchlist.service';
+import {Stock} from '../../shared/watchlist/stock';
+import {WatchlistService} from '../../shared/watchlist/watchlist.service';
 
 const PGRVALUES = {
   1: 'VERY_BEARISH',
@@ -23,9 +23,8 @@ export class WatchlistComponent implements OnInit {
   watchlist: Stock[];
   sortWatchList: string = 'up';
 
-  constructor(
-    private watchlistService: WatchlistService
-  ) { }
+  constructor(private watchlistService: WatchlistService) {
+  }
 
   ngOnInit() {
     this.watchlist = this.watchlistService.sortedStocks.reverse();
@@ -48,7 +47,7 @@ export class WatchlistComponent implements OnInit {
     } else if (correctedPGR === 1 || correctedPGR === 2) {
       return PGRVALUES[+correctedPGR];
     } else {
-      return PGRVALUES[+correctedPGR+2];
+      return PGRVALUES[+correctedPGR + 2];
     }
   }
 

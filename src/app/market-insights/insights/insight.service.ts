@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Headers, Http} from '@angular/http';
 
 // import 'rxjs/add/operator/toPromise';
 
-import { Insight } from './insight';
-import { INSIGHTS } from './mock-insights';
+import {Insight} from './insight';
+import {INSIGHTS} from './mock-insights';
 
 @Injectable()
 export class InsightService {
@@ -17,9 +17,8 @@ export class InsightService {
     return Promise.reject(error.message || error);
   }
 
-  constructor(
-    private http: Http
-  ) { }
+  constructor(private http: Http) {
+  }
 
   getInsights(): Promise<Insight[]> {
     return Promise.resolve(INSIGHTS); // stub
@@ -31,7 +30,7 @@ export class InsightService {
 
   getInsight(id: number): Promise<Insight> {
     return this.getInsights()
-               .then(insights => insights.find(insight => insight.id === id));
+      .then(insights => insights.find(insight => insight.id === id));
   }
 
 }

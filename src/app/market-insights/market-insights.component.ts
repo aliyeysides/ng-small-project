@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Insight } from './insights/insight';
-import { InsightService } from './insights/insight.service';
+import {Insight} from './insights/insight';
+import {InsightService} from './insights/insight.service';
 
 @Component({
   selector: 'psp-market-insights',
@@ -12,10 +12,8 @@ export class MarketInsightsComponent implements OnInit {
 
   insights: Insight[];
 
-  constructor(
-    private insightService: InsightService
-  ) { }
-
+  constructor(private insightService: InsightService) {
+  }
 
   ngOnInit(): void {
     this.getInsights();
@@ -23,7 +21,7 @@ export class MarketInsightsComponent implements OnInit {
 
   getInsights(): void {
     this.insightService.getInsights()
-        .then(insights => this.insights = insights);
+      .then(insights => this.insights = insights);
   }
 
 }
