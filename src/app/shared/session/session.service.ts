@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, URLSearchParams} from '@angular/http';
+import {Http, URLSearchParams, Headers} from '@angular/http';
 import {Observable} from "rxjs/Observable";
 
 import 'rxjs/add/operator/map';
@@ -29,21 +29,21 @@ export class SessionService {
   }
 
   login(environment: string) {
-    /* TODO: Cleanup */
-    // let date = moment().toString(),
-    //     time = moment().toString();
 
     this.loginParams.set('deviceId', this.authParams.get('email'));
-
     /* TODO: Detect environment dynamically */
     // this.loginParams.set('environment', environment);
     // this.loginParams.set('date', date);
     // this.loginParams.set('time', time);
     // this.loginParams.set('version', '1.3.4');
+    var headers = new Headers();
+    headers.append('environment', environment);
+    headers.append('version', '1.3.4');
 
     this.http.get(this.loginUrl, {
       search: this.loginParams,
-      withCredentials: true
+      // withCredentials: true,
+      headers: headers
     }).toPromise()
       .then((res) => SessionService.extractData)
       .catch((err) => SessionService.handleError)
