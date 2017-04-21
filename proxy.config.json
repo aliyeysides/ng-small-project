@@ -1,7 +1,6 @@
-//{
-//  "/CPTRestSecure/*": {
-//    "target": "https://qa.chaikinanalytics.com",
-//    "secure": true,
-//    "logLevel": "debug"
-//  }
-//}
+{
+  "/CPTRestSecure": {
+    "target": "https://qa.chaikinanalytics.com/",
+    "secure": false
+  }
+}

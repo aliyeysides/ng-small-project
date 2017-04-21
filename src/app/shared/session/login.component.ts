@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+
 import {SessionService} from "./session.service";
+import {Session} from './session';
+import {User} from "./user";
 
 @Component({
   selector: 'psp-login',
@@ -8,11 +11,12 @@ import {SessionService} from "./session.service";
 })
 export class LoginComponent implements OnInit {
 
-  session: Object;
+  session: Session;
+  user: User;
 
   constructor(private sessionService: SessionService) {
     this.getSession();
-    this.login();
+    // this.login();
   }
 
   ngOnInit() {
@@ -21,13 +25,18 @@ export class LoginComponent implements OnInit {
   getSession(): void {
     let email = 'shashankpunuru@flexisphere.com',
       password = 'facebook321';
+
     this.sessionService.getAuthorization(email, password)
-      .then(session => this.session = session);
+      .then(session => {
+        this.session = session;
+      });
   }
 
-  login() {
-    let environment = 'desktop';
-    this.sessionService.login(environment);
+  login(): void {
+    this.sessionService.login()
+      .then(usr => {
+        this.user = usr;
+      });
   }
 
 }

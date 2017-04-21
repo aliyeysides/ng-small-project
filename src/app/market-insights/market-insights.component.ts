@@ -14,14 +14,14 @@ export class MarketInsightsComponent implements OnInit {
   insights: any;
 
   constructor(private insightService: InsightService) {
+    this.getInsights('shashankpunuru@flexisphere.com');
   }
 
   ngOnInit(): void {
-    this.getInsights();
   }
 
-  getInsights(): void {
-    this.insightService.getInsights()
+  getInsights(email: string): void {
+    this.insightService.getInsights(email)
       .then(insights => this.insights = insights);
   }
 

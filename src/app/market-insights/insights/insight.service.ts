@@ -7,17 +7,21 @@ import 'rxjs/add/operator/toPromise';
 // import {Insight} from './insight';
 // import {INSIGHTS} from './mock-insights';
 
+
 @Injectable()
 export class InsightService {
 
-  private insightsUrl: string = 'https://qa.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&count=20&id=2,10&_=1489485632440';
+  private insightsUrl: string = 'https://qa.chaikinanalytics.com/insights/';
   private params: URLSearchParams = new URLSearchParams;
-  // private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) {
   }
 
-  getInsights() {
+  getInsights(email: string) {
+    this.params.set('deviceId', email);
+    // this.params.set('json', );
+    // json=secursive.get_product_updates&dev=1&count=20&id=2,10&_=1489485632440
+
     return this.http.get(this.insightsUrl, {
       search: this.params,
       withCredentials: true

@@ -17,20 +17,20 @@ export class MiPreviewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getInsights(2);
+    // this.getInsights(2);
   }
 
   /**
    *
    * @param {number} previewLimit Number of insights to display
    */
-  getInsights(previewLimit: Number): void {
-    this.InsightService.getInsights()
-        .then(insights => {
-          for (let previewCount = 0; previewCount < previewLimit; previewCount++){
-            this.insights.push(insights[previewCount]);
-          }
-        })
-  }
+  // getInsights(previewLimit: Number): void {
+  //   this.InsightService.getInsights()
+  //       .then(insights => {
+  //         for (let previewCount = 0; previewCount < previewLimit; previewCount++){
+  //           this.insights.push(insights[previewCount]);
+  //         }
+  //       })
+  // }
 
 }

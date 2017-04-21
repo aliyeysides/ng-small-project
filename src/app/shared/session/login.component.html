@@ -1,3 +1,8 @@
-<p>
-  login works!
-</p>
+<div>
+  <h2>Session Stats:</h2>
+  <div>
+    <div *ngIf="session">{{session.loggedInStatus}}</div>
+    <div *ngIf="session">{{session.exisitingSessionStatus}}</div>
+    <div *ngIf="session">{{session.existingSession}}</div>
+  </div>
+</div>
