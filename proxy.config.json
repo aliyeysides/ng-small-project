@@ -1,6 +1,6 @@
 {
   "/CPTRestSecure": {
-    "target": "https://qa.chaikinanalytics.com/",
+    "target": "https://qa.chaikinanalytics.com",
     "secure": false
   }
 }

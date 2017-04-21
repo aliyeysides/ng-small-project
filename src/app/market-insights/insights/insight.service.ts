@@ -11,7 +11,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class InsightService {
 
-  private insightsUrl: string = 'https://qa.chaikinanalytics.com/insights/';
+  private insightsUrl: string = '/insights/';
   private params: URLSearchParams = new URLSearchParams;
 
   constructor(private http: Http) {
@@ -26,7 +26,7 @@ export class InsightService {
       search: this.params,
       withCredentials: true
     }).toPromise()
-      .then((res) => InsightService.extractData)
+      .then(res => console.log('res', res))
       .catch((err) => InsightService.handleError)
   }
 
@@ -35,10 +35,10 @@ export class InsightService {
   //     .then(insights => insights.find(insight => insight.id === id));
   // }
 
-  private static extractData(res: Response) {
-    let body = res.json();
-    return body || {}
-  }
+  // private static extractData(res: Response) {
+  //   let body = res.json();
+  //   return body || {}
+  // }
 
   private static handleError(err: any) {
     let errMsg = (err.message) ? err.message :
