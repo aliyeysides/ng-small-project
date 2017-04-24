@@ -17,10 +17,7 @@ export class InsightService {
   constructor(private http: Http) {
   }
 
-  getInsights(email: string) {
-    this.params.set('deviceId', email);
-    // this.params.set('json', );
-    // json=secursive.get_product_updates&dev=1&count=20&id=2,10&_=1489485632440
+  getInsights() {
 
     return this.http.get(this.insightsUrl, {
       search: this.params,

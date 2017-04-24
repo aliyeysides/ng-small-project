@@ -13,7 +13,7 @@ export class MiPreviewComponent implements OnInit {
   insights: Insight[] = [];
 
   constructor(
-    private InsightService: InsightService
+    private insightService: InsightService
   ) { }
 
   ngOnInit() {
@@ -25,7 +25,7 @@ export class MiPreviewComponent implements OnInit {
    * @param {number} previewLimit Number of insights to display
    */
   // getInsights(previewLimit: Number): void {
-  //   this.InsightService.getInsights()
+  //   this.insightService.getInsights()
   //       .then(insights => {
   //         for (let previewCount = 0; previewCount < previewLimit; previewCount++){
   //           this.insights.push(insights[previewCount]);

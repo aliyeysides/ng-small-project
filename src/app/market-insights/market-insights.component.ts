@@ -3,6 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import {Insight} from './insights/insight';
 import {InsightService} from './insights/insight.service';
 
+import {INSIGHTS} from './insights/mock-insights';
+
 @Component({
   selector: 'psp-market-insights',
   templateUrl: './market-insights.component.html',
@@ -10,19 +12,38 @@ import {InsightService} from './insights/insight.service';
 })
 export class MarketInsightsComponent implements OnInit {
 
-  // insights: Insight[];
-  insights: any;
+  insights: Array<object>;
+  previewLimit: number;
+  addPerLoad: number;
 
   constructor(private insightService: InsightService) {
-    this.getInsights('shashankpunuru@flexisphere.com');
   }
 
   ngOnInit(): void {
+    this.previewLimit = 4;
+    this.addPerLoad = 2;
+    this.insights = this.getInsights(this.previewLimit);
   }
 
-  getInsights(email: string): void {
-    this.insightService.getInsights(email)
-      .then(insights => this.insights = insights);
+  getInsights(previewLimit): Array<object> {
+    let insights = [];
+    for (let previewCount = 0; previewCount < previewLimit; previewCount++){
+      insights.push(INSIGHTS[previewCount]);
+    }
+    return insights;
+
+    // this.insightService.getInsights()
+    //   .then(insights => {
+    //     for (let previewCount = 0; previewCount < previewLimit; previewCount++){
+    //       this.insights.push(insights[previewCount]);
+    //     }
+    //   })
+  }
+
+  loadMoreInsights(additional: number): void {
+    this.previewLimit += additional;
+    this.insights = [];
+    this.insights = this.getInsights(this.previewLimit);
   }
 
 }

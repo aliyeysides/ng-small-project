@@ -1,13 +1,17 @@
 <div class="container-fluid">
-    <psp-mi-navbar></psp-mi-navbar>
-    <div class=" borderz d-inline-block " *ngFor="let insight of insights ">
-        <div class="card " style="width: 20rem; ">
-            <img class="card-img-top " src="{{insight.image}} " alt="Card image cap ">
-            <div class="card-block ">
-                <h4 class="card-title ">{{insight.title}}</h4>
-                <p class="card-text ">{{insight.content}}</p>
-                <a href="# " class="btn btn-primary " [routerLink]="[ '/market-insights', insight.id] ">Read insight</a>
-            </div>
+  <psp-mi-navbar></psp-mi-navbar>
+  <p class="fixed-bottom"># {{previewLimit}}</p>
+  <div class="chaikin-insights container-fluid">
+    <div class="borderz d-inline-block " *ngFor="let insight of insights ">
+      <div class="card " style="width: 20rem; ">
+        <img class="card-img-top " src="{{insight.image}} " alt="Card image cap ">
+        <div class="card-block ">
+          <h4 class="card-title ">{{insight.title}}</h4>
+          <p class="card-text ">{{insight.content}}</p>
+          <a href="#" class="btn btn-primary " [routerLink]="[ '/market-insights', insight.id] ">Read insight</a>
         </div>
+      </div>
     </div>
+    <a (click)="loadMoreInsights(addPerLoad)">LOAD {{addPerLoad}} MORE</a>
+  </div>
 </div>
