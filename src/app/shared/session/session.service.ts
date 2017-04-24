@@ -9,8 +9,8 @@ import {User} from "./user";
 
 @Injectable()
 export class SessionService {
-  private authUrl: string = '/CPTRestSecure/app/authenticate/getAuthorization';
-  private loginUrl: string = '/CPTRestSecure/app/user/login';
+  private authUrl: string = 'https://app.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
+  private loginUrl: string = 'https://app.chaikinanalytics.com/CPTRestSecure/app/user/login';
   private authParams: URLSearchParams = new URLSearchParams;
   private loginParams: URLSearchParams = new URLSearchParams;
 
@@ -23,12 +23,13 @@ export class SessionService {
 
     return this.http.get(this.authUrl, {
       search: this.authParams,
+      withCredentials: true
     }).toPromise()
       .then(res => res.json() as Session)
       .catch(SessionService.handleError)
   }
 
-  login(): any {
+  login(): Promise<User> {
 
     this.loginParams.set('deviceId', this.authParams.get('email'));
 
@@ -37,9 +38,9 @@ export class SessionService {
     // headers.append('environment', environment);
     // headers.append('version', '1.3.4');
 
-    this.http.get(this.loginUrl, {
+    return this.http.get(this.loginUrl, {
       search: this.loginParams,
-      withCredentials: true,
+      withCredentials: true
     }).toPromise()
       .then(res => res.json() as User)
       .catch(SessionService.handleError)

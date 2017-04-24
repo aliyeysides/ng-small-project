@@ -11,7 +11,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class InsightService {
 
-  private insightsUrl: string = '/insights/';
+  private insightsUrl: string = 'https://app.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&id=2,10';
   private params: URLSearchParams = new URLSearchParams;
 
   constructor(private http: Http) {

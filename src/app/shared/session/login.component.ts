@@ -15,16 +15,16 @@ export class LoginComponent implements OnInit {
   user: User;
 
   constructor(private sessionService: SessionService) {
+  }
+
+  ngOnInit() {
     this.getSession();
     this.login();
   }
 
-  ngOnInit() {
-  }
-
   getSession(): void {
-    let email = 'shashankpunuru@flexisphere.com',
-      password = 'facebook321';
+    let email = 'laura.c.trumbull@gmail.com',
+      password = 'trumbull1';
 
     this.sessionService.getAuthorization(email, password)
       .then(session => {
