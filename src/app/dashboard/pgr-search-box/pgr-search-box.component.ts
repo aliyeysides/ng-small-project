@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'psp-pgr-search-box',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PgrSearchBoxComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

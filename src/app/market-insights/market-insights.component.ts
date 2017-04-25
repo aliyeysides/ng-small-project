@@ -12,9 +12,10 @@ import {INSIGHTS} from './insights/mock-insights';
 })
 export class MarketInsightsComponent implements OnInit {
 
-  insights: Array<object>;
-  previewLimit: number;
-  addPerLoad: number;
+  public insights: Array<object>;
+  public addPerLoad: number;
+
+  private previewLimit: number;
 
   constructor(private insightService: InsightService) {
   }
@@ -22,28 +23,22 @@ export class MarketInsightsComponent implements OnInit {
   ngOnInit(): void {
     this.previewLimit = 4;
     this.addPerLoad = 2;
-    this.insights = this.getInsights(this.previewLimit);
+    this.insights = MarketInsightsComponent.getMarketInsights(this.previewLimit);
   }
 
-  getInsights(previewLimit): Array<object> {
+  public static getMarketInsights(amount: number): Array<object> {
     let insights = [];
-    for (let previewCount = 0; previewCount < previewLimit; previewCount++){
+    for (let previewCount = 0; previewCount < amount; previewCount++) {
       insights.push(INSIGHTS[previewCount]);
     }
     return insights;
-
-    // this.insightService.getInsights()
-    //   .then(insights => {
-    //     for (let previewCount = 0; previewCount < previewLimit; previewCount++){
-    //       this.insights.push(insights[previewCount]);
-    //     }
-    //   })
   }
 
-  loadMoreInsights(additional: number): void {
+  public loadMoreInsights(additional: number): void {
     this.previewLimit += additional;
     this.insights = [];
-    this.insights = this.getInsights(this.previewLimit);
+    this.insights = MarketInsightsComponent.getMarketInsights(this.previewLimit);
   }
+
 
 }

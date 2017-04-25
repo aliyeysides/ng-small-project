@@ -22,20 +22,20 @@ export class LoginComponent implements OnInit {
     this.login();
   }
 
-  getSession(): void {
+  public login(): void {
+    this.sessionService.login()
+      .then(usr => {
+        this.user = usr;
+      });
+  }
+
+  private getSession(): void {
     let email = 'laura.c.trumbull@gmail.com',
       password = 'trumbull1';
 
     this.sessionService.getAuthorization(email, password)
       .then(session => {
         this.session = session;
-      });
-  }
-
-  login(): void {
-    this.sessionService.login()
-      .then(usr => {
-        this.user = usr;
       });
   }
 

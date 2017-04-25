@@ -17,8 +17,7 @@ export class InsightService {
   constructor(private http: Http) {
   }
 
-  getInsights() {
-
+  public getInsights() {
     return this.http.get(this.insightsUrl, {
       search: this.params,
       withCredentials: true

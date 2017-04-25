@@ -11,7 +11,7 @@ const PGRVALUES = {
   5: 'POSITIVE_NEUTRAL',
   6: 'BULLISH',
   7: 'VERY_BULLISH'
-}
+};
 
 @Component({
   selector: 'psp-watchlist',
@@ -20,14 +20,15 @@ const PGRVALUES = {
 })
 export class WatchlistComponent implements OnInit {
 
-  watchlist: Stock[];
-  sortWatchList: string = 'up';
+  public watchlist: Stock[];
+  public sortWatchList: string;
 
   constructor(private watchlistService: WatchlistService) {
   }
 
   ngOnInit() {
-    this.watchlist = this.watchlistService.sortedStocks.reverse();
+    this.watchlist = this.watchlistService.getStocks();
+    this.sortWatchList = 'up';
   }
 
   /**
@@ -35,7 +36,7 @@ export class WatchlistComponent implements OnInit {
    * @param {Number} rawPGR
    * @param {Number} correctedPGR
    */
-  displayRating(rawPGR: Number, correctedPGR: Number) {
+  public displayRating(rawPGR: number, correctedPGR: number) {
     if (rawPGR >= 4 && correctedPGR === 3) {
       return PGRVALUES[5];
     } else if (rawPGR <= 2 && correctedPGR === 3) {
@@ -51,14 +52,14 @@ export class WatchlistComponent implements OnInit {
     }
   }
 
-  sortByDailyChange(): void {
+  public sortByDailyChange(): void {
     if (this.sortWatchList === 'up') {
       this.sortWatchList = 'down';
-      this.watchlist = this.watchlistService.sortedStocks.reverse();
+      this.watchlist = this.watchlistService.getStocks().reverse();
       return;
     }
     this.sortWatchList = 'up';
-    this.watchlist = this.watchlistService.sortedStocks.reverse();
+    this.watchlist = this.watchlistService.getStocks().reverse();
   }
 
 }

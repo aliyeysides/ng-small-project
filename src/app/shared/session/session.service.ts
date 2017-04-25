@@ -9,15 +9,19 @@ import {User} from "./user";
 
 @Injectable()
 export class SessionService {
-  private authUrl: string = 'https://app.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
-  private loginUrl: string = 'https://app.chaikinanalytics.com/CPTRestSecure/app/user/login';
-  private authParams: URLSearchParams = new URLSearchParams;
-  private loginParams: URLSearchParams = new URLSearchParams;
+  private authUrl: string;
+  private loginUrl: string;
+  private authParams: URLSearchParams;
+  private loginParams: URLSearchParams;
 
   constructor(private http: Http) {
+    this.authUrl = 'https://app.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
+    this.loginUrl = 'https://app.chaikinanalytics.com/CPTRestSecure/app/user/login';
+    this.authParams = new URLSearchParams;
+    this.loginParams = new URLSearchParams;
   }
 
-  getAuthorization(email: string, password: string): Promise<Session> {
+  public getAuthorization(email: string, password: string): Promise<Session> {
     this.authParams.set('email', email);
     this.authParams.set('password', password);
 
@@ -29,7 +33,7 @@ export class SessionService {
       .catch(SessionService.handleError)
   }
 
-  login(): Promise<User> {
+  public login(): Promise<User> {
 
     this.loginParams.set('deviceId', this.authParams.get('email'));
 

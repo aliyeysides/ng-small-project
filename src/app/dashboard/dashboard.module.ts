@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { SharedModule } from '../shared/shared.module';
+import {SharedModule} from '../shared/shared.module';
 
-import { DashboardComponent } from './dashboard.component';
-import { MiPreviewComponent } from './mi-preview/mi-preview.component';
-import { TopMoversComponent } from './top-movers/top-movers.component';
-import { PgrSearchBoxComponent } from './pgr-search-box/pgr-search-box.component';
+import {DashboardComponent} from './dashboard.component';
+import {MiPreviewComponent} from './mi-preview/mi-preview.component';
+import {TopMoversComponent} from './top-movers/top-movers.component';
+import {PgrSearchBoxComponent} from './pgr-search-box/pgr-search-box.component';
 
 @NgModule({
   imports: [
@@ -16,4 +16,5 @@ import { PgrSearchBoxComponent } from './pgr-search-box/pgr-search-box.component
   ],
   declarations: [DashboardComponent, MiPreviewComponent, TopMoversComponent, PgrSearchBoxComponent]
 })
-export class DashboardModule { }
+export class DashboardModule {
+}

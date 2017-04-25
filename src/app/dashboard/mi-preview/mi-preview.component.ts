@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Insight } from '../../market-insights/insights/insight';
-import { InsightService } from '../../market-insights/insights/insight.service';
+import {Insight} from '../../market-insights/insights/insight';
+import {InsightService} from '../../market-insights/insights/insight.service';
 
 @Component({
   selector: 'psp-mi-preview',
@@ -10,11 +10,10 @@ import { InsightService } from '../../market-insights/insights/insight.service';
 })
 export class MiPreviewComponent implements OnInit {
 
-  insights: Insight[] = [];
+  public insights: Insight[];
 
-  constructor(
-    private insightService: InsightService
-  ) { }
+  constructor(private insightService: InsightService) {
+  }
 
   ngOnInit() {
     // this.getInsights(2);
