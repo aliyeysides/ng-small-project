@@ -17,6 +17,7 @@ export class WatchlistService {
     return WatchlistService.stocks;
   }
 
+  /* TODO: implement function to get single stock from list */
   public getStock(index: Number): Stock {
     return this.fetchStockList()[+index]; // Stub
   }

@@ -24,6 +24,7 @@ export class InsightService {
     return InsightService.insights;
   }
 
+  /* TODO: implement http call to fetch insights */
   private fetchInsights() {
     // let insightsUrl = 'https://app.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&id=2,10';
     InsightService.insights = INSIGHTS;

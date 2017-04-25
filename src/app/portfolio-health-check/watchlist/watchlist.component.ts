@@ -31,11 +31,6 @@ export class WatchlistComponent implements OnInit {
     this.sortWatchList = 'up';
   }
 
-  /**
-   * Returns PGR rating based on raw PGR and corrected PGR scores returned from getSymbolData call
-   * @param {Number} rawPGR
-   * @param {Number} correctedPGR
-   */
   public displayRating(rawPGR: number, correctedPGR: number) {
     if (rawPGR >= 4 && correctedPGR === 3) {
       return PGRVALUES[5];
