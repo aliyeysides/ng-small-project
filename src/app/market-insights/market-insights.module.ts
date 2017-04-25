@@ -11,6 +11,7 @@ import {
   BsDropdownModule,
   PopoverModule
 } from 'ngx-bootstrap';
+import {InsightService} from "./insights/insight.service";
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import {
     MarketInsightsComponent
   ],
   declarations: [MiNavbarComponent, MarketInsightsComponent, InsightDetailComponent, DateDropdownComponent],
-  providers: []
+  providers: [InsightService]
 })
 export class MarketInsightsModule {
 }

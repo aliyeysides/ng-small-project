@@ -16,7 +16,6 @@ import {PowerGaugeReportModule} from './power-gauge-report/power-gauge-report.mo
 import {PortfolioHealthCheckModule} from './portfolio-health-check/portfolio-health-check.module';
 
 /* Services */
-import {InsightService} from './market-insights/insights/insight.service';
 import {WatchlistService} from './shared/watchlist/watchlist.service';
 import {SessionService} from "./shared/session/session.service";
 
@@ -57,7 +56,7 @@ import {BusyModule} from 'angular2-busy';
     AccordionModule.forRoot(),
     BusyModule
   ],
-  providers: [InsightService, WatchlistService, SessionService],
+  providers: [WatchlistService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
