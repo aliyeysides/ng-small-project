@@ -55,11 +55,11 @@ export class WatchlistComponent implements OnInit {
   public sortByDailyChange(): void {
     if (this.sortWatchList === 'up') {
       this.sortWatchList = 'down';
-      this.watchlist = this.watchlistService.getStocks().reverse();
+      this.watchlist.reverse();
       return;
     }
     this.sortWatchList = 'up';
-    this.watchlist = this.watchlistService.getStocks().reverse();
+    this.watchlist.reverse();
   }
 
 }

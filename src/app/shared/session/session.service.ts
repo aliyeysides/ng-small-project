@@ -9,23 +9,21 @@ import {User} from "./user";
 
 @Injectable()
 export class SessionService {
-  private authUrl: string;
-  private loginUrl: string;
+
   private authParams: URLSearchParams;
   private loginParams: URLSearchParams;
 
   constructor(private http: Http) {
-    this.authUrl = 'https://app.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
-    this.loginUrl = 'https://app.chaikinanalytics.com/CPTRestSecure/app/user/login';
     this.authParams = new URLSearchParams;
     this.loginParams = new URLSearchParams;
   }
 
   public getAuthorization(email: string, password: string): Promise<Session> {
+    let authUrl = 'https://app.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
     this.authParams.set('email', email);
     this.authParams.set('password', password);
 
-    return this.http.get(this.authUrl, {
+    return this.http.get(authUrl, {
       search: this.authParams,
       withCredentials: true
     }).toPromise()
@@ -34,15 +32,10 @@ export class SessionService {
   }
 
   public login(): Promise<User> {
-
+    let loginUrl = 'https://app.chaikinanalytics.com/CPTRestSecure/app/user/login';
     this.loginParams.set('deviceId', this.authParams.get('email'));
 
-    /* TODO: Detect environment dynamically */
-    // var headers = new Headers();
-    // headers.append('environment', environment);
-    // headers.append('version', '1.3.4');
-
-    return this.http.get(this.loginUrl, {
+    return this.http.get(loginUrl, {
       search: this.loginParams,
       withCredentials: true
     }).toPromise()

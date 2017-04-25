@@ -11,8 +11,9 @@ import {User} from "./user";
 })
 export class LoginComponent implements OnInit {
 
-  session: Session;
-  user: User;
+  public user: User;
+
+  private session: Session;
 
   constructor(private sessionService: SessionService) {
   }

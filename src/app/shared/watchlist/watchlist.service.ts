@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Headers, Http} from '@angular/http';
-
-import {Observable} from 'rxjs/Observable';
+import {Http} from '@angular/http';
 
 import {Stock} from './stock';
 import {WATCHLIST} from './mock-watchlist';
@@ -9,24 +7,23 @@ import {WATCHLIST} from './mock-watchlist';
 @Injectable()
 export class WatchlistService {
 
-  public stocks: Stock[];
+  public static stocks: Stock[];
 
   constructor(private http: Http) {
-    this.stocks = WatchlistService.mergeSortStocks(this.getUserStockList()).reverse();
+    this.fetchStockList();
   }
 
   public getStocks(): Stock[] {
-    return this.stocks;
-  }
-
-  public getUserStockList(): Stock[] {
-    /* TODO: implement http call */
-    let stocks = WATCHLIST;
-    return stocks;
+    return WatchlistService.stocks;
   }
 
   public getStock(index: Number): Stock {
-    return this.getUserStockList()[+index]; // Stub
+    return this.fetchStockList()[+index]; // Stub
+  }
+
+  private fetchStockList(): void {
+    /* TODO: implement http call */
+    WatchlistService.stocks = WatchlistService.mergeSortStocks(WATCHLIST).reverse();
   }
 
   private static mergeSortStocks(arr: Stock[]): Stock[] {
