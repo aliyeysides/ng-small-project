@@ -12,6 +12,7 @@ import {INSIGHTS} from './mock-insights';
 export class InsightService {
 
   public static insights: Insight[];
+
   private params: URLSearchParams;
 
   constructor(private http: Http) {
