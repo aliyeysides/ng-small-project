@@ -22,8 +22,8 @@ export class WatchlistService {
     return this.fetchStockList()[+index]; // Stub
   }
 
+  /* TODO: implement http call to fetch user stock list */
   private fetchStockList(): void {
-    /* TODO: implement http call */
     WatchlistService.stocks = WatchlistService.mergeSortStocks(WATCHLIST).reverse();
   }
 
