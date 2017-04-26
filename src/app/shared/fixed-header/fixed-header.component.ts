@@ -1,10 +1,8 @@
-import { Router, Event, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 import {
   Component,
   OnInit,
-  Output,
-  EventEmitter
 } from '@angular/core';
 
 @Component({

@@ -9,7 +9,6 @@ import {AppComponent} from './app.component';
 
 /* Modules */
 import {SharedModule} from './shared/shared.module';
-import {FixedHeaderModule} from './fixed-header/fixed-header.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {MarketInsightsModule} from './market-insights/market-insights.module';
 import {PowerGaugeReportModule} from './power-gauge-report/power-gauge-report.module';
@@ -42,7 +41,6 @@ import {BusyModule} from 'angular2-busy';
     HttpModule,
     BrowserAnimationsModule,
     SharedModule,
-    FixedHeaderModule,
     DashboardModule,
     MarketInsightsModule,
     PowerGaugeReportModule,

@@ -2,10 +2,8 @@ import {NgModule} from '@angular/core';
 
 import {SharedModule} from '../shared/shared.module';
 
-import {MiNavbarComponent} from './mi-navbar/mi-navbar.component';
 import {MarketInsightsComponent} from './market-insights.component';
 import {InsightDetailComponent} from './insight-detail/insight-detail.component';
-import {DateDropdownComponent} from './mi-navbar/date-dropdown/date-dropdown.component';
 
 import {
   BsDropdownModule,
@@ -22,7 +20,7 @@ import {InsightService} from "./insights/insight.service";
   exports: [
     MarketInsightsComponent
   ],
-  declarations: [MiNavbarComponent, MarketInsightsComponent, InsightDetailComponent, DateDropdownComponent],
+  declarations: [MarketInsightsComponent, InsightDetailComponent],
   providers: [InsightService]
 })
 export class MarketInsightsModule {

@@ -1,19 +1,14 @@
 <div class="container-fluid">
     <nav class="row navbar-light bg-faded">
         <div class="col-1">
-            <img src="../../assets/imgs/logo.png" class="img-fluid" routerLink="/" />
+            <img src="../../../assets/imgs/logo.png" class="img-fluid" routerLink="/" />
         </div>
 
         <div *ngIf="!settingsVisible" class="col-4">
             <psp-navbar></psp-navbar>
         </div>
 
-        <div *ngIf="!settingsVisible && !isRouteDashboard" class="col">
-            <psp-symbol-search></psp-symbol-search>
-        </div>
-
         <div *ngIf="settingsVisible" class="col">
-            <h2>Good Morning, Ali!</h2>
             <psp-settings></psp-settings>
         </div>
 

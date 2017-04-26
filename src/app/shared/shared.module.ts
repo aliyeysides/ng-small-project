@@ -3,23 +3,27 @@ import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from '../app-routing.module';
+import {FixedHeaderModule} from './fixed-header/fixed-header.module';
+import {SidebarModule} from './sidebar/sidebar.module';
 
-import {SymbolSearchComponent} from './symbol-search/symbol-search.component';
 import {LoginComponent} from './session/login.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
     AppRoutingModule,
-    BrowserModule
+    FixedHeaderModule,
+    SidebarModule
   ],
   exports: [
     CommonModule,
-    AppRoutingModule,
     BrowserModule,
-    SymbolSearchComponent
+    AppRoutingModule,
+    FixedHeaderModule,
+    SidebarModule
   ],
-  declarations: [SymbolSearchComponent, LoginComponent]
+  declarations: [LoginComponent]
 })
 export class SharedModule {
 }
