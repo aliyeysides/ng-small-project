@@ -4,12 +4,13 @@ import {Subject} from "rxjs/Subject";
 @Injectable()
 export class SharedService {
 
-  private closeIconVisible: Subject<boolean> = new Subject<boolean>();
+  private returnIconVisible: Subject<boolean> = new Subject<boolean>();
 
-  closeIconVisible$ = this.closeIconVisible.asObservable();
+  returnIconVisible$ = this.returnIconVisible.asObservable();
 
-  transmitData(data: boolean) {
-    this.closeIconVisible.next(data);
+  /* Setter for return icon on secondary-header component */
+  setReturnIconVisible(data: boolean) {
+    this.returnIconVisible.next(data);
   }
 
 }

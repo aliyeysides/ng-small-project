@@ -13,17 +13,17 @@ import {Subject} from "rxjs/Subject";
 })
 export class SecondaryHeaderComponent implements OnInit, OnDestroy {
 
-  public closeIconVisible: boolean;
+  public returnIconVisible: boolean;
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(private location: Location, private sharedService: SharedService) {
-    this.sharedService.closeIconVisible$
+    this.sharedService.returnIconVisible$
       .takeUntil(this.ngUnsubscribe)
       .subscribe(
-      data => {
-        this.closeIconVisible = data;
-      }
-    )
+        data => {
+          this.returnIconVisible = data;
+        }
+      )
   }
 
   ngOnInit() {

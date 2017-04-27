@@ -17,11 +17,10 @@ export class InsightDetailComponent implements OnInit {
   public insight: Insight;
 
   constructor(private sharedService: SharedService) {
-    this.sharedService.transmitData(true);
   }
 
-  ngOnInit(): void {
-
+  ngOnInit() {
+    this.sharedService.setReturnIconVisible(true);
     // this.route.params
     //   .switchMap((params: Params) =>
     //     this.insightService.getInsight(+params['id']))
