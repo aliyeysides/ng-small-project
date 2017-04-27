@@ -10,6 +10,8 @@ import {SecondaryHeaderModule} from './secondary-header/secondary-header.module'
 
 import {LoginComponent} from './session/login.component';
 
+import {SharedService} from './shared.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import {LoginComponent} from './session/login.component';
     PrimaryHeaderModule,
     SecondaryHeaderModule
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent],
+  providers: [SharedService]
 })
 export class SharedModule {
 }

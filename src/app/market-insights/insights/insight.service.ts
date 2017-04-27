@@ -5,8 +5,6 @@ import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/toPromise';
 
 import {Insight} from './insight';
-import {INSIGHTS} from './mock-insights';
-
 
 @Injectable()
 export class InsightService {
@@ -20,21 +18,23 @@ export class InsightService {
     this.fetchInsights();
   }
 
-  public getInsights() {
+  public getInsights(): Insight[] {
     return InsightService.insights;
   }
 
   /* TODO: implement http call to fetch insights */
-  private fetchInsights() {
-    // let insightsUrl = 'https://app.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&id=2,10';
-    InsightService.insights = INSIGHTS;
-
-    //   this.http.get(insightsUrl, {
-    //   search: this.params,
-    //   withCredentials: true
-    // }).toPromise()
-    //   .then(res => res.json() as Insight[])
-    //   .catch(err => InsightService.handleError)
+  private fetchInsights(): any {
+    // let insightsUrl = 'https://dev.chaikinanalytics.com/insights/';
+    let insightsUrl = 'https://dev.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&count=20&id=35,4';
+    // this.params.set('json', 'secursive.get_product_updates');
+    // this.params.set('dev', '1');
+    // this.params.set('id', '2,10');
+      this.http.get(insightsUrl, {
+      // search: this.params,
+      withCredentials: true
+    }).toPromise()
+      .then(res => console.log(res.json()))
+      .catch(err => InsightService.handleError)
   }
 
   // getInsight(id: number): Promise<Insight> {

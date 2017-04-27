@@ -19,7 +19,7 @@ export class SessionService {
   }
 
   public getAuthorization(email: string, password: string): Promise<Session> {
-    let authUrl = 'https://app.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
+    let authUrl = 'https://dev.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
     this.authParams.set('email', email);
     this.authParams.set('password', password);
 
@@ -32,7 +32,7 @@ export class SessionService {
   }
 
   public login(): Promise<User> {
-    let loginUrl = 'https://app.chaikinanalytics.com/CPTRestSecure/app/user/login';
+    let loginUrl = 'https://dev.chaikinanalytics.com/CPTRestSecure/app/user/login';
     this.loginParams.set('deviceId', this.authParams.get('email'));
 
     return this.http.get(loginUrl, {
