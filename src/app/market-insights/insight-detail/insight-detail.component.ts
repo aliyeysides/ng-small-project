@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
-import {Location} from '@angular/common';
 
 import {Insight} from '../insights/insight';
 import {InsightService} from '../insights/insight.service';
-
-import {SharedModule} from '../../shared/shared.module';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -19,8 +16,7 @@ export class InsightDetailComponent implements OnInit {
   insight: Insight;
 
   constructor(private insightService: InsightService,
-              private route: ActivatedRoute,
-              private location: Location) {
+              private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -30,10 +26,6 @@ export class InsightDetailComponent implements OnInit {
     //   .subscribe(insight => {
     //     this.insight = insight;
     //   });
-  }
-
-  goBack(): void {
-    this.location.back();
   }
 
   printInsight(): void {
