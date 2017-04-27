@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+## Styleguides / Review Process
+
+https://chaikinsr.jira.com/wiki/pages/viewpage.action?pageId=142445550
+
 ## Development server
 
 Run `ng serve -w` for a JIT (Just-In-Time) dev server. Add `--aot` flag for AOT compilation (Ahead-Of-Time). Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
