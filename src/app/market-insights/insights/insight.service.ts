@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {Observable} from "rxjs/Observable";
 
 import 'rxjs/add/operator/toPromise';
 
 import {Insight} from './insight';
 import {INSIGHTS} from './mock-insights';
+
+import {SharedService} from '../../shared/shared.service';
 
 @Injectable()
 export class InsightService {
@@ -47,11 +48,11 @@ export class InsightService {
   //     .then(insights => insights.find(insight => insight.id === id));
   // }
 
-  private static handleError(err: any) {
-    let errMsg = (err.message) ? err.message :
-      err.status ? `${err.status} - ${err.statusText}` : 'Server error';
-    console.error(errMsg); // log to console instead
-    return Observable.throw(errMsg);
-  }
+  // private static handleError(err: any) {
+  //   let errMsg = (err.message) ? err.message :
+  //     err.status ? `${err.status} - ${err.statusText}` : 'Server error';
+  //   console.error(errMsg); // log to console instead
+  //   return Observable.throw(errMsg);
+  // }
 
 }

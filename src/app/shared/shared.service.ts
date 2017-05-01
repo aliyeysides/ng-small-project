@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Subject} from "rxjs/Subject";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class SharedService {
@@ -11,6 +12,13 @@ export class SharedService {
   /* Setter for return icon on secondary-header component */
   setReturnIconVisible(data: boolean) {
     this.returnIconVisible.next(data);
+  }
+
+  public static handleError(err: any) {
+    let errMsg = (err.message) ? err.message :
+      err.status ? `${err.status} - ${err.statusText}` : 'Server error';
+    console.error(errMsg); // log to console instead
+    return Observable.throw(errMsg);
   }
 
 }

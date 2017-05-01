@@ -11,6 +11,7 @@ import {SecondaryHeaderModule} from './secondary-header/secondary-header.module'
 import {LoginComponent} from './session/login.component';
 
 import {SharedService} from './shared.service';
+import {SymbolSearchService} from './symbol-search/symbol-search.service';
 
 @NgModule({
   imports: [
@@ -32,7 +33,7 @@ import {SharedService} from './shared.service';
     SecondaryHeaderModule
   ],
   declarations: [LoginComponent],
-  providers: [SharedService]
+  providers: [SharedService, SymbolSearchService]
 })
 export class SharedModule {
 }

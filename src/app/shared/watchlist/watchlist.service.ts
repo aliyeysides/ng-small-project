@@ -4,6 +4,8 @@ import {Http} from '@angular/http';
 import {Stock} from './stock';
 import {WATCHLIST} from './mock-watchlist';
 
+import {SharedService} from '../../shared/shared.service';
+
 @Injectable()
 export class WatchlistService {
 
@@ -46,11 +48,6 @@ export class WatchlistService {
       result.push(a[0]['metaInfo'][0]['Percentage '] < b[0]['metaInfo'][0]['Percentage '] ? a.shift() : b.shift());
     }
     return result.concat(a.length ? a : b);
-  }
-
-  private static handleError(error: any): Promise<any> {
-    console.error('An error occured', error);
-    return Promise.reject(error.message || error);
   }
 
 }

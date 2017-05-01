@@ -7,6 +7,8 @@ import 'rxjs/add/operator/toPromise';
 import {Session} from "./session";
 import {User} from "./user";
 
+import {SharedService} from '../../shared/shared.service';
+
 @Injectable()
 export class SessionService {
 
@@ -28,7 +30,7 @@ export class SessionService {
       withCredentials: true
     }).toPromise()
       .then(res => res.json() as Session)
-      .catch(SessionService.handleError)
+      .catch(SharedService.handleError)
   }
 
   public login(): Promise<User> {
@@ -40,15 +42,7 @@ export class SessionService {
       withCredentials: true
     }).toPromise()
       .then(res => res.json() as User)
-      .catch(SessionService.handleError)
+      .catch(SharedService.handleError)
   }
 
-  private static handleError(err: Response) {
-    /* TODO: Handle Error */
-    console.log('err', err);
-    // let errMsg = (err.message) ? err.message :
-    //   err.status ? `${err.status} - ${err.statusText}` : 'Server error';
-    // console.error(errMsg); // log to console instead
-    // return Observable.throw(errMsg);
-  }
 }

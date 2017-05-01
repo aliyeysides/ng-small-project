@@ -1,3 +1,5 @@
+import {SymbolSearchService} from '../shared/symbol-search/symbol-search.service';
+
 import {
   Component,
   OnInit,
@@ -34,9 +36,10 @@ export class PowerGaugeReportComponent implements OnInit {
 
   helpMenuOpen: String;
 
-  constructor() { }
+  constructor(private symbolSearchService: SymbolSearchService) { }
 
   ngOnInit() {
+    this.symbolSearchService.getSymbolData();
     this.helpMenuOpen = 'out';
   }
 

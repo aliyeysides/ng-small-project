@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
   }
 
   private getSession(): void {
-    let email = 'laura.c.trumbull@gmail.com',
-      password = 'trumbull1';
+    let email = 'ayeysides@chaikinanalytics.com',
+      password = 'password';
 
     this.sessionService.getAuthorization(email, password)
       .then(session => {
