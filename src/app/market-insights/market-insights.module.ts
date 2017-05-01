@@ -9,6 +9,7 @@ import {
   BsDropdownModule,
   PopoverModule
 } from 'ngx-bootstrap';
+
 import {InsightService} from "./insights/insight.service";
 
 @NgModule({

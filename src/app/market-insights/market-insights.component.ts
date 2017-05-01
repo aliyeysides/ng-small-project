@@ -20,14 +20,14 @@ export class MarketInsightsComponent implements OnInit {
   ngOnInit(): void {
     this.previewLimit = 4;
     this.addPerLoad = 2;
-    // this.insights = this.getMarketInsights(this.previewLimit);
+    this.insights = this.getMarketInsights(this.previewLimit);
   }
 
   public getMarketInsights(amount: number): Array<object> {
     let results = [],
         insights = this.insightService.getInsights();
     for (let previewCount = 0; previewCount < amount; previewCount++) {
-      insights.push(insights[previewCount]);
+      results.push(insights[previewCount]);
     }
     return results;
   }

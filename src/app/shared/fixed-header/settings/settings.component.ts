@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'psp-settings',
@@ -10,7 +10,8 @@ export class SettingsComponent implements OnInit {
   helpItems: Object[];
   chaikinItems: Object[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.accountItems = [
@@ -19,10 +20,10 @@ export class SettingsComponent implements OnInit {
       {icon: '/123', desc: 'Billing details', link: '#'}
     ];
     this.helpItems = [
-      {icon: '/abc', desc:'Read the resource guide', link: '#'},
+      {icon: '/abc', desc: 'Read the resource guide', link: '#'},
       {icon: '/abc', desc: 'Check the glossary of terms', link: '/glossary'},
       {icon: '/abc', desc: 'Read a few FAQs', link: '#'},
-      {icon:'/abc', desc: 'Contact a representative', link: '#'}
+      {icon: '/abc', desc: 'Contact a representative', link: '#'}
     ];
     this.chaikinItems = [
       {icon: '/foo', desc: 'The first choice!', link: '#'},
