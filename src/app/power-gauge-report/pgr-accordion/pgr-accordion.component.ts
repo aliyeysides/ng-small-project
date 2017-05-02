@@ -1,17 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 import { AccordionModule } from 'ngx-bootstrap';
+import {Stock} from "../../shared/watchlist/stock";
 
 @Component({
   selector: 'psp-pgr-accordion',
   templateUrl: './pgr-accordion.component.html',
   styleUrls: ['./pgr-accordion.component.scss']
 })
-export class PgrAccordionComponent implements OnInit {
+export class PgrAccordionComponent implements OnInit, OnChanges {
 
-  constructor() { }
+  @Input() stock: Stock;
+  public financialKeys: string[];
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.financialKeys = this.stock.getFinancialKeys();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['stock']) {
+      this.stock = changes['stock'].currentValue;
+    }
   }
 
 }

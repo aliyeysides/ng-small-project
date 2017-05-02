@@ -37,6 +37,15 @@ export class Stock {
     return this.pgr[1]['Financials'];
   }
 
+  getFinancialKeys(): string[] {
+    let result = [];
+    this.getFinancials().forEach(obj => {
+      // pushes only the first key of each object returned by getFinancials
+      result.push(Object.keys(obj)[0]);
+    });
+    return result;
+  }
+
   getEarnings(): object[] {
     return this.pgr[2]['Earnings'];
   }

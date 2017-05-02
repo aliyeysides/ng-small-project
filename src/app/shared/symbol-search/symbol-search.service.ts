@@ -17,7 +17,7 @@ export class SymbolSearchService {
     this.params = new URLSearchParams;
   }
 
-  public getSymbolData(): Promise<Stock> {
+  public getSymbolData(): Observable<Stock> {
     let symbolDataUrl = 'https://dev.chaikinanalytics.com/CPTRestSecure/app/portfolio/getSymbolData?uid=1050117&symbol=SHLD&components=pgr%2CmetaInfo%2CfundamentalData';
 
     // uid:1050117
@@ -27,15 +27,11 @@ export class SymbolSearchService {
 
     return this.http.get(symbolDataUrl, {
       withCredentials: true
-    }).toPromise()
-      .then(res => {
+    }).map(res => {
         let data = res.json();
-        let newStock = new Stock(data.metaInfo, data.pgr, data.fundamentalData, data.status);
-        console.log('newStock', newStock);
-        console.log('getFundamentalData', newStock.getFundamentalData());
-        return newStock;
+        return new Stock(data.metaInfo, data.pgr, data.fundamentalData, data.status);
       })
-      .catch(SharedService.handleError)
+      // .catch(SharedService.handleError)
   }
 
 }

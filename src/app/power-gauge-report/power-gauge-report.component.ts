@@ -36,14 +36,16 @@ import {Stock} from "app/shared/watchlist/stock";
 })
 export class PowerGaugeReportComponent implements OnInit {
 
-  public helpMenuOpen: String;
+  public helpMenuOpen: string;
   public stock: Stock;
 
   constructor(private symbolSearchService: SymbolSearchService) {}
 
   ngOnInit() {
-    let stock = this.symbolSearchService.getSymbolData();
-    console.log('stock', stock);
+    this.symbolSearchService.getSymbolData().subscribe(res => {
+      this.stock = res;
+      console.log('this.stock in parent', this.stock);
+    });
     this.helpMenuOpen = 'out';
   }
 
