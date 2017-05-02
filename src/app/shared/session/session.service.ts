@@ -22,6 +22,7 @@ export class SessionService {
 
   public getAuthorization(email: string, password: string): Promise<Session> {
     let authUrl = 'https://dev.chaikinanalytics.com/CPTRestSecure/app/authenticate/getAuthorization';
+    this.authParams.set('acquireSessionForcibly', 'true');
     this.authParams.set('email', email);
     this.authParams.set('password', password);
 

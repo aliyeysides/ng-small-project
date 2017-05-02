@@ -18,7 +18,7 @@ export class SharedService {
     let errMsg = (err.message) ? err.message :
       err.status ? `${err.status} - ${err.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead
-    return Observable.throw(errMsg);
+    // return Observable.throw(errMsg);
   }
 
 }

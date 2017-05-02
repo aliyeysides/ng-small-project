@@ -4,6 +4,7 @@ import {Http} from '@angular/http';
 import {Stock} from '../../shared/watchlist/stock';
 
 import {Observable} from "rxjs/Observable";
+import 'rxjs/add/operator/map';
 
 import {SharedService} from '../shared.service';
 
@@ -16,24 +17,25 @@ export class SymbolSearchService {
     this.params = new URLSearchParams;
   }
 
-  getSymbolData(): any {
-    let symbolDataUrl = 'http://dev.chaikinanalytics.com/CPTRestSecure/app/portfolio/getSymbolData?uid=1050117&symbol=BNS&components=pgr%2CmetaInfo%2CfundamentalData';
+  public getSymbolData(): Promise<Stock> {
+    let symbolDataUrl = 'https://dev.chaikinanalytics.com/CPTRestSecure/app/portfolio/getSymbolData?uid=1050117&symbol=SHLD&components=pgr%2CmetaInfo%2CfundamentalData';
 
-    // uid:1050173
-    // symbol:CAR
+    // uid:1050117
+    // symbol:SHLD
     // components:pgr,metaInfo,fundamentalData,EPSData
     // _:1493650250099
 
-    // this.params.set('symbol', 'CAR');
-    // this.params.set('components', )
-
     return this.http.get(symbolDataUrl, {
       withCredentials: true
-    }).subscribe(
-      (res) => console.log('res', res),
-      (err) => console.log('err', err),
-      () => console.log('completed')
-    )
+    }).toPromise()
+      .then(res => {
+        let data = res.json();
+        let newStock = new Stock(data.metaInfo, data.pgr, data.fundamentalData, data.status);
+        console.log('newStock', newStock);
+        console.log('getFundamentalData', newStock.getFundamentalData());
+        return newStock;
+      })
+      .catch(SharedService.handleError)
   }
 
 }

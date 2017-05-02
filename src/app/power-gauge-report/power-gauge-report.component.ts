@@ -10,6 +10,8 @@ import {
   animate
 } from '@angular/core';
 
+import {Stock} from "app/shared/watchlist/stock";
+
 @Component({
   selector: 'psp-power-gauge-report',
   templateUrl: './power-gauge-report.component.html',
@@ -34,12 +36,14 @@ import {
 })
 export class PowerGaugeReportComponent implements OnInit {
 
-  helpMenuOpen: String;
+  public helpMenuOpen: String;
+  public stock: Stock;
 
-  constructor(private symbolSearchService: SymbolSearchService) { }
+  constructor(private symbolSearchService: SymbolSearchService) {}
 
   ngOnInit() {
-    this.symbolSearchService.getSymbolData();
+    let stock = this.symbolSearchService.getSymbolData();
+    console.log('stock', stock);
     this.helpMenuOpen = 'out';
   }
 

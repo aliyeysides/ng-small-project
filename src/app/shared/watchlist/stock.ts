@@ -1,15 +1,59 @@
-/**
- * Represents all info given about a single stock symbol
- * @param {Object} EPSData
- * @param {ObjectArray} metaInfo
- * @param {ObjectArray} pgr
- * @param {Object} fundamentalData
- * @param {string} status Status of call, expect "success"
- */
 export class Stock {
-    EPSData: Object;
-    metaInfo: Object[];
-    pgr: Object[];
-    fundamentalData: Object;
-    status: string;
+  constructor(public metaInfo: object[],
+              public pgr: object[],
+              public fundamentalData: object,
+              public status: string) {
+  }
+
+  getStockSymbol(): number {
+    return this.metaInfo[0]['symbol'];
+  }
+
+  getStockName(): string {
+    return this.metaInfo[0]['name'];
+  }
+
+  getListRating(): number {
+    return this.metaInfo[0]['listRating'];
+  }
+
+  getIndustryName(): string {
+    return this.metaInfo[0]['industry_name']
+  }
+
+  getChange(): number {
+    return this.metaInfo[0]['Change'];
+  }
+
+  getFundamentalData(): object {
+    return this.fundamentalData;
+  }
+
+  getPGR(): string {
+    return this.pgr[0]['PGR Value'];
+  }
+
+  getFinancials(): object[] {
+    return this.pgr[1]['Financials'];
+  }
+
+  getEarnings(): object[] {
+    return this.pgr[2]['Earnings'];
+  }
+
+  getTechnicals(): object[] {
+    return this.pgr[3]['Technicals'];
+  }
+
+  getExperts(): object[] {
+    return this.pgr[4]['Experts'];
+  }
+
+  getCorrectedPgr(): object {
+    return this.pgr[5]['Corrected PGR Value'];
+  }
+
+  getPGRStats(): object {
+    return this.pgr[6];
+  }
 }

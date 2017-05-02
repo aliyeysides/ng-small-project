@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 
 import {Stock} from './stock';
-import {WATCHLIST} from './mock-watchlist';
+// import {WATCHLIST} from './mock-watchlist';
 
 import {SharedService} from '../../shared/shared.service';
 
@@ -26,7 +26,7 @@ export class WatchlistService {
 
   /* TODO: implement http call to fetch user stock list */
   private fetchStockList(): void {
-    WatchlistService.stocks = WatchlistService.mergeSortStocks(WATCHLIST).reverse();
+    // WatchlistService.stocks = WatchlistService.mergeSortStocks(WATCHLIST).reverse();
   }
 
   private static mergeSortStocks(arr: Stock[]): Stock[] {
