@@ -15,7 +15,6 @@ import {PowerGaugeReportModule} from './power-gauge-report/power-gauge-report.mo
 import {PortfolioHealthCheckModule} from './portfolio-health-check/portfolio-health-check.module';
 
 /* Services */
-import {WatchlistService} from './shared/watchlist/watchlist.service';
 import {SessionService} from "./shared/session/session.service";
 
 /* ngx-bootstrap lib (Bootstrap4 wrapper) */
@@ -54,7 +53,7 @@ import {BusyModule} from 'angular2-busy';
     AccordionModule.forRoot(),
     BusyModule
   ],
-  providers: [WatchlistService, SessionService],
+  providers: [SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

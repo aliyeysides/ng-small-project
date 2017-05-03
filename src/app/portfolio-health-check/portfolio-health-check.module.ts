@@ -8,6 +8,8 @@ import { PowerbarComponent } from './watchlist/powerbar/powerbar.component';
 
 import { PopoverModule } from 'ngx-bootstrap';
 
+import {WatchlistService} from "../shared/watchlist/watchlist.service";
+
 @NgModule({
   imports: [
     SharedModule,
@@ -16,6 +18,7 @@ import { PopoverModule } from 'ngx-bootstrap';
   exports: [
     PortfolioHealthCheckComponent
   ],
-  declarations: [PortfolioHealthCheckComponent, WatchlistComponent, PowerbarComponent]
+  declarations: [PortfolioHealthCheckComponent, WatchlistComponent, PowerbarComponent],
+  providers: [WatchlistService]
 })
 export class PortfolioHealthCheckModule { }
