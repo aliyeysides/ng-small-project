@@ -15,9 +15,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'market-insights', component: MarketInsightsComponent},
+  {path: 'market-insights/:id', component: InsightDetailComponent},
   {path: 'power-gauge-report', component: PowerGaugeReportComponent},
   {path: 'portfolio-health-check', component: PortfolioHealthCheckComponent},
-  {path: 'market-insights/:id', component: InsightDetailComponent},
   {path: 'glossary', component: GlossaryComponent}
 ];
 

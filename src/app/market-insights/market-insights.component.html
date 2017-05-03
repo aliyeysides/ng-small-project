@@ -5,13 +5,13 @@
   </div>
   <div class="col-sm-4" *ngFor="let insight of insights; let odd = odd; let even = even;">
     <div *ngIf="odd">
-      <div class="tile" [routerLink]="['/market-insights', insight.id]">
+      <div class="tile" (click)="gotoInsight(insight)">
         <img class="tile__logo tile__logo--market-insights" src="../../../assets/imgs/logo-marketinsights.svg">
         <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
       </div>
     </div>
     <div *ngIf="even">
-      <div class="tile" [routerLink]="['/market-insights', insight.id]">
+      <div class="tile" (click)="gotoInsight(insight)">
         <img class="tile__logo tile__logo--morning-insights" src="../../../assets/imgs/logo-morninginsights.svg">
         <div class="tile__date tile__date--morning-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
       </div>
@@ -22,3 +22,4 @@
     <a (click)="loadMoreInsights(addPerLoad)">Show {{addPerLoad}} more &raquo;</a>
   </div>
 </div>
+

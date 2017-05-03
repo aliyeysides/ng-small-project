@@ -2,10 +2,12 @@ import {Component, OnInit} from '@angular/core';
 
 import {Insight} from '../insights/insight';
 import {InsightService} from '../insights/insight.service';
+import {INSIGHTS} from '../insights/mock-insights';
 
 import {SharedService} from '../../shared/shared.service';
 
-import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/map';
+import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'psp-insight-detail',
@@ -16,17 +18,17 @@ export class InsightDetailComponent implements OnInit {
 
   public insight: Insight;
 
-  constructor(private sharedService: SharedService) {
+  constructor(private sharedService: SharedService, private route: ActivatedRoute) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    window.scrollTo(0,0); // scrolls to top of insight
     this.sharedService.setReturnIconVisible(true);
-    // this.route.params
-    //   .switchMap((params: Params) =>
-    //     this.insightService.getInsight(+params['id']))
-    //   .subscribe(insight => {
-    //     this.insight = insight;
-    //   });
+    this.route.params
+      .subscribe(params => {
+        let id = +params['id'];
+        this.insight = INSIGHTS[id];
+      });
   }
 
   printInsight(): void {

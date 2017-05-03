@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 import {InsightService} from './insights/insight.service';
 
@@ -17,7 +18,7 @@ export class MarketInsightsComponent implements OnInit {
 
   private previewLimit: number;
 
-  constructor(private insightService: InsightService) {
+  constructor(private insightService: InsightService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -42,5 +43,8 @@ export class MarketInsightsComponent implements OnInit {
     this.insights = this.getMarketInsights(this.previewLimit);
   }
 
+  gotoInsight(insight: any): void {
+    this.router.navigate(['/market-insights', insight.id]);
+  }
 
 }
