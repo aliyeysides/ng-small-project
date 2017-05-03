@@ -1,21 +1,21 @@
 <psp-secondary-header></psp-secondary-header>
 <div class="row tile-container">
-  	<div class="col-12 tile-container__date">
-    	<p><span>Week of:</span> Sunday, April 23, 2017</p>
-  	</div>
-  	<div class="col-sm-4" *ngFor="let insight of insights ">
-    	<div class="tile">
-	      	<img class="tile__logo tile__logo--market-insights" src="../../../assets/imgs/logo-marketinsights.svg">
-	      	<div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
-    	</div>
-  	</div>
-  	<div class="col-sm-4" *ngFor="let insight of insights ">
-    	<div class="tile">
-	      	<img class="tile__logo tile__logo--morning-insights" src="../../../assets/imgs/logo-morninginsights.svg">
-	      	<div class="tile__date tile__date--morning-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
-    	</div>
-  	</div>
-  	<div class="col-12 load-more">
-  	    <a (click)="loadMoreInsights(addPerLoad)">Show {{addPerLoad}} more &raquo;</a>
-	</div>
+  <div class="col-12 tile-container__date">
+    <p><span>Week of:</span> Sunday, April 23, 2017</p>
+  </div>
+  <div class="col-sm-4" *ngFor="let insight of insights ">
+    <div class="tile" [routerLink]="[ '/market-insights', insight.id]">
+      <img class="tile__logo tile__logo--market-insights" src="../../../assets/imgs/logo-marketinsights.svg">
+      <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
+    </div>
+  </div>
+  <div class="col-sm-4" *ngFor="let insight of insights ">
+    <div class="tile" [routerLink]="[ '/market-insights', insight.id]">
+      <img class="tile__logo tile__logo--morning-insights" src="../../../assets/imgs/logo-morninginsights.svg">
+      <div class="tile__date tile__date--morning-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
+    </div>
+  </div>
+  <div class="col-12 load-more">
+    <a (click)="loadMoreInsights(addPerLoad)">Show {{addPerLoad}} more &raquo;</a>
+  </div>
 </div>
