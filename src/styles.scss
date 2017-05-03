@@ -2,3 +2,48 @@
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/angular2-busy/build/style/busy.css";
+
+.align-middle {
+  	position: absolute;
+  	top: 50%;
+  	left:50%;
+  	transform: translate(-50%, -50%);
+}
+
+p, span, label, li {
+	font-family: 'OpenSans', sans-serif;
+	color: #4A4A4A;
+		padding:0;
+}
+
+ul, li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+table {
+    width: 100%;
+}
+
+button {
+	border:0;
+}
+
+h6 {
+	font-size: 14px;
+	font-family: 'OpenSans', sans-serif;
+	color: #4A4A4A;
+	letter-spacing: 0.25px;
+	text-transform: uppercase;
+	line-height: 30px;
+	border-bottom: 1px solid #cccccc;
+	text-align: left;
+	margin: 11px 30px 10px 0;
+	font-weight: 600;
+	padding-left: 10px;
+}
+
+h6 i {
+	margin-right: 5px;
+}

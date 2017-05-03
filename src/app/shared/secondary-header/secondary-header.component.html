@@ -1,10 +1,15 @@
 <!-- Just an image -->
-<nav class="navbar navbar-light bg-faded">
-  <a class="navbar-brand" href="#">
-    <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-  </a>
+<div class="row body__header">
+  <div class="body__header-icon">
+    <img class="align-middle" src="../../../assets/imgs/icon-lightbulb.svg" width="25" height="27">
+  </div>
+  <div class="body__header-title">
+    <p>Chaikin Insights</p>
+  </div>
 
-  <button *ngIf="returnIconVisible" (click)="goBack()" type="button" class="close" aria-label="Close">
+  <button *ngIf="returnIconVisible" (click)="goBack()" type="button" class="close body__header-back-button"
+          aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-</nav>
+
+</div>

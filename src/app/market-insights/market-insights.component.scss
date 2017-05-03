@@ -1,7 +1,113 @@
-.borderz {
-    border: 1px solid black;
+@import 'variables';
+
+.tile-container {
+	padding:0 40px;
+	background: $background-grey;
+	height:100%;
+	}
+
+.tile-container__date {
+	text-align: center;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 14px;
+	color: #4A4A4A;
+	letter-spacing: 0.03px;
 }
 
-.chaikin-insights {
-  height: 100%;
+.tile-container__date {
+	span {
+		font-family: 'OpenSans', sans-serif;
+		color: #8f8f8f;
+	}
 }
+
+
+
+
+
+.tile {
+	width: 100%;
+	height: 160px;
+	border: 1px solid $line-grey;
+	background-color:#ffffff;
+	margin-bottom: 40px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 0px 3px rgba(0,0,0,0.1);
+	cursor: pointer;
+}
+
+.tile__logo--powerfeed {
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 15px;
+}
+
+.tile__logo--market-insights {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 30px;
+}
+
+.tile__logo--morning-insights {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 27px;
+}
+
+
+
+
+
+.tile__date {
+	position: absolute;
+	font-size: 15px;
+	color: #FFFFFF;
+	text-align: center;
+	width: 100%;
+	bottom:0;
+	line-height: 40px;
+	font-weight: 700;
+	height: 40px;
+}
+
+.tile__date--powerfeed  {
+	background-image: linear-gradient(-180deg, #1199FF 0%, #0255DB 100%);
+	box-shadow:  inset 0 -3px 0px 0px #014BA0;
+}
+
+.tile__date--market-insights {
+	background-image: $tile-greenGradient;
+	box-shadow:  inset 0 -3px 0px 0px $tile-greenShadow;
+}
+
+.tile__date--morning-insights {
+	background-image: linear-gradient(0deg, #3023AE 0%, #5F25FB 100%);
+	box-shadow:  inset 0 -3px 0px 0px #2B0071;
+}
+
+
+
+
+
+.load-more {
+	border-top: 1px solid $line-grey;
+	padding: 15px 0px;
+	text-align: center;
+
+	a {
+		font-size: 14px;
+		color: $font-color;
+		cursor: pointer;
+		text-align: center;
+	}
+}
+
+
+
+
+
