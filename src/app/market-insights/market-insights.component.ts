@@ -23,7 +23,7 @@ export class MarketInsightsComponent implements OnInit {
 
   ngOnInit(): void {
     this.previewLimit = 6;
-    this.addPerLoad = 2;
+    this.addPerLoad = 3;
     this.insights = this.getMarketInsights(this.previewLimit);
   }
 
