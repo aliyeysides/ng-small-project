@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 
 import {InsightService} from './insights/insight.service';
 
+import {Insight} from './insights/insight';
+import {INSIGHTS} from './insights/mock-insights';
+
 @Component({
   selector: 'psp-market-insights',
   templateUrl: './market-insights.component.html',
@@ -24,12 +27,13 @@ export class MarketInsightsComponent implements OnInit {
   }
 
   public getMarketInsights(amount: number): Array<object> {
-    let results = [],
-        insights = this.insightService.getInsights();
-    for (let previewCount = 0; previewCount < amount; previewCount++) {
-      results.push(insights[previewCount]);
-    }
-    return results;
+    return INSIGHTS;
+    // let results = [],
+    //     insights = this.insightService.getInsights();
+    // for (let previewCount = 0; previewCount < amount; previewCount++) {
+    //   results.push(insights[previewCount]);
+    // }
+    // return results;
   }
 
   public loadMoreInsights(additional: number): void {
