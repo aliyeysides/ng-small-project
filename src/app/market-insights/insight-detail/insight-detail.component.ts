@@ -7,7 +7,7 @@ import {INSIGHTS} from '../insights/mock-insights';
 import {SharedService} from '../../shared/shared.service';
 
 import 'rxjs/add/operator/map';
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'psp-insight-detail',
@@ -26,7 +26,7 @@ export class InsightDetailComponent implements OnInit {
     this.sharedService.setReturnIconVisible(true);
     this.route.params
       .subscribe(params => {
-        let id = +params['id'];
+        let id = +params['id'] - 1;
         this.insight = INSIGHTS[id];
       });
   }
