@@ -1,14 +1,13 @@
 <div class="container-fluid">
+
   <psp-fixed-header></psp-fixed-header>
-
-  <div class="container-fluid">
-    <div class="row">
-      <psp-primary-header class="col-9"></psp-primary-header>
-      <psp-secondary-header class="col-9"></psp-secondary-header>
-      <psp-sidebar class="col-3"></psp-sidebar>
+  <psp-primary-header></psp-primary-header>
+  <div class="row">
+    <div class="col-sm-9 body">
+      <router-outlet>
+      </router-outlet>
     </div>
+    <psp-sidebar class="col-sm-3 side-bar"></psp-sidebar>
   </div>
-
-  <router-outlet>
-  </router-outlet>
+  
 </div>

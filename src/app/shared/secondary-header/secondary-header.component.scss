@@ -1,0 +1,28 @@
+ @import 'variables';
+
+ .body__header {
+	background-color: #fafafa;
+	height: 40px;
+	box-shadow:  inset 0 -1px 0px 0px $line-grey;
+	overflow: hidden;
+}
+
+.body__header-icon {
+	width: 80px;
+	border-right: 1px solid #ffffff;
+	box-shadow:  inset 0 -3px 0px 0px #0074FB;
+	float: left;
+	height: 40px;
+	background-color: #1199ff;
+	position: relative;
+}
+
+.body__header-title {
+	float:left;
+	margin-left:2%;
+	font-size: 18px;
+	color: #4A4A4A;
+	letter-spacing: 0.25px;
+	text-transform: uppercase;
+	line-height: 40px;
+}

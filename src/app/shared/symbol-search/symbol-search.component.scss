@@ -1,0 +1,50 @@
+@import 'variables';
+
+.form-inline {
+	float: right;
+		text-align:center;
+}
+
+.search-box {
+	text-align: right;
+	padding: 0;
+	border:0;
+	font-size: 18px;
+	margin-right: 20px;
+	font-weight: 400;
+	font-family: 'OpenSans', sans-serif;
+}
+
+.search-submit {
+	width: 60px;
+	border-left:1px solid #ffffff;
+	box-shadow:  inset 0 -3px 0px 0px $button-orangeDK;
+	height: 60px;
+	background-color: $button-orange;
+
+}
+
+.fa-search {
+	font-size: 32px;
+	line-height: 60px;
+	color: #ffffff;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: #cccccc;
+  font-weight: 400;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #cccccc;
+   font-weight: 400;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #cccccc;
+  opacity: 1;
+  font-weight: 400;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #cccccc;
+  opacity: 1;
+  font-weight: 400;
+}

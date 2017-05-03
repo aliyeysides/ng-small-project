@@ -1,15 +1,21 @@
-<div class="container-fluid">
-  <div class="chaikin-insights container-fluid">
-    <div class="borderz d-inline-block " *ngFor="let insight of insights ">
-      <div class="card " style="width: 20rem; ">
-        <img class="card-img-top " src="{{insight.image}} " alt="Card image cap ">
-        <div class="card-block ">
-          <h4 class="card-title ">{{insight.title}}</h4>
-          <p class="card-text ">{{insight.content}}</p>
-          <a href="#" class="btn btn-primary " [routerLink]="[ '/market-insights', insight.id] ">Read insight</a>
-        </div>
-      </div>
-    </div>
-    <a (click)="loadMoreInsights(addPerLoad)">LOAD {{addPerLoad}} MORE</a>
-  </div>
+<psp-secondary-header></psp-secondary-header>
+<div class="row tile-container">
+  	<div class="col-12 tile-container__date">
+    	<p><span>Week of:</span> Sunday, April 23, 2017</p>
+  	</div>
+  	<div class="col-sm-4" *ngFor="let insight of insights ">
+    	<div class="tile">
+	      	<img class="tile__logo tile__logo--market-insights" src="../../../assets/imgs/logo-marketinsights.svg">
+	      	<div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
+    	</div>
+  	</div>
+  	<div class="col-sm-4" *ngFor="let insight of insights ">
+    	<div class="tile">
+	      	<img class="tile__logo tile__logo--morning-insights" src="../../../assets/imgs/logo-morninginsights.svg">
+	      	<div class="tile__date tile__date--morning-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
+    	</div>
+  	</div>
+  	<div class="col-12 load-more">
+  	    <a (click)="loadMoreInsights(addPerLoad)">Show {{addPerLoad}} more &raquo;</a>
+	</div>
 </div>
