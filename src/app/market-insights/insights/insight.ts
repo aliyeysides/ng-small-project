@@ -9,9 +9,9 @@
  * @param {string} content
  */
 export class Insight {
-    id: Number;
+    id: number;
     date: any;
-    read: Boolean;
+    read: boolean;
     image: string;
     title: string;
     content: string;
