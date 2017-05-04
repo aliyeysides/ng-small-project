@@ -17,6 +17,7 @@ export class MarketInsightsComponent implements OnInit {
   public insights: Array<object>;
   public addPerLoad: number;
   public hashMap: object = {};
+  public isCollapsed: boolean = false;
 
   private previewLimit: number;
 

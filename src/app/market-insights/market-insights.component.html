@@ -2,8 +2,11 @@
 <div class="row tile-container">
   <div class="col-12 tile-container__date">
     <p><span>Week of:</span> Sunday, April 23, 2017</p>
+    <button type="button" class="btn btn-primary"
+            (click)="isCollapsed = !isCollapsed">Toggle collapse
+    </button>
   </div>
-  <div class="col-sm-4" *ngFor="let insight of insights">
+  <div [collapse]="isCollapsed" class="col-sm-4" *ngFor="let insight of insights">
     <div class="tile" (mouseover)="toggleHoverOn(insight)" (mouseout)="toggleHoverOff(insight)"
          (click)="gotoInsight(insight)">
         <div *ngIf="hashMap[insight.id.toString()] != true">

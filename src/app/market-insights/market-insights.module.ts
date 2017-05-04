@@ -8,7 +8,8 @@ import {InsightDetailComponent} from './insight-detail/insight-detail.component'
 
 import {
   BsDropdownModule,
-  PopoverModule
+  PopoverModule,
+  CollapseModule
 } from 'ngx-bootstrap';
 
 import {InsightService} from "./insights/insight.service";
@@ -18,7 +19,8 @@ import {InsightService} from "./insights/insight.service";
     SharedModule,
     AboutModule,
     BsDropdownModule,
-    PopoverModule
+    PopoverModule,
+    CollapseModule
   ],
   exports: [
     MarketInsightsComponent
