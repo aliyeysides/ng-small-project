@@ -8,7 +8,12 @@ import {PowerGaugeReportComponent} from './power-gauge-report/power-gauge-report
 import {PortfolioHealthCheckComponent} from './portfolio-health-check/portfolio-health-check.component';
 import {InsightDetailComponent} from './market-insights/insight-detail/insight-detail.component';
 import {GlossaryComponent} from './shared/fixed-header/settings/glossary/glossary.component';
-import {LoginComponent} from "./shared/session/login.component";
+import {LoginComponent} from './shared/session/login.component';
+
+/* ABOUT */
+import {MarcChaikinComponent} from './market-insights/about/marc-chaikin/marc-chaikin.component';
+import {JohnSchlitzComponent} from './market-insights/about/john-schlitz/john-schlitz.component';
+import {AboutChaikinAnalyticsComponent} from './market-insights/about/chaikin-analytics/about-chaikin-analytics.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -18,7 +23,10 @@ const routes: Routes = [
   {path: 'market-insights/:id', component: InsightDetailComponent},
   {path: 'power-gauge-report', component: PowerGaugeReportComponent},
   {path: 'portfolio-health-check', component: PortfolioHealthCheckComponent},
-  {path: 'glossary', component: GlossaryComponent}
+  {path: 'glossary', component: GlossaryComponent},
+  {path: 'about/marc-chaikin', component: MarcChaikinComponent},
+  {path: 'about/john-schlitz', component: JohnSchlitzComponent},
+  {path: 'about/chaikin-analytics', component: AboutChaikinAnalyticsComponent}
 ];
 
 @NgModule({
