@@ -6,10 +6,7 @@
   <div class="body__header-title">
     <p>Chaikin Insights</p>
   </div>
-
-  <button *ngIf="returnIconVisible" (click)="goBack()" type="button" class="close body__header-back-button"
-          aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-
+    <button *ngIf="returnIconVisible" (click)="goBack()" type="button" class="body__header-back" aria-label="Close">
+      <img class="align-middle" src="../../../assets/imgs/icon-back.svg" width="24" height="22">
+    </button> 
 </div>
