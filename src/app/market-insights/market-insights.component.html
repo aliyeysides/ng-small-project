@@ -3,18 +3,17 @@
   <div class="col-12 tile-container__date">
     <p><span>Week of:</span> Sunday, April 23, 2017</p>
   </div>
-  <div class="col-sm-4" *ngFor="let insight of insights; let odd = odd; let even = even;">
-    <div *ngIf="odd">
-      <div class="tile" (click)="gotoInsight(insight)">
-        <img class="tile__logo tile__logo--market-insights" src="../../../assets/imgs/logo-marketinsights.svg">
-        <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
-      </div>
-    </div>
-    <div *ngIf="even">
-      <div class="tile" (click)="gotoInsight(insight)">
-        <img class="tile__logo tile__logo--morning-insights" src="../../../assets/imgs/logo-morninginsights.svg">
-        <div class="tile__date tile__date--morning-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
-      </div>
+  <div class="col-sm-4" *ngFor="let insight of insights">
+    <div class="tile" (mouseover)="toggleHoverOn(insight)" (mouseout)="toggleHoverOff(insight)"
+         (click)="gotoInsight(insight)">
+        <div *ngIf="hashMap[insight.id.toString()] != true">
+          <img class="tile__logo tile__logo--market-insights" src="../../../assets/imgs/logo-marketinsights.svg">
+        </div>
+        <div *ngIf="hashMap[insight.id.toString()] == true">
+          <div class="tile__logo tile__logo--market-insights">{{insight.title}}</div>
+          <a>Click to read</a>
+        </div>
+      <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
     </div>
   </div>
 

@@ -5,6 +5,7 @@ import {InsightService} from './insights/insight.service';
 
 import {Insight} from './insights/insight';
 import {INSIGHTS} from './insights/mock-insights';
+import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'psp-market-insights',
@@ -15,6 +16,7 @@ export class MarketInsightsComponent implements OnInit {
 
   public insights: Array<object>;
   public addPerLoad: number;
+  public hashMap: object = {};
 
   private previewLimit: number;
 
@@ -29,7 +31,7 @@ export class MarketInsightsComponent implements OnInit {
 
   public getMarketInsights(amount: number): Array<object> {
     let results = [],
-        insights = this.insightService.getInsights();
+      insights = this.insightService.getInsights();
     for (let previewCount = 0; previewCount < amount; previewCount++) {
       results.push(INSIGHTS[previewCount]);
     }
@@ -42,8 +44,20 @@ export class MarketInsightsComponent implements OnInit {
     this.insights = this.getMarketInsights(this.previewLimit);
   }
 
-  gotoInsight(insight: any): void {
+  public gotoInsight(insight: any): void {
     this.router.navigate(['/market-insights', insight.id]);
+  }
+
+  public toggleHoverOn(el: any): void {
+    let key = el.id.toString();
+    this.hashMap = {};
+    this.hashMap[key] = true;
+  }
+
+  public toggleHoverOff(el: any): void {
+    let key = el.id.toString();
+    this.hashMap = {};
+    this.hashMap[key] = false;
   }
 
 }
