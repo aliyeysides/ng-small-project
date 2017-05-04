@@ -28,19 +28,17 @@ export class InsightService {
   private fetchInsights(): any {
     this.insights = INSIGHTS;
     // let insightsUrl = 'https://dev.chaikinanalytics.com/insights/';
-
     let insightsUrl = 'https://dev.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&count=20&id=35,4';
 
     // this.params.set('json', 'secursive.get_product_updates');
     // this.params.set('dev', '1');
     // this.params.set('id', '2,10');
 
-    // this.http.get(insightsUrl, {
-    //   // search: this.params,
-    //   withCredentials: false
-    // }).toPromise()
-    //   .then(res => console.log(res.json()))
-    //   .catch(err => InsightService.handleError)
+    this.http.get(insightsUrl, {
+      withCredentials: false
+    }).toPromise()
+      .then(res => console.log(res.json()))
+      .catch(err => SharedService.handleError)
   }
 
   // getInsight(id: number): Promise<Insight> {
