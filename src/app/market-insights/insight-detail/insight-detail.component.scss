@@ -1,0 +1,28 @@
+@import 'variables';
+
+.blog {
+	margin-top:40px;
+}
+
+.blog__entry {
+	h1 {
+		font-size: 32px;
+		color: $font-color;
+	}
+}
+
+.blog__entry-date {
+	font-size: 16px;
+	color: $font-colorMD;
+}
+
+.blog__content {
+	font-size: 18px;
+	line-height: 27px;
+}
+
+.blog__author {
+	font-size: 24px;
+	color: $font-colorBlue;
+	font-weight: 600;
+}
