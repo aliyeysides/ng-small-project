@@ -7,18 +7,17 @@
     <div class="tile" (mouseover)="toggleHoverOn(insight)" (mouseout)="toggleHoverOff(insight)"
          (click)="gotoInsight(insight)">
         <div *ngIf="hashMap[insight.id.toString()] != true">
-          <img class="tile__logo tile__logo--market-insights" src="../../../assets/imgs/logo-marketinsights.svg">
+          <img class="tile__logo tile__logo--market-insights align-middle" src="../../../assets/imgs/logo-marketinsights.svg">
         </div>
-        <div *ngIf="hashMap[insight.id.toString()] == true">
-          <div class="tile__logo tile__logo--market-insights">{{insight.title}}</div>
-          <a>Click to read</a>
+        <div class="tile_hover-container" *ngIf="hashMap[insight.id.toString()] == true">
+          <div class="tile__hover">{{insight.title}}</div>
+          <a href="" class="tile__hover-link">Click to read <span>&raquo;</span></a>
         </div>
       <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
     </div>
   </div>
 
   <div class="col-12 load-more">
-    <a (click)="loadMoreInsights(addPerLoad)">Show {{addPerLoad}} more &raquo;</a>
+    <a (click)="loadMoreInsights(addPerLoad)">Show 1 more week &raquo;</a>
   </div>
 </div>
-

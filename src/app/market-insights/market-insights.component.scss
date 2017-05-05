@@ -38,26 +38,43 @@
 	cursor: pointer;
 }
 
+.tile__logo {
+	margin-top:-15px;
+}
+
 .tile__logo--powerfeed {
 	width: 70%;
-	margin-left: 15%;
-	margin-right: 15%;
-	margin-top: 15px;
 }
 
 .tile__logo--market-insights {
 	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 30px;
 }
 
 .tile__logo--morning-insights {
 	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 27px;
 }
+
+.tile__hover-link {
+	font-size: 13px;
+	color: $link-blue;
+	text-decoration: underline;
+
+	span {
+		text-decoration: none !important;	
+	}
+}
+
+.tile__hover {
+	font-size: 20px;
+	color: $font-color;
+	line-height: 25px;
+	font-weight: 600;
+}
+
+.tile_hover-container {
+	padding: 10px;
+}
+
 
 
 
