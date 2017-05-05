@@ -37,7 +37,6 @@ export class SecondaryHeaderComponent implements OnInit, OnDestroy {
 
   goBack(): void {
     this.location.back();
-    this.returnIconVisible = false;
   }
 
 }
