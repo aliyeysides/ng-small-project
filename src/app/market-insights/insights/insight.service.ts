@@ -26,7 +26,7 @@ export class InsightService {
 
   /* TODO: implement http call to fetch insights */
   private fetchInsights(): any {
-    this.insights = INSIGHTS;
+    // this.insights = INSIGHTS;
     // let insightsUrl = 'https://dev.chaikinanalytics.com/insights/';
     let insightsUrl = 'https://dev.chaikinanalytics.com/insights/?json=secursive.get_product_updates&dev=1&count=20&id=35,4';
 
@@ -37,7 +37,7 @@ export class InsightService {
     this.http.get(insightsUrl, {
       withCredentials: false
     }).toPromise()
-      .then(res => console.log(res.json()))
+      .then(res => this.insights = res.json() as Insight[])
       .catch(err => SharedService.handleError)
   }
 

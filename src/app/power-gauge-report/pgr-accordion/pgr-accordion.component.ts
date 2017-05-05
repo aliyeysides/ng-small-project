@@ -17,7 +17,7 @@ export class PgrAccordionComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.financialKeys = this.stock.getFinancialKeys();
+    // this.financialKeys = this.stock.getFinancialKeys();
   }
 
   ngOnChanges(changes: SimpleChanges) {

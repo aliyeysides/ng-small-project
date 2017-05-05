@@ -25,7 +25,8 @@ import {
   TooltipModule,
   BsDropdownModule,
   PopoverModule,
-  AccordionModule
+  AccordionModule,
+  CollapseModule
 } from 'ngx-bootstrap';
 
 /* Loading mask */
@@ -51,6 +52,7 @@ import {BusyModule} from 'angular2-busy';
     BsDropdownModule.forRoot(),
     PopoverModule.forRoot(),
     AccordionModule.forRoot(),
+    CollapseModule.forRoot(),
     BusyModule
   ],
   providers: [SessionService],

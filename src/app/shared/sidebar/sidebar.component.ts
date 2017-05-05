@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
   }
 
   gotoAbout(name: string): void {
-    this.router.navigate(['/about', name]);
+    this.router.navigate(['/market-insights/about', name]);
   }
 
 }

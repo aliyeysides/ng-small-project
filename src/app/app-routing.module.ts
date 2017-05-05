@@ -11,9 +11,7 @@ import {GlossaryComponent} from './shared/fixed-header/settings/glossary/glossar
 import {LoginComponent} from './shared/session/login.component';
 
 /* ABOUT */
-import {MarcChaikinComponent} from './market-insights/about/marc-chaikin/marc-chaikin.component';
-import {JohnSchlitzComponent} from './market-insights/about/john-schlitz/john-schlitz.component';
-import {AboutChaikinAnalyticsComponent} from './market-insights/about/chaikin-analytics/about-chaikin-analytics.component';
+import {AboutComponent} from './market-insights/about/about.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -24,9 +22,7 @@ const routes: Routes = [
   {path: 'power-gauge-report', component: PowerGaugeReportComponent},
   {path: 'portfolio-health-check', component: PortfolioHealthCheckComponent},
   {path: 'glossary', component: GlossaryComponent},
-  {path: 'about/marc-chaikin', component: MarcChaikinComponent},
-  {path: 'about/john-schlitz', component: JohnSchlitzComponent},
-  {path: 'about/chaikin-analytics', component: AboutChaikinAnalyticsComponent}
+  {path: 'market-insights/about/:name', component: AboutComponent}
 ];
 
 @NgModule({
