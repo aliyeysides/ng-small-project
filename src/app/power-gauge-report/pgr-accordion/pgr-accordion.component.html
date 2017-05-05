@@ -6,7 +6,7 @@
          [ngClass]="{'fa-chevron-down': financials?.isOpen, 'fa-chevron-right': !financials?.isOpen}"></i>
     </div>
     <div *ngFor="let data of stock.getFinancials()">
-      <span>{{ data[financialKeys[index]] }}</span>
+      <span>{{data}}</span>
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
             popoverTitle="Dismissible popover" triggers="focus" placement="right">

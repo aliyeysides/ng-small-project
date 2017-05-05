@@ -17,6 +17,7 @@ export class MarketInsightsComponent implements OnInit {
   public insights: Array<object>;
   public addPerLoad: number;
   public hashMap: object = {};
+  public isCollapsed: boolean = false;
 
   private previewLimit: number;
 
@@ -32,6 +33,7 @@ export class MarketInsightsComponent implements OnInit {
   public getMarketInsights(amount: number): Array<object> {
     let results = [],
       insights = this.insightService.getInsights();
+    console.log('insights', insights);
     for (let previewCount = 0; previewCount < amount; previewCount++) {
       results.push(INSIGHTS[previewCount]);
     }
