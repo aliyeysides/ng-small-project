@@ -29,9 +29,6 @@ import {
   CollapseModule
 } from 'ngx-bootstrap';
 
-/* Loading mask */
-import {BusyModule} from 'angular2-busy';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -52,8 +49,7 @@ import {BusyModule} from 'angular2-busy';
     BsDropdownModule.forRoot(),
     PopoverModule.forRoot(),
     AccordionModule.forRoot(),
-    CollapseModule.forRoot(),
-    BusyModule
+    CollapseModule.forRoot()
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]
