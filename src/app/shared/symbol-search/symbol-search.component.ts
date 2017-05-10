@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
+import {SymbolSearchService} from "./symbol-search.service";
 
 @Component({
   selector: 'psp-symbol-search',
@@ -9,14 +10,23 @@ import {FormControl} from '@angular/forms';
 export class SymbolSearchComponent implements OnInit {
 
   public symbolSearchForm: FormControl;
+  public searchResults: Array<object>;
 
-  constructor() {
+  constructor(private symbolSearchService: SymbolSearchService) {
     this.symbolSearchForm = new FormControl();
   }
 
   ngOnInit() {
+    this.searchResults = [];
     this.symbolSearchForm.valueChanges.subscribe(
-      val => console.log('value from search', val)
+      val => {
+        this.symbolSearchService.symbolLookup(val).subscribe(
+          val => {
+            this.searchResults = val;
+            console.log('this.searchResults', this.searchResults)
+          }
+        )
+      }
     )
   }
 
