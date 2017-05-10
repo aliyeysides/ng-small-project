@@ -1,15 +1,17 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
+import {SymbolSearchModule} from '../symbol-search/symbol-search.module';
+
 import {PrimaryHeaderComponent} from './primary-header.component';
-import {SymbolSearchComponent} from '../symbol-search/symbol-search.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    SymbolSearchModule
   ],
-  exports: [PrimaryHeaderComponent, SymbolSearchComponent],
-  declarations: [PrimaryHeaderComponent, SymbolSearchComponent]
+  exports: [PrimaryHeaderComponent],
+  declarations: [PrimaryHeaderComponent]
 })
 export class PrimaryHeaderModule {
 }

@@ -5,7 +5,6 @@ import {InsightService} from './insights/insight.service';
 
 import {Insight} from './insights/insight';
 import {INSIGHTS} from './insights/mock-insights';
-import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'psp-market-insights',
@@ -32,8 +31,12 @@ export class MarketInsightsComponent implements OnInit {
 
   public getMarketInsights(amount: number): Array<object> {
     let results = [],
-      insights = this.insightService.getInsights();
-    console.log('insights', insights);
+      insights = this.insightService.getInsights()
+        .subscribe(
+          res => console.log('res', res),
+          err => console.log('err', err)
+        );
+
     for (let previewCount = 0; previewCount < amount; previewCount++) {
       results.push(INSIGHTS[previewCount]);
     }
@@ -42,8 +45,8 @@ export class MarketInsightsComponent implements OnInit {
 
   public loadMoreInsights(additional: number): void {
     this.previewLimit += additional;
-    this.insights = [];
-    this.insights = this.getMarketInsights(this.previewLimit);
+    // this.insights = [];
+    // this.insights = this.getMarketInsights(this.previewLimit);
   }
 
   public gotoInsight(insight: any): void {

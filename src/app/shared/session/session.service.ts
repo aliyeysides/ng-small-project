@@ -15,7 +15,7 @@ export class SessionService {
   private authParams: URLSearchParams;
   private loginParams: URLSearchParams;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private sharedService: SharedService) {
     this.authParams = new URLSearchParams;
     this.loginParams = new URLSearchParams;
   }
@@ -31,7 +31,7 @@ export class SessionService {
       withCredentials: true
     }).toPromise()
       .then(res => res.json() as Session)
-      .catch(SharedService.handleError)
+      .catch(this.sharedService.handleError)
   }
 
   public login(): Promise<User> {
@@ -43,7 +43,7 @@ export class SessionService {
       withCredentials: true
     }).toPromise()
       .then(res => res.json() as User)
-      .catch(SharedService.handleError)
+      .catch(this.sharedService.handleError)
   }
 
 }

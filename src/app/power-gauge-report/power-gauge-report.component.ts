@@ -11,6 +11,8 @@ import {
 } from '@angular/core';
 
 import {Stock} from "app/shared/watchlist/stock";
+import {Observable} from "rxjs/Observable";
+import {SharedService} from "../shared/shared.service";
 
 @Component({
   selector: 'psp-power-gauge-report',
@@ -39,13 +41,15 @@ export class PowerGaugeReportComponent implements OnInit {
   public helpMenuOpen: string;
   public stock: Stock;
 
-  constructor(private symbolSearchService: SymbolSearchService) {}
+  constructor(private symbolSearchService: SymbolSearchService, private sharedService: SharedService) {
+  }
 
   ngOnInit() {
-    this.symbolSearchService.getSymbolData().subscribe(res => {
-      this.stock = res;
-      console.log('this.stock in parent', this.stock);
-    });
+    this.symbolSearchService.getSymbolData('shld')
+      .subscribe(
+        res => this.stock = res,
+        err => this.sharedService.handleError
+      )
     this.helpMenuOpen = 'out';
   }
 

@@ -1,6 +1,5 @@
 /* @angular */
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -29,15 +28,11 @@ import {
   CollapseModule
 } from 'ngx-bootstrap';
 
-/* Loading mask */
-import {BusyModule} from 'angular2-busy';
-
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    FormsModule,
     HttpModule,
     BrowserAnimationsModule,
     SharedModule,
@@ -52,8 +47,7 @@ import {BusyModule} from 'angular2-busy';
     BsDropdownModule.forRoot(),
     PopoverModule.forRoot(),
     AccordionModule.forRoot(),
-    CollapseModule.forRoot(),
-    BusyModule
+    CollapseModule.forRoot()
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]

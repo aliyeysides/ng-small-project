@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { SharedModule } from '../shared/shared.module';
+import {SharedModule} from '../shared/shared.module';
 
-import { PowerGaugeReportComponent } from './power-gauge-report.component';
-import { PgrAccordionComponent } from './pgr-accordion/pgr-accordion.component';
+import {PowerGaugeReportComponent} from './power-gauge-report.component';
+import {PgrAccordionComponent} from './pgr-accordion/pgr-accordion.component';
 
 import {
   AccordionModule,
@@ -21,4 +21,5 @@ import {
   ],
   declarations: [PowerGaugeReportComponent, PgrAccordionComponent]
 })
-export class PowerGaugeReportModule { }
+export class PowerGaugeReportModule {
+}
