@@ -1,7 +1,4 @@
-
-  <form class="form-inline">
-    <div class="form-group">
-      <input type="text" class="form-control search-box" placeholder="SEARCH A STOCK" aria-describedby="basic-addon1">
-      <span class="search-submit" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
-    </div>
-  </form>
+  <div class="form-group">
+    <input [formControl]="symbolSearchForm" type="search" class="form-control search-box" placeholder="SEARCH A STOCK" aria-describedby="basic-addon1">
+    <span class="search-submit" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+  </div>
