@@ -1,26 +1,34 @@
-<psp-secondary-header></psp-secondary-header>
-<div class="row tile-container">
-  <div class="col-12 tile-container__date">
-    <p><span>Week of:</span> Sunday, April 23, 2017</p>
-    <button type="button" class="btn btn-primary"
-            (click)="isCollapsed = !isCollapsed">Toggle collapse
-    </button>
-  </div>
-  <div [collapse]="isCollapsed" class="col-sm-4" *ngFor="let insight of insights">
-    <div class="tile" (mouseover)="toggleHoverOn(insight)" (mouseout)="toggleHoverOff(insight)"
-         (click)="gotoInsight(insight)">
-        <div *ngIf="hashMap[insight.id.toString()] != true">
-          <img class="tile__logo tile__logo--market-insights align-middle" src="../../../assets/imgs/logo-marketinsights.svg">
+<div class="row">
+  <div class="col-sm-9 body">
+
+    <psp-secondary-header></psp-secondary-header>
+    <div class="row tile-container">
+      <div class="col-12 tile-container__date">
+        <p><span>Week of:</span> Sunday, April 23, 2017</p>
+        <button type="button" class="btn btn-primary"
+                (click)="isCollapsed = !isCollapsed">Toggle collapse
+        </button>
+      </div>
+      <div [collapse]="isCollapsed" class="col-sm-4" *ngFor="let insight of insights">
+        <div class="tile" (mouseover)="toggleHoverOn(insight)" (mouseout)="toggleHoverOff(insight)"
+             (click)="gotoInsight(insight)">
+          <div *ngIf="hashMap[insight.id.toString()] != true">
+            <img class="tile__logo tile__logo--market-insights align-middle"
+                 src="../../../assets/imgs/logo-marketinsights.svg">
+          </div>
+          <div class="tile_hover-container" *ngIf="hashMap[insight.id.toString()] == true">
+            <div class="tile__hover">{{insight.title}}</div>
+            <a href="" class="tile__hover-link">Click to read <span>&raquo;</span></a>
+          </div>
+          <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
         </div>
-        <div class="tile_hover-container" *ngIf="hashMap[insight.id.toString()] == true">
-          <div class="tile__hover">{{insight.title}}</div>
-          <a href="" class="tile__hover-link">Click to read <span>&raquo;</span></a>
-        </div>
-      <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
+      </div>
+
+      <div class="col-12 load-more">
+        <a (click)="loadMoreInsights(addPerLoad)">Show 1 more week &raquo;</a>
+      </div>
     </div>
   </div>
-
-  <div class="col-12 load-more">
-    <a (click)="loadMoreInsights(addPerLoad)">Show 1 more week &raquo;</a>
-  </div>
+  <psp-sidebar class="col-sm-3 side-bar"></psp-sidebar>
 </div>
+
