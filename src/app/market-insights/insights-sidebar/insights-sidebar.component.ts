@@ -3,10 +3,10 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'psp-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  templateUrl: './insights-sidebar.component.html',
+  styleUrls: ['./insights-sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class InsightsSidebarComponent implements OnInit {
 
   constructor(private router: Router) {
   }

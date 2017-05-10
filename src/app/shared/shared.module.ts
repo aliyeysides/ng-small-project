@@ -5,7 +5,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from '../app-routing.module';
 import {SymbolSearchModule} from '../shared/symbol-search/symbol-search.module';
 import {FixedHeaderModule} from './fixed-header/fixed-header.module';
-import {SidebarModule} from './sidebar/sidebar.module';
 import {PrimaryHeaderModule} from './primary-header/primary-header.module';
 import {SecondaryHeaderModule} from './secondary-header/secondary-header.module';
 
@@ -20,7 +19,6 @@ import {SharedService} from './shared.service';
     AppRoutingModule,
     SymbolSearchModule,
     FixedHeaderModule,
-    SidebarModule,
     PrimaryHeaderModule,
     SecondaryHeaderModule
   ],
@@ -30,7 +28,6 @@ import {SharedService} from './shared.service';
     AppRoutingModule,
     SymbolSearchModule,
     FixedHeaderModule,
-    SidebarModule,
     PrimaryHeaderModule,
     SecondaryHeaderModule
   ],
