@@ -5,14 +5,17 @@ import {SharedModule} from '../shared/shared.module';
 import {MarketInsightsComponent} from './market-insights.component';
 import {InsightDetailComponent} from './insight-detail/insight-detail.component';
 
-import {
-  BsDropdownModule,
-  PopoverModule,
-  CollapseModule
-} from 'ngx-bootstrap';
+
+import {AboutComponent} from './about/about.component';
+import {InsightsSidebarComponent} from "./insights-sidebar/insights-sidebar.component";
 
 import {InsightService} from "./insights/insight.service";
-import {AboutComponent} from './about/about.component';
+
+import {
+BsDropdownModule,
+PopoverModule,
+CollapseModule
+} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
@@ -24,7 +27,7 @@ import {AboutComponent} from './about/about.component';
   exports: [
     MarketInsightsComponent
   ],
-  declarations: [MarketInsightsComponent, InsightDetailComponent, AboutComponent],
+  declarations: [MarketInsightsComponent, InsightsSidebarComponent, InsightDetailComponent, AboutComponent],
   providers: [InsightService]
 })
 export class MarketInsightsModule {
