@@ -5,7 +5,7 @@
       <i class="pull-right float-xs-right fa"
          [ngClass]="{'fa-chevron-down': financials?.isOpen, 'fa-chevron-right': !financials?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock.getFinancials()">
+    <div *ngFor="let data of stock?.getFinancials()">
       <span>{{data}}</span>
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
@@ -19,7 +19,7 @@
       <i class="pull-right float-xs-right fa"
          [ngClass]="{'fa-chevron-down': earnings?.isOpen, 'fa-chevron-right': !earnings?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock.getEarnings()">
+    <div *ngFor="let data of stock?.getEarnings()">
       {{data}}
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
@@ -33,7 +33,7 @@
       <i class="pull-right float-xs-right fa"
          [ngClass]="{'fa-chevron-down': technicals?.isOpen, 'fa-chevron-right': !technicals?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock.getTechnicals()">
+    <div *ngFor="let data of stock?.getTechnicals()">
       {{data}}
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
@@ -47,7 +47,7 @@
       <i class="pull-right float-xs-right fa"
          [ngClass]="{'fa-chevron-down': experts?.isOpen, 'fa-chevron-right': !experts?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock.getExperts()">
+    <div *ngFor="let data of stock?.getExperts()">
       {{data}}
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."

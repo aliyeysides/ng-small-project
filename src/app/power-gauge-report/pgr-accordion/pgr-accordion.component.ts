@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
-import { AccordionModule } from 'ngx-bootstrap';
+import {AccordionModule} from 'ngx-bootstrap';
 import {Stock} from "../../shared/watchlist/stock";
 
 @Component({
@@ -11,13 +11,11 @@ import {Stock} from "../../shared/watchlist/stock";
 export class PgrAccordionComponent implements OnInit, OnChanges {
 
   @Input() stock: Stock;
-  public financialKeys: string[];
 
   constructor() {
   }
 
   ngOnInit() {
-    // this.financialKeys = this.stock.getFinancialKeys();
   }
 
   ngOnChanges(changes: SimpleChanges) {
