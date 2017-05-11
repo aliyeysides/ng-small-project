@@ -2,11 +2,13 @@
   <accordion-group #financials>
     <div accordion-heading>
       Financials
+      {{ stock?.getFinacialValue() }}
       <i class="pull-right float-xs-right fa"
          [ngClass]="{'fa-chevron-down': financials?.isOpen, 'fa-chevron-right': !financials?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock?.getFinancials()">
-      <span>{{data}}</span>
+    <div *ngFor="let data of stock?.getFinancials(); let index = index">
+      <span>{{ data[financialKeys[index]] }}</span>
+      <span>{{ financialKeys[index] }}</span>
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
             popoverTitle="Dismissible popover" triggers="focus" placement="right">
@@ -16,11 +18,13 @@
   <accordion-group #earnings>
     <div accordion-heading>
       Earnings
+      {{ stock?.getEarningsValue() }}
       <i class="pull-right float-xs-right fa"
          [ngClass]="{'fa-chevron-down': earnings?.isOpen, 'fa-chevron-right': !earnings?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock?.getEarnings()">
-      {{data}}
+    <div *ngFor="let data of stock?.getEarnings(); let index = index">
+      <span>{{ data[earningsKeys[index]] }}</span>
+      <span>{{ earningsKeys[index] }}</span>
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
             popoverTitle="Dismissible popover" triggers="focus" placement="right">
@@ -30,11 +34,13 @@
   <accordion-group #technicals>
     <div accordion-heading>
       Technicals
+      {{ stock?.getTechnicalsValue() }}
       <i class="pull-right float-xs-right fa"
          [ngClass]="{'fa-chevron-down': technicals?.isOpen, 'fa-chevron-right': !technicals?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock?.getTechnicals()">
-      {{data}}
+    <div *ngFor="let data of stock?.getTechnicals(); let index = index">
+      <span>{{ data[technicalKeys[index]] }}</span>
+      <span>{{ technicalKeys[index] }}</span>
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
             popoverTitle="Dismissible popover" triggers="focus" placement="right">
@@ -44,11 +50,13 @@
   <accordion-group #experts>
     <div accordion-heading>
       Experts
+      {{ stock?.getExpertsValue() }}
       <i class="pull-right float-xs-right fa"
          [ngClass]="{'fa-chevron-down': experts?.isOpen, 'fa-chevron-right': !experts?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock?.getExperts()">
-      {{data}}
+    <div *ngFor="let data of stock?.getExperts(); let index = index">
+      <span>{{ data[expertKeys[index]] }}</span>
+      <span>{{ expertKeys[index] }}</span>
     </div>
     <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
             popoverTitle="Dismissible popover" triggers="focus" placement="right">

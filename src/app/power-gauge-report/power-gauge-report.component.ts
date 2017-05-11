@@ -45,11 +45,11 @@ export class PowerGaugeReportComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.symbolSearchService.getSymbolData('shld')
+    this.symbolSearchService.getSymbolData('aapl')
       .subscribe(
         res => this.stock = res,
         err => this.sharedService.handleError
-      )
+      );
     this.helpMenuOpen = 'out';
   }
 

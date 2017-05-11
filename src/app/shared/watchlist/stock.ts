@@ -5,6 +5,24 @@ export class Stock {
               public status: string) {
   }
 
+  private static _extractData(arr) {
+    let result = [];
+    arr.forEach(val => {
+      if (Object.keys(val)[0] != 'Value') {
+        result.push(val);
+      }
+    });
+    return result;
+  }
+
+  private static _extractKeys(arr) {
+    let result = [];
+    arr.forEach(obj => {
+      result.push(Object.keys(obj)[0]);
+    });
+    return result;
+  }
+
   getStockSymbol(): number {
     return this.metaInfo[0]['symbol'];
   }
@@ -18,7 +36,7 @@ export class Stock {
   }
 
   getIndustryName(): string {
-    return this.metaInfo[0]['industry_name']
+    return this.metaInfo[0]['industry_name'];
   }
 
   getChange(): number {
@@ -34,28 +52,51 @@ export class Stock {
   }
 
   getFinancials(): object[] {
-    return this.pgr[1]['Financials'];
+    return Stock._extractData(this.pgr[1]['Financials']);
+  }
+
+  getFinacialValue(): number {
+    return this.pgr[1]['Financials'][0]['Value'];
   }
 
   getFinancialKeys(): string[] {
-    let result = [];
-    this.getFinancials().forEach(obj => {
-      // pushes only the first key of each object returned by getFinancials
-      result.push(Object.keys(obj)[0]);
-    });
-    return result;
+    return Stock._extractKeys(this.getFinancials());
   }
 
   getEarnings(): object[] {
-    return this.pgr[2]['Earnings'];
+    return Stock._extractData(this.pgr[2]['Earnings']);
+  }
+
+  getEarningsValue(): number {
+    return this.pgr[2]['Earnings'][0]['Value'];
+  }
+
+  getEarningsKeys(): string[] {
+    return Stock._extractKeys(this.getEarnings());
   }
 
   getTechnicals(): object[] {
-    return this.pgr[3]['Technicals'];
+    return Stock._extractData(this.pgr[3]['Technicals']);
+  }
+
+  getTechnicalsValue(): number {
+    return this.pgr[3]['Technicals'][0]['Value'];
+  }
+
+  getTechnicalKeys(): string[] {
+    return Stock._extractKeys(this.getTechnicals());
   }
 
   getExperts(): object[] {
-    return this.pgr[4]['Experts'];
+    return Stock._extractData(this.pgr[4]['Experts']);
+  }
+
+  getExpertsValue(): number {
+    return this.pgr[4]['Experts'][0]['Value'];
+  }
+
+  getExpertKeys(): string[] {
+    return Stock._extractKeys(this.getExperts());
   }
 
   getCorrectedPgr(): object {
