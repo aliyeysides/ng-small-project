@@ -17,6 +17,7 @@ PopoverModule,
 CollapseModule
 } from 'ngx-bootstrap';
 import { InsightDetailSidebarComponent } from './insight-detail/insight-detail-sidebar/insight-detail-sidebar.component';
+import { AboutSidebarComponent } from './about/about-sidebar/about-sidebar.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,7 @@ import { InsightDetailSidebarComponent } from './insight-detail/insight-detail-s
   exports: [
     MarketInsightsComponent
   ],
-  declarations: [MarketInsightsComponent, InsightsSidebarComponent, InsightDetailComponent, AboutComponent, InsightDetailSidebarComponent],
+  declarations: [MarketInsightsComponent, InsightsSidebarComponent, InsightDetailComponent, AboutComponent, InsightDetailSidebarComponent, AboutSidebarComponent],
   providers: [InsightService]
 })
 export class MarketInsightsModule {
