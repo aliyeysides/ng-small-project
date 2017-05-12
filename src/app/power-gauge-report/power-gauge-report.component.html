@@ -20,15 +20,77 @@
         </div>
 
       <!-- COMPANY PROFILE -->
-      <h2>{{ researchReport?.CompanyName }}</h2><br/>
-      <div>{{ researchReport?.Symbol }}</div><br/>
-      <div>${{ researchReport?.Price }}</div><br/>
-      <div>INDUSTRY: {{ researchReport?.Industry }}</div><br/>
-      <div>SECTOR: {{ researchReport?.Details.Sector }}</div><br/>
-      <div>MARKET CAP: {{ stock?.fundamentalData["Mkt Capitalization"] }}</div><br/>
+      <h5>Company Profile</h5>
+      <h2>{{ researchReport?.CompanyName }}</h2>
+      <div>{{ researchReport?.Symbol }}</div>
+      <div>${{ researchReport?.Price }}</div>
+      <div>INDUSTRY: {{ researchReport?.Industry }}</div>
+      <div>SECTOR: {{ researchReport?.Details.Sector }}</div>
+      <div>MARKET CAP: {{ stock?.fundamentalData["Mkt Capitalization"] }}</div>
 
       <!-- POWER GAUGE RATING REPORT -->
+      <h5>Financials</h5>
+      <div>{{ contextSummary?.pgrContextSummary[0].status }}</div>
+      <div>{{ contextSummary?.pgrContextSummary[0].mainSentence }}</div>
+      <div>{{ contextSummary?.pgrContextSummary[0].additionalSentence }}</div>
+      <div>{{ contextSummary?.pgrContextSummary[0].neutralSentence }}</div>
 
+      <!-- ASSETS & LIABILITIES -->
+      <h5>Assets & Liabilities</h5>
+      <div>RATIO:</div>
+      <div>{{ researchReport ? researchReport["Assets and Liabilities"]["Current Ratio"] : null }}</div>
+      <div>{{ researchReport ? researchReport["Assets and Liabilities"]["LT Debt/Equity"] : null }}</div>
+
+      <!-- VALUATION -->
+      <h5>Valuation</h5>
+      <div>RATIO:</div>
+      <div>{{ researchReport?.Valuation["Price/Book"] }}</div>
+      <div>{{ researchReport?.Valuation["Price/Sales"] }}</div>
+
+      <!-- RETURNS -->
+      <h5>Returns</h5>
+      <div>RATIO:</div>
+      <div>{{ researchReport?.Returns["Return on Invest"] }}</div>
+      <div>{{ researchReport?.Returns["Return on Equity"] }}</div>
+
+      <!-- REVENUE & EARNINGS GROWTH -->
+      <h5>5 Year Revenue and Earnings Growth</h5>
+      <table class="table table-sm">
+        <thead>
+        <tr>
+          <th></th>
+          <th *ngFor="let label of researchReport ? researchReport['Revenue&EarningsGrowth'].labels : null">
+            {{ label }}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Revenue (M)</th>
+          <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['Revenue (M)'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Rev % Growth</th>
+          <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['Rev % Growth'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">EPS</th>
+          <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth'].EPS : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">EPS % Growth</th>
+          <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['EPS % Growth'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
     <div class="row">
     </div>

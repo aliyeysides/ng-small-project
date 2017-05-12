@@ -47,7 +47,7 @@ export class PowerGaugeReportComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.symbolSearchService.getSymbolData('cmcsa')
+    this.symbolSearchService.getSymbolData('xl')
       .switchMap(stock => {
         this.stock = stock;
         return Observable.combineLatest(
