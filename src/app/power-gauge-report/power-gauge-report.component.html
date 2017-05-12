@@ -29,11 +29,17 @@
       <div>MARKET CAP: {{ stock?.fundamentalData["Mkt Capitalization"] }}</div>
 
       <!-- POWER GAUGE RATING REPORT -->
-      <h5>Financials</h5>
+      <h5>Power Gauge Rating</h5>
       <div>{{ contextSummary?.pgrContextSummary[0].status }}</div>
       <div>{{ contextSummary?.pgrContextSummary[0].mainSentence }}</div>
       <div>{{ contextSummary?.pgrContextSummary[0].additionalSentence }}</div>
       <div>{{ contextSummary?.pgrContextSummary[0].neutralSentence }}</div>
+
+      <!-- FINANCIALS REPORT -->
+      <h5>Financials</h5>
+      <div>{{ contextSummary?.financialContextSummary[0].status }}</div>
+      <div>{{ contextSummary?.financialContextSummary[0].explanatorySentence }}</div>
+      <div>{{ contextSummary?.financialContextSummary[0].generalSentence }}</div>
 
       <!-- ASSETS & LIABILITIES -->
       <h5>Assets & Liabilities</h5>
@@ -52,6 +58,12 @@
       <div>RATIO:</div>
       <div>{{ researchReport?.Returns["Return on Invest"] }}</div>
       <div>{{ researchReport?.Returns["Return on Equity"] }}</div>
+
+      <!-- EARNINGS REPORT -->
+      <h5>Earnings</h5>
+      <div>{{ contextSummary?.earningsContextSummary[0].status }}</div>
+      <div>{{ contextSummary?.earningsContextSummary[0].explanatorySentence }}</div>
+      <div>{{ contextSummary?.earningsContextSummary[0].generalSentence }}</div>
 
       <!-- REVENUE & EARNINGS GROWTH -->
       <h5>5 Year Revenue and Earnings Growth</h5>
