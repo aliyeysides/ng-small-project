@@ -91,6 +91,45 @@
         </tr>
         </tbody>
       </table>
+
+      <!-- EPS ESTIMATES -->
+      <h5>EPS Estimates</h5>
+      <table class="table table-sm">
+        <thead>
+        <tr>
+          <th>Factor</th>
+          <th *ngFor="let factor of researchReport ? researchReport['EPS Estimates'].factor1 : null">
+            {{ factor }}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Quarterly EPS</th>
+          <td *ngFor="let data of researchReport ? researchReport['EPS Estimates']['Quarterly EPS'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Yearly EPS</th>
+          <td *ngFor="let data of researchReport ? researchReport['EPS Estimates']['Yearly EPS'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Factor</th>
+          <th *ngFor="let factor of researchReport ? researchReport['EPS Estimates'].factor2 : null">
+            {{ factor }}
+          </th>
+        </tr>
+        <tr>
+          <th scope="row">3-5 Year EPS</th>
+          <td *ngFor="let data of researchReport ? researchReport['EPS Estimates']['3-5 year EPS'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
     <div class="row">
     </div>
