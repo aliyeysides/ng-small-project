@@ -7,7 +7,7 @@ import {
   state,
   style,
   transition,
-  animate
+  animate, OnChanges, SimpleChanges
 } from '@angular/core';
 
 import {Stock} from "app/shared/watchlist/stock";
@@ -36,21 +36,39 @@ import {SharedService} from "../shared/shared.service";
     ])
   ]
 })
-export class PowerGaugeReportComponent implements OnInit {
+export class PowerGaugeReportComponent implements OnInit, OnChanges {
 
   public helpMenuOpen: string;
   public stock: Stock;
+  public researchReport: any;
+  public contextSummary: any;
 
   constructor(private symbolSearchService: SymbolSearchService, private sharedService: SharedService) {
   }
 
   ngOnInit() {
-    this.symbolSearchService.getSymbolData('aapl')
+    this.symbolSearchService.getSymbolData('cmcsa')
+      .switchMap(stock => {
+        this.stock = stock;
+        return Observable.combineLatest(
+          this.symbolSearchService.getResearchReportData(stock),
+          this.symbolSearchService.getPGRDataAndContextSummary(stock)
+        )})
       .subscribe(
-        res => this.stock = res,
+        res => {
+          console.log('res', res);
+          this.researchReport = res[0];
+          this.contextSummary = res[1];
+        },
         err => this.sharedService.handleError
       );
     this.helpMenuOpen = 'out';
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['researchReport']) {
+      this.researchReport = changes['researchReport'].currentValue;
+    }
   }
 
   toggleHelpMenu(): void {

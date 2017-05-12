@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-9">    
+    <div class="col-9">
         <psp-secondary-header></psp-secondary-header>
     </div>
     <div class="col-3 report-action__container">
@@ -19,7 +19,15 @@
             <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
         </div>
 
-        <h2>{{ stock }}</h2>
+      <!-- COMPANY PROFILE -->
+      <h2>{{ researchReport?.CompanyName }}</h2><br/>
+      <div>{{ researchReport?.Symbol }}</div><br/>
+      <div>${{ researchReport?.Price }}</div><br/>
+      <div>INDUSTRY: {{ researchReport?.Industry }}</div><br/>
+      <div>SECTOR: {{ researchReport?.Details.Sector }}</div><br/>
+      <div>MARKET CAP: {{ stock?.fundamentalData["Mkt Capitalization"] }}</div><br/>
+
+      <!-- POWER GAUGE RATING REPORT -->
 
     </div>
     <div class="row">

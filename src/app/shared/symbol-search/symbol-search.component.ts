@@ -19,7 +19,7 @@ export class SymbolSearchComponent implements OnInit {
   ngOnInit() {
     this.searchResults = [];
     this.symbolSearchForm.valueChanges
-      .mergeMap(val => this.symbolSearchService.symbolLookup(val))
+      .switchMap(val => this.symbolSearchService.symbolLookup(val))
       .subscribe(val => this.searchResults = val);
   }
 

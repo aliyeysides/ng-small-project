@@ -12,10 +12,14 @@ export class SymbolSearchService {
 
   private symbolParams: URLSearchParams;
   private symbolLookupParams: URLSearchParams;
+  private researchParams: URLSearchParams;
+  private summaryParams: URLSearchParams;
 
   constructor(private http: Http, private sharedService: SharedService) {
     this.symbolParams = new URLSearchParams;
     this.symbolLookupParams = new URLSearchParams;
+    this.researchParams = new URLSearchParams;
+    this.summaryParams = new URLSearchParams;
   }
 
   public getSymbolData(ticker: string): Observable<Stock> {
@@ -30,7 +34,39 @@ export class SymbolSearchService {
       withCredentials: true
     }).map(res => {
       let data = res.json();
-      return new Stock(data.metaInfo, data.pgr, data.fundamentalData, data.status);
+      return new Stock(data.EPSData, data.metaInfo, data.pgr, data.fundamentalData, data.status);
+    })
+      .catch(this.sharedService.handleError)
+  }
+
+  public getResearchReportData(stock: Stock): Observable<object> {
+    let researchReportUrl = '/CPTRestSecure/app/researchReportServices/getResearchReportData?';
+    let symbol = stock.getStockSymbol();
+
+    this.researchParams.set('symbol', symbol);
+
+    return this.http.get(researchReportUrl, {
+      search: this.researchParams,
+      withCredentials: true
+    }).map(res => {
+      return res.json();
+    })
+      .catch(this.sharedService.handleError)
+  }
+
+  public getPGRDataAndContextSummary(stock: Stock): Observable<object> {
+    let contextSummaryUrl = '/CPTRestSecure/app/researchReportServices/getPgrDataAndContextSummary?';
+    let symbol = stock.getStockSymbol();
+    // let industry = stock
+
+    this.summaryParams.set('symbol', symbol);
+    // this.summaryParams.set('industry', this.)
+
+    return this.http.get(contextSummaryUrl, {
+      search: this.summaryParams,
+      withCredentials: true
+    }).map(res => {
+      return res.json();
     })
       .catch(this.sharedService.handleError)
   }

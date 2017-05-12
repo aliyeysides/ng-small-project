@@ -1,5 +1,6 @@
 export class Stock {
-  constructor(public metaInfo: object[],
+  constructor(public EPSData: object,
+              public metaInfo: object[],
               public pgr: object[],
               public fundamentalData: object,
               public status: string) {
@@ -23,28 +24,8 @@ export class Stock {
     return result;
   }
 
-  getStockSymbol(): number {
-    return this.metaInfo[0]['symbol'];
-  }
-
-  getStockName(): string {
-    return this.metaInfo[0]['name'];
-  }
-
-  getListRating(): number {
-    return this.metaInfo[0]['listRating'];
-  }
-
-  getIndustryName(): string {
-    return this.metaInfo[0]['industry_name'];
-  }
-
-  getChange(): number {
-    return this.metaInfo[0]['Change'];
-  }
-
-  getFundamentalData(): object {
-    return this.fundamentalData;
+  getStockSymbol(): string {
+    return this.EPSData['symbol'];
   }
 
   getPGR(): string {
