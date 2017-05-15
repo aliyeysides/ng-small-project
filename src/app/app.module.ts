@@ -8,7 +8,6 @@ import {AppComponent} from './app.component';
 
 /* Modules */
 import {SharedModule} from './shared/shared.module';
-import {DashboardModule} from './dashboard/dashboard.module';
 import {MarketInsightsModule} from './market-insights/market-insights.module';
 import {PowerGaugeReportModule} from './power-gauge-report/power-gauge-report.module';
 import {PortfolioHealthCheckModule} from './portfolio-health-check/portfolio-health-check.module';
@@ -36,7 +35,6 @@ import {
     HttpModule,
     BrowserAnimationsModule,
     SharedModule,
-    DashboardModule,
     MarketInsightsModule,
     PowerGaugeReportModule,
     PortfolioHealthCheckModule,
