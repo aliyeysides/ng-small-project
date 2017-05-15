@@ -1,23 +1,168 @@
 <div class="row">
-    <div class="col-9">
-        <psp-secondary-header></psp-secondary-header>
+  <div class="col-9">
+    <psp-secondary-header></psp-secondary-header>
+  </div>
+  <div class="col-3 report-action__container">
+    <div class="body__report-title">
+      <p>Report generated: 03/23/17 11:50am</p>
     </div>
-    <div class="col-3 report-action__container">
-        <div class="body__report-title">
-            <p>Report generated: 03/23/17 11:50am</p>
-        </div>
-        <div class="body__report-icon">
-            <img class="align-middle" src="../../../assets/imgs/icon-export.svg" width="21" height="17">
-        </div>
+    <div class="body__report-icon">
+      <img class="align-middle" src="../../../assets/imgs/icon-export.svg" width="21" height="17">
     </div>
+  </div>
 </div>
 <div class="row">
-    <div class="pgr__side-bar">
+  <div class="pgr__side-bar">
 
-        <div class="accordian__container">
-            <psp-pgr-accordion [stock]="stock"></psp-pgr-accordion>
-            <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
-        </div>
+    <div class="accordian__container">
+      <psp-pgr-accordion [stock]="stock"></psp-pgr-accordion>
+      <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-bars"
+                                                                                 aria-hidden="true"></i></button>
+    </div>
+
+    <!-- COMPANY PROFILE -->
+    <h5>Company Profile</h5>
+    <h2>{{ researchReport?.CompanyName }}</h2>
+    <div>{{ researchReport?.Symbol }}</div>
+    <div>${{ researchReport?.Price }}</div>
+    <div>INDUSTRY: {{ researchReport?.Industry }}</div>
+    <div>SECTOR: {{ researchReport?.Details.Sector }}</div>
+    <div>MARKET CAP: {{ stock?.fundamentalData["Mkt Capitalization"] }}</div>
+
+    <!-- POWER GAUGE RATING REPORT -->
+    <h5>Power Gauge Rating</h5>
+    <div>{{ contextSummary?.pgrContextSummary[0].status }}</div>
+    <div>{{ contextSummary?.pgrContextSummary[0].mainSentence }}</div>
+    <div>{{ contextSummary?.pgrContextSummary[0].additionalSentence }}</div>
+    <div>{{ contextSummary?.pgrContextSummary[0].neutralSentence }}</div>
+
+    <!-- FINANCIALS REPORT -->
+    <h5>Financials</h5>
+    <div>{{ contextSummary?.financialContextSummary[0].status }}</div>
+    <div>{{ contextSummary?.financialContextSummary[0].explanatorySentence }}</div>
+    <div>{{ contextSummary?.financialContextSummary[0].generalSentence }}</div>
+
+    <!-- ASSETS & LIABILITIES -->
+    <h5>Assets & Liabilities</h5>
+    <div>RATIO:</div>
+    <div>{{ researchReport ? researchReport["Assets and Liabilities"]["Current Ratio"] : null }}</div>
+    <div>{{ researchReport ? researchReport["Assets and Liabilities"]["LT Debt/Equity"] : null }}</div>
+
+    <!-- VALUATION -->
+    <h5>Valuation</h5>
+    <div>RATIO:</div>
+    <div>{{ researchReport?.Valuation["Price/Book"] }}</div>
+    <div>{{ researchReport?.Valuation["Price/Sales"] }}</div>
+
+    <!-- RETURNS -->
+    <h5>Returns</h5>
+    <div>RATIO:</div>
+    <div>{{ researchReport?.Returns["Return on Invest"] }}</div>
+    <div>{{ researchReport?.Returns["Return on Equity"] }}</div>
+
+    <!-- EARNINGS REPORT -->
+    <h5>Earnings</h5>
+    <div>{{ contextSummary?.earningsContextSummary[0].status }}</div>
+    <div>{{ contextSummary?.earningsContextSummary[0].explanatorySentence }}</div>
+    <div>{{ contextSummary?.earningsContextSummary[0].generalSentence }}</div>
+
+    <!-- REVENUE & EARNINGS GROWTH -->
+    <h5>5 Year Revenue and Earnings Growth</h5>
+    <table class="table table-sm">
+      <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let label of researchReport ? researchReport['Revenue&EarningsGrowth'].labels : null">
+          {{ label }}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">Revenue (M)</th>
+        <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['Revenue (M)'] : null">
+          {{ data }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Rev % Growth</th>
+        <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['Rev % Growth'] : null">
+          {{ data }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">EPS</th>
+        <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth'].EPS : null">
+          {{ data }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">EPS % Growth</th>
+        <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['EPS % Growth'] : null">
+          {{ data }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!-- EPS ESTIMATES -->
+    <h5>EPS Estimates</h5>
+    <table class="table table-sm">
+      <thead>
+      <tr>
+        <th>Factor</th>
+        <th *ngFor="let factor of researchReport ? researchReport['EPS Estimates'].factor1 : null">
+          {{ factor }}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">Quarterly EPS</th>
+        <td *ngFor="let data of researchReport ? researchReport['EPS Estimates']['Quarterly EPS'] : null">
+          {{ data }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Yearly EPS</th>
+        <td *ngFor="let data of researchReport ? researchReport['EPS Estimates']['Yearly EPS'] : null">
+          {{ data }}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Factor</th>
+        <th *ngFor="let factor of researchReport ? researchReport['EPS Estimates'].factor2 : null">
+          {{ factor }}
+        </th>
+      </tr>
+      <tr>
+        <th scope="row">3-5 Year EPS</th>
+        <td *ngFor="let data of researchReport ? researchReport['EPS Estimates']['3-5 year EPS'] : null">
+          {{ data }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+  </div>
+  =======
+  <div class="borderz container-fluid">
+    <div class="row">
+      <div [@slideInOut]="helpMenuOpen" class="d-inline-block">
+        <h5>PGR Learn More</h5>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </div>
+
+      <div class="d-inline-block">
+        <psp-pgr-accordion [stock]="stock"></psp-pgr-accordion>
+        <button class="float-right" (click)="toggleHelpMenu()">help</button>
+      </div>
 
       <!-- COMPANY PROFILE -->
       <h5>Company Profile</h5>
@@ -142,7 +287,164 @@
         </tr>
         </tbody>
       </table>
+
+      <!-- EPS SURPRISE BY QTR -->
+      <h5>EPS SURPRISE (BY QTR)</h5>
+      <table class="table table-sm">
+        <thead>
+        <tr>
+          <th></th>
+          <th *ngFor="let label of researchReport ? researchReport['EPS Surprises'].labels : null">
+            {{ label }}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Latest Qtr</th>
+          <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['Latest Qtr'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">1st Qtr</th>
+          <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['1 Qtr Ago'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2nd Qtr</th>
+          <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['2 Qtr Ago'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3rd Qtr</th>
+          <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['3 Qtr Ago'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <!-- EPS QUARTERLY RESULTS -->
+      <h5>EPS Quarterly Results</h5>
+      <div>{{ researchReport ? researchReport['EPS Quarterly Results'].label[0] : null }}</div>
+      <table class="table table-sm">
+        <thead>
+        <tr>
+          <th>FY</th>
+          <th *ngFor="let label of researchReport ? researchReport['EPS Quarterly Results'].FY : null">
+            {{ label }}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[0][0] : null }}</th>
+          <td
+            *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[0].slice(1) : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[1][0] : null }}</th>
+          <td
+            *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[1].slice(1) : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[2][0] : null }}</th>
+          <td
+            *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[2].slice(1) : null">
+            {{ data }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <!-- TECHNICAL REPORT -->
+      <h5>Technicals</h5>
+      <div>{{ contextSummary?.priceVolumeContextSummary[0].status }}</div>
+      <div>{{ contextSummary?.priceVolumeContextSummary[0].explanatorySentence }}</div>
+      <div>{{ contextSummary?.priceVolumeContextSummary[0].generalSentence }}</div>
+
+      <!-- PRICE ACTIVITY -->
+      <h5>Price Activity 1</h5>
+      <div>{{ researchReport?.PriceActivity1['52 Week High'] }}</div>
+      <div>{{ researchReport?.PriceActivity1['52 Week Low'] }}</div>
+      <div>{{ researchReport?.PriceActivity1['% Change YTD Rel S&P 500'] }}</div>
+
+      <h5>Price Activity 2</h5>
+      <div>{{ researchReport?.PriceActivity2['% Change Price - 4 Weeks'] }}</div>
+      <div>{{ researchReport?.PriceActivity2['% Change Price - 4 Wks Rel to S&P'] }}</div>
+      <div>{{ researchReport?.PriceActivity2['% Change Price - 24 Weeks'] }}</div>
+      <div>{{ researchReport?.PriceActivity2['% Change Price - 24 Wks Rel to S&P'] }}</div>
+
+      <!-- VOLUME ACTIVITY -->
+      <h5>Volume Activity</h5>
+      <div>{{ researchReport?.VolumeActivity['Average Volume 20 Days'] }}</div>
+      <div>{{ researchReport?.VolumeActivity['Average Volume 90 Days'] }}</div>
+      <div>{{ researchReport?.VolumeActivity['Chaikin Money Flow Persistency'] }}</div>
+
+      <!-- EXPERTS REPORT -->
+      <h5>Experts</h5>
+      <div>{{ contextSummary?.expertOpnionsContextSummary[0].status }}</div>
+      <div>{{ contextSummary?.expertOpnionsContextSummary[0].explanatorySentence }}</div>
+      <div>{{ contextSummary?.expertOpnionsContextSummary[0].generalSentence }}</div>
+
+      <!-- EARNINGS ESTIMATE REVISIONS -->
+      <h5>Earnings Estimate Revisions</h5>
+      <table class="table table-sm">
+        <thead>
+        <tr>
+          <th></th>
+          <th *ngFor="let label of researchReport ? researchReport['Earning Estimate Revisions'].Labels : null">
+            {{ label }}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Current Qtr</th>
+          <td *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Current Qtr'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Next Qtr</th>
+          <td *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Next Qtr'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <th *ngFor="let label of researchReport ? researchReport['Earning Estimate Revisions'].labels2 : null">
+            {{ label }}
+          </th>
+        </tr>
+        <tr>
+          <th scope="row">Current FY</th>
+          <td *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Current FY'] : null">
+            {{ data }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <!-- ANALYTS RECOMMENDATIONS -->
+      <h5>Analyts Recommendations</h5>
+      <div>Factor: {{ researchReport ? researchReport['Analyst Recommendations'].Factor : null }}</div>
+      <div>Mean this Week: {{ researchReport ? researchReport['Analyst Recommendations']['Mean this Week'] : null }}
+      </div>
+      <div>Mean last Week: {{ researchReport ? researchReport['Analyst Recommendations']['Mean Last Week'] : null }}
+      </div>
+      <div>Change: {{ researchReport ? researchReport['Analyst Recommendations']['Change'] : null }}</div>
+      <div>Mean 5 Weeks ago: {{ researchReport ? researchReport['Analyst Recommendations']['Mean 5 Weeks Ago'] : null
+        }}
+      </div>
+
     </div>
-    <div class="row">
-    </div>
+  </div>
 </div>
