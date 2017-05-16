@@ -1,6 +1,13 @@
+<div class="pgr-accordian__main-rating">
+  <img class="align-middle" src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+</div>
+<div class="main-rating__copy">
+  <p>VERY BULLISH <a><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
+</div>
+<div class="">
 <accordion>
   <accordion-group #financials>
-    <div accordion-heading>
+    <div class="pgr-factor__header" accordion-heading>
       Financials
       {{ stock?.getFinacialValue() }}
       <i class="pull-right float-xs-right fa"
@@ -16,7 +23,7 @@
     </button>
   </accordion-group>
   <accordion-group #earnings>
-    <div accordion-heading>
+    <div class="pgr-factor__header" accordion-heading>
       Earnings
       {{ stock?.getEarningsValue() }}
       <i class="pull-right float-xs-right fa"
@@ -32,7 +39,7 @@
     </button>
   </accordion-group>
   <accordion-group #technicals>
-    <div accordion-heading>
+    <div class="pgr-factor__header" accordion-heading>
       Technicals
       {{ stock?.getTechnicalsValue() }}
       <i class="pull-right float-xs-right fa"
@@ -48,7 +55,7 @@
     </button>
   </accordion-group>
   <accordion-group #experts>
-    <div accordion-heading>
+    <div class="pgr-factor__header" accordion-heading>
       Experts
       {{ stock?.getExpertsValue() }}
       <i class="pull-right float-xs-right fa"
@@ -64,3 +71,4 @@
     </button>
   </accordion-group>
 </accordion>
+</div>

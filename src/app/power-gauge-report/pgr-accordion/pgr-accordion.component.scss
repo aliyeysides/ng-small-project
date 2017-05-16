@@ -1,0 +1,44 @@
+@import 'variables';
+
+
+.pgr-accordian__main-rating {
+    display: block;
+    position: relative;
+    background-color: #24A300;
+    height: 80px;
+    box-shadow: inset 0 -3px 0 0 #1C8100;
+}
+
+.main-rating__copy {
+    border-bottom: 1px solid #cccccc;
+
+    p {
+        text-align: center;
+        font-weight: 700;
+        font-size: 20px;
+        padding: 10px 0 10px;
+        margin-bottom: 0;
+    }
+
+    a {
+        color: #cccccc;
+
+        i {
+            margin-left: 10px;
+
+        }
+    }
+}
+
+
+.pgr-factor__header {
+    font-weight: 400;
+    font-size: 20px;
+    font-color: #444444;
+}
+
+
+.pgr-factor__header i {
+    font-size: 14px;
+    line-height: 30px;
+}

@@ -1,9 +1,11 @@
 @import 'variables';
 
+
+
+
 .tile-container {
 	padding:0 40px;
 	background: $background-grey;
-	height:100%;
 	}
 
 .tile-container__date {
@@ -125,6 +127,8 @@
 }
 
 
-
+.side-bar {
+	border-left: 1px solid #cccccc;
+}
 
 

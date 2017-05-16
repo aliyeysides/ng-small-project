@@ -11,7 +11,7 @@
 }
 
 p, span, label, li {
-	font-family: 'OpenSans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	color: #4A4A4A;
 		padding:0;
 }
@@ -29,6 +29,12 @@ table {
 button {
 	border:0;
 }
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
 
 h6 {
 	font-size: 14px;
@@ -78,4 +84,33 @@ h6 i {
       text-decoration: underline;
     }
   }
+}
+
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+    border-right: 0;
+    border-radius: 0;
+    border-top: 0;
+    border-left: 0;
+}
+
+.card-header {
+    padding: 10px;
+    margin-bottom: 0;
+    background-color: #ffffff;
+    border:0;
+}
+
+.card-title {
+    margin-bottom: 0;
 }

@@ -1,17 +1,27 @@
-<div class="borderz container-fluid">
-    <div class="row">
-        <div [@slideInOut]="helpMenuOpen" class="d-inline-block">
-            <h5>PGR Learn More</h5>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<div class="row">
+    <div class="col-9">    
+        <psp-secondary-header></psp-secondary-header>
+    </div>
+    <div class="col-3 report-action__container">
+        <div class="body__report-title">
+            <p>Report generated: 03/23/17 11:50am</p>
         </div>
+        <div class="body__report-icon">
+            <img class="align-middle" src="../../../assets/imgs/icon-export.svg" width="21" height="17">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="pgr__side-bar">
 
-        <div class="d-inline-block">
+        <div class="accordian__container">
             <psp-pgr-accordion [stock]="stock"></psp-pgr-accordion>
-            <button class="float-right" (click)="toggleHelpMenu()">help</button>
+            <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
         </div>
 
-      <h2>{{ stock }}</h2>
+        <h2>{{ stock }}</h2>
 
+    </div>
+    <div class="row">
     </div>
 </div>
