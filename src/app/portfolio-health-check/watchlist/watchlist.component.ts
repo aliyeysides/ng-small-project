@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Stock} from '../../shared/watchlist/stock';
+import {Stock} from '../../shared/models/stock';
 import {WatchlistService} from '../../shared/watchlist/watchlist.service';
 
 const PGRVALUES = {

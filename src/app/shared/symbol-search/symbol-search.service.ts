@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, URLSearchParams} from '@angular/http';
 
-import {Stock} from '../watchlist/stock';
+import {Stock} from '../models/stock';
 
 import {Observable} from 'rxjs/Rx';
 

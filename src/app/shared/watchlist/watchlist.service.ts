@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 
-import {Stock} from './stock';
+import {Stock} from '../models/stock';
 // import {WATCHLIST} from './mock-watchlist';
 
 import {SharedService} from '../../shared/shared.service';

@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 import {AccordionModule} from 'ngx-bootstrap';
-import {Stock} from "../../shared/watchlist/stock";
+import {Stock} from "../../shared/models/stock";
 
 @Component({
   selector: 'psp-pgr-accordion',

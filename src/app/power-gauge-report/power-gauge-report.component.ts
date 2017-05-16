@@ -10,7 +10,8 @@ import {
   animate, OnChanges, SimpleChanges
 } from '@angular/core';
 
-import {Stock} from "app/shared/watchlist/stock";
+import {Stock} from "app/shared/models/stock";
+import {PGRFAKEDATA} from './pgrFakeData';
 import {Observable} from "rxjs/Observable";
 import {SharedService} from "../shared/shared.service";
 
@@ -47,21 +48,24 @@ export class PowerGaugeReportComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.symbolSearchService.getSymbolData('xl')
-      .switchMap(stock => {
-        this.stock = stock;
-        return Observable.combineLatest(
-          this.symbolSearchService.getResearchReportData(stock),
-          this.symbolSearchService.getPGRDataAndContextSummary(stock)
-        )})
-      .subscribe(
-        res => {
-          console.log('res', res);
-          this.researchReport = res[0];
-          this.contextSummary = res[1];
-        },
-        err => this.sharedService.handleError
-      );
+    this.stock = PGRFAKEDATA[0];
+    this.researchReport = PGRFAKEDATA[1];
+    this.contextSummary = PGRFAKEDATA[2];
+    // this.symbolSearchService.getSymbolData('xl')
+    //   .switchMap(stock => {
+    //     this.stock = stock;
+    //     return Observable.combineLatest(
+    //       this.symbolSearchService.getResearchReportData(stock),
+    //       this.symbolSearchService.getPGRDataAndContextSummary(stock)
+    //     )})
+    //   .subscribe(
+    //     res => {
+    //       console.log('res', res);
+    //       this.researchReport = res[0];
+    //       this.contextSummary = res[1];
+    //     },
+    //     err => this.sharedService.handleError
+    //   );
     this.helpMenuOpen = 'out';
   }
 
