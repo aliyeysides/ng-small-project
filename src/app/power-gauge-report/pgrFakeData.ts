@@ -153,32 +153,34 @@ const XL = {
   "fundamentalData": {
     "52 Wk Lo": "30.67",
     "Address": "ONE BERMUDIANA ROAD",
-    "52 Wk Hi": "42.90999",
-    "Debt/Equity": "0.20428",
-    "P/E": "23.517",
+    "52 Wk Hi": "42.90",
+    "Debt/Equity": "0.20",
+    "P/E": "23.51",
     "Analyst Revisions (%)": "0.01",
     "ROE": "3.7091",
-    "Relative to S&P (%)": "4.86439",
+    "Relative to S&P (%)": "4.86",
     "EPS_current ('17)": "3.27",
     "is_optionable": true,
-    "ROI": "3.0936",
-    "Price/Book": "0.8493",
-    "52 Wk Performance (%)": "22.50499",
+    "ROI": "3.09",
+    "Price/Book": "0.84",
+    "52 Wk Performance (%)": "22.50",
     "Company Text Blurb": "XL Group Limited provides insurance and reinsurance coverage to industrial, commercial and professional service firms, insurance companies and other enterprises. The Company's operating segment consists of Insurance and Reinsurance. Insurance product segment includes Global Casualty, Global Energy Property, & Construction; Global Professional and Global Specialty. Reinsurance segment provides casualty, property risk, property catastrophe, specialty and other reinsurance lines. XL Group Limited, formerly known as XL Group plc, is based in Hamilton, Bermuda.",
     "5 Yr EPS Growth (%)": "133.85",
     "EPS_Previous ('16)": "1.63",
-    "Mkt Capitalization": "10943.94921",
-    "Revenue": "10884.2207",
-    "Yield": "2.20",
-    "Price/Sales": "1.03772"
+    "Mkt Capitalization": "10943.94",
+    "Revenue": "10884.22",
+    "Yield": "2.20%",
+    "Price/Sales": "1.03"
   },
   "status": "success"
 };
 
 const XLResearchData = {
   "Valuation": {
-    "Price/Sales": "1.005480",
-    "Price/Book": "0.849300"
+    "Price/Sales": "1.00",
+    "Price/Book": "$0.84",
+    "PEG": "12.5",
+    "Price/Earnings": "14.2"
   },
   "Analyst Recommendations": {
     "Mean Last Week": "Buy",
@@ -227,9 +229,11 @@ const XLResearchData = {
     "52 Week Low": "30.67"
   },
   "Date": "Tue May 16 09:56 EDT 2017 ",
-  "Assets and Liabilities": {
-    "Current Ratio": "0.365260",
-    "LT Debt/Equity": "0.203700"
+  "AssetsandLiabilities": {
+    "Current Ratio": "0.36",
+    "LT Debt/Equity": "0.20",
+    "perEarned on Equity": "10.3%",
+    "Book Value": "$9.11"
   },
   "PriceActivity2": {
     "% Change Price - 24 Wks Rel to S&P": "3.84%",
@@ -268,8 +272,10 @@ const XLResearchData = {
   },
   "CompanyName": "Xl Group Ltd",
   "Returns": {
-    "Return on Invest": "3.093600",
-    "Return on Equity": "3.709100"
+    "Return on Invest": "5.03%",
+    "Return on Equity": "1.55%",
+    "1 Month Return": "-0.74%",
+    "3 Month Return": "+1.66%"
   },
   "Details": {
     "ChineseProfile": null,

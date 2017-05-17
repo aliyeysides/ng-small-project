@@ -1,13 +1,15 @@
 @import 'variables';
 
-.blog {
-	margin-top:40px;
-}
+
 
 .blog__entry {
+	margin-top:40px;
+	padding: 0 40px;
+
 	h1 {
-		font-size: 32px;
+		font-size: 36px;
 		color: $font-color;
+		font-weight: 300;
 	}
 }
 
@@ -17,12 +19,12 @@
 }
 
 .blog__content {
-	font-size: 18px;
+	font-size: 15px;
 	line-height: 27px;
 }
 
 .blog__author {
-	font-size: 24px;
+	font-size: 18px;
 	color: $font-colorBlue;
-	font-weight: 600;
+	font-weight: 400;
 }

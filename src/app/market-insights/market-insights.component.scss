@@ -4,9 +4,11 @@
 
 
 .tile-container {
-	padding:0 40px;
+	padding:0 40px 140px;
 	background: $background-grey;
-	}
+	height:100vh;
+	overflow-y: scroll;
+}
 
 .tile-container__date {
 	text-align: center;
@@ -14,18 +16,20 @@
 	text-align: center;
 	font-size: 14px;
 	color: #4A4A4A;
-	letter-spacing: 0.03px;
-}
+	position: relative;
+	width: 100%;
+	border-top: 1px solid $line-grey;
+	padding-top:8px;
 
-.tile-container__date {
 	span {
-		font-family: 'OpenSans', sans-serif;
+		font-family: 'Open Sans', sans-serif;
 		color: #8f8f8f;
 	}
 }
 
-
-
+.tile-container__date--no-rule {
+	border-top: none !important;
+}
 
 
 .tile {
@@ -110,7 +114,16 @@
 }
 
 
+.tile__collapse {
+	position: absolute;
+	top: 10px;
+	right:20px;
 
+	i {
+		font-size: 18px;
+		color: $background-dkGrey;
+	}
+}
 
 
 .load-more {
@@ -124,11 +137,6 @@
 		cursor: pointer;
 		text-align: center;
 	}
-}
-
-
-.side-bar {
-	border-left: 1px solid #cccccc;
 }
 
 
