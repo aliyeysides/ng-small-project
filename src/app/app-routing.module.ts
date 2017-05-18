@@ -8,6 +8,7 @@ import {PortfolioHealthCheckComponent} from './portfolio-health-check/portfolio-
 import {InsightDetailComponent} from './market-insights/insight-detail/insight-detail.component';
 import {GlossaryComponent} from './shared/fixed-header/settings/glossary/glossary.component';
 import {LoginComponent} from './shared/session/login.component';
+import {PageNotFoundComponent} from './shared/404/page-not-found.component';
 
 /* ABOUT */
 import {AboutComponent} from './market-insights/about/about.component';
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path: 'power-gauge-report', component: PowerGaugeReportComponent},
   {path: 'portfolio-health-check', component: PortfolioHealthCheckComponent},
   {path: 'glossary', component: GlossaryComponent},
-  {path: 'market-insights/about/:name', component: AboutComponent}
+  {path: 'market-insights/about/:name', component: AboutComponent},
+  {path: '404', component: PageNotFoundComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

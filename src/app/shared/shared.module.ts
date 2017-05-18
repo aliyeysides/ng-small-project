@@ -11,6 +11,7 @@ import {SecondaryHeaderModule} from './secondary-header/secondary-header.module'
 import {LoginComponent} from './session/login.component';
 
 import {SharedService} from './shared.service';
+import {PageNotFoundComponent} from './404/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,7 @@ import {SharedService} from './shared.service';
     PrimaryHeaderModule,
     SecondaryHeaderModule
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, PageNotFoundComponent],
   providers: [SharedService]
 })
 export class SharedModule {
