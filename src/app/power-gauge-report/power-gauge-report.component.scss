@@ -1,54 +1,6 @@
 @import 'variables';
 
-.borderz {
-    border: 1px solid black;
-}
 
-.body__header {
-	background-color: $background-ltGrey;
-	height: 40px;
-	box-shadow:  inset 0 -1px 0px 0px $line-grey;
-	overflow: hidden;
-}
-
-.body__header-icon {
-	width: 80px;
-	border-right: 1px solid #ffffff;
-	box-shadow:  inset 0 -3px 0px 0px $link-blueDK;
-	float: left;
-	height: 40px;
-	background-color: $link-blue;
-	position: relative;
-}
-
-.body__header-title {
-	float:left;
-	margin-left:2%;
-	font-size: 18px;
-	color: $font-color;
-	letter-spacing: 0.25px;
-	text-transform: uppercase;
-	line-height: 40px;
-}
-
-.body__header-report {
-	float:left;
-	margin-left:2%;
-	font-size: 14px;
-	color: $font-color;
-	letter-spacing: 0.25px;
-	line-height: 40px;
-}
-
-.body__header-back {
-	width: 80px;
-	border-left: 1px solid #ffffff;
-	box-shadow:  inset 0 -3px 0px 0px $button-orangeDK;
-	right:0;
-	height: 40px;
-	background-color: $button-orange;
-	position: absolute;
-}
 
 .report-action__container {
 	background-color: $background-ltGrey;
@@ -85,13 +37,14 @@
 	padding:0;
 	margin-top: 0;
 	border-right:1px solid #cccccc;
-	height: 100vh;
 	background-color: #EEEEEE;
+	float: left;
+	height: 100vh;
+	position: relative;
  }
 
 .accordian__container {
 	width: 205px;
-
 }
 
 .icon__learn-more {
@@ -100,6 +53,275 @@
 	right:0px;
 	background-color:#eeeeee;
 }
+
+.stock-summary__container {
+	float: left;
+	overflow-y: scroll;
+	height: 100vh;
+	padding: 20px 30px;
+}
+
+.standardHeader {
+	background-color:#F5F5F5;
+	padding: 7px 0px 7px 10px;
+	width: 100%;
+	margin-bottom:15px;
+	border-bottom: 1px solid #E3E3E3;
+	position: relative;
+
+	p {
+		padding:2px 0 0 0;
+		margin:0;
+		line-height: 1;
+	}
+
+	.headerLabel {
+		font-size: 13px;
+		font-weight: 300;
+		color: #4A4A4A;
+	}
+
+	.headerLabel-large {
+		font-size: 18px;
+	}
+}
+
+
+
+
+
+.data-container {
+	padding:0 10px;
+	margin-top: -10px;
+	margin-bottom:20px;
+
+	p {
+		margin-bottom:4px;
+		font-size: 14px;
+	}
+
+	a {
+		color:#1199ff;
+		text-decoration: none;
+
+		&:hover {
+			color:#1199ff;
+			text-decoration: none;
+		}
+	}
+
+	table {
+		width: 100%;
+
+		tr {
+			td {
+				font-size: 15px;
+				text-align: center;
+  				padding: 4px 0;
+  				white-space: nowrap;
+  				overflow: visible;
+  				width: 90px;
+
+  				span {
+  					font-weight: 600;
+  				}
+			}
+			.dataLabel {
+				text-align: left;
+			}
+			.data {
+				text-align: right;
+			}
+		}
+
+		th {
+			font-size: 13px;
+  			padding: 3px 0;
+  			text-align: center;
+
+  			span {
+  				font-weight: 400;	
+  			}
+		}
+
+		tbody {
+			tr {
+				&:hover  {
+					background-color: #f5f5f5;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+.summaryData {
+	font-size: 16px;
+	color: #797979;
+	letter-spacing: -0.02px;
+	margin: 0 0 0 10px;
+	font-weight: 600;
+}
+
+.summaryLabel {
+	font-size: 13px;
+		white-space: nowrap;
+  	overflow: visible;
+}
+
+
+/*             Stock Name               */
+
+.stockName {
+	width: 100%;
+	display:block;
+
+	p {
+		float: left;
+		font-size: 28px;
+		color: #4A4A4A;
+		margin:0;
+		padding:0;
+
+		a {
+			margin-left:5px;
+			font-size: 20px;
+			color: #D7D7D7;
+
+			.iconInfo {
+				float:left;
+			}
+		}
+	}
+	.actionButtons {
+		float:right;
+		margin-top:10px;
+
+		a {
+			font-size: 20px;
+			color: #D7D7D7;
+			padding: 0px 8px 0 0;
+		}
+	}
+}
+
+.Company_name {
+	
+}
+
+.Ticker {
+	font-weight: 700;
+	margin-left: 30px;
+}
+
+
+.stockPrice {
+
+	p {
+		width: 100%;
+		font-size: 24px;
+		margin:0;
+		padding:0;
+
+		span {
+			margin-right: 50px;
+		}
+	}
+}
+
+.downChange {
+	color: #EB001C;
+}
+
+.upChange {
+	width: 100%;
+}
+
+
+
+
+/*             Stock Industry               */
+
+.stockIndustry {
+	padding:3px 0;
+	white-space: nowrap;
+  	overflow: hidden;
+}
+
+.stockIndustry:hover {
+  	overflow: visible;
+  	text-overflow: clip;
+}
+
+.stockIndustry p {
+	float: left;
+	width: 50%;
+	margin:0;
+	padding:0;
+}
+
+/*             Stock Additional               */
+
+.stockAdditional p {
+	float: left;
+	width: 50%;
+	margin:0;
+	padding:0;
+}
+
+
+/*             Stock Industry Strength               */
+
+.industryRating-container {
+	padding-bottom:4px;
+	border-bottom:1px solid #e3e3e3;
+	margin-bottom: 9px;
+}
+
+.industryRating-container p {
+	float: left;
+	margin:0 0 5px;
+	padding:0;
+}
+
+.industryRating-container a {
+	float: right;
+	color: #e3e3e3
+}
+
+.industryRating-container p span.industryStrength {
+	font-weight: 700;
+	font-size: 18px;
+	margin-left: 10px;
+	line-height: 16px;
+}
+
+.industryRating-container .summaryLabel-container {
+	display: block;
+	width: 35%;
+}
+
+
+
+
+
+
+
+
+.stock__profile {
+	padding:0px 20px 0 25px;
+}
+
+.stock__sentence {
+	padding:10px 40px 0;
+	border-left: 1px solid #cccccc;
+}
+
+
+
 
 
 

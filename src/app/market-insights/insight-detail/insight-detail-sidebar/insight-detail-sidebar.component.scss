@@ -1,0 +1,76 @@
+@import 'variables';
+
+.sod__pgr-sliders {
+	.pgrSliders {
+		padding: 15px 20px 0 10px;
+
+		.pgrLabel {
+			margin: 0;
+			font-size: 100%;
+			font-weight: 600;
+		}
+	}
+}
+
+.sod__logo {
+	height: 120px;
+    position: relative;
+    margin-bottom: 10px;
+
+	img {
+		width: 75%;
+		max-width: 300px;
+	}
+}
+
+.sod {
+    margin-bottom: 60px;
+}
+
+.sod__pgr {
+	height: 40px;
+	text-align: center;
+
+	img {
+		display: inline-block;
+	}
+
+	p {
+		font-weight: 700;
+		font-size: 100%;
+		text-align: center;
+	}
+}
+
+.sod__pgr--bullish {
+	p {
+		color: $veryBullish-green;
+	}
+}
+
+.side-bar__section--sod {
+	.slider-veryBullish {
+	    margin-left: -34px;
+	}
+	.slider-neutral {
+	    margin-left: -10px;
+	}
+}
+
+.sod__pgr-report {
+	p {
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

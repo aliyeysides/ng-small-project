@@ -8,65 +8,93 @@
 <accordion>
   <accordion-group #financials>
     <div class="pgr-factor__header" accordion-heading>
+      <div class="sliderBar-container sliderBar-container--main Financial_component_rating">
+        <div class="sliderProgress">
+          <div class="slider-bullish"></div>
+          <div class="sliderBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+          </div>
+        </div>
+      </div>
       Financials
-      {{ stock?.getFinacialValue() }}
-      <i class="pull-right float-xs-right fa"
-         [ngClass]="{'fa-chevron-down': financials?.isOpen, 'fa-chevron-right': !financials?.isOpen}"></i>
+      <!-- {{ stock?.getFinacialValue() }}  -->
+      <i class="pull-left float-xs-right fa"
+         [ngClass]="{'fa-chevron-circle-down': financials?.isOpen, 'fa-chevron-circle-right': !financials?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock?.getFinancials(); let index = index">
+    <div class="pgr__expand" *ngFor="let data of stock?.getFinancials(); let index = index">
       <span>{{ data[financialKeys[index]] }}</span>
       <span>{{ financialKeys[index] }}</span>
     </div>
-    <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            popoverTitle="Dismissible popover" triggers="focus" placement="right">
+    <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+            popoverTitle="Financials Factor" triggers="focus" placement="right">
       <i class="fa fa-question" aria-hidden="true"></i>
     </button>
   </accordion-group>
   <accordion-group #earnings>
     <div class="pgr-factor__header" accordion-heading>
+      <div class="sliderBar-container sliderBar-container--main Earnings_component_rating">
+        <div class="sliderProgress">
+          <div class="slider-bearish"></div>
+          <div class="sliderBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+          </div>
+        </div>
+      </div>
       Earnings
-      {{ stock?.getEarningsValue() }}
-      <i class="pull-right float-xs-right fa"
-         [ngClass]="{'fa-chevron-down': earnings?.isOpen, 'fa-chevron-right': !earnings?.isOpen}"></i>
+      <!-- {{ stock?.getEarningsValue() }} -->
+      <i class="pull-left float-xs-right fa"
+         [ngClass]="{'fa-chevron-circle-down': earnings?.isOpen, 'fa-chevron-circle-right': !earnings?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock?.getEarnings(); let index = index">
+    <div class="pgr__expand" *ngFor="let data of stock?.getEarnings(); let index = index">
       <span>{{ data[earningsKeys[index]] }}</span>
       <span>{{ earningsKeys[index] }}</span>
     </div>
-    <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            popoverTitle="Dismissible popover" triggers="focus" placement="right">
+    <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+            popoverTitle="Earnings Factor" triggers="focus" placement="right">
       <i class="fa fa-question" aria-hidden="true"></i>
     </button>
   </accordion-group>
   <accordion-group #technicals>
     <div class="pgr-factor__header" accordion-heading>
+      <div class="sliderBar-container sliderBar-container--main Technicals_component_rating">
+        <div class="sliderProgress">
+          <div class="slider-veryBullish"></div>
+          <div class="sliderBar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+          </div>
+        </div>
+      </div>
       Technicals
-      {{ stock?.getTechnicalsValue() }}
-      <i class="pull-right float-xs-right fa"
-         [ngClass]="{'fa-chevron-down': technicals?.isOpen, 'fa-chevron-right': !technicals?.isOpen}"></i>
+      <!-- {{ stock?.getTechnicalsValue() }} -->
+      <i class="pull-left float-xs-right fa"
+         [ngClass]="{'fa-chevron-circle-down': technicals?.isOpen, 'fa-chevron-circle-right': !technicals?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock?.getTechnicals(); let index = index">
+    <div class="pgr__expand" *ngFor="let data of stock?.getTechnicals(); let index = index">
       <span>{{ data[technicalKeys[index]] }}</span>
       <span>{{ technicalKeys[index] }}</span>
     </div>
-    <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            popoverTitle="Dismissible popover" triggers="focus" placement="right">
+    <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+            popoverTitle="Technicals Factor" triggers="focus" placement="right">
       <i class="fa fa-question" aria-hidden="true"></i>
     </button>
   </accordion-group>
   <accordion-group #experts>
     <div class="pgr-factor__header" accordion-heading>
+      <div class="sliderBar-container sliderBar-container--main Experts_component_rating">
+        <div class="sliderProgress">
+          <div class="slider-neutral"></div>
+          <div class="sliderBar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+          </div>
+        </div>
+      </div>
       Experts
-      {{ stock?.getExpertsValue() }}
-      <i class="pull-right float-xs-right fa"
-         [ngClass]="{'fa-chevron-down': experts?.isOpen, 'fa-chevron-right': !experts?.isOpen}"></i>
+      <!-- {{ stock?.getExpertsValue() }} -->
+      <i class="pull-left float-xs-right fa"
+         [ngClass]="{'fa-chevron-circle-down': experts?.isOpen, 'fa-chevron-circle-right': !experts?.isOpen}"></i>
     </div>
-    <div *ngFor="let data of stock?.getExperts(); let index = index">
+    <div class="pgr__expand" *ngFor="let data of stock?.getExperts(); let index = index">
       <span>{{ data[expertKeys[index]] }}</span>
       <span>{{ expertKeys[index] }}</span>
     </div>
-    <button type="button" class="btn btn-success" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            popoverTitle="Dismissible popover" triggers="focus" placement="right">
+    <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+            popoverTitle="Experts Factor" triggers="focus" placement="right">
       <i class="fa fa-question" aria-hidden="true"></i>
     </button>
   </accordion-group>
