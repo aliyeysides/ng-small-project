@@ -1,16 +1,18 @@
 <div class="row">
-	<div class="col-sm-9  action-header">
-		<div class="action-header__button action-header__button--morning">
-    		<img class="align-middle" src="../../../assets/imgs/icon-morning.svg">
-    	</div>
-    	<div class="action-header__headline action-header__headline--morning">
-    		<p>Good morning. Welcome back!</p>
-    	</div>
-    	<div class="action-header__date">
-    		<p>Fri &nbsp; • &nbsp; Apr 28 &nbsp; • &nbsp; 2017</p>
-    	</div>
-	</div>
-	<div class="col-sm-3 main-search">
-		<psp-symbol-search></psp-symbol-search>
-	</div>
+  <div class="col-sm-9  action-header">
+    <div [ngClass]="actionHeaderClass" class="action-header__button">
+      <img *ngIf="getGreetingTime() == 'morning'" class="align-middle" src="../../../assets/imgs/icon-morning.svg">
+      <img *ngIf="getGreetingTime() == 'afternoon'" class="align-middle" src="../../../assets/imgs/icon-afternoon.svg">
+      <img *ngIf="getGreetingTime() == 'evening'" class="align-middle" src="../../../assets/imgs/icon-night.svg">
+    </div>
+    <div class="action-header__headline action-header__headline--morning">
+      <p>Good {{ getGreetingTime() }}. Welcome back!</p>
+    </div>
+    <div class="action-header__date">
+      <p>{{ day }} &nbsp; • &nbsp; {{ date }} &nbsp; • &nbsp; {{ year }}</p>
+    </div>
+  </div>
+  <div class="col-sm-3 main-search">
+    <psp-symbol-search></psp-symbol-search>
+  </div>
 </div>
