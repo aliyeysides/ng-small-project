@@ -11,7 +11,7 @@
              (click)="gotoInsight(insight)">
           <div *ngIf="hashMap[insight.id.toString()] != true">
             <img class="tile__logo tile__logo--market-insights align-middle"
-                 src="../../../assets/imgs/logo-marketinsights.svg">
+                 src="../../assets/imgs/logo-marketinsights.svg">
           </div>
           <div class="tile_hover-container" *ngIf="hashMap[insight.id.toString()] == true">
             <div class="tile__hover">{{insight.title}}</div>
