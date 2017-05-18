@@ -12,11 +12,17 @@ export class PrimaryHeaderComponent implements OnInit {
   public year = moment().year();
   public date = moment().format('MMM D');
   public day = moment().format('ddd');
+  public actionHeaderClass: object;
 
   constructor() {
   }
 
   ngOnInit() {
+    this.actionHeaderClass = {
+      'action-header__button--morning' : this.getGreetingTime() == 'morning',
+      'action-header__button--afternoon' : this.getGreetingTime() == 'afternoon',
+      'action-header__button--evening' : this.getGreetingTime() == 'evening'
+    }
   }
 
   public getGreetingTime() {

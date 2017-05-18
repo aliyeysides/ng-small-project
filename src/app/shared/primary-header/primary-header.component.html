@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-9  action-header">
-    <div class="action-header__button action-header__button--morning">
+    <div [ngClass]="actionHeaderClass" class="action-header__button">
       <img *ngIf="getGreetingTime() == 'morning'" class="align-middle" src="../../../assets/imgs/icon-morning.svg">
       <img *ngIf="getGreetingTime() == 'afternoon'" class="align-middle" src="../../../assets/imgs/icon-afternoon.svg">
       <img *ngIf="getGreetingTime() == 'evening'" class="align-middle" src="../../../assets/imgs/icon-night.svg">
