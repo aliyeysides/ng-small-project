@@ -37,7 +37,7 @@ export class PrimaryHeaderComponent implements OnInit {
         this.year = val.year();
         this.date = val.format('MMM D');
         this.day = val.format('ddd');
-        this.time = val.format("hh:mm a");
+        this.time = val.format("h:mm a");
         this.greeting = this.getGreetingTime(val);
       }
     );
