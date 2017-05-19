@@ -51,7 +51,7 @@ export class PrimaryHeaderComponent implements OnInit {
     }
   }
 
-  public getGreetingTime(moment: any) {
+  public getGreetingTime(moment: any): string {
     let greeting = null,
       m = moment;
 
