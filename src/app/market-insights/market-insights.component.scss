@@ -2,128 +2,136 @@
 
 
 
-
 .tile-container {
 	padding:0 40px 140px;
 	background: $background-grey;
 	height:100vh;
 	overflow-y: scroll;
-}
 
-.tile-container__date {
-	text-align: center;
-	margin-top: 15px;
-	text-align: center;
-	font-size: 14px;
-	color: #4A4A4A;
-	position: relative;
-	width: 100%;
-	border-top: 1px solid $line-grey;
-	padding-top:8px;
+	.tile-container__date {
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		text-align: center;
+		font-size: 14px;
+		color: #4A4A4A;
+		position: relative;
+		width: 100%;
+		border-top: 1px solid $line-grey;
+		padding-top:15px;
 
-	span {
-		font-family: 'Open Sans', sans-serif;
-		color: #8f8f8f;
+		span {
+			color: $font-colorMD;
+		}
 	}
-}
-
-.tile-container__date--no-rule {
-	border-top: none !important;
-}
-
-
-.tile {
-	width: 100%;
-	height: 160px;
-	border: 1px solid $line-grey;
-	background-color:#ffffff;
-	margin-bottom: 40px;
-	overflow: hidden;
-	position: relative;
-	box-shadow: 0 0px 3px rgba(0,0,0,0.1);
-	cursor: pointer;
-}
-
-.tile__logo {
-	margin-top:-15px;
-}
-
-.tile__logo--powerfeed {
-	width: 70%;
-}
-
-.tile__logo--market-insights {
-	width: 80%;
-}
-
-.tile__logo--morning-insights {
-	width: 80%;
-}
-
-.tile__hover-link {
-	font-size: 13px;
-	color: $link-blue;
-	text-decoration: underline;
-
-	span {
-		text-decoration: none !important;	
+	.tile-container__date--no-rule {
+		border-top: 0;
+		margin-top: 0;
 	}
-}
-
-.tile__hover {
-	font-size: 20px;
-	color: $font-color;
-	line-height: 25px;
-	font-weight: 600;
-}
-
-.tile_hover-container {
-	padding: 10px;
-}
-
-
-
-
-
-
-.tile__date {
-	position: absolute;
-	font-size: 15px;
-	color: #FFFFFF;
-	text-align: center;
-	width: 100%;
-	bottom:0;
-	line-height: 40px;
-	font-weight: 700;
-	height: 40px;
-}
-
-.tile__date--powerfeed  {
-	background-image: linear-gradient(-180deg, #1199FF 0%, #0255DB 100%);
-	box-shadow:  inset 0 -3px 0px 0px #014BA0;
-}
-
-.tile__date--market-insights {
-	background-image: $tile-greenGradient;
-	box-shadow:  inset 0 -3px 0px 0px $tile-greenShadow;
-}
-
-.tile__date--morning-insights {
-	background-image: linear-gradient(0deg, #3023AE 0%, #5F25FB 100%);
-	box-shadow:  inset 0 -3px 0px 0px #2B0071;
 }
 
 
 .tile__collapse {
 	position: absolute;
-	top: 10px;
-	right:20px;
+	top: 15px;
+	right: 10px;
+	cursor: pointer;
 
 	i {
 		font-size: 18px;
 		color: $background-dkGrey;
+
+		&:hover {
+			color: $link-blue;
+		}
 	}
 }
+
+.tile {
+	width: 100%;
+	border: 1px solid $line-grey;
+	background-color:#ffffff;
+	margin-bottom: 40px;
+	position: relative;
+	box-shadow: 0 0px 3px rgba(0,0,0,0.1);
+	cursor: pointer;
+	display: flex;
+
+	.tile__content {
+		padding: 8px 10px 50px;
+
+		.tile__content-title {
+			font-size: 16px;
+			color: $font-color;
+			line-height: 23px;
+			font-weight: 600;
+			margin-bottom:3px;
+		}
+
+		.tile__content-author {
+			font-size: 12px;
+			color: $font-colorMD;
+			font-weight: 700;
+			font-style: italic;
+		}
+
+		.tile__content-date {
+			font-size: 14px;
+			line-height: 1.5;
+			font-weight: 400;
+			margin-bottom: 5px;
+		}	
+	}
+	.tile__category {
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		bottom: 0;
+		padding: 8px 0;
+
+		p {
+			font-size: 16px;
+			color: #FFFFFF;
+			font-weight: 700;
+		}
+	}
+}
+
+.tile__market-insights {
+	.tile__category {
+		background-image: $tile-greenGradient;
+		box-shadow: $tile-greenShadow; 
+	}
+	.tile__content-date {
+		color:$bullish-green;
+	}
+
+	&:hover {
+		outline-offset: -3px;
+		outline: 2px solid $bullish-green;
+	}
+}
+
+.tile__morning-insights {
+	.tile__category {
+		background-image: $tile-purpleGradient;
+		box-shadow: $tile-purpleShadow; 
+	}
+	.tile__content-date {
+		color: #3023AE;
+	}
+
+	&:hover {
+		outline-offset: -3px;
+		outline: 2px solid #3023AE;
+	}
+}
+
+.tile__category--powerfeed  {
+	background-image: linear-gradient(-180deg, #1199FF 0%, #0255DB 100%);
+	box-shadow:  inset 0 -3px 0px 0px #014BA0;
+}
+
 
 
 .load-more {

@@ -37,9 +37,10 @@
 .action-header__headline {
 	float:left;
 	margin-left:2%;
-	font-size: 26px;
-	letter-spacing: -0.12px;
+	font-size: 25px;
+	letter-spacing: -0.2px;
 	line-height: 60px;
+	font-weight:300;
 }
 
 .action-header__headline--morning {
@@ -50,18 +51,13 @@
 
 .action-header__date {
 	float: right;
-	margin-right: 15px;
-	color: $button-navDK;
-	letter-spacing: -0.37px;
+	margin-right: 13px;
+	color: $font-colorMD;
+	letter-spacing: -0.4px;
 	line-height: 60px;
 }
 
-.align-middle {
-  	position: absolute;
-  	top: 50%;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
-}
+
 
 
 
