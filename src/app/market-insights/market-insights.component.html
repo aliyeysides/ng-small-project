@@ -12,7 +12,7 @@
         </button>
       </div>
       <div *ngIf="collapseText && !isCollapsed">collapse</div>
-      <div *ngIf="collapseText && isCollapsed">uncollapse</div>
+      <div *ngIf="!collapseText && isCollapsed">uncollapse</div>
       <div [collapse]="isCollapsed" class="col-sm-4" *ngFor="let insight of insights">
         <div class="tile" (mouseenter)="toggleCardHover(insight)" (mouseleave)="toggleCardHover(insight)"
              (click)="gotoInsight(insight)">
@@ -29,9 +29,9 @@
       </div>
 
       <div class="col-12 tile-container__date">
-        <p><span>Week of:</span> Sunday, April 23, 2017</p>
+        <p><span>Week of:</span> Sunday, April 22, 2017</p>
         <button type="button" class="tile__collapse"
-                (click)="isCollapsed = !isCollapsed"><i class="fa fa-minus-square-o" aria-hidden="true"></i>
+                (click)="isCollapsed = !isCollapsed"><i class="fa fa-plus-square-o" aria-hidden="true"></i>
         </button>
       </div>
 
