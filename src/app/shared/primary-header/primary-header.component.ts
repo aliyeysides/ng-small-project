@@ -11,12 +11,12 @@ import {BehaviorSubject} from "rxjs/BehaviorSubject";
 export class PrimaryHeaderComponent implements OnInit {
 
   public currentMoment = new BehaviorSubject<any>(moment());
+  public actionHeaderClass: object;
   public year: number;
   public date: string;
   public day: string;
   public time: string;
-  public greetingTime: string = this.getGreetingTime();
-  public actionHeaderClassObject: object;
+  public greeting: string;
 
   currentMoment$ = this.currentMoment.asObservable();
 
@@ -24,32 +24,36 @@ export class PrimaryHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.greeting = this.getGreetingTime(moment());
+    this.updateActionHeaderClassObject();
 
     setInterval(() => {
       this.currentMoment.next(moment());
-      this.greetingTime = this.getGreetingTime();
+      this.updateActionHeaderClassObject();
     }, 1000);
-
-    this.actionHeaderClassObject = {
-      'action-header__button--morning': this.greetingTime == 'morning',
-      'action-header__button--afternoon': this.greetingTime == 'afternoon',
-      'action-header__button--evening': this.greetingTime == 'evening'
-    };
 
     this.currentMoment$.subscribe(
       val => {
         this.year = val.year();
         this.date = val.format('MMM D');
         this.day = val.format('ddd');
-        this.time = val.format("HH:mm a");
+        this.time = val.format("hh:mm a");
+        this.greeting = this.getGreetingTime(val);
       }
     );
-
   }
 
-  public getGreetingTime() {
+  public updateActionHeaderClassObject() {
+    this.actionHeaderClass = {
+      'action-header__button--morning': this.greeting == 'morning',
+      'action-header__button--afternoon': this.greeting == 'afternoon',
+      'action-header__button--evening': this.greeting == 'evening'
+    }
+  }
+
+  public getGreetingTime(moment: any) {
     let greeting = null,
-      m = moment();
+      m = moment;
 
     if (!m || !m.isValid()) {
       return;
