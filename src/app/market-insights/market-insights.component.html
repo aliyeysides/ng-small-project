@@ -5,7 +5,12 @@
     <div class="row tile-container">
       <div class="col-12 tile-container__date tile-container__date--no-rule">
         <p><span>Week of:</span> Sunday, April 23, 2017</p>
+        <button (mouseover)="toggleCollapseText()" (mouseout)="toggleCollapseText()" type="button" class="tile__collapse"
+                (click)="isCollapsed = !isCollapsed"><i class="fa fa-minus-square-o" aria-hidden="true"></i>
+        </button>
       </div>
+      <div *ngIf="collapseText && isCollapsed == false">collapse</div>
+      <div *ngIf="collapseText && isCollapsed == true">uncollapse</div>
       <div [collapse]="isCollapsed" class="col-sm-4" *ngFor="let insight of insights">
         <div class="tile" (mouseover)="toggleHoverOn(insight)" (mouseout)="toggleHoverOff(insight)"
              (click)="gotoInsight(insight)">

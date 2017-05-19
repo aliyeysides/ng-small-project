@@ -17,6 +17,7 @@ export class MarketInsightsComponent implements OnInit {
   public addPerLoad: number;
   public hashMap: object = {};
   public isCollapsed: boolean = false;
+  public collapseText: boolean;
 
   private previewLimit: number;
 
@@ -27,6 +28,7 @@ export class MarketInsightsComponent implements OnInit {
     this.previewLimit = 6;
     this.addPerLoad = 3;
     this.insights = this.getMarketInsights(this.previewLimit);
+    this.collapseText = false;
   }
 
   public getMarketInsights(amount: number): Array<object> {
@@ -63,6 +65,10 @@ export class MarketInsightsComponent implements OnInit {
     let key = el.id.toString();
     this.hashMap = {};
     this.hashMap[key] = false;
+  }
+
+  public toggleCollapseText() {
+    this.collapseText = !this.collapseText;
   }
 
 }
