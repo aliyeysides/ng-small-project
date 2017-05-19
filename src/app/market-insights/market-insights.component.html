@@ -5,20 +5,22 @@
     <div class="row tile-container">
       <div class="col-12 tile-container__date tile-container__date--no-rule">
         <p><span>Week of:</span> Sunday, April 23, 2017</p>
-        <button (mouseover)="toggleCollapseText()" (mouseout)="toggleCollapseText()" type="button" class="tile__collapse"
-                (click)="isCollapsed = !isCollapsed"><i class="fa fa-minus-square-o" aria-hidden="true"></i>
+        <button (mouseenter)="toggleCollapseText()" (mouseleave)="toggleCollapseText()" type="button" class="tile__collapse"
+                (click)="isCollapsed = !isCollapsed">
+          <i *ngIf="!isCollapsed" class="fa fa-minus-square-o" aria-hidden="true"></i>
+          <i *ngIf="isCollapsed" class="fa fa-plus-square-o" aria-hidden="true"></i>
         </button>
       </div>
-      <div *ngIf="collapseText && isCollapsed == false">collapse</div>
-      <div *ngIf="collapseText && isCollapsed == true">uncollapse</div>
+      <div *ngIf="collapseText && !isCollapsed">collapse</div>
+      <div *ngIf="collapseText && isCollapsed">uncollapse</div>
       <div [collapse]="isCollapsed" class="col-sm-4" *ngFor="let insight of insights">
-        <div class="tile" (mouseover)="toggleHoverOn(insight)" (mouseout)="toggleHoverOff(insight)"
+        <div class="tile" (mouseenter)="toggleCardHover(insight)" (mouseleave)="toggleCardHover(insight)"
              (click)="gotoInsight(insight)">
-          <div *ngIf="hashMap[insight.id.toString()] != true">
+          <div *ngIf="!hashMap[insight.id.toString()]">
             <img class="tile__logo tile__logo--market-insights align-middle"
                  src="../../assets/imgs/logo-marketinsight.svg">
           </div>
-          <div class="tile_hover-container" *ngIf="hashMap[insight.id.toString()] == true">
+          <div class="tile_hover-container" *ngIf="!!hashMap[insight.id.toString()]">
             <div class="tile__hover">{{insight.title}}</div>
             <a href="" class="tile__hover-link">Click to read <span>&raquo;</span></a>
           </div>
@@ -32,20 +34,7 @@
                 (click)="isCollapsed = !isCollapsed"><i class="fa fa-minus-square-o" aria-hidden="true"></i>
         </button>
       </div>
-      <div [collapse]="isCollapsed" class="col-sm-4" *ngFor="let insight of insights">
-        <div class="tile" (mouseover)="toggleHoverOn(insight)" (mouseout)="toggleHoverOff(insight)"
-             (click)="gotoInsight(insight)">
-          <div *ngIf="hashMap[insight.id.toString()] != true">
-            <img class="tile__logo tile__logo--market-insights align-middle"
-                 src="../../assets/imgs/logo-marketinsight.svg">
-          </div>
-          <div class="tile_hover-container" *ngIf="hashMap[insight.id.toString()] == true">
-            <div class="tile__hover">{{insight.title}}</div>
-            <a href="" class="tile__hover-link">Click to read <span>&raquo;</span></a>
-          </div>
-          <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
-        </div>
-      </div>
+
       <div class="col-12 load-more">
         <a (click)="loadMoreInsights(addPerLoad)">Show 1 more week &raquo;</a>
       </div>
