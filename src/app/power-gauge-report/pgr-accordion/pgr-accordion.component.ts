@@ -35,4 +35,20 @@ export class PgrAccordionComponent implements OnInit, OnChanges {
     }
   }
 
+  public getClass(pgrValue: number): string {
+    switch (pgrValue) {
+      case 5:
+        return 'slider-veryBullish';
+      case 4:
+        return 'slider-bullish';
+      case 3:
+        return 'slider-neutral';
+      case 2:
+        return 'slider-bearish';
+      case 1:
+        return 'slider-veryBearish';
+    }
+
+  }
+
 }
