@@ -8,7 +8,7 @@
   <img *ngIf="stock?.displayRating() == 'VERY_BEARISH'" class="align-middle" src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
 </div>
 <div class="">
-<accordion>
+<accordion [closeOthers]="true">
   <accordion-group #financials>
     <div class="pgr-factor__header" accordion-heading>
       <div class="sliderBar-container sliderBar-container--main Financial_component_rating">
