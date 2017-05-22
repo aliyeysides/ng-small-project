@@ -1,0 +1,42 @@
+@import 'variables';
+
+
+
+.bio__container {
+	margin-top: 40px;
+    padding: 0 4% 0 6%;
+
+	.bio__left {
+		padding: 0;
+
+		.bio__author {
+				font-size: 18px;
+				color: $font-colorBlue;
+				font-weight: 600;
+				margin-bottom: 0;
+		}
+		.bio__position {
+			font-size: 13px;
+			font-style: italic;
+		}
+		img {
+			width: 100%;
+			margin-bottom: 15px;
+			margin-top: 4px;
+		}		
+	}
+
+	.bio__right {
+		padding:0 15px 0 45px;
+		h1 {
+			font-size: 36px;
+			color: $font-color;
+			font-weight: 300;
+			margin-bottom: 15px;
+		}
+		p {
+			font-size: 15px;
+			line-height: 27px;
+		}
+	}
+}

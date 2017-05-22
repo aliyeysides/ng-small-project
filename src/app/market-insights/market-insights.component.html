@@ -1,10 +1,11 @@
 <div class="row">
-  <div class="col-sm-9 body">
+  <div class="col-sm-7 col-md-8 col-lg-9 body">
 
     <psp-secondary-header></psp-secondary-header>
     <div class="row tile-container">
-      <div class="col-12 tile-container__date tile-container__date--no-rule">
-        <p><span>Week of:</span> Sunday, April 23, 2017</p>
+
+      <div class="col-12 tile-container__date">
+        <p><span>Week of:</span> Sunday, April 16, 2017</p>
         <button (mouseenter)="toggleCollapseText()" (mouseleave)="toggleCollapseText()" type="button" class="tile__collapse"
                 (click)="isCollapsed = !isCollapsed">
           <i *ngIf="!isCollapsed" class="fa fa-minus-square-o" aria-hidden="true"></i>
@@ -13,32 +14,25 @@
       </div>
       <div *ngIf="collapseText && !isCollapsed">collapse</div>
       <div *ngIf="!collapseText && isCollapsed">uncollapse</div>
-      <div [collapse]="isCollapsed" class="col-sm-4" *ngFor="let insight of insights">
-        <div class="tile" (mouseenter)="toggleCardHover(insight)" (mouseleave)="toggleCardHover(insight)"
-             (click)="gotoInsight(insight)">
-          <div *ngIf="!hashMap[insight.id.toString()]">
-            <img class="tile__logo tile__logo--market-insights align-middle"
-                 src="../../assets/imgs/logo-marketinsight.svg">
+      <div [collapse]="isCollapsed" class="col-md-6 col-lg-4 flex" *ngFor="let insight of insights">
+        <div class="tile tile__morning-insights" (click)="gotoInsight(insight)">
+          <div class="tile__content">
+            <p class="tile__content-date">Monday, April 16, 2017</p>
+            <p class="tile__content-title">{{insight.title}}</p>
+            <p class="tile__content-author">By John Schlitz</p>
           </div>
-          <div class="tile_hover-container" *ngIf="!!hashMap[insight.id.toString()]">
-            <div class="tile__hover">{{insight.title}}</div>
-            <a href="" class="tile__hover-link">Click to read <span>&raquo;</span></a>
+          <div class="tile__category">
+            <p>MORNING INSIGHTS</p>
           </div>
-          <div class="tile__date tile__date--market-insights">Sun &nbsp; • &nbsp; Apr 23 &nbsp; • &nbsp; 2017</div>
         </div>
-      </div>
-
-      <div class="col-12 tile-container__date">
-        <p><span>Week of:</span> Sunday, April 22, 2017</p>
-        <button type="button" class="tile__collapse"><i class="fa fa-plus-square-o" aria-hidden="true"></i>
-        </button>
       </div>
 
       <div class="col-12 load-more">
         <a (click)="loadMoreInsights(addPerLoad)">Show 1 more week &raquo;</a>
       </div>
+
     </div>
   </div>
-  <psp-sidebar class="col-sm-3 side-bar"></psp-sidebar>
-</div>
 
+  <psp-sidebar class="col-sm-5 col-md-4 col-lg-3 side-bar"></psp-sidebar>
+</div>

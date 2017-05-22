@@ -3,10 +3,16 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/angular2-busy/build/style/busy.css";
 
+body, html {
+  height: 100vh;
+  overflow:hidden;
+  color: $font-color;
+  font-family: $font-stack;
+}
+
 p, span, label, li {
-	font-family: 'Open Sans', sans-serif;
-	color: #4A4A4A;
-		padding:0;
+    margin:0;
+	padding:0;
 }
 
 ul, li {
@@ -22,25 +28,21 @@ table {
 button {
 	border:0;
     background-color: transparent;
+    outline:0;
 }
 
-body, html {
-  height: 100vh;
-  overflow:hidden;
-  color: #4A4A4A; 
+textarea, input, button {
+    outline: none !important; 
 }
-
-textarea, input, button { outline: none !important; }
-
 
 h6 {
 	font-size: 14px;
-	font-family: 'OpenSans', sans-serif;
+	font-family: $font-stack;
 	color: #4A4A4A;
 	letter-spacing: 0.25px;
 	text-transform: uppercase;
 	line-height: 30px;
-	border-bottom: 1px solid #cccccc;
+	border-bottom: 1px solid $line-grey;
 	text-align: left;
 	margin: 11px 20px 10px 10px;
 	font-weight: 600;
@@ -51,6 +53,40 @@ h6 i {
 	margin-right: 5px;
 }
 
+
+
+
+
+
+.change--down {
+    color: $veryBearish-red;
+}
+
+.change--up {
+    color: $veryBullish-green;
+}
+
+.icon__social--tw {
+    color: #1199ff;
+}
+
+.icon__social--fb {
+    color: #003366;
+}
+
+.icon__social--in {
+    color: #5A95DA;
+}
+
+.icon__social--yt {
+    color: #D0021B;
+}
+
+
+
+
+
+
 .align-middle {
     position: absolute;
     top: 50%;
@@ -60,19 +96,28 @@ h6 i {
 
 
 
+
+
+.flex {
+    display: flex !important;
+}
+
+
+
+
+
 .side-bar {
     border-left: 1px solid #cccccc;
     height: 100vh;
     overflow-y: scroll;
-    padding-bottom: 140px;
+    padding-bottom: 135px;
 }
 
-
 .side-bar__section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 
     p {
-        font-size: 14px;
+        font-size: 13px;
         margin: 0 20px 10px 20px;
         line-height: 1.5;
     }
@@ -81,33 +126,43 @@ h6 i {
         margin:15px 10px 30px 20px;
 
         li {
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom:10px;
+
+            .icon__social {
+                font-size: 18px;
+                margin-right:5px;
+                width: 28px;
+                text-align: center;
+            }
         }
     }
 
     a {
         color: $font-color;
         text-decoration: none;
-        font-size: 14px;
+        cursor: pointer;
 
         &:hover {
             color: $link-blue;
             text-decoration: underline;
         }
     }
+
 }
 
 .side-bar__section--filter {
-  div {
-    margin-left: 20px;
-  }
+    div {
+        margin-left: 20px;
+    }
 
-  label {
-    font-size: 16px;
-    margin-left: 10px;
-  }
+    label {
+        font-size: 18px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
 }
+
 
 
 
@@ -115,6 +170,8 @@ h6 i {
 /*                                      */
 /*             PGR T0GGLE               */
 /*                                      */
+
+
 
 
 
@@ -149,7 +206,7 @@ h6 i {
 
 
 .card-block {
-  padding: 0px 0px 10px 24px;
+  padding: 0px 10px 10px 24px;
 
   span {
     font-size: 11px;
@@ -159,9 +216,22 @@ h6 i {
 
 
 
+
+.popover {
+    width: 300px;
+}
+
+
+
+
+
+
+
 /*                                      */
 /*             PGR SLIDERS              */
 /*                                      */
+
+
 
 
 
@@ -254,12 +324,6 @@ h6 i {
     border: 4px solid #ffffff;
 }
 
-
-
-.popover {
-    width: 300px;
-    margin-left: 10px;
-}
 
 
 

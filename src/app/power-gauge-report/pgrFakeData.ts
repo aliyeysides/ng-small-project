@@ -170,7 +170,8 @@ const XL = {
     "Mkt Capitalization": "10943.94",
     "Revenue": "10884.22",
     "Yield": "2.20%",
-    "Price/Sales": "1.03"
+    "Industry_strength": "STRONG",
+    "Trends_strength": "WEAK"
   },
   "status": "success"
 };

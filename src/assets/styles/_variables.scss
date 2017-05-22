@@ -35,4 +35,7 @@ $font-colorBlue: #003366;
 
 
 $tile-greenGradient: linear-gradient(-180deg, #B4ED50 0%, #006A27 100%);
-$tile-greenShadow: #245C02;
+$tile-greenShadow: inset 0 -3px 0px 0px #245C02;
+
+$tile-purpleGradient: linear-gradient(0deg, #3023AE 0%, #5F25FB 100%);
+$tile-purpleShadow: inset 0 -3px 0px 0px #2B0071;

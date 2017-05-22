@@ -2,10 +2,10 @@ export const ABOUT: object[] = [
   {
     name: 'Marc Chaikin',
     img: '',
-    position: 'CEO',
+    position: 'Founder, Chaikin Analytics',
     content: {
-      title: 'Who is marc chaikin',
-      body: 'Hi I\'m marc chaikin and I like stocks'
+      title: 'Who is Marc Chaikin?',
+      body: 'After more than 40 years on Wall Street as a trader, broker and analyst, Marc Chaikin founded Chaikin Analytics in 2009 to build on his legacy of delivering actionable equities research and analytics to professional money managers. Marc most recently created the Chaikin Power Gauge rating after years of working with institutional investors to help them improve their investment performance. \n He built Bomar Securities around a real-time analytics workstation for portfolio managers and traders and sold it two and a half years later, in 1992, to the Instinet subsidiary of Reuters. It was renamed Instinet Research and Analytics, and, with order routing added, grew into a $50 million dollar business in 5 years. \n Instinet workstations became the industry standard and proliferated to the point where they were used by 5,000 investment professionals. It was the first real-time analytics workstation for institutional money managers and trading desks, now part of Thomson Reuters institutional workstation.'
     },
     urls: {
       twitter: 'twitter.com/marcchaikin',

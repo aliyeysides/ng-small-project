@@ -1,13 +1,13 @@
 <div class="row">
-  <div class="col-9">
+  <div class="col-sm-7 col-md-8 col-lg-9">
     <psp-secondary-header></psp-secondary-header>
   </div>
-  <div class="col-3 report-action__container">
-    <div id="report-title" class="body__report-title">
-      <p>Report generated: 03/23/17 11:50am</p>
-    </div>
-    <div (click)="printReport()" class="body__report-icon">
+  <div class="col-sm-5 col-md-4 col-lg-3 report-action__container">
+    <div class="body__report-icon">
       <img class="align-middle" src="../../../assets/imgs/icon-export.svg" width="21" height="17">
+    </div>
+    <div class="body__report-title">
+      <p>Generated: 03/23/17 11:50am</p>
     </div>
   </div>
 </div>
@@ -22,34 +22,49 @@
 
   <div id="print-section" class="col stock-summary__container">
     <div class="row" style="margin-bottom: 40px;">
-      <div class="col-sm-6 stock__profile">
-        <div class="stockName clearfix">
-          <p class="Company_name">{{ researchReport?.CompanyName }} <span class="Ticker">( {{ researchReport?.Symbol }} )</span>
-          <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a></p>
-          <div class="actionButtons">
-            <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+      <div class="col-lg-6 col-xl-5 stock__profile">
+        <div class="stock__id clearfix">
+          <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
+          <div class="action-buttons">
+            <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
           </div>
         </div>
-        <div class="stockPrice">
-          <p><span class="Last_price">${{ researchReport?.Price }}</span><span class="Net_change downChange">-0.64</span><span class="Percent_change downChange">(-0.42%)</span></p>
+        <div class="stock__price">
+          <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
         </div>
-        <div class="stockIndustry">
-          <p class="summaryLabel">INDUSTRY: <span class="Industry summaryData">{{ researchReport?.Industry }}</span></p>
-          <p class="summaryLabel">SECTOR: <span class="Sector summaryData">{{ researchReport?.Details.Sector }}</span></p>
+        <div class="stock__main-data row">
+          <div class="col-sm-6">
+            <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
+          </div>
         </div>
-        <div class="stockAdditional">
-          <p class="summaryLabel">MARKET CAP: <span class="Market_cap summaryData">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
-          <p class="summaryLabel">YIELD: <span class="Yield summaryData">2.35%</span></p>
+        <div class="stock__main-data row">
+          <div class="col-sm-6">
+            <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
+          </div>
+        </div>
+        <div class="stock__main-data row">
+          <div class="col-sm-6">
+            <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
+          </div>
         </div>
       </div>
-      <div class="col-sm-6 stock__sentence">
+      <div class="col-lg-6 col-xl-7 stock__sentence">
+        <div class="stock__sentence-factor">OVERALL: <span class="change--up">VERY BULLISH</span></div>
         <div>{{ contextSummary?.financialContextSummary[0].explanatorySentence }}</div>
         <div>{{ contextSummary?.financialContextSummary[0].generalSentence }}</div>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-6 col-xl-3">
+      <div class="col-md-6 col-lg-6 col-xl-3">
         <div class="standardHeader">
           <p class="headerLabel">ASSETS &amp; LIABILITIES:</p>
         </div>
@@ -57,26 +72,26 @@
           <table class="table-2col">
             <tbody>
               <tr>
-                <td class="dataLabel">Current Ratio</td>
+                <td class="label">Current Ratio</td>
                 <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["Current Ratio"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">LT Debt/Equity</td>
+                <td class="label">LT Debt/Equity</td>
                 <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["LT Debt/Equity"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">%Earn on Equity</td>
+                <td class="label">%Earn on Equity</td>
                 <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["perEarned on Equity"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">Book Value</td>
+                <td class="label">Book Value</td>
                 <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["Book Value"] }}</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-      <div class="col-lg-6 col-xl-3">
+      <div class="col-md-6 col-lg-6 col-xl-3">
         <div class="standardHeader">
           <p class="headerLabel">VALUATION:</p>
         </div>
@@ -84,26 +99,26 @@
           <table class="table-2col">
             <tbody>
               <tr>
-                <td class="dataLabel">Price/Earnings</td>
+                <td class="label">Price/Earnings</td>
                 <td class="data"><span class="">{{ researchReport?.Valuation["Price/Earnings"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">PEG</td>
+                <td class="label">PEG</td>
                 <td class="data"><span class="">{{ researchReport?.Valuation["PEG"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">Price to Book</td>
+                <td class="label">Price to Book</td>
                 <td class="data"><span class="">{{ researchReport?.Valuation["Price/Book"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">Price to Sales</td>
+                <td class="label">Price to Sales</td>
                 <td class="data"><span class="">{{ researchReport?.Valuation["Price/Sales"] }}</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-      <div class="col-lg-6 col-xl-3">
+      <div class="col-md-6 col-lg-6 col-xl-3">
         <div class="standardHeader">
           <p class="headerLabel">DIVIDENDS:</p>
         </div>
@@ -111,26 +126,26 @@
           <table class="table-2col">
             <tbody>
               <tr>
-                <td class="dataLabel">Dividends per Share</td>
+                <td class="label">Dividends per Share</td>
                 <td class="data"><span class="">{{ researchReport?.Returns["Return on Invest"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">Payout</td>
+                <td class="label">Payout</td>
                 <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">Yield</td>
+                <td class="label">Yield</td>
                 <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">Growth Rate</td>
+                <td class="label">Growth Rate</td>
                 <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-      <div class="col-lg-6 col-xl-3">
+      <div class="col-md-6 col-lg-6 col-xl-3">
         <div class="standardHeader">
           <p class="headerLabel">RETURNS:</p>
         </div>
@@ -138,19 +153,19 @@
           <table class="table-2col">
             <tbody>
               <tr>
-                <td class="dataLabel">Return on Invest</td>
+                <td class="label">Return on Invest</td>
                 <td class="data"><span class="">{{ researchReport?.Returns["Return on Invest"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">Return on Equity</td>
+                <td class="label">Return on Equity</td>
                 <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">1 Month Return</td>
+                <td class="label">1 Month Return</td>
                 <td class="data"><span class="">{{ researchReport?.Returns["1 Month Return"] }}</span></td>
               </tr>
               <tr>
-                <td class="dataLabel">3 Month Return</td>
+                <td class="label">3 Month Return</td>
                 <td class="data"><span class="">{{ researchReport?.Returns["3 Month Return"] }}</span></td>
               </tr>
             </tbody>
