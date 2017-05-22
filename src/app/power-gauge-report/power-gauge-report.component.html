@@ -15,6 +15,12 @@
   <div class="pgr__side-bar">
 
     <div class="accordian__container">
+      <div [@slideInOut]="helpMenuOpen">
+        <h5>Power Gauge Rating</h5>
+        <p>Though no one can predict exactly what a stock will do over time, the Power Gauge Rating is a tried and tested ranking system using predictive algorithms to assess the likelihood of a stock outperforming the market average over a one to six month time frame.
+          The rating is based on an unbiased 20-factor model analyzing financial metrics and earnings performance (often called fundamental analysis), as well as price/volume activity (often called technical analysis), and expert opinions. Fundamentals essentially assess the company’s performance, while Technicals assess the stock’s performance, which are not always the same. Note that though the overall Power Gauge rating uses both Technical and Fundamental analysis, it is weighted towards Technicals.  The model then distills this data into a simple stock rating: green for bullish (or strong) stocks that are likely to perform better than the market average, and red for bearish (or weak) stocks that are likely to underperform the market. Stocks that are performing at the expected average of the market are given a neutral rating.
+          The Chaikin Power Gauge Rating was developed by stock market expert, Marc Chaikin, whose Chaikin Oscillator and Chaikin Persistency of Money Flow became investment industry standards. Now, investors use the Power Gauge to find winners and drop losers ahead of price fluctuations.</p>
+      </div>
       <psp-pgr-accordion [stock]="stock"></psp-pgr-accordion>
       <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
     </div>
