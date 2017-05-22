@@ -1,18 +1,29 @@
 <div class="row">
-  <div class="col-sm-9  action-header">
-    <div [ngClass]="actionHeaderClass" class="action-header__button">
-      <img *ngIf="this.greeting == 'morning'" class="align-middle" src="../../../assets/imgs/icon-morning.svg">
-      <img *ngIf="this.greeting == 'afternoon'" class="align-middle" src="../../../assets/imgs/icon-afternoon.svg">
-      <img *ngIf="this.greeting == 'evening'" class="align-middle" src="../../../assets/imgs/icon-night.svg">
+  <div class="col-sm-7 col-md-8 col-lg-9 action-header">
+    <div class="action__switcher action__switcher--morning">
+      <div class="action__button">
+        <img *ngIf="this.greeting == 'morning'" class="align-middle" src="../../../assets/imgs/icon-morning.svg">
+        <img *ngIf="this.greeting == 'afternoon'" class="align-middle" src="../../../assets/imgs/icon-afternoon.svg">
+        <img *ngIf="this.greeting == 'evening'" class="align-middle" src="../../../assets/imgs/icon-night.svg">
+      </div>
+      <div class="action__headline">
+        <p>Good {{ this.greeting }}. Welcome back!</p>
+      </div>
     </div>
-    <div class="action-header__headline action-header__headline--morning">
-      <p>Good {{ this.greeting }}. Welcome back!</p>
+    <div class="action__switcher action__switcher--SP500">
+      <div class="action__button">
+        <img class="align-middle" src="../../../assets/imgs/icon-SPYup.svg">
+      </div>
+      <div class="action__headline">
+        <p>The S&amp;P 500 is up!</p>
+        <p><span class="divider"> | </span> <span class=""> 238.63 </span> <span class=""> +1.41 </span> <span class=""> (0.59%) </span></p>
+      </div>
     </div>
-    <div class="action-header__date">
+    <div class="action__date">
       <p>{{ day }} &nbsp; • &nbsp; {{ date }} &nbsp; • &nbsp; {{ year }} | {{ time }}</p>
     </div>
   </div>
-  <div class="col-sm-3 main-search">
+  <div class="col-sm-5 col-md-4 col-lg-3 main-search">
     <psp-symbol-search></psp-symbol-search>
   </div>
 </div>
