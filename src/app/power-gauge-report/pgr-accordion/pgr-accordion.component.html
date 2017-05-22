@@ -1,11 +1,11 @@
 <div class="pgr-accordian__main-rating">
   <img class="align-middle" src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
 </div>
-<div class="main-rating__copy">
+<!--<div class="main-rating__copy">
   <p>VERY BULLISH <a><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
-</div>
+</div>-->
 <div class="">
-<accordion>
+<accordion> 
   <accordion-group #financials>
     <div class="pgr-factor__header" accordion-heading>
       <div class="sliderBar-container sliderBar-container--main Financial_component_rating">
@@ -21,7 +21,15 @@
          [ngClass]="{'fa-chevron-circle-down': financials?.isOpen, 'fa-chevron-circle-right': !financials?.isOpen}"></i>
     </div>
     <div class="pgr__expand" *ngFor="let data of stock?.getFinancials(); let index = index">
-      <span>{{ data[financialKeys[index]] }}</span>
+      <span>
+        <div class="sliderBar-container sliderBar-container--sub">
+          <div class="sliderProgress">
+            <div class="slider-bullish"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+            </div>
+          </div>
+        </div>
+      </span>
       <span>{{ financialKeys[index] }}</span>
     </div>
     <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
@@ -44,7 +52,15 @@
          [ngClass]="{'fa-chevron-circle-down': earnings?.isOpen, 'fa-chevron-circle-right': !earnings?.isOpen}"></i>
     </div>
     <div class="pgr__expand" *ngFor="let data of stock?.getEarnings(); let index = index">
-      <span>{{ data[earningsKeys[index]] }}</span>
+      <span>
+        <div class="sliderBar-container sliderBar-container--sub">
+          <div class="sliderProgress">
+            <div class="slider-bearish"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+            </div>
+          </div>
+        </div>
+      </span>
       <span>{{ earningsKeys[index] }}</span>
     </div>
     <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
