@@ -15,8 +15,9 @@ export class MarketInsightsComponent implements OnInit {
 
   public insights: Array<object>;
   public addPerLoad: number;
-  public hashMap: object = {};
-  public isCollapsed: boolean = false;
+  public hashMap: object;
+  public isCollapsed: boolean;
+  public collapseText: boolean;
 
   private previewLimit: number;
 
@@ -25,8 +26,11 @@ export class MarketInsightsComponent implements OnInit {
 
   ngOnInit(): void {
     this.previewLimit = 6;
-    this.addPerLoad = 3;
     this.insights = this.getMarketInsights(this.previewLimit);
+    this.addPerLoad = 3;
+    this.hashMap = {};
+    this.isCollapsed = false;
+    this.collapseText = false;
   }
 
   public getMarketInsights(amount: number): Array<object> {
@@ -53,16 +57,19 @@ export class MarketInsightsComponent implements OnInit {
     this.router.navigate(['/market-insights', insight.id]);
   }
 
-  public toggleHoverOn(el: any): void {
+  public toggleCardHover(el: any): void {
     let key = el.id.toString();
+    if (!this.hashMap[key]) {
+      this.hashMap[key] = true;
+      return;
+    }
     this.hashMap = {};
-    this.hashMap[key] = true;
   }
 
-  public toggleHoverOff(el: any): void {
-    let key = el.id.toString();
-    this.hashMap = {};
-    this.hashMap[key] = false;
+  public toggleCollapseText() {
+    console.log('before', this.collapseText);
+    this.collapseText = !this.collapseText;
+    console.log('after', this.collapseText);
   }
 
 }

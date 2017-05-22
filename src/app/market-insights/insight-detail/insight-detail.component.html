@@ -1,16 +1,15 @@
+<div class="row">
+  <div class="col-sm-9">
 
-  <div class="row">
-    <div class="col-sm-9">
-
-      <psp-secondary-header></psp-secondary-header>
-      <!-- <button (click)="printInsight()"><i class="fa fa-print" aria-hidden="true"></i></button> -->
-      <div *ngIf="insight" id="print-section" class="col-12 blog__entry">
-        <p class="blog__entry-date">April 26, 2017</p>
-        <h1 id="insight-title">{{insight.title}}</h1>
-        <!-- <span>{{insight.id}}</span> -->
-        <p class="blog__author">By Marc Chaikin</p>
-        <p class="blog__content">{{insight.content}}</p>
-      </div>
+    <psp-secondary-header></psp-secondary-header>
+    <button (click)="printInsight()"><i class="fa fa-print" aria-hidden="true"></i></button>
+    <div *ngIf="insight" id="print-section" class="col-12 blog__entry">
+      <p class="blog__entry-date">April 26, 2017</p>
+      <h1 id="insight-title">{{insight.title}}</h1>
+      <!-- <span>{{insight.id}}</span> -->
+      <p class="blog__author">By Marc Chaikin</p>
+      <p class="blog__content">{{insight.content}}</p>
     </div>
-    <psp-insight-detail-sidebar class="col-sm-3 side-bar"></psp-insight-detail-sidebar>
   </div>
+  <psp-insight-detail-sidebar class="col-sm-3 side-bar"></psp-insight-detail-sidebar>
+</div>

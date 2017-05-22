@@ -3,10 +3,10 @@
     <psp-secondary-header></psp-secondary-header>
   </div>
   <div class="col-3 report-action__container">
-    <div class="body__report-title">
+    <div id="report-title" class="body__report-title">
       <p>Report generated: 03/23/17 11:50am</p>
     </div>
-    <div class="body__report-icon">
+    <div (click)="printReport()" class="body__report-icon">
       <img class="align-middle" src="../../../assets/imgs/icon-export.svg" width="21" height="17">
     </div>
   </div>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="col stock-summary__container">
+  <div id="print-section" class="col stock-summary__container">
     <div class="row" style="margin-bottom: 40px;">
       <div class="col-sm-6 stock__profile">
         <div class="stockName clearfix">
@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="stockPrice">
-          <p><span class="Last_price">${{ researchReport?.Price }}</span><span class="Net_change downChange">-0.64</span><span class="Percent_change downChange">(-0.42%)</span></p> 
+          <p><span class="Last_price">${{ researchReport?.Price }}</span><span class="Net_change downChange">-0.64</span><span class="Percent_change downChange">(-0.42%)</span></p>
         </div>
         <div class="stockIndustry">
           <p class="summaryLabel">INDUSTRY: <span class="Industry summaryData">{{ researchReport?.Industry }}</span></p>
