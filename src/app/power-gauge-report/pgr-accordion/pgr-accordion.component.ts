@@ -48,7 +48,6 @@ export class PgrAccordionComponent implements OnInit, OnChanges {
       case 1:
         return 'slider-veryBearish';
     }
-
   }
 
 }
