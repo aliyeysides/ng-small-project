@@ -1,35 +1,29 @@
-<form class="form-inline">
+<form class="form-inline" (submit)="onSubmit()">
   <div class="form-group">
-    <span class="search-submit" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+    <span (click)="gotoReport(searchResults[0].Symbol)"  class="search-submit" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
     <input [formControl]="symbolSearchForm" type="search" class="form-control search-box" placeholder="SEARCH A STOCK"
            aria-describedby="basic-addon1">
+    <button type="submit" style="display:none">hidden submit</button>
   </div>
 </form>
 <div class="search__dropdown">
-  <ul>
+  <ul *ngFor="let result of searchResults">
     <li class="row no-gutters search__entry">
       <div class="col-sm-2 search__action">
         <i class="fa fa-plus-circle" aria-hidden="true"></i>
       </div>
       <div class="col-sm-8 search__company">
-        <p class="company-ticker">GOOGL</p>
-        <p class="company-name">Alphabet Corp-A</p>
+        <p class="company-ticker">{{ result.Symbol }}</p>
+        <p class="company-name">{{ result.CompanyName }}</p>
       </div>
-      <div class="col-sm-2 search__action">
+      <div (click)="gotoReport(result.Symbol)" class="col-sm-2 search__action">
         <i class="fa fa-line-chart" aria-hidden="true"></i>
       </div>
     </li>
-    <li class="row no-gutters search__entry">
-      <div class="col-sm-2 search__action">
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-      </div>
-      <div class="col-sm-8 search__company">
-        <p class="company-ticker">NOC</p>
-        <p class="company-name">Northrop Grummn</p>
-      </div>
-      <div class="col-sm-2 search__action">
-        <i class="fa fa-line-chart" aria-hidden="true"></i>
-      </div>
+  </ul>
+  <ul *ngIf="searchResults && symbolSearchForm.value && searchResults.length == 0">
+    <li>
+      <p>There is no such symbol</p>
     </li>
   </ul>
 </div>

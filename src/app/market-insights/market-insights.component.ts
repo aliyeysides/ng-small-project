@@ -67,9 +67,7 @@ export class MarketInsightsComponent implements OnInit {
   }
 
   public toggleCollapseText() {
-    console.log('before', this.collapseText);
     this.collapseText = !this.collapseText;
-    console.log('after', this.collapseText);
   }
 
 }

@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'market-insights', component: MarketInsightsComponent},
   {path: 'market-insights/:id', component: InsightDetailComponent},
   {path: 'power-gauge-report', component: PowerGaugeReportComponent},
+  {path: 'power-gauge-report/:symbol', component: PowerGaugeReportComponent},
   {path: 'portfolio-health-check', component: PortfolioHealthCheckComponent},
   {path: 'glossary', component: GlossaryComponent},
   {path: 'market-insights/about/:name', component: AboutComponent},

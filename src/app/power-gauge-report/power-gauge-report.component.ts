@@ -16,6 +16,7 @@ import {Stock} from "app/shared/models/stock";
 import {PGRFAKEDATA} from './pgrFakeData';
 import {Observable} from "rxjs/Observable";
 import {SharedService} from "../shared/shared.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'psp-power-gauge-report',
@@ -49,29 +50,34 @@ export class PowerGaugeReportComponent implements OnInit, OnChanges {
 
   constructor(private symbolSearchService: SymbolSearchService,
               private sharedService: SharedService,
-              private http: Http) {
+              private http: Http,
+              private route: ActivatedRoute) {
     this.reportParams = new URLSearchParams();
   }
 
   ngOnInit() {
-    this.stock = PGRFAKEDATA[0];
-    this.researchReport = PGRFAKEDATA[1];
-    this.contextSummary = PGRFAKEDATA[2];
-    // this.symbolSearchService.getSymbolData('xl')
-    //   .switchMap(stock => {
-    //     this.stock = stock;
-    //     return Observable.combineLatest(
-    //       this.symbolSearchService.getResearchReportData(stock),
-    //       this.symbolSearchService.getPGRDataAndContextSummary(stock)
-    //     )})
-    //   .subscribe(
-    //     res => {
-    //       console.log('res', res);
-    //       this.researchReport = res[0];
-    //       this.contextSummary = res[1];
-    //     },
-    //     err => this.sharedService.handleError
-    //   );
+    // this.stock = PGRFAKEDATA[0];
+    // this.researchReport = PGRFAKEDATA[1];
+    // this.contextSummary = PGRFAKEDATA[2];
+
+    this.route.params
+      .subscribe(params => {
+        this.symbolSearchService.getSymbolData(params.symbol)
+          .switchMap(stock => {
+            this.stock = stock;
+            return Observable.combineLatest(
+              this.symbolSearchService.getResearchReportData(stock),
+              this.symbolSearchService.getPGRDataAndContextSummary(stock)
+            )})
+          .subscribe(
+            res => {
+              console.log('res', res);
+              this.researchReport = res[0];
+              this.contextSummary = res[1];
+            },
+            err => this.sharedService.handleError
+          );
+      });
     this.helpMenuOpen = 'out';
   }
 
