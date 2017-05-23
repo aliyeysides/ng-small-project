@@ -11,9 +11,9 @@
           <i *ngIf="!isCollapsed" class="fa fa-minus-square-o" aria-hidden="true"></i>
           <i *ngIf="isCollapsed" class="fa fa-plus-square-o" aria-hidden="true"></i>
         </button>
+        <div class="collapse__hover-text" *ngIf="collapseText && !isCollapsed">HIDE</div>
+        <div class="collapse__hover-text"  *ngIf="!collapseText && isCollapsed">SHOW</div>
       </div>
-      <div *ngIf="collapseText && !isCollapsed">collapse</div>
-      <div *ngIf="!collapseText && isCollapsed">uncollapse</div>
       <div [collapse]="isCollapsed" class="col-md-6 col-lg-4 flex" *ngFor="let insight of insights">
         <div class="tile tile__morning-insights" (click)="gotoInsight(insight)">
           <div class="tile__content">

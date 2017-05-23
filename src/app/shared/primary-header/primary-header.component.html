@@ -1,13 +1,19 @@
 <div class="row">
   <div class="col-sm-7 col-md-8 col-lg-9 action-header">
-    <div class="action__switcher action__switcher--morning">
-      <div class="action__button">
-        <img *ngIf="this.greeting == 'morning'" class="align-middle" src="../../../assets/imgs/icon-morning.svg">
-        <img *ngIf="this.greeting == 'afternoon'" class="align-middle" src="../../../assets/imgs/icon-afternoon.svg">
-        <img *ngIf="this.greeting == 'evening'" class="align-middle" src="../../../assets/imgs/icon-night.svg">
+    <div class="action__switcher action__switcher--time">
+      <div class="action__button action__button--morning"  *ngIf="this.greeting == 'morning'" >
+        <img class="align-middle" src="../../../assets/imgs/icon-morning.svg">
+      </div>
+      <div class="action__button action__button--afternoon" *ngIf="this.greeting == 'afternoon'" >
+        <img class="align-middle" src="../../../assets/imgs/icon-afternoon.svg">
+      </div>
+      <div class="action__button action__button--evening"  *ngIf="this.greeting == 'evening'" >
+        <img class="align-middle" src="../../../assets/imgs/icon-night.svg">
       </div>
       <div class="action__headline">
-        <p>Good {{ this.greeting }}. Welcome back!</p>
+        <p class="morning" *ngIf="this.greeting == 'morning'" >Good {{ this.greeting }}. Happy trading!</p>
+        <p class="afternoon" *ngIf="this.greeting == 'afternoon'" >Good {{ this.greeting }}. Welcome back!</p>
+        <p class="evening"  *ngIf="this.greeting == 'evening'" >Good {{ this.greeting }}. The market is closed.</p>
       </div>
     </div>
     <div class="action__switcher action__switcher--SP500">
@@ -20,7 +26,7 @@
       </div>
     </div>
     <div class="action__date">
-      <p>{{ day }} &nbsp; • &nbsp; {{ date }} &nbsp; • &nbsp; {{ year }} | {{ time }}</p>
+      <p>{{ day }} &nbsp; • &nbsp; {{ date }} &nbsp; • &nbsp; {{ time }}</p>
     </div>
   </div>
   <div class="col-sm-5 col-md-4 col-lg-3 main-search">
