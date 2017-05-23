@@ -4,10 +4,32 @@
     <input [formControl]="symbolSearchForm" type="search" class="form-control search-box" placeholder="SEARCH A STOCK"
            aria-describedby="basic-addon1">
   </div>
-  <div *ngIf="searchResults.length > 0">
-    <ul *ngFor="let result of searchResults">
-      <li>{{result.Symbol}}</li>
-      <li>{{result.CompanyName}}</li>
-    </ul>
-  </div>
 </form>
+<div class="search__dropdown">
+  <ul>
+    <li class="row no-gutters search__entry">
+      <div class="col-sm-2 search__action">
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm-8 search__company">
+        <p class="company-ticker">GOOGL</p>
+        <p class="company-name">Alphabet Corp-A</p>
+      </div>
+      <div class="col-sm-2 search__action">
+        <i class="fa fa-line-chart" aria-hidden="true"></i>
+      </div>
+    </li>
+    <li class="row no-gutters search__entry">
+      <div class="col-sm-2 search__action">
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm-8 search__company">
+        <p class="company-ticker">NOC</p>
+        <p class="company-name">Northrop Grummn</p>
+      </div>
+      <div class="col-sm-2 search__action">
+        <i class="fa fa-line-chart" aria-hidden="true"></i>
+      </div>
+    </li>
+  </ul>
+</div>

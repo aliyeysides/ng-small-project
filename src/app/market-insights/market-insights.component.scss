@@ -14,7 +14,6 @@
 		margin-bottom: 15px;
 		text-align: center;
 		font-size: 14px;
-		color: #4A4A4A;
 		position: relative;
 		width: 100%;
 		border-top: 1px solid $line-grey;
@@ -22,6 +21,29 @@
 
 		span {
 			color: $font-colorMD;
+		}
+
+		.tile__collapse {
+			position: absolute;
+			top: 15px;
+			right: 10px;
+			cursor: pointer;
+
+			i {
+				font-size: 18px;
+				color: $background-dkGrey;
+
+				&:hover {
+					color: $link-blue;
+				}
+			}
+		}
+		.collapse__hover-text {
+			position: absolute;
+			top: 14px;
+			right: 40px;
+			cursor: pointer;
+			color: $link-blue;
 		}
 	}
 	.tile-container__date--no-rule {
@@ -31,21 +53,9 @@
 }
 
 
-.tile__collapse {
-	position: absolute;
-	top: 15px;
-	right: 10px;
-	cursor: pointer;
 
-	i {
-		font-size: 18px;
-		color: $background-dkGrey;
 
-		&:hover {
-			color: $link-blue;
-		}
-	}
-}
+
 
 .tile {
 	width: 100%;
