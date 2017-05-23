@@ -1,118 +1,151 @@
 <div class="pgr-accordian__main-rating">
-  <img class="align-middle" src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+  <img *ngIf="stock?.displayRating() == 'VERY_BULLISH'" class="align-middle"
+       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+  <img *ngIf="stock?.displayRating() == 'BULLISH'" class="align-middle"
+       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+  <img *ngIf="stock?.displayRating() == 'POSITIVE_NEUTRAL'" class="align-middle"
+       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+  <img *ngIf="stock?.displayRating() == 'NEUTRAL'" class="align-middle"
+       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+  <img *ngIf="stock?.displayRating() == 'NEGATIVE_NEUTRAL'" class="align-middle"
+       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+  <img *ngIf="stock?.displayRating() == 'BEARISH'" class="align-middle"
+       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+  <img *ngIf="stock?.displayRating() == 'VERY_BEARISH'" class="align-middle"
+       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
 </div>
-<!--<div class="main-rating__copy">
-  <p>VERY BULLISH <a><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
-</div>-->
 <div class="">
-<accordion> 
-  <accordion-group #financials>
-    <div class="pgr-factor__header" accordion-heading>
-      <div class="sliderBar-container sliderBar-container--main Financial_component_rating">
-        <div class="sliderProgress">
-          <div class="slider-bullish"></div>
-          <div class="sliderBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+  <accordion [closeOthers]="true">
+    <accordion-group #financials>
+      <div class="pgr-factor__header" accordion-heading>
+        <div class="sliderBar-container sliderBar-container--main Financial_component_rating">
+          <div class="sliderProgress">
+            <div [ngClass]="getClass(stock?.getFinacialValue())"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                 style="width:75%">
+            </div>
           </div>
         </div>
+        Financials
+        <i class="pull-left float-xs-right fa"
+           [ngClass]="{'fa-chevron-circle-down': financials?.isOpen, 'fa-chevron-circle-right': !financials?.isOpen}"></i>
       </div>
-      Financials
-      <!-- {{ stock?.getFinacialValue() }}  -->
-      <i class="pull-left float-xs-right fa"
-         [ngClass]="{'fa-chevron-circle-down': financials?.isOpen, 'fa-chevron-circle-right': !financials?.isOpen}"></i>
-    </div>
-    <div class="pgr__expand" *ngFor="let data of stock?.getFinancials(); let index = index">
+      <div class="pgr__expand" *ngFor="let data of stock?.getFinancials(); let index = index">
       <span>
         <div class="sliderBar-container sliderBar-container--sub">
           <div class="sliderProgress">
-            <div class="slider-bullish"></div>
-            <div class="sliderBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+            <div [ngClass]="getClass(data[financialKeys[index]])"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                 style="width:75%">
             </div>
           </div>
         </div>
       </span>
-      <span>{{ financialKeys[index] }}</span>
-    </div>
-    <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            popoverTitle="Financials Factor" triggers="focus" placement="right">
-      <i class="fa fa-question" aria-hidden="true"></i>
-    </button>
-  </accordion-group>
-  <accordion-group #earnings>
-    <div class="pgr-factor__header" accordion-heading>
-      <div class="sliderBar-container sliderBar-container--main Earnings_component_rating">
-        <div class="sliderProgress">
-          <div class="slider-bearish"></div>
-          <div class="sliderBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+        <span>{{ financialKeys[index] }}</span>
+      </div>
+      <button type="button" class="pgr__component-question" popover="{{ getFinancialText() }}"
+              popoverTitle="Financials Factor" triggers="focus" placement="right">
+        <i class="fa fa-question" aria-hidden="true"></i>
+      </button>
+    </accordion-group>
+    <accordion-group #earnings>
+      <div class="pgr-factor__header" accordion-heading>
+        <div class="sliderBar-container sliderBar-container--main Earnings_component_rating">
+          <div class="sliderProgress">
+            <div [ngClass]="getClass(stock?.getEarningsValue())"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                 style="width:25%">
+            </div>
           </div>
         </div>
+        Earnings
+        <i class="pull-left float-xs-right fa"
+           [ngClass]="{'fa-chevron-circle-down': earnings?.isOpen, 'fa-chevron-circle-right': !earnings?.isOpen}"></i>
       </div>
-      Earnings
-      <!-- {{ stock?.getEarningsValue() }} -->
-      <i class="pull-left float-xs-right fa"
-         [ngClass]="{'fa-chevron-circle-down': earnings?.isOpen, 'fa-chevron-circle-right': !earnings?.isOpen}"></i>
-    </div>
-    <div class="pgr__expand" *ngFor="let data of stock?.getEarnings(); let index = index">
+      <div class="pgr__expand" *ngFor="let data of stock?.getEarnings(); let index = index">
       <span>
         <div class="sliderBar-container sliderBar-container--sub">
           <div class="sliderProgress">
-            <div class="slider-bearish"></div>
-            <div class="sliderBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+            <div [ngClass]="getClass(data[earningsKeys[index]])"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                 style="width:25%">
             </div>
           </div>
         </div>
       </span>
-      <span>{{ earningsKeys[index] }}</span>
-    </div>
-    <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            popoverTitle="Earnings Factor" triggers="focus" placement="right">
-      <i class="fa fa-question" aria-hidden="true"></i>
-    </button>
-  </accordion-group>
-  <accordion-group #technicals>
-    <div class="pgr-factor__header" accordion-heading>
-      <div class="sliderBar-container sliderBar-container--main Technicals_component_rating">
-        <div class="sliderProgress">
-          <div class="slider-veryBullish"></div>
-          <div class="sliderBar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        <span>{{ earningsKeys[index] }}</span>
+      </div>
+      <button type="button" class="pgr__component-question"
+              popover="{{ getEarningsText() }}"
+              popoverTitle="Earnings Factor" triggers="focus" placement="right">
+        <i class="fa fa-question" aria-hidden="true"></i>
+      </button>
+    </accordion-group>
+    <accordion-group #technicals>
+      <div class="pgr-factor__header" accordion-heading>
+        <div class="sliderBar-container sliderBar-container--main Technicals_component_rating">
+          <div class="sliderProgress">
+            <div [ngClass]="getClass(stock?.getTechnicalsValue())"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                 style="width:100%">
+            </div>
           </div>
         </div>
+        Technicals
+        <i class="pull-left float-xs-right fa"
+           [ngClass]="{'fa-chevron-circle-down': technicals?.isOpen, 'fa-chevron-circle-right': !technicals?.isOpen}"></i>
       </div>
-      Technicals
-      <!-- {{ stock?.getTechnicalsValue() }} -->
-      <i class="pull-left float-xs-right fa"
-         [ngClass]="{'fa-chevron-circle-down': technicals?.isOpen, 'fa-chevron-circle-right': !technicals?.isOpen}"></i>
-    </div>
-    <div class="pgr__expand" *ngFor="let data of stock?.getTechnicals(); let index = index">
-      <span>{{ data[technicalKeys[index]] }}</span>
-      <span>{{ technicalKeys[index] }}</span>
-    </div>
-    <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            popoverTitle="Technicals Factor" triggers="focus" placement="right">
-      <i class="fa fa-question" aria-hidden="true"></i>
-    </button>
-  </accordion-group>
-  <accordion-group #experts>
-    <div class="pgr-factor__header" accordion-heading>
-      <div class="sliderBar-container sliderBar-container--main Experts_component_rating">
-        <div class="sliderProgress">
-          <div class="slider-neutral"></div>
-          <div class="sliderBar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+      <div class="pgr__expand" *ngFor="let data of stock?.getTechnicals(); let index = index">
+      <span>
+        <div class="sliderBar-container sliderBar-container--sub">
+          <div class="sliderProgress">
+            <div [ngClass]="getClass(data[technicalKeys[index]])"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                 style="width:25%">
+            </div>
           </div>
         </div>
+      </span>
+        <span>{{ technicalKeys[index] }}</span>
       </div>
-      Experts
-      <!-- {{ stock?.getExpertsValue() }} -->
-      <i class="pull-left float-xs-right fa"
-         [ngClass]="{'fa-chevron-circle-down': experts?.isOpen, 'fa-chevron-circle-right': !experts?.isOpen}"></i>
-    </div>
-    <div class="pgr__expand" *ngFor="let data of stock?.getExperts(); let index = index">
-      <span>{{ data[expertKeys[index]] }}</span>
-      <span>{{ expertKeys[index] }}</span>
-    </div>
-    <button type="button" class="pgr__component-question" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-            popoverTitle="Experts Factor" triggers="focus" placement="right">
-      <i class="fa fa-question" aria-hidden="true"></i>
-    </button>
-  </accordion-group>
-</accordion>
+      <button type="button" class="pgr__component-question"
+              popover="{{ getTechnicalText() }}"
+              popoverTitle="Technicals Factor" triggers="focus" placement="right">
+        <i class="fa fa-question" aria-hidden="true"></i>
+      </button>
+    </accordion-group>
+    <accordion-group #experts>
+      <div class="pgr-factor__header" accordion-heading>
+        <div class="sliderBar-container sliderBar-container--main Experts_component_rating">
+          <div class="sliderProgress">
+            <div [ngClass]="getClass(stock?.getExpertsValue())"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+                 style="width:50%">
+            </div>
+          </div>
+        </div>
+        Experts
+        <i class="pull-left float-xs-right fa"
+           [ngClass]="{'fa-chevron-circle-down': experts?.isOpen, 'fa-chevron-circle-right': !experts?.isOpen}"></i>
+      </div>
+      <div class="pgr__expand" *ngFor="let data of stock?.getExperts(); let index = index">
+      <span>
+        <div class="sliderBar-container sliderBar-container--sub">
+          <div class="sliderProgress">
+            <div [ngClass]="getClass(data[expertKeys[index]])"></div>
+            <div class="sliderBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                 style="width:25%">
+            </div>
+          </div>
+        </div>
+      </span>
+        <span>{{ expertKeys[index] }}</span>
+      </div>
+      <button type="button" class="pgr__component-question"
+              popover="{{ getExpertsText() }}"
+              popoverTitle="Experts Factor" triggers="focus" placement="right">
+        <i class="fa fa-question" aria-hidden="true"></i>
+      </button>
+    </accordion-group>
+  </accordion>
 </div>

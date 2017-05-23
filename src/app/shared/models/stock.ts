@@ -1,3 +1,13 @@
+const PGRVALUES = {
+  1: 'VERY_BEARISH',
+  2: 'BEARISH',
+  3: 'NEGATIVE_NEUTRAL',
+  4: 'NEUTRAL',
+  5: 'POSITIVE_NEUTRAL',
+  6: 'BULLISH',
+  7: 'VERY_BULLISH'
+};
+
 export class Stock {
   constructor(public EPSData: object,
               public metaInfo: object[],
@@ -24,11 +34,29 @@ export class Stock {
     return result;
   }
 
+  public displayRating() {
+    let rawPGR = this.getPGR(),
+        correctedPGR = this.getCorrectedPgr();
+    if (rawPGR >= 4 && correctedPGR === 3) {
+      return PGRVALUES[5];
+    } else if (rawPGR <= 2 && correctedPGR === 3) {
+      return PGRVALUES[3];
+    } else if (rawPGR === 3 && correctedPGR === 3) {
+      return PGRVALUES[4];
+    } else if (rawPGR === -1 || correctedPGR === -1) {
+      return 'NONE'
+    } else if (correctedPGR === 1 || correctedPGR === 2) {
+      return PGRVALUES[+correctedPGR];
+    } else {
+      return PGRVALUES[+correctedPGR + 2];
+    }
+  }
+
   getStockSymbol(): string {
     return this.EPSData['symbol'];
   }
 
-  getPGR(): string {
+  getPGR(): number {
     return this.pgr[0]['PGR Value'];
   }
 
@@ -80,7 +108,7 @@ export class Stock {
     return Stock._extractKeys(this.getExperts());
   }
 
-  getCorrectedPgr(): object {
+  getCorrectedPgr(): number {
     return this.pgr[5]['Corrected PGR Value'];
   }
 
