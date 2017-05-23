@@ -3,7 +3,7 @@
     <psp-secondary-header></psp-secondary-header>
   </div>
   <div class="col-sm-5 col-md-4 col-lg-3 report-action__container">
-    <div class="body__report-icon">
+    <div (click)="downloadReportPDF(stock?.getStockSymbol())" class="body__report-icon">
       <img class="align-middle" src="../../../assets/imgs/icon-export.svg" width="21" height="17">
     </div>
     <div class="body__report-title">

@@ -1,13 +1,15 @@
+import {Http, Headers, URLSearchParams} from "@angular/http";
+
 import {SymbolSearchService} from '../shared/symbol-search/symbol-search.service';
 
 import {
-  Component,
-  OnInit,
-  trigger,
-  state,
-  style,
-  transition,
-  animate, OnChanges, SimpleChanges
+Component,
+OnInit,
+trigger,
+state,
+style,
+transition,
+animate, OnChanges, SimpleChanges
 } from '@angular/core';
 
 import {Stock} from "app/shared/models/stock";
@@ -43,8 +45,12 @@ export class PowerGaugeReportComponent implements OnInit, OnChanges {
   public stock: Stock;
   public researchReport: any;
   public contextSummary: any;
+  public reportParams: URLSearchParams;
 
-  constructor(private symbolSearchService: SymbolSearchService, private sharedService: SharedService) {
+  constructor(private symbolSearchService: SymbolSearchService,
+              private sharedService: SharedService,
+              private http: Http) {
+    this.reportParams = new URLSearchParams();
   }
 
   ngOnInit() {
@@ -77,6 +83,28 @@ export class PowerGaugeReportComponent implements OnInit, OnChanges {
 
   toggleHelpMenu(): void {
     this.helpMenuOpen = this.helpMenuOpen === 'out' ? 'in' : 'out';
+  }
+
+  public downloadReportPDF(ticker: string) {
+    let reportPDFUrl = '/CPTRestSecure/app/pdf/fetchReport?';
+    let headers = new Headers();
+    headers.append('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8');
+
+    this.reportParams.set('symbol', ticker);
+    this.reportParams.set('response', 'file');
+
+    this.http.get(reportPDFUrl, {
+      search: this.reportParams,
+      headers: headers,
+      withCredentials: true
+    }).subscribe(
+      res => {
+        console.log('res', res)
+      },
+      err => {
+        this.sharedService.handleError(err)
+      }
+    )
   }
 
   printReport(): void {
