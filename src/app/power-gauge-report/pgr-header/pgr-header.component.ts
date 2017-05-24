@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Location} from '@angular/common';
 
 import {SecondaryHeaderComponent} from "../../shared/secondary-header/secondary-header.component";
