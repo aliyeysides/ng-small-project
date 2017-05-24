@@ -4,180 +4,492 @@
   </div>
   <div class="col-sm-5 col-md-4 col-lg-3 report-action__container">
     <div (click)="downloadReportPDF(stock?.getStockSymbol())" class="body__report-icon">
-      <img class="align-middle" src="../../../assets/imgs/icon-export.svg" width="21" height="17">
+      <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
     </div>
     <div class="body__report-title">
       <p>Generated: 03/23/17 11:50am</p>
     </div>
-  </div>
+  </div> 
 </div>
+<!-- SIDE BAR PGR SLIDER -->
 <div class="row">
   <div class="pgr__side-bar">
-
-    <div class="accordian__container">
-      <div [@slideInOut]="helpMenuOpen">
-        <h5>Power Gauge Rating</h5>
-        <p>Though no one can predict exactly what a stock will do over time, the Power Gauge Rating is a tried and tested ranking system using predictive algorithms to assess the likelihood of a stock outperforming the market average over a one to six month time frame.
-          The rating is based on an unbiased 20-factor model analyzing financial metrics and earnings performance (often called fundamental analysis), as well as price/volume activity (often called technical analysis), and expert opinions. Fundamentals essentially assess the company’s performance, while Technicals assess the stock’s performance, which are not always the same. Note that though the overall Power Gauge rating uses both Technical and Fundamental analysis, it is weighted towards Technicals.  The model then distills this data into a simple stock rating: green for bullish (or strong) stocks that are likely to perform better than the market average, and red for bearish (or weak) stocks that are likely to underperform the market. Stocks that are performing at the expected average of the market are given a neutral rating.
-          The Chaikin Power Gauge Rating was developed by stock market expert, Marc Chaikin, whose Chaikin Oscillator and Chaikin Persistency of Money Flow became investment industry standards. Now, investors use the Power Gauge to find winners and drop losers ahead of price fluctuations.</p>
+    <div class="pgr__learn-container" [@slideInOut]="helpMenuOpen">
+      <div class="pgr__learn">
+        <h2>What is this?</h2>
+        <h5>The Chaikin Power Gauge Rating:</h5>
+        <p>Though no one can predict exactly what a stock will do over time, the Power Gauge Rating is a tried and tested ranking system using predictive algorithms to assess the likelihood of a stock outperforming the market average over a one to six month time frame.</p>
+        <p>The rating is based on an unbiased 20-factor model analyzing financial metrics and earnings performance (often called fundamental analysis), as well as price/volume activity (often called technical analysis), and expert opinions.</p>
+        <p>Fundamentals essentially assess the company’s performance, while Technicals assess the stock’s performance, which are not always the same. Note that though the overall Power Gauge rating uses both Technical and Fundamental analysis, it is weighted towards Technicals.</p>
+        <p>The model then distills this data into a simple stock rating: green for bullish (or strong) stocks that are likely to perform better than the market average, and red for bearish (or weak) stocks that are likely to underperform the market. Stocks that are performing at the expected average of the market are given a neutral rating.</p>
       </div>
+    </div>
+    <div class="accordian__container">
       <psp-pgr-accordion [stock]="stock"></psp-pgr-accordion>
-      <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+      <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
     </div>
   </div>
 
-  <div id="print-section" class="col stock-summary__container">
-    <div class="row" style="margin-bottom: 40px;">
-      <div class="col-lg-6 col-xl-5 stock__profile">
-        <div class="stock__id clearfix">
-          <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
-          <div class="action-buttons">
-            <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+<!-- STOCK SUMMARY -->
+  <div class="stock-summary__container" id="print-section">
+
+  <!-- OVERALL -->
+    <div class="stock-summary stock-summary--overall">
+    <!-- SUMMARY -->
+      <div class="row" style="margin-bottom: 40px;">
+        <div class="col-lg-6 col-xl-6 stock__profile">
+          <div class="stock__id clearfix">
+            <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
+            <div class="action-buttons">
+              <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="stock__price">
+            <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
+            </div>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
+            </div>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
+            </div>
           </div>
         </div>
-        <div class="stock__price">
-          <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
-        </div>
-        <div class="stock__main-data row">
-          <div class="col-sm-6">
-            <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
-          </div>
-          <div class="col-sm-6">
-            <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
-          </div>
-        </div>
-        <div class="stock__main-data row">
-          <div class="col-sm-6">
-            <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
-          </div>
-          <div class="col-sm-6">
-            <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
-          </div>
-        </div>
-        <div class="stock__main-data row">
-          <div class="col-sm-6">
-            <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
-          </div>
-          <div class="col-sm-6">
-            <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
-          </div>
+        <div class="col-lg-6 col-xl-6 stock__sentence">
+          <div class="stock__sentence-factor">OVERALL: <span class="bullish">{{ contextSummary?.pgrContextSummary[0].status }}</span></div>
+          <div>{{ contextSummary?.pgrContextSummary[0].mainSentence }}</div>
+          <div>{{ contextSummary?.pgrContextSummary[0].additonalSentence }}</div>
         </div>
       </div>
-      <div class="col-lg-6 col-xl-7 stock__sentence">
-        <div class="stock__sentence-factor">OVERALL: <span class="change--up">BULLISH</span></div>
-        <div>{{ contextSummary?.financialContextSummary[0].explanatorySentence }}</div>
-        <div>{{ contextSummary?.financialContextSummary[0].generalSentence }}</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="standardHeader">
-          <p class="headerLabel">ASSETS &amp; LIABILITIES:</p>
-        </div>
-        <div class="data-container">
-          <table class="table-2col">
-            <tbody>
-              <tr>
-                <td class="label">Current Ratio</td>
-                <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["Current Ratio"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">LT Debt/Equity</td>
-                <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["LT Debt/Equity"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">%Earn on Equity</td>
-                <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["perEarned on Equity"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">Book Value</td>
-                <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["Book Value"] }}</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="standardHeader">
-          <p class="headerLabel">VALUATION:</p>
-        </div>
-        <div class="data-container">
-          <table class="table-2col">
-            <tbody>
-              <tr>
-                <td class="label">Price/Earnings</td>
-                <td class="data"><span class="">{{ researchReport?.Valuation["Price/Earnings"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">PEG</td>
-                <td class="data"><span class="">{{ researchReport?.Valuation["PEG"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">Price to Book</td>
-                <td class="data"><span class="">{{ researchReport?.Valuation["Price/Book"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">Price to Sales</td>
-                <td class="data"><span class="">{{ researchReport?.Valuation["Price/Sales"] }}</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="standardHeader">
-          <p class="headerLabel">DIVIDENDS:</p>
-        </div>
-        <div class="data-container">
-          <table class="table-2col">
-            <tbody>
-              <tr>
-                <td class="label">Dividends per Share</td>
-                <td class="data"><span class="">{{ researchReport?.Returns["Return on Invest"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">Payout</td>
-                <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">Yield</td>
-                <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">Growth Rate</td>
-                <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="standardHeader">
-          <p class="headerLabel">RETURNS:</p>
-        </div>
-        <div class="data-container">
-          <table class="table-2col">
-            <tbody>
-              <tr>
-                <td class="label">Return on Invest</td>
-                <td class="data"><span class="">{{ researchReport?.Returns["Return on Invest"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">Return on Equity</td>
-                <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">1 Month Return</td>
-                <td class="data"><span class="">{{ researchReport?.Returns["1 Month Return"] }}</span></td>
-              </tr>
-              <tr>
-                <td class="label">3 Month Return</td>
-                <td class="data"><span class="">{{ researchReport?.Returns["3 Month Return"] }}</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
+    <!-- DATA -->
+      <div class="row" style="margin-bottom: 40px;">
       </div>
     </div>
+
+  <!-- FINANCIALS -->
+    <div class="stock-summary stock-summary--financials">
+    <!-- SUMMARY -->
+      <div class="row" style="margin-bottom: 40px;">
+        <div class="col-lg-6 col-xl-6 stock__profile">
+          <div class="stock__id clearfix">
+            <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
+            <div class="action-buttons">
+              <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="stock__price">
+            <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
+            </div>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
+            </div>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-6 stock__sentence">
+          <div class="stock__sentence-factor">FINANCIALS: <span class="verybullish">{{ contextSummary?.financialContextSummary[0].status }}</span></div>
+          <div>{{ contextSummary?.financialContextSummary[0].generalSentence }}</div>
+          <div>{{ contextSummary?.financialContextSummary[0].explanatorySentence }}</div>
+        </div>
+      </div>
+
+    <!-- DATA -->
+      <div class="row" style="margin-bottom: 40px;">
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="standardHeader">
+            <p class="headerLabel">ASSETS &amp; LIABILITIES:</p>
+          </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+                <tr>
+                  <td class="label">Current Ratio</td>
+                  <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["Current Ratio"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">LT Debt/Equity</td>
+                  <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["LT Debt/Equity"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">%Earn on Equity</td>
+                  <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["perEarned on Equity"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">Book Value</td>
+                  <td class="data"><span class="">{{ researchReport?.AssetsandLiabilities["Book Value"] }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="standardHeader">
+            <p class="headerLabel">VALUATION:</p>
+          </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+                <tr>
+                  <td class="label">Price/Earnings</td>
+                  <td class="data"><span class="">{{ researchReport?.Valuation["Price/Earnings"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">PEG</td>
+                  <td class="data"><span class="">{{ researchReport?.Valuation["PEG"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">Price to Book</td>
+                  <td class="data"><span class="">{{ researchReport?.Valuation["Price/Book"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">Price to Sales</td>
+                  <td class="data"><span class="">{{ researchReport?.Valuation["Price/Sales"] }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="standardHeader">
+            <p class="headerLabel">DIVIDENDS:</p>
+          </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+                <tr>
+                  <td class="label">Dividends per Share</td>
+                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Invest"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">Payout</td>
+                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">Yield</td>
+                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">Growth Rate</td>
+                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="standardHeader">
+            <p class="headerLabel">RETURNS:</p>
+          </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+                <tr>
+                  <td class="label">Return on Invest</td>
+                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Invest"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">Return on Equity</td>
+                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">1 Month Return</td>
+                  <td class="data"><span class="">{{ researchReport?.Returns["1 Month Return"] }}</span></td>
+                </tr>
+                <tr>
+                  <td class="label">3 Month Return</td>
+                  <td class="data"><span class="">{{ researchReport?.Returns["3 Month Return"] }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- EARNINGS -->
+    <div class="stock-summary stock-summary--earnings">
+    <!-- SUMMARY -->
+      <div class="row" style="margin-bottom: 40px;">
+        <div class="col-lg-6 col-xl-6 stock__profile">
+          <div class="stock__id clearfix">
+            <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
+            <div class="action-buttons">
+              <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="stock__price">
+            <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
+            </div>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
+            </div>
+          </div>
+          <div class="stock__main-data row">
+            <div class="col-sm-6">
+              <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-6 stock__sentence">
+          <div class="stock__sentence-factor">EARNINGS: <span class="bullish">{{ contextSummary?.earningsContextSummary[0].status }}</span></div>
+          <div>{{ contextSummary?.earningsContextSummary[0].generalSentence }}</div>
+          <div>{{ contextSummary?.earningsContextSummary[0].explanatorySentence }}</div>
+        </div>
+      </div>
+
+    <!-- DATA -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="standardHeader">
+            <p class="headerLabel">5 YEAR REVENUE &amp; EARNINGS GROWTH:</p>
+          </div>
+          <div class="data-container" id="earningsGrowth-table">
+            <table>
+              <thead>
+                <th>
+                </th>
+                <th>
+                  <span>12/12</span>
+                </th>
+                <th>
+                  <span>12/13</span>
+                </th>
+                <th>
+                  <span>12/14</span>
+                </th>
+                <th>
+                  <span>12/15</span>
+                </th>
+                <th>
+                  <span>12/16</span>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="label">Revenue (M)</td>
+                  <td ><span class="Revenue_1_year">$40.356</span></td>
+                  <td ><span class="Revenue_2_years">$40.097</span></td>
+                  <td ><span class="Revenue_3_years">$50.209</span></td>
+                  <td ><span class="Revenue_4_years">$50.116</span></td>
+                  <td ><span class="Revenue_current">$40.356</span></td>
+                </tr>
+                <tr>
+                  <td class="label">Rev Growth</td>
+                  <td ><span class="strong Rev_pct_growth_1_years">+32.4%</span></td>
+                  <td ><span class="strong Rev_pct_growth_2_years">+11.5%</span></td>
+                  <td ><span class="weak Rev_pct_growth_3_years">-4.2%</span></td>
+                  <td ><span class="weak Rev_pct_growth_4_years">-2.4%</span></td>
+                  <td ><span class="strong Rev_pct_growth_current">+4.5%</span></td>
+                </tr>
+                <tr>
+                  <td class="label">EPS</td>
+                  <td ><span class="EPS_1_years">$46.34</span></td>
+                  <td ><span class="EPS_2_years">$37.22</span></td>
+                  <td ><span class="EPS_3_years">$59.76</span></td>
+                  <td ><span class="EPS_4_years">$116.11</span></td>
+                  <td ><span class="EPS_current">$56.34</span></td>
+                </tr>
+                <tr>
+                  <td class="label">EPS Growth</td>
+                  <td ><span class="strong EPS_pct_growth_1_years">+6.5%</span></td>
+                  <td ><span class="strong EPS_pct_growth_2_years">+12.4%</span></td>
+                  <td ><span class="weak EPS_pct_growth_3_years">-3.6%</span></td>
+                  <td ><span class="weak EPS_pct_growth_4_years">-6.5%</span></td>
+                  <td ><span class="strong EPS_pct_growth_current">+9.7%</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="standardHeader">
+            <p class="headerLabel">EPS SURPRISE (By Qtr):</p>
+          </div>
+          <div class="data-container" id="earningsSurprise-table">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th *ngFor="let label of researchReport ? researchReport['EPS Surprises'].labels : null">
+                    <span>{{ label }}</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row" class="label">Latest Qtr</th>
+                <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['Latest Qtr'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="label">1st Qtr</th>
+                <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['1 Qtr Ago'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="label">2nd Qtr</th>
+                <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['2 Qtr Ago'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="label">3rd Qtr</th>
+                <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['3 Qtr Ago'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8 col-md-6">
+          <div class="standardHeader">
+            <p class="headerLabel">EPS QUARTERLY RESULTS (3yr):</p>
+          </div>
+          <div class="data-container" id="epsQuarterly-table">
+            <table>
+              <thead>
+                <th>
+                </th>
+                <th>
+                  <span class="">Qtr 1</span>
+                </th>
+                <th>
+                  <span class="">Qtr 2</span>
+                </th>
+                <th>
+                  <span class="">Qtr 3</span>
+                </th>
+                <th>
+                  <span class="">Qtr 4</span>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="label">12/14</td>
+                  <td ><span class="weak 2_years_ago_qtr1">$-0.03</span></td>
+                  <td ><span class="weak 2_years_ago_qtr2">$-0.08</span></td>
+                  <td ><span class="weak 2_years_ago_qtr3">$-0.06</span></td>
+                  <td ><span class="weak 2_years_ago_qtr4">$-0.18</span></td>
+                </tr>
+                <tr>
+                  <td class="label">12/15</td>
+                  <td ><span class="strong 1_year_ago_qtr1">$0.04</span></td>
+                  <td ><span class="weak 1_year_ago_qtr2">$-0.22</span></td>
+                  <td ><span class="strong 1_year_ago_qtr3">$0.33</span></td>
+                  <td ><span class="weak 1_year_ago_qtr4">$-0.22</span></td>
+                </tr>
+                <tr>
+                  <td class="label">12/16</td>
+                  <td ><span class="weak current_qtr1">$-0.11</span></td>
+                  <td ><span class="strong current_qtr2">$0.55</span></td>
+                  <td ><span class="strong current_qtr3">$0.08</span></td>
+                  <td ><span class="strong current_qtr4">$0.09</span></td>
+                </tr>
+                <tr>
+                  <td colspan="5" class="FY-end-text">
+                    <span class="current_FY_end">Fiscal Year End Month: December</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="standardHeader">
+            <p class="headerLabel">EPS YEARLY RESULTS:</p>
+          </div>
+          <div class="data-container" id="epsYearly-table">
+            <table>
+              <thead>
+                <th>
+                </th>
+                <th>
+                  <span class="">Yearly Total</span>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="label">12/14</td>
+                  <td ><span class="weak 2_years_ago_total">$-0.35</span></td>
+                </tr>
+                <tr>
+                  <td class="label">12/15</td>
+                  <td ><span class="strong 1_year_ago_total">$0.07</span></td>
+                </tr>
+                <tr>
+                  <td class="label">12/16</td>
+                  <td ><span class="weak current_total">$0.54</span></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="FY-end-text">
+                    <span class="current_FY_end">Fiscal Year End Month: December</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </div>

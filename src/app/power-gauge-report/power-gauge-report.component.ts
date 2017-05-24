@@ -26,7 +26,7 @@ import {SharedService} from "../shared/shared.service";
       state('in', style({
         overflow: 'hidden',
         height: 'auto',
-        width: '300px'
+        width: '600px'
       })),
       state('out', style({
         opacity: '0',

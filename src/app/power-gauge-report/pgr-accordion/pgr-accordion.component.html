@@ -1,18 +1,32 @@
 <div class="pgr-accordian__main-rating">
-  <img *ngIf="stock?.displayRating() == 'VERY_BULLISH'" class="align-middle"
+  <div class="main-rating--verybullish" *ngIf="stock?.displayRating() == 'VERY_BULLISH'" >
+    <img class="align-middle"
        src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
-  <img *ngIf="stock?.displayRating() == 'BULLISH'" class="align-middle"
+  </div>
+  <div class="main-rating--bullish" *ngIf="stock?.displayRating() == 'BULLISH'" >
+    <img class="align-middle"
+       src="../../../assets/imgs/arc_large.svg" width="110" height="55">
+  </div>
+  <div class="" *ngIf="stock?.displayRating() == 'POSITIVE_NEUTRAL'" >
+    <img class="align-middle"
+       src="../../../assets/imgs/arc_large.svg" width="110" height="55">
+  </div>
+  <div class="" *ngIf="stock?.displayRating() == 'NEUTRAL'" >
+    <img class="align-middle"
+       src="../../../assets/imgs/arc_large.svg" width="110" height="55">
+  </div>
+  <div class="" *ngIf="stock?.displayRating() == 'NEGATIVE_NEUTRAL'" >
+    <img class="align-middle"
+       src="../../../assets/imgs/arc_large.svg" width="110" height="55">
+  </div>
+  <div class="" *ngIf="stock?.displayRating() == 'BEARISH'" >
+    <img class="align-middle"
+       src="../../../assets/imgs/arc_large.svg" width="110" height="55">
+  </div>
+  <div class="" *ngIf="stock?.displayRating() == 'VERY_BEARISH'" >
+    <img class="align-middle"
        src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
-  <img *ngIf="stock?.displayRating() == 'POSITIVE_NEUTRAL'" class="align-middle"
-       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
-  <img *ngIf="stock?.displayRating() == 'NEUTRAL'" class="align-middle"
-       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
-  <img *ngIf="stock?.displayRating() == 'NEGATIVE_NEUTRAL'" class="align-middle"
-       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
-  <img *ngIf="stock?.displayRating() == 'BEARISH'" class="align-middle"
-       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
-  <img *ngIf="stock?.displayRating() == 'VERY_BEARISH'" class="align-middle"
-       src="../../../assets/imgs/arc_VeryBullish-large.svg" width="110" height="55">
+  </div> 
 </div>
 <div class="">
   <accordion [closeOthers]="true">

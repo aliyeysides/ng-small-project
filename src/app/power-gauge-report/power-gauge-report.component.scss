@@ -7,7 +7,7 @@
 	height: 40px;
 	box-shadow:  inset 0 -1px 0px 0px $line-grey;
 	overflow: hidden;
-	width:100%;
+	width:100%;  
 	padding:0;
 	border-left: 1px solid #cccccc;
 }
@@ -20,11 +20,15 @@
 	height: 40px;
 	background-color: $link-blue;
 	position: relative;
+	font-size: 20px;
+	line-height: 38px;
+	color: #ffffff;
+	text-align: center;
 }
 
 .body__report-title {
 	float:left;
-	margin-left:4%;
+	margin-left: 4%;
 	font-size: 12px;
 	color: $font-color;
 	font-style: italic;
@@ -35,28 +39,61 @@
 
 
 
-
 .pgr__side-bar {
-	padding:0;
+	padding: 0 0 140px 0;
 	margin-top: 0;
-	border-right:1px solid $line-grey;
+	margin-left: -1px;
+	border-right: 1px solid $line-grey;
 	background-color: #EEEEEE;
 	float: left;
 	height: 100vh;
-	position: relative;
+	position: absolute;
+	z-index: 501;
 
 	.accordian__container {
 		width: 205px;
+		float: left;
+		border-left: 1px solid $line-grey;
 
 		.icon__learn-more {
 			position: absolute;
-			bottom:140px;
-			right:0px;
+			bottom: 136px;
+			right: 0;
+			font-size: 20px;
+			color: #666666;
 		}
 	}
- }
+	.pgr__learn-container {
+		float: left;
 
+		.pgr__learn {
+			padding: 20px 30px;
+			margin-top: 50px;
 
+			h2 {
+				font-weight: 300;
+				font-family: $font-stack;
+				margin-bottom: 35px;
+				border-bottom: 1px solid $line-grey;
+				line-height: 1.4;
+			}
+
+			h5 {
+				font-weight: 600;
+				font-family: $font-stack;
+				margin-bottom: 10px;
+				font-size: 20px;
+			}
+
+			p {
+				font-size: 15px;
+				font-weight: 400;
+				line-height: 1.6;
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
 
 
 
@@ -64,7 +101,8 @@
 	float: left;
 	overflow-y: scroll;
 	height: 100vh;
-	padding: 20px 30px;
+	padding: 15px 30px 140px 30px;
+	margin-left: 205px;
 
 	.stock__profile {
 		padding:0px 20px 0px 25px;
@@ -75,7 +113,7 @@
 
 			p {
 				float: left;
-				font-size: 28px;
+				font-size: 30px;
 				color: $font-color;
 				margin:0;
 				padding:0;
@@ -111,6 +149,9 @@
 		}
 
 		.stock__price {
+			border-bottom: 1px solid $line-greyLT;
+			padding-bottom: 11px;
+			margin-bottom: 8px;
 
 			p {
 				font-size: 26px;
@@ -121,16 +162,15 @@
 				span {
 					margin-right: 50px;
 					font-weight: 400;
-
-					.Last_price {
-						font-weight: 600 !important;
-					}
+				}	
+				.Last_price {
+					font-weight: 600 !important;
 				}
 			}
 		}
 
 		.stock__main-data {
-			padding:5px 0;
+			padding:4px 0;
 
 			p {
 				margin:0;
@@ -155,22 +195,23 @@
 	}
 
 	.stock__sentence {
-		padding:0 40px;
-		border-left: 1px solid $line-grey;
+		border-left: 1px solid $line-greyLT;
 		font-size: 16px;
+		padding-left: 30px;
+		padding-right:20px;
 
 		div {
 			margin-bottom: 10px;
 		}
 		.stock__sentence-factor {
 			font-size: 26px;
-			margin:0 0 10px;
-			padding:0;
+			margin: 4px 0 10px;
+			padding: 0;
 			font-weight: 400;
 
 			span {
 				font-weight: 700;
-				margin-left:15px;
+				margin-left: 15px;
 			}
 		}
 	}
@@ -244,6 +285,13 @@
   					font-weight: 600;
   				}
 			}
+			.FY-end-text span {
+				display: block;
+				font-size: 14px; 
+				font-weight: 300 !important;
+				margin-top:10px;
+				letter-spacing: .5px;
+				}
 			.label {
 				text-align: left;
 			}
@@ -260,6 +308,12 @@
   			span {
   				font-weight: 400;	
   			}
+		}
+		.label {
+			text-align: left;
+			font-weight: 400;
+			font-size: 15px;
+			width: 90px;
 		}
 
 		tbody {

@@ -25,7 +25,6 @@
 	height: 60px;
 	background-color: $button-orange;
 	border-right: 1px solid #ffffff;
-
 }
 
 .fa-search {
@@ -35,6 +34,7 @@
 }
 
 .search__dropdown {
+	display:none;
 	position: absolute;
 	top: 59px;
 	width: 100%;
