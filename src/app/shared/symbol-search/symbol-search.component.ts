@@ -51,7 +51,7 @@ export class SymbolSearchComponent implements OnInit {
 
   public onSubmit(e: Event) {
     e.preventDefault();
-    if (isNullOrUndefined(this.searchResults)) {
+    if (isNullOrUndefined(this.symbolSearchForm.value) || this.searchResults.length == 0) {
       this.sharedService.addAlert(INVALIDSYMBOLALERT.type, INVALIDSYMBOLALERT.msg);
       return;
     }
