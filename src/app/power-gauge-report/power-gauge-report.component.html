@@ -9,7 +9,7 @@
     <div class="body__report-title">
       <p>Generated: 03/23/17 11:50am</p>
     </div>
-  </div> 
+  </div>
 </div>
 <!-- SIDE BAR PGR SLIDER -->
 <div class="row">
@@ -30,12 +30,13 @@
     </div>
   </div>
 
-<!-- STOCK SUMMARY -->
+  <!-- STOCK SUMMARY -->
   <div class="stock-summary__container" id="print-section">
 
-  <!-- OVERALL -->
+    <!-- OVERALL -->
     <div class="stock-summary stock-summary--overall">
-    <!-- SUMMARY -->
+
+      <!-- SUMMARY -->
       <div class="row" style="margin-bottom: 30px;">
         <div class="col-lg-6 col-xl-6 stock__profile">
           <div class="stock__id clearfix">
@@ -79,7 +80,7 @@
         </div>
       </div>
 
-    <!-- DATA -->
+      <!-- DATA -->
       <div class="row" style="margin-bottom: 40px;">
         <div class="col-12 chart__yearly">
           <div class="standardHeader">
@@ -115,53 +116,10 @@
       </div>
     </div>
 
-  <!-- FINANCIALS -->
+    <!-- FINANCIALS -->
     <div class="stock-summary stock-summary--financials">
-    <!-- SUMMARY -->
-      <div class="row" style="margin-bottom: 30px;">
-        <div class="col-lg-6 col-xl-6 stock__profile">
-          <div class="stock__id clearfix">
-            <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
-            <div class="action-buttons">
-              <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="stock__price">
-            <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-xl-6 stock__sentence">
-          <div class="stock__sentence-factor">FINANCIALS: <span class="verybullish">{{ contextSummary?.financialContextSummary[0].status }}</span></div>
-          <div>{{ contextSummary?.financialContextSummary[0].generalSentence }}</div>
-          <div>{{ contextSummary?.financialContextSummary[0].explanatorySentence }}</div>
-        </div>
-      </div>
 
-    <!-- DATA -->
+      <!-- DATA -->
       <div class="row" style="margin-bottom: 40px;">
         <div class="col-md-6 col-lg-6 col-xl-3">
           <div class="standardHeader">
@@ -274,53 +232,10 @@
       </div>
     </div>
 
-  <!-- EARNINGS -->
+    <!-- EARNINGS -->
     <div class="stock-summary stock-summary--earnings">
-    <!-- SUMMARY -->
-      <div class="row" style="margin-bottom: 40px;">
-        <div class="col-lg-6 col-xl-6 stock__profile">
-          <div class="stock__id clearfix">
-            <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
-            <div class="action-buttons">
-              <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="stock__price">
-            <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-xl-6 stock__sentence">
-          <div class="stock__sentence-factor">EARNINGS: <span class="bullish">{{ contextSummary?.earningsContextSummary[0].status }}</span></div>
-          <div>{{ contextSummary?.earningsContextSummary[0].generalSentence }}</div>
-          <div>{{ contextSummary?.earningsContextSummary[0].explanatorySentence }}</div>
-        </div>
-      </div>
 
-    <!-- DATA -->
+      <!-- DATA -->
       <div class="row">
         <div class="col-md-6">
           <div class="standardHeader">
@@ -408,9 +323,7 @@
             </table>
           </div>
         </div>
-      </div>
-
-      <div class="row" style="margin-bottom: 40px;">
+        <div class="row" style="margin-bottom: 40px;">
         <div class="col-sm-8 col-md-6">
           <div class="standardHeader">
             <p class="headerLabel">EPS QUARTERLY RESULTS (3yr):</p>
@@ -493,55 +406,13 @@
         </div>
 
       </div>
+      </div>
     </div>
 
-  <!-- TECHNICALS -->
+    <!-- TECHNICALS -->
     <div class="stock-summary stock-summary--technicals">
-    <!-- SUMMARY -->
-      <div class="row" style="margin-bottom: 30px;">
-        <div class="col-lg-6 col-xl-6 stock__profile">
-          <div class="stock__id clearfix">
-            <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
-            <div class="action-buttons">
-              <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="stock__price">
-            <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-xl-6 stock__sentence">
-          <div class="stock__sentence-factor">TECHNICALS: <span class="neutral">{{ contextSummary?.priceVolumeContextSummary[0].status }}</span></div>
-          <div>{{ contextSummary?.priceVolumeContextSummary[0].generalSentence }}</div>
-          <div>{{ contextSummary?.priceVolumeContextSummary[0].explanatorySentence }}</div>
-        </div>
-      </div>
 
-    <!-- DATA -->
+      <!-- DATA -->
       <div class="row" style="margin-bottom: 30px;">
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="standardHeader">
@@ -605,55 +476,12 @@
         </div>
       </div>
     </div>
+    </div>
 
-
-  <!-- EXPERTS -->    
+    <!-- EXPERTS -->
     <div class="stock-summary stock-summary--experts">
-    <!-- SUMMARY -->
-      <div class="row" style="margin-bottom: 30px;">
-        <div class="col-lg-6 col-xl-6 stock__profile">
-          <div class="stock__id clearfix">
-            <p class="company">{{ researchReport?.CompanyName }} <span class="ticker">( {{ researchReport?.Symbol }} )</span></p>
-            <div class="action-buttons">
-              <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="stock__price">
-            <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span class="Net_change change--down">-0.64</span><span class="Percent_change change--down">(-0.42%)</span></p>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">YIELD: <span class="Yield data">2.35%</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Market_cap data change--up">{{ stock?.fundamentalData["Industry_strength"] }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">TRENDS: <span class="Yield data change--down">{{ stock?.fundamentalData["Trends_strength"] }}</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-xl-6 stock__sentence">
-          <div class="stock__sentence-factor">EXPERTS: <span class="bearish">{{ contextSummary?.expertOpinionsContextSummary[0].status }}</span></div>
-          <div>{{ contextSummary?.expertOpinionsContextSummary[0].generalSentence }}</div>
-          <div>{{ contextSummary?.expertOpinionsContextSummary[0].explanatorySentence }}</div>
-        </div>
-      </div>
 
-    <!-- DATA -->
+      <!-- DATA -->
       <div class="row" style="margin-bottom: 30px;">
         <div class="col-md-6" style="padding-bottom: 0px;">
           <div class="standardHeader">
@@ -707,7 +535,7 @@
             <table>
               <thead>
                 <th>
-                  <span>Factor</span>                 
+                  <span>Factor</span>
                 </th>
                 <th>
                   <span>Value</span>
