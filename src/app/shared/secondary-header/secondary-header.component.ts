@@ -14,6 +14,7 @@ import {Subject} from "rxjs/Subject";
 export class SecondaryHeaderComponent implements OnInit, OnDestroy {
 
   public returnIconVisible: boolean;
+
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(private location: Location,
