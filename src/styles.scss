@@ -61,7 +61,6 @@ h6 i {
 .change--down {
     color: $veryBearish-red;
 }
-
 .change--up {
     color: $veryBullish-green;
 }
@@ -69,7 +68,12 @@ h6 i {
 .bullish {
     color: $bullish-green;
 }
-
+.bearish {
+    color: $bearish-red;
+}
+.neutral {
+    color: $neutral-yellow;
+}
 .verybullish {
     color: $veryBullish-green;
 }
@@ -77,15 +81,12 @@ h6 i {
 .icon__social--tw {
     color: #1199ff;
 }
-
 .icon__social--fb {
     color: #003366;
 }
-
 .icon__social--in {
     color: #5A95DA;
 }
-
 .icon__social--yt {
     color: #D0021B;
 }
@@ -156,7 +157,6 @@ h6 i {
             text-decoration: underline;
         }
     }
-
 }
 
 .side-bar__section--filter {
@@ -231,6 +231,36 @@ h6 i {
 
 
 
+.action__alert {
+    text-align: center;
+
+    .alert-danger {
+        background-color: #FF3D55;
+        border-color: #D0021B;
+        color: #ffffff;
+    }   
+    .alert {
+        padding: 1rem 1.25rem 0;
+        margin-bottom: 1rem;
+        border-top:1px solid $line-grey;
+        border-bottom:1px solid $line-grey;
+        border-right:0px solid $line-grey;
+        border-left:0px solid $line-grey;
+        border-radius: 0;
+        height: 60px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .close {
+        float: right;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1;
+        color: #fff;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+        opacity: .9;
+    }
+}
 
 
 
