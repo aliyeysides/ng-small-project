@@ -6,6 +6,11 @@ import {Router} from "@angular/router";
 import {SharedService} from "../shared.service";
 import {isNullOrUndefined} from "util";
 
+const INVALIDSYMBOLALERT = {
+  type: 'danger',
+  msg: `You must enter a valid stock symbol.`
+};
+
 @Component({
   selector: 'psp-symbol-search',
   templateUrl: './symbol-search.component.html',
@@ -37,19 +42,19 @@ export class SymbolSearchComponent implements OnInit {
 
   public gotoReport(ticker?: string): void {
     if (isNullOrUndefined(ticker)) {
-      let alert = {
-        type: 'danger',
-        msg: `You must enter a valid stock symbol.`
-      };
-      this.sharedService.addAlert(alert.type, alert.msg);
+      this.sharedService.addAlert(INVALIDSYMBOLALERT.type, INVALIDSYMBOLALERT.msg);
       return;
     }
     this.router.navigate(['/power-gauge-report', ticker]);
     this.symbolSearchForm.reset();
   }
 
-  public onSubmit() {
-    console.log('symbol', this.searchResults[0].Symbol);
+  public onSubmit(e: Event) {
+    e.preventDefault();
+    if (isNullOrUndefined(this.searchResults)) {
+      this.sharedService.addAlert(INVALIDSYMBOLALERT.type, INVALIDSYMBOLALERT.msg);
+      return;
+    }
     this.gotoReport(this.searchResults[0].Symbol);
     this.symbolSearchForm.reset();
   }
