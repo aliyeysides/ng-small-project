@@ -56,28 +56,28 @@ export class PowerGaugeReportComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    // this.stock = PGRFAKEDATA[0];
-    // this.researchReport = PGRFAKEDATA[1];
-    // this.contextSummary = PGRFAKEDATA[2];
+    this.stock = PGRFAKEDATA[0];
+    this.researchReport = PGRFAKEDATA[1];
+    this.contextSummary = PGRFAKEDATA[2];
 
-    this.route.params
-      .subscribe(params => {
-        this.symbolSearchService.getSymbolData(params.symbol)
-          .switchMap(stock => {
-            this.stock = stock;
-            return Observable.combineLatest(
-              this.symbolSearchService.getResearchReportData(stock),
-              this.symbolSearchService.getPGRDataAndContextSummary(stock)
-            )})
-          .subscribe(
-            res => {
-              console.log('res', res);
-              this.researchReport = res[0];
-              this.contextSummary = res[1];
-            },
-            err => this.sharedService.handleError
-          );
-      });
+    // this.route.params
+    //   .subscribe(params => {
+    //     this.symbolSearchService.getSymbolData(params.symbol)
+    //       .switchMap(stock => {
+    //         this.stock = stock;
+    //         return Observable.combineLatest(
+    //           this.symbolSearchService.getResearchReportData(stock),
+    //           this.symbolSearchService.getPGRDataAndContextSummary(stock)
+    //         )})
+    //       .subscribe(
+    //         res => {
+    //           console.log('res', res);
+    //           this.researchReport = res[0];
+    //           this.contextSummary = res[1];
+    //         },
+    //         err => this.sharedService.handleError
+    //       );
+    //   });
     this.helpMenuOpen = 'out';
   }
 

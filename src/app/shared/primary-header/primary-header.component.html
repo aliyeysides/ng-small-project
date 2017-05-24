@@ -25,6 +25,11 @@
         <p><span class="divider"> | </span> <span class=""> 238.63 </span> <span class=""> +1.41 </span> <span class=""> (0.59%) </span></p>
       </div>
     </div>
+
+    <div *ngFor="let alert of alerts">
+      <alert [type]="alert.type" dismissible="true">{{ alert.msg }}</alert>
+    </div>
+
     <div class="action__date">
       <p>{{ day }} &nbsp; • &nbsp; {{ date }} &nbsp; • &nbsp; {{ time }}</p>
     </div>

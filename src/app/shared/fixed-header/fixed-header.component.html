@@ -1,30 +1,31 @@
+<nav class="row">
+  <div class="col-12  primary-nav">
+    <div class="primary-nav__logo">
+      <img class="align-middle" src="../../../assets/imgs/logo-arc.svg" width="48" height="24" routerLink="/">
+    </div>
 
-    <nav class="row">
-        <div class="col-12  primary-nav">
-            <div class="primary-nav__logo">
-                <img class="align-middle" src="../../../assets/imgs/logo-arc.svg" width="48" height="24" routerLink="/">
-            </div>
+    <div *ngIf="!settingsVisible" class="primary-nav__nav">
+      <psp-navbar></psp-navbar>
+    </div>
 
-            <div *ngIf="!settingsVisible" class="primary-nav__nav">
-                <psp-navbar></psp-navbar>
-            </div>
+    <div *ngIf="settingsVisible" class="col">
+      <psp-settings></psp-settings>
+    </div>
 
-            <div *ngIf="settingsVisible" class="col">
-                <psp-settings></psp-settings>
-            </div>
-
-            <div class="primary-nav__settings">
-                <button [hidden]="settingsVisible" (click)="toggle()" class=""><img class="align-middle" src="../../../assets/imgs/icon-gear.svg" width="22" height="22"></button>
-                <button [hidden]="!settingsVisible" (click)="toggle()" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="primary-nav__logout">
-                <ul class="nav nav-justified">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                  </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="primary-nav__settings">
+      <button [hidden]="settingsVisible" (click)="toggle()" class=""><img class="align-middle"
+                                                                          src="../../../assets/imgs/icon-gear.svg"
+                                                                          width="22" height="22"></button>
+      <button [hidden]="!settingsVisible" (click)="toggle()" type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="primary-nav__logout">
+      <ul class="nav nav-justified">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

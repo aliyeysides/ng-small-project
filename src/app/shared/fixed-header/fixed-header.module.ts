@@ -16,7 +16,7 @@ import {GlossaryComponent} from './settings/glossary/glossary.component';
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    BsDropdownModule
+    BsDropdownModule,
   ],
   exports: [
     FixedHeaderComponent
