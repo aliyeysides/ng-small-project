@@ -454,7 +454,7 @@ const XLContextSummary = {
     {
       "explanatorySentence": "The factor rank is based on the stock having low long term debt to equity ratio, low price to book value, low price to sales ratio, and relatively high cash flow, but low return on equity.",
       "generalSentence": "XL's financial metrics are excellent. The company generates high free cash flow relative to market capitalization and does not hold much long term debt.",
-      "status": "Very Bullish"
+      "status": "VERY BULLISH"
     }
   ],
   "expertOpnionsContextSummary": [
@@ -526,15 +526,15 @@ const XLContextSummary = {
     {
       "explanatorySentence": "The factor rank is based on the stock having high earnings growth over the past 3-5 years, better than expected earnings in recent quarters, a relatively low projected P/E ratio, and consistent earnings over the past 5 years, but a relatively poor yearly earnings trend.",
       "generalSentence": "XL's earnings performance has been strong. The company has a history of strong earnings growth and has outperformed analysts' earnings estimates.",
-      "status": "Bullish"
+      "status": "BULLISH"
     }
   ],
   "pgrContextSummary": [
     {
       "additonalSentence": "XL's financial metrics are excellent due to a relatively high cash flow.\nXL's earnings performance is strong as a result of better than expected earnings in recent quarters.",
       "neutralSentence": "",
-      "mainSentence": "The Chaikin Power Gauge Rating<TRADEMARK> for XL is Bullish due to very attractive financial metrics and strong earnings performance. The stock also has negative expert activity. ",
-      "status": "Bullish"
+      "mainSentence": "The Chaikin Power Gauge Rating for XL is Bullish due to very attractive financial metrics and strong earnings performance. The stock also has negative expert activity. ",
+      "status": "BULLISH"
     }
   ]
 };
