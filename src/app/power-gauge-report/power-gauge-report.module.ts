@@ -9,6 +9,7 @@ import {
   AccordionModule,
   PopoverModule
 } from 'ngx-bootstrap';
+import { PgrHeaderComponent } from './pgr-header/pgr-header.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import {
   exports: [
     PowerGaugeReportComponent
   ],
-  declarations: [PowerGaugeReportComponent, PgrAccordionComponent]
+  declarations: [PowerGaugeReportComponent, PgrAccordionComponent, PgrHeaderComponent]
 })
 export class PowerGaugeReportModule {
 }
