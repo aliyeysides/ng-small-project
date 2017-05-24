@@ -207,7 +207,7 @@
 			font-size: 26px;
 			margin: 4px 0 10px;
 			padding: 0;
-			font-weight: 400;
+			font-weight: 300;
 
 			span {
 				font-weight: 700;
@@ -328,8 +328,81 @@
 
 
 
+.chart__yearly {
+	.c3-target-data1 {
+		.c3-line {
+    		stroke-width: 2px;
+    	}
+    }
+    .c3-target-data2 {
+    	.c3-line {
+	    	stroke-dasharray: 5;
+	    	stroke-width: 2px;
+	    }
+	}
+	.c3-ygrids {
+		line {
+			stroke: #ececec;
+			stroke-dasharray: 1;
+		}
+	}
+	.chart__container {
+		border: 1px solid #cccccc;
+		padding-top:10px;
 
+		#mainChart {
+			margin-top:15px;
+		}
 
+		.chart__toggle {
+			margin-left:62px;
+
+			.radio {
+				margin-right: 20px;
+				float: left;
+
+				label {
+					font-weight: 700;
+				}
+			}
+			.checkbox {
+				float: left;
+
+				label {
+					font-weight: 700;
+				}
+				input {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}
+
+.pgr-chart__overlay {
+	display:block;
+	height: 12px;
+	width: 88%;
+	overflow: hidden;
+	float: right;
+	padding:0 5px 0 0 !important;
+	margin-top:-5px !important;
+
+	.pgr-chart{
+		display:block;
+		height: 12px;
+		float: left;
+	}
+	.pgr-chart--bullish {
+		background-color: #24A300;
+	}
+	.pgr-chart--neutral {
+		background-color: #FF9900;
+	}
+	.pgr-chart--bearish {
+		background-color: #EB001c;
+	}
+}
 
 
 

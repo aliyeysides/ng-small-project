@@ -301,7 +301,6 @@ const XLResearchData = {
       "Qtr2",
       "Qtr3",
       "Qtr4",
-      "Total"
     ],
     "label": [
       "Fiscal Year End Month is December."
@@ -313,7 +312,6 @@ const XLResearchData = {
         "$3.16",
         "$0.09",
         "$0.76",
-        "$4.15"
       ],
       [
         "12/16",
@@ -321,7 +319,6 @@ const XLResearchData = {
         "$0.16",
         "$0.26",
         "$1.13",
-        "$1.62"
       ],
       [
         "12/17",
@@ -329,7 +326,6 @@ const XLResearchData = {
         "-",
         "-",
         "-",
-        "-"
       ]
     ]
   },
@@ -341,7 +337,7 @@ const XLResearchData = {
       "33.43%",
       "13.29%"
     ],
-    "Revenue(M)": [
+    "Revenue (M)": [
       "7,230.48",
       "7,541.23",
       "6,976.44",
@@ -447,7 +443,7 @@ const XLContextSummary = {
     {
       "explanatorySentence": "The factor rank is based on the stock having price strength versus the market, strong Chaikin Money Flow persistency, strength vs. its long-term price trend, and an increasing volume trend, but negative trend momentum.",
       "generalSentence": "Price/volume activity for XL is neutral. XL is currently strong relative to its long-term trend and has decelerating 4-month trend momentum.",
-      "status": "Neutral"
+      "status": "NEUTRAL"
     }
   ],
   "financialContextSummary": [
@@ -457,11 +453,11 @@ const XLContextSummary = {
       "status": "VERY BULLISH"
     }
   ],
-  "expertOpnionsContextSummary": [
+  "expertOpinionsContextSummary": [
     {
       "explanatorySentence": "The factor rank is based on the stock having analysts revising earnings estimates downward, insiders not purchasing significant amounts of stock, and weak performance of the <industry> industry group, but a low short interest ratio, and optimistic analyst opinions.",
       "generalSentence": "Expert activity about XL is negative. Insiders are not net buyers of XL's stock and analysts have been lowering their earnings estimates for XL.",
-      "status": "Bearish"
+      "status": "BEARISH"
     }
   ],
   "pgrData": [
