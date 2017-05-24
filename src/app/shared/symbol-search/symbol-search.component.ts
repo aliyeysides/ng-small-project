@@ -50,8 +50,7 @@ export class SymbolSearchComponent implements OnInit {
 
   public onSubmit() {
     console.log('symbol', this.searchResults[0].Symbol);
-    debugger;
-    // this.gotoReport(this.searchResults[0].Symbol);
+    this.gotoReport(this.searchResults[0].Symbol);
     this.symbolSearchForm.reset();
   }
 
