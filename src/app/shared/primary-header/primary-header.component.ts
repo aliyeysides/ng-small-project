@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import * as moment from 'moment';
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
+import {SharedService} from "../shared.service";
 
 @Component({
   selector: 'psp-primary-header',
@@ -17,10 +18,11 @@ export class PrimaryHeaderComponent implements OnInit {
   public day: string;
   public time: string;
   public greeting: string;
+  public alerts: Array<any>;
 
   currentMoment$ = this.currentMoment.asObservable();
 
-  constructor() {
+  constructor(private sharedService: SharedService) {
   }
 
   ngOnInit() {
@@ -41,6 +43,10 @@ export class PrimaryHeaderComponent implements OnInit {
         this.greeting = this.getGreetingTime(val);
       }
     );
+
+    this.sharedService.getAlerts().subscribe(
+      res => this.alerts = res
+    )
   }
 
   public updateActionHeaderClassObject() {
