@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {SharedService} from "../../shared.service";
 
 @Component({
   selector: 'psp-navbar',
@@ -7,10 +9,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router,
+              private sharedService: SharedService) {
   }
 
   ngOnInit() {
+    this.router.events.subscribe(
+      val => this.sharedService.shiftAlert()
+    )
   }
 
 }

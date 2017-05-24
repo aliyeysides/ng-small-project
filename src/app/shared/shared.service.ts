@@ -22,17 +22,21 @@ export class SharedService {
     return Observable.throw(errMsg);
   }
 
+  public getAlerts(): Observable<Array<any>>  {
+    return Observable.of(this.alerts);
+  }
+
   public addAlert(type: string, msg: string) {
     let newAlert = {
       type: type,
       msg: msg
     };
-    this.alerts.shift();
+    this.shiftAlert();
     this.alerts.push(newAlert);
   }
 
-  public getAlerts(): Observable<Array<any>>  {
-    return Observable.of(this.alerts);
+  public shiftAlert() {
+    this.alerts.shift();
   }
 
 }
