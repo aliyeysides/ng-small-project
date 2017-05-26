@@ -9,7 +9,7 @@ trigger,
 state,
 style,
 transition,
-animate, OnChanges, SimpleChanges
+animate,
 } from '@angular/core';
 
 import {Stock} from "app/shared/models/stock";
@@ -40,13 +40,19 @@ import {ActivatedRoute} from "@angular/router";
     ])
   ]
 })
-export class PowerGaugeReportComponent implements OnInit, OnChanges {
+export class PowerGaugeReportComponent implements OnInit {
 
   public helpMenuOpen: string;
   public stock: Stock;
   public researchReport: any;
   public contextSummary: any;
+  public tickerCompetitors: any;
   public reportParams: URLSearchParams;
+  public overallRatingClass: object;
+  public technicalRatingClass: object;
+  public earningsRatingClass: object;
+  public expertsRatingClass: object;
+  public financialRatingClass: object;
 
   constructor(private symbolSearchService: SymbolSearchService,
               private sharedService: SharedService,
@@ -56,39 +62,58 @@ export class PowerGaugeReportComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.stock = PGRFAKEDATA[0];
-    this.researchReport = PGRFAKEDATA[1];
-    this.contextSummary = PGRFAKEDATA[2];
+    // this.stock = PGRFAKEDATA[0];
+    // this.researchReport = PGRFAKEDATA[1];
+    // this.contextSummary = PGRFAKEDATA[2];
 
-    // this.route.params
-    //   .subscribe(params => {
-    //     this.symbolSearchService.getSymbolData(params.symbol)
-    //       .switchMap(stock => {
-    //         this.stock = stock;
-    //         return Observable.combineLatest(
-    //           this.symbolSearchService.getResearchReportData(stock),
-    //           this.symbolSearchService.getPGRDataAndContextSummary(stock)
-    //         )})
-    //       .subscribe(
-    //         res => {
-    //           console.log('res', res);
-    //           this.researchReport = res[0];
-    //           this.contextSummary = res[1];
-    //         },
-    //         err => this.sharedService.handleError
-    //       );
-    //   });
+    this.route.params
+      .subscribe(params => {
+        console.log('activated route', params);
+        this.symbolSearchService.getSymbolData(params.symbol)
+          .switchMap(stock => {
+            this.stock = stock;
+            return Observable.combineLatest(
+              this.symbolSearchService.getResearchReportData(params.symbol),
+              this.symbolSearchService.getPGRDataAndContextSummary(params.symbol),
+              this.symbolSearchService.getTickerCompetitors(params.symbol)
+            )})
+          .subscribe(
+            res => {
+              console.log('res', res);
+              this.extractData(res);
+            },
+            err => this.sharedService.handleError
+          );
+      });
     this.helpMenuOpen = 'out';
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['researchReport']) {
-      this.researchReport = changes['researchReport'].currentValue;
-    }
   }
 
   toggleHelpMenu(): void {
     this.helpMenuOpen = this.helpMenuOpen === 'out' ? 'in' : 'out';
+  }
+
+  private extractData(res) {
+    console.log('I was called');
+    this.researchReport = res[0];
+    this.contextSummary = res[1];
+    this.tickerCompetitors = res[2].compititors;
+    this.overallRatingClass = this.createClassObject(this.contextSummary.pgrContextSummary);
+    this.technicalRatingClass = this.createClassObject(this.contextSummary.priceVolumeContextSummary);
+    this.earningsRatingClass = this.createClassObject(this.contextSummary.earningsContextSummary);
+    this.expertsRatingClass = this.createClassObject(this.contextSummary.expertOpnionsContextSummary);
+    this.financialRatingClass = this.createClassObject(this.contextSummary.financialContextSummary);
+  }
+
+  public createClassObject(arr: any): object {
+    if (arr) {
+      return {
+        'verybullish' : arr[0].status == 'Very Bullish',
+        'bullish' : arr[0].status == 'Bullish',
+        'neutral' : arr[0].status == 'Neutral',
+        'bearish' : arr[0].status == 'Bearish',
+        'verybearish' : arr[0].status == 'Very Bearish'
+      }
+    }
   }
 
   public downloadReportPDF(ticker: string) {

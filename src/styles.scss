@@ -32,7 +32,7 @@ button {
 }
 
 textarea, input, button {
-    outline: none !important; 
+    outline: none !important;
 }
 
 h6 {
@@ -76,6 +76,10 @@ h6 i {
 }
 .verybullish {
     color: $veryBullish-green;
+}
+
+.verybearish {
+    color: $veryBearish-red;
 }
 
 .icon__social--tw {
@@ -238,7 +242,7 @@ h6 i {
         background-color: #FF3D55;
         border-color: #D0021B;
         color: #ffffff;
-    }   
+    }
     .alert {
         padding: 1rem 1.25rem 0;
         margin-bottom: 1rem;
@@ -295,7 +299,7 @@ h6 i {
     color: #fff;
     text-align: center;
 }
-    
+
 .slider-veryBearish {
     background-color: #e00000;
     left: 0%;

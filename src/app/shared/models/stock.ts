@@ -115,4 +115,5 @@ export class Stock {
   getPGRStats(): object {
     return this.pgr[6];
   }
+
 }

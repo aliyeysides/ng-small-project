@@ -39,11 +39,11 @@ export class SymbolSearchService {
       .catch(this.sharedService.handleError)
   }
 
-  public getResearchReportData(stock: Stock): Observable<object> {
+  public getResearchReportData(stock: string): Observable<object> {
     let researchReportUrl = '/CPTRestSecure/app/researchReportServices/getResearchReportData?';
-    let symbol = stock.getStockSymbol();
+    // let symbol = stock.getStockSymbol();
 
-    this.researchParams.set('symbol', symbol);
+    this.researchParams.set('symbol', stock);
 
     return this.http.get(researchReportUrl, {
       search: this.researchParams,
@@ -54,13 +54,12 @@ export class SymbolSearchService {
       .catch(this.sharedService.handleError)
   }
 
-  public getPGRDataAndContextSummary(stock: Stock): Observable<object> {
+  public getPGRDataAndContextSummary(stock: string): Observable<object> {
     let contextSummaryUrl = '/CPTRestSecure/app/researchReportServices/getPgrDataAndContextSummary?';
-    let symbol = stock.getStockSymbol();
+    // let symbol = stock.getStockSymbol();
     // let industry = stock
 
-    this.summaryParams.set('symbol', symbol);
-    // this.summaryParams.set('industry', this.)
+    this.summaryParams.set('symbol', stock);
 
     return this.http.get(contextSummaryUrl, {
       search: this.summaryParams,
@@ -69,6 +68,19 @@ export class SymbolSearchService {
       return res.json();
     })
       .catch(this.sharedService.handleError)
+  }
+
+  public getTickerCompetitors(stock: string): Observable<object> {
+    let tickerCompetitorsUrl = '/CPTRestSecure/app/researchReportServices/getTickerCompetitors?';
+
+    return this.http.get(tickerCompetitorsUrl, {
+      search: this.summaryParams,
+      withCredentials: true
+    }).map(res => {
+      return res.json();
+    })
+      .catch(this.sharedService.handleError)
+
   }
 
   public symbolLookup(query: string): Observable<Array<object>> {
