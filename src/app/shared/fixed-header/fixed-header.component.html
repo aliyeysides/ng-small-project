@@ -8,16 +8,16 @@
       <psp-navbar></psp-navbar>
     </div>
 
-    <div *ngIf="settingsVisible" class="col">
+    <div *ngIf="settingsVisible" class="settings__dropdown">
       <psp-settings></psp-settings>
     </div>
 
     <div class="primary-nav__settings">
-      <button [hidden]="settingsVisible" (click)="toggle()" class=""><img class="align-middle"
-                                                                          src="../../../assets/imgs/icon-gear.svg"
-                                                                          width="22" height="22"></button>
+      <button [hidden]="settingsVisible" (click)="toggle()" class="">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+      </button>
       <button [hidden]="!settingsVisible" (click)="toggle()" type="button" class="close" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
+        <i class="fa fa-times" aria-hidden="true"></i>
       </button>
     </div>
     <div class="primary-nav__logout">

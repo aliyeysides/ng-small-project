@@ -14,7 +14,7 @@
         <div class="collapse__hover-text" *ngIf="collapseText && !isCollapsed">HIDE</div>
         <div class="collapse__hover-text"  *ngIf="!collapseText && isCollapsed">SHOW</div>
       </div>
-      <div [collapse]="isCollapsed" class="col-md-6 col-lg-4 flex" *ngFor="let insight of insights">
+      <div [collapse]="isCollapsed" class="col-lg-6 col-xl-4 flex" *ngFor="let insight of insights">
         <div class="tile tile__morning-insights" (click)="gotoInsight(insight)">
           <div class="tile__content">
             <p class="tile__content-date">Monday, April 16, 2017</p>
@@ -22,7 +22,7 @@
             <p class="tile__content-author">By John Schlitz</p>
           </div>
           <div class="tile__category">
-            <p>MORNING INSIGHTS</p>
+            <p><span>MORNING</span>INSIGHTS</p>
           </div>
         </div>
       </div>
@@ -36,3 +36,4 @@
 
   <psp-sidebar class="col-sm-5 col-md-4 col-lg-3 side-bar"></psp-sidebar>
 </div>
+ 

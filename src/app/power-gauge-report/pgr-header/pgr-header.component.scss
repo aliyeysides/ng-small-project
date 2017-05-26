@@ -10,21 +10,32 @@
 .body__header-icon {
   width: 80px;
   border-right: 1px solid #ffffff;
-  box-shadow:  inset 0 -3px 0px 0px $link-blueDK;
+  box-shadow:  inset 0 -3px 0px 0px $button-navDK;
   float: left;
   height: 40px;
-  background-color: $link-blue;
+  background-color: $button-nav;
   position: relative;
+
+  img {
+    margin-top:-1px;
+  }
 }
 
 .body__header-title {
   float:left;
   margin-left:2%;
   font-size: 18px;
-  color: $font-color;
+  color: $font-colorMD;
   letter-spacing: 0.25px;
   text-transform: uppercase;
   line-height: 40px;
+  
+  p {
+    span {
+      font-weight: 600;
+      color: $font-color;
+    }
+  }
 }
 
 .body__header-back {
