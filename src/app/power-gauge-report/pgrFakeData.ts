@@ -34,7 +34,9 @@ const XL = {
     "current_quarter": "2",
     "last_quarter": "1"
   },
-  "metaInfo": [],
+  "metaInfo": [
+
+  ],
   "pgr": [
     {
       "PGR Value": 4
@@ -54,7 +56,7 @@ const XL = {
           "Return on Equity": 2
         },
         {
-          "Price to Sales": 4
+          "Price to Sales": 3
         },
         {
           "Free Cash Flow": 5
@@ -89,7 +91,7 @@ const XL = {
           "Value": 3
         },
         {
-          "Rel Strength vs Market": 3
+          "Rel Strength vs Market": 4
         },
         {
           "Chaikin Money Flow": 3
@@ -101,7 +103,7 @@ const XL = {
           "Price Trend ROC": 2
         },
         {
-          "Volume Trend": 3
+          "Volume Trend": 2
         }
       ]
     },
@@ -111,10 +113,10 @@ const XL = {
           "Value": 2
         },
         {
-          "Estimate Trend": 2
+          "Estimate Trend": 3
         },
         {
-          "Short Interest": 3
+          "Short Interest": 4
         },
         {
           "Insider Activity": 1
@@ -123,7 +125,7 @@ const XL = {
           "Analyst Rating Trend": 4
         },
         {
-          "Industry Rel Strength": 2
+          "Industry Rel Strength": 3
         }
       ]
     },
@@ -153,35 +155,32 @@ const XL = {
   "fundamentalData": {
     "52 Wk Lo": "30.67",
     "Address": "ONE BERMUDIANA ROAD",
-    "52 Wk Hi": "42.90",
-    "Debt/Equity": "0.20",
-    "P/E": "23.51",
+    "52 Wk Hi": "42.90999",
+    "Debt/Equity": "0.20428",
+    "P/E": "23.96599",
     "Analyst Revisions (%)": "0.01",
     "ROE": "3.7091",
-    "Relative to S&P (%)": "4.86",
-    "EPS_current ('17)": "3.27",
+    "Relative to S&P (%)": "7.6676",
+    "EPS_current ('17)": "3.28",
     "is_optionable": true,
-    "ROI": "3.09",
-    "Price/Book": "0.84",
-    "52 Wk Performance (%)": "22.50",
+    "ROI": "3.0936",
+    "Price/Book": "0.86554",
+    "52 Wk Performance (%)": "23.832",
     "Company Text Blurb": "XL Group Limited provides insurance and reinsurance coverage to industrial, commercial and professional service firms, insurance companies and other enterprises. The Company's operating segment consists of Insurance and Reinsurance. Insurance product segment includes Global Casualty, Global Energy Property, & Construction; Global Professional and Global Specialty. Reinsurance segment provides casualty, property risk, property catastrophe, specialty and other reinsurance lines. XL Group Limited, formerly known as XL Group plc, is based in Hamilton, Bermuda.",
     "5 Yr EPS Growth (%)": "133.85",
     "EPS_Previous ('16)": "1.63",
-    "Mkt Capitalization": "10943.94",
-    "Revenue": "10884.22",
-    "Yield": "2.20%",
-    "Industry_strength": "STRONG",
-    "Trends_strength": "WEAK"
+    "Mkt Capitalization": "11153.10253",
+    "Revenue": "10884.2207",
+    "Yield": "2.20",
+    "Price/Sales": "1.05755"
   },
   "status": "success"
 };
 
 const XLResearchData = {
   "Valuation": {
-    "Price/Sales": "1.00",
-    "Price/Book": "$0.84",
-    "PEG": "12.5",
-    "Price/Earnings": "14.2"
+    "Price/Sales": "1.024700",
+    "Price/Book": "0.865540"
   },
   "Analyst Recommendations": {
     "Mean Last Week": "Buy",
@@ -229,25 +228,23 @@ const XLResearchData = {
     "Factor": "Value",
     "52 Week Low": "30.67"
   },
-  "Date": "Tue May 16 09:56 EDT 2017 ",
-  "AssetsandLiabilities": {
-    "Current Ratio": "0.36",
-    "LT Debt/Equity": "0.20",
-    "perEarned on Equity": "10.3%",
-    "Book Value": "$9.11"
+  "Date": "Fri May 26 13:47 EDT 2017 ",
+  "Assets and Liabilities": {
+    "Current Ratio": "0.365260",
+    "LT Debt/Equity": "0.203700"
   },
   "PriceActivity2": {
-    "% Change Price - 24 Wks Rel to S&P": "3.84%",
-    "% Change Price - 24 Weeks": "12.16%",
-    "% Change Price - 4 Wks Rel to S&P": "1.91%",
+    "% Change Price - 24 Wks Rel to S&P": "9.25%",
+    "% Change Price - 24 Weeks": "17.20%",
+    "% Change Price - 4 Wks Rel to S&P": "1.02%",
     "Factor": "Value",
-    "% Change Price - 4 Weeks": "4.62%"
+    "% Change Price - 4 Weeks": "1.74%"
   },
   "Industry": "Insurance",
   "Earning Estimate Revisions": {
     "Current FY": [
+      "3.28",
       "3.27",
-      "3.26",
       "+0.31%"
     ],
     "labels2": [
@@ -261,8 +258,8 @@ const XLResearchData = {
       "%Chg"
     ],
     "Next Qtr": [
-      "0.70",
-      "0.70",
+      "0.71",
+      "0.71",
       "0.00%"
     ],
     "Current Qtr": [
@@ -273,10 +270,8 @@ const XLResearchData = {
   },
   "CompanyName": "Xl Group Ltd",
   "Returns": {
-    "Return on Invest": "5.03%",
-    "Return on Equity": "1.55%",
-    "1 Month Return": "-0.74%",
-    "3 Month Return": "+1.66%"
+    "Return on Invest": "3.093600",
+    "Return on Equity": "3.709100"
   },
   "Details": {
     "ChineseProfile": null,
@@ -294,13 +289,14 @@ const XLResearchData = {
     "PhoneNumber": "441-292-8515",
     "CountryCode": "BMU"
   },
-  "Price": 41.92,
+  "Price": 43.36,
   "EPS Quarterly Results": {
     "FY": [
       "Qtr1",
       "Qtr2",
       "Qtr3",
       "Qtr4",
+      "Total"
     ],
     "label": [
       "Fiscal Year End Month is December."
@@ -312,6 +308,7 @@ const XLResearchData = {
         "$3.16",
         "$0.09",
         "$0.76",
+        "$4.15"
       ],
       [
         "12/16",
@@ -319,6 +316,7 @@ const XLResearchData = {
         "$0.16",
         "$0.26",
         "$1.13",
+        "$1.62"
       ],
       [
         "12/17",
@@ -326,6 +324,7 @@ const XLResearchData = {
         "-",
         "-",
         "-",
+        "-"
       ]
     ]
   },
@@ -337,7 +336,7 @@ const XLResearchData = {
       "33.43%",
       "13.29%"
     ],
-    "Revenue (M)": [
+    "Revenue(M)": [
       "7,230.48",
       "7,541.23",
       "6,976.44",
@@ -377,19 +376,19 @@ const XLResearchData = {
       "0",
       "0",
       "3",
-      "2"
+      "1"
     ],
     "Curr Qtr": [
       "0",
       "0",
-      "2",
-      "0"
+      "1",
+      "1"
     ],
     "Next Yr": [
       "0",
       "0",
       "2",
-      "2"
+      "1"
     ],
     "Last 4 Weeks": [
       "Up",
@@ -398,8 +397,8 @@ const XLResearchData = {
     "Next Qtr": [
       "0",
       "0",
-      "2",
-      "1"
+      "3",
+      "0"
     ]
   },
   "EPS Estimates": {
@@ -431,106 +430,106 @@ const XLResearchData = {
   },
   "VolumeActivity": {
     "Factor": "Value",
-    "Average Volume 90 Days": "1,513,311",
-    "Average Volume 20 Days": "1,461,902",
-    "Chaikin Money Flow Persistency": "65%"
+    "Average Volume 90 Days": "1,521,302",
+    "Average Volume 20 Days": "1,399,094",
+    "Chaikin Money Flow Persistency": "59%"
   },
-  "TradingDate": "2017-05-15"
+  "TradingDate": "2017-05-25"
 };
 
 const XLContextSummary = {
   "priceVolumeContextSummary": [
     {
-      "explanatorySentence": "The factor rank is based on the stock having price strength versus the market, strong Chaikin Money Flow persistency, strength vs. its long-term price trend, and an increasing volume trend, but negative trend momentum.",
-      "generalSentence": "Price/volume activity for XL is neutral. XL is currently strong relative to its long-term trend and has decelerating 4-month trend momentum.",
-      "status": "NEUTRAL"
+      "explanatorySentence": "The factor rank is based on the stock having price strength versus the market, strong Chaikin Money Flow persistency, and strength vs. its long-term price trend, but negative trend momentum, and a decreasing volume trend.",
+      "generalSentence": "Price/volume activity for XL is neutral. XL has outperformed the S&P 500 over the past 6 months and has decelerating 4-month trend momentum.",
+      "status": "Neutral"
     }
   ],
   "financialContextSummary": [
     {
       "explanatorySentence": "The factor rank is based on the stock having low long term debt to equity ratio, low price to book value, low price to sales ratio, and relatively high cash flow, but low return on equity.",
       "generalSentence": "XL's financial metrics are excellent. The company generates high free cash flow relative to market capitalization and does not hold much long term debt.",
-      "status": "VERY BULLISH"
+      "status": "Very Bullish"
     }
   ],
-  "expertOpinionsContextSummary": [
+  "expertOpnionsContextSummary": [
     {
-      "explanatorySentence": "The factor rank is based on the stock having analysts revising earnings estimates downward, insiders not purchasing significant amounts of stock, and weak performance of the <industry> industry group, but a low short interest ratio, and optimistic analyst opinions.",
+      "explanatorySentence": "The factor rank is based on the stock having insiders not purchasing significant amounts of stock, but analysts revising earnings estimates upward, a low short interest ratio, optimistic analyst opinions, and strong performance of the <industry> industry group.",
       "generalSentence": "Expert activity about XL is negative. Insiders are not net buyers of XL's stock and analysts have been lowering their earnings estimates for XL.",
-      "status": "BEARISH"
+      "status": "Bearish"
     }
   ],
   "pgrData": [
     {
-      "volume_trend": 46.86,
-      "price_trend_roc": 24.75,
+      "volume_trend": 34.98,
+      "price_trend_roc": 24.53,
       "earnings_trend_rate": 1,
-      "pgr_date": "2017-05-15",
-      "financial_strength": 90.66,
-      "corrected_pgr": 76.9,
-      "earnings_stability": 82.97,
+      "pgr_date": "2017-05-25",
+      "financial_strength": 87.96,
+      "corrected_pgr": 79.63,
+      "earnings_stability": 83.01,
       "debt_equity_ratio_rate": 4,
-      "earnings_consistency": 57.71,
-      "chaikin_volume_accumulation": 54.69,
-      "relative_strength_vs_industry_rate": 2,
+      "earnings_consistency": 57.34,
+      "chaikin_volume_accumulation": 44.41,
+      "relative_strength_vs_industry_rate": 3,
       "earnings_consistency_rate": 3,
-      "price_volume_activity": 47.81,
-      "price_to_sales_ratio": 62.77,
-      "short_interest_rate": 3,
-      "earnings_performance": 76.34,
-      "debt_equity_ratio": 67.92,
-      "price_to_sales_ratio_rate": 4,
+      "price_volume_activity": 45.25,
+      "price_to_sales_ratio": 59.57,
+      "short_interest_rate": 4,
+      "earnings_performance": 74.66,
+      "debt_equity_ratio": 68.02,
+      "price_to_sales_ratio_rate": 3,
       "price_volume_activity_rate": 3,
-      "earning_estimates_revision": 39.08,
+      "earning_estimates_revision": 49.77,
       "earnings_stability_rate": 5,
       "analyst_options_rate": 4,
       "price_trend_roc_rate": 2,
-      "earnings_trend": 9.28,
-      "price_to_book_value": 71.28,
-      "insider_activity": 11.42,
-      "relative_strength_vs_market": 54.48,
+      "earnings_trend": 9.39,
+      "price_to_book_value": 69.15,
+      "insider_activity": 10.94,
+      "relative_strength_vs_market": 77.2,
       "insider_activity_rate": 1,
       "price_trend_rate": 4,
       "pgr_value_rate": 4,
-      "analyst_options": 79.55,
+      "analyst_options": 79.66,
       "chaikin_volume_accumulation_rate": 3,
-      "pgr_value": 76.9,
-      "price_trend": 70.61,
-      "relative_strength_vs_industry": 37.48,
-      "volume_trend_rate": 3,
+      "pgr_value": 79.63,
+      "price_trend": 78.55,
+      "relative_strength_vs_industry": 46.31,
+      "volume_trend_rate": 2,
       "return_on_investment_rate": 2,
       "eps_surprise_rate": 4,
-      "projected_pe_ratio": 76.54,
+      "projected_pe_ratio": 74.07,
       "isPgrCorrected": false,
-      "investor_sentiment": 27.36,
+      "investor_sentiment": 36.99,
       "financial_strength_rate": 5,
-      "return_on_investment": 36.02,
-      "short_interest": 54.9,
+      "return_on_investment": 35.92,
+      "short_interest": 60.46,
       "price_to_book_value_rate": 4,
       "business_value_rate": 5,
       "projected_pe_ratio_rate": 4,
       "corrected_pgr_rate": 4,
-      "eps_surprise": 79.43,
-      "relative_strength_vs_market_rate": 3,
+      "eps_surprise": 79.35,
+      "relative_strength_vs_market_rate": 4,
       "investor_sentiment_rate": 2,
       "earnings_performance_rate": 4,
-      "earning_estimates_revision_rate": 2,
-      "business_value": 89.28
+      "earning_estimates_revision_rate": 3,
+      "business_value": 87.93
     }
   ],
   "earningsContextSummary": [
     {
       "explanatorySentence": "The factor rank is based on the stock having high earnings growth over the past 3-5 years, better than expected earnings in recent quarters, a relatively low projected P/E ratio, and consistent earnings over the past 5 years, but a relatively poor yearly earnings trend.",
       "generalSentence": "XL's earnings performance has been strong. The company has a history of strong earnings growth and has outperformed analysts' earnings estimates.",
-      "status": "BULLISH"
+      "status": "Bullish"
     }
   ],
   "pgrContextSummary": [
     {
       "additonalSentence": "XL's financial metrics are excellent due to a relatively high cash flow.\nXL's earnings performance is strong as a result of better than expected earnings in recent quarters.",
       "neutralSentence": "",
-      "mainSentence": "The Chaikin Power Gauge Rating for XL is Bullish due to very attractive financial metrics and strong earnings performance. The stock also has negative expert activity. ",
-      "status": "BULLISH"
+      "mainSentence": "The Chaikin Power Gauge Rating<TRADEMARK> for XL is Bullish due to very attractive financial metrics and strong earnings performance. The stock also has negative expert activity. ",
+      "status": "Bullish"
     }
   ]
 };

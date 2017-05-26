@@ -62,29 +62,29 @@ export class PowerGaugeReportComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.stock = PGRFAKEDATA[0];
-    // this.researchReport = PGRFAKEDATA[1];
-    // this.contextSummary = PGRFAKEDATA[2];
+    this.stock = PGRFAKEDATA[0];
+    this.researchReport = PGRFAKEDATA[1];
+    this.contextSummary = PGRFAKEDATA[2];
 
-    this.route.params
-      .subscribe(params => {
-        console.log('activated route', params);
-        this.symbolSearchService.getSymbolData(params.symbol)
-          .switchMap(stock => {
-            this.stock = stock;
-            return Observable.combineLatest(
-              this.symbolSearchService.getResearchReportData(params.symbol),
-              this.symbolSearchService.getPGRDataAndContextSummary(params.symbol),
-              this.symbolSearchService.getTickerCompetitors(params.symbol)
-            )})
-          .subscribe(
-            res => {
-              console.log('res', res);
-              this.extractData(res);
-            },
-            err => this.sharedService.handleError
-          );
-      });
+    // this.route.params
+    //   .subscribe(params => {
+    //     console.log('activated route', params);
+    //     this.symbolSearchService.getSymbolData(params.symbol)
+    //       .switchMap(stock => {
+    //         this.stock = stock;
+    //         return Observable.combineLatest(
+    //           this.symbolSearchService.getResearchReportData(params.symbol),
+    //           this.symbolSearchService.getPGRDataAndContextSummary(params.symbol),
+    //           this.symbolSearchService.getTickerCompetitors(params.symbol)
+    //         )})
+    //       .subscribe(
+    //         res => {
+    //           console.log('res', res);
+    //           this.extractData(res);
+    //         },
+    //         err => this.sharedService.handleError
+    //       );
+    //   });
     this.helpMenuOpen = 'out';
   }
 
