@@ -10,11 +10,15 @@
 .body__header-icon {
 	width: 80px;
 	border-right: 1px solid #ffffff;
-	box-shadow:  inset 0 -3px 0px 0px $link-blueDK;
+	box-shadow:  inset 0 -3px 0px 0px $button-navDK;
 	float: left;
 	height: 40px;
-	background-color: $link-blue;
+	background-color: $button-nav;
 	position: relative;
+
+	img {
+		margin-top:-1px;
+	}
 }
 
 .body__header-title {

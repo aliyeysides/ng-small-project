@@ -1,0 +1,19 @@
+@import 'variables';
+
+
+ 
+.settings__menu {
+	color: $font-color;
+	
+ 	li {
+ 		a {
+ 			color: $font-colorLT;
+
+ 			&:hover {
+ 				color: #ffffff;
+ 				font-weight:600;
+ 				text-decoration:none;
+ 			}
+ 		}
+ 	}
+}

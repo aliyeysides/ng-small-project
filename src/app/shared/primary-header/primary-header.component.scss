@@ -64,7 +64,7 @@
 }
 
 .action__switcher--time {
-	display: block;
+	display: none;
 	
 	.action__button--morning {
 		background-color: $button-orange;
@@ -91,20 +91,30 @@
 	}
 }
 
-.action__switcher--SP500 {
-	display: none;
+.action__switcher--SP500-up {
+	display: block;
 
 	.action__button {
-		background-color: $bullish-green;
-		box-shadow:  inset 0 -3px 0px 0px #2FC106;
-
+		background-color: $button-bullish;
+		box-shadow:  inset 0 -3px 0px 0px $button-bullish-shadow;
 	}
 	.action__headline {
 		color: $bullish-green;
 	}
 }
 
+.action__switcher--SP500-down {
+	display: block;
 
+	.action__button {
+		background-color: $button-veryBearish;
+		box-shadow:  inset 0 -3px 0px 0px $button-veryBearish-shadow;
+
+	}
+	.action__headline {
+		color: $veryBearish-red;
+	}
+}
 
 
 .main-search {
