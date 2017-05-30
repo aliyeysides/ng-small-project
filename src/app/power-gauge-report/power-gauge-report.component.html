@@ -35,627 +35,627 @@
     </div>
     <div class="accordian__container">
       <psp-pgr-accordion [stock]="stock"></psp-pgr-accordion>
-      <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-question-circle"
-                                                                                 aria-hidden="true"></i></button>
+      <button class="float-right icon__learn-more" (click)="toggleHelpMenu()"><i class="fa fa-question-circle" aria-hidden="true"></i></button>
     </div>
   </div>
 
-  <!-- STOCK SUMMARY -->
+<!-- STOCK SUMMARY -->
   <div class="stock-summary__container" id="print-section">
-
-    <!-- OVERALL -->
-    <div class="stock-summary stock-summary--overall">
-
-      <!-- SUMMARY -->
-      <div class="row" style="margin-bottom: 30px;">
-        <div class="col-lg-6 col-xl-6 stock__profile">
-          <div class="stock__id clearfix">
-            <p class="company">{{ researchReport?.CompanyName }} <span
-              class="ticker">( {{ researchReport?.Symbol }} )</span></p>
-            <div class="action-buttons">
-              <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp; <a href="#"><i
-              class="fa fa-plus-circle" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <div class="stock__price">
-            <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span
-              class="Net_change change--down">placeholder</span><span
-              class="Percent_change change--down">(placeholder%)</span></p>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span>
-              </p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">YIELD: <span class="Yield data">{{ stock?.fundamentalData["Yield"] }}</span></p>
-            </div>
-          </div>
-          <div class="stock__main-data row">
-            <div class="col-sm-6">
-              <p class="label">INDUSTRY: <span class="Market_cap data change--up">placeholder</span></p>
-            </div>
-            <div class="col-sm-6">
-              <p class="label">TRENDS: <span class="Yield data change--down">placeholder</span></p>
-            </div>
+  <!-- PROFILE -->
+    <div class="row stock__profile">
+      <div class="col-lg-6 col-xl-6" style="border-right: 1px solid #cccccc;">
+        <div class="stock__id clearfix">
+          <p class="company">{{ researchReport?.CompanyName }}</p>
+          <p class="ticker"><span>(</span> {{ researchReport?.Symbol }} <span>)</span></p>
+          <div class="action-buttons">
+            <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
           </div>
         </div>
+        <div class="stock__price">
+          <p><span class="Last_price change--down">${{ researchReport?.Price }}</span><span
+            class="Net_change change--down">-2.54</span><span
+            class="Percent_change change--down">(-0.56%)</span></p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-xl-6">
+        <div class="stock__main-data row">
+          <div class="col-sm-6">
+            <p class="label">INDUSTRY: <span class="Industry data">{{ researchReport?.Industry }}</span></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="label">SECTOR: <span class="Sector data">{{ researchReport?.Details.Sector }}</span></p>
+          </div>
+        </div>
+        <div class="stock__main-data row">
+          <div class="col-sm-6">
+            <p class="label">MARKET CAP: <span class="Market_cap data">{{ stock?.fundamentalData["Mkt Capitalization"] }}</span>
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p class="label">YIELD: <span class="Yield data">{{ stock?.fundamentalData["Yield"] }}</span></p>
+          </div>
+        </div>
+        <div class="stock__main-data row">
+          <div class="col-sm-6">
+            <p class="label">INDUSTRY: <span class="Market_cap data change--up">STRONG</span></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="label">TRENDS: <span class="Yield data change--down">WEAK</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- BREAKDOWN -->
+    <div class="stock__summary">
+    <!-- OVERALL -->
+      <div class="row  stock__overall">
         <div class="col-lg-6 col-xl-6 stock__sentence">
           <div class="stock__sentence-factor">OVERALL: <span [ngClass]="overallRatingClass">{{ contextSummary?.pgrContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.pgrContextSummary[0].mainSentence }}</div>
           <div>{{ contextSummary?.pgrContextSummary[0].additonalSentence }}</div>
         </div>
+
+        <div class="col-lg-6 col-xl-6 chart__yearly">
+          <div class="chart__container">
+          </div>
+        </div>
       </div>
 
-      <!-- FINANCIALS -->
-      <div class="stock-summary stock-summary--financials">
-        <!-- SUMMARY -->
-        <div class="col-lg-6 col-xl-6 stock__sentence">
+    <!-- FINANCIALS -->
+      <div class="row stock__financials">
+      <!-- SUMMARY -->
+        <div class="col-md-8 col-lg-6 col-xl-6 stock__sentence">
           <div class="stock__sentence-factor">FINANCIALS: <span [ngClass]="financialRatingClass">{{ contextSummary?.financialContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.financialContextSummary[0].generalSentence }}</div>
           <div>{{ contextSummary?.financialContextSummary[0].explanatorySentence }}</div>
         </div>
+        <div class="col-md-4 col-lg-6 col-xl-6">
+        </div>
         <!-- DATA -->
-        <div class="row" style="margin-bottom: 40px;">
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="standardHeader">
-              <p class="headerLabel">ASSETS &amp; LIABILITIES:</p>
-            </div>
-            <div class="data-container">
-              <table class="table-2col">
-                <tbody>
-                <tr>
-                  <td class="label">Current Ratio</td>
-                  <td class="data"><span class="">{{ researchReport ? researchReport["Assets and Liabilities"]["Current Ratio"] : null }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">LT Debt/Equity</td>
-                  <td class="data"><span class="">{{ researchReport ? researchReport["Assets and Liabilities"]["LT Debt/Equity"] : null }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">%Earn on Equity</td>
-                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
-                </tr>
-                <tr>
-                  <td class="label">Book Value</td>
-                  <td class="data"><span class="">placeholder</span></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="standardHeader">
+            <p class="headerLabel">ASSETS &amp; LIABILITIES:</p>
           </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="standardHeader">
-              <p class="headerLabel">VALUATION:</p>
-            </div>
-            <div class="data-container">
-              <table class="table-2col">
-                <tbody>
-                <tr>
-                  <td class="label">Price/Earnings</td>
-                  <td class="data"><span class="">{{ stock?.fundamentalData["P/E"] }}</span></td>
-                </tr>
-                <tr>
-                  <td class="label">PEG</td>
-                  <td class="data"><span class="">placeholder</span></td>
-                </tr>
-                <tr>
-                  <td class="label">Price to Book</td>
-                  <td class="data"><span class="">{{ researchReport?.Valuation["Price/Book"] }}</span></td>
-                </tr>
-                <tr>
-                  <td class="label">Price to Sales</td>
-                  <td class="data"><span class="">{{ researchReport?.Valuation["Price/Sales"] }}</span></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+              <tr>
+                <td class="label">Current Ratio</td>
+                <td class="data"><span class="">{{ researchReport ? researchReport["Assets and Liabilities"]["Current Ratio"] : null }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="label">LT Debt/Equity</td>
+                <td class="data"><span class="">{{ researchReport ? researchReport["Assets and Liabilities"]["LT Debt/Equity"] : null }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="label">%Earn on Equity</td>
+                <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
+              </tr>
+              <tr>
+                <td class="label">Book Value</td>
+                <td class="data"><span class="">placeholder</span></td>
+              </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="standardHeader">
-              <p class="headerLabel">DIVIDENDS:</p>
-            </div>
-            <div class="data-container">
-              <table class="table-2col">
-                <tbody>
-                <tr>
-                  <td class="label">Dividends per Share</td>
-                  <td class="data"><span class="">placeholder</span></td>
-                </tr>
-                <tr>
-                  <td class="label">Payout</td>
-                  <td class="data"><span class="">placeholder</span></td>
-                </tr>
-                <tr>
-                  <td class="label">Yield</td>
-                  <td class="data"><span class="">placeholder</span></td>
-                </tr>
-                <tr>
-                  <td class="label">Growth Rate</td>
-                  <td class="data"><span class="">placeholder</span></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="standardHeader">
+            <p class="headerLabel">VALUATION:</p>
           </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="standardHeader">
-              <p class="headerLabel">RETURNS:</p>
-            </div>
-            <div class="data-container">
-              <table class="table-2col">
-                <tbody>
-                <tr>
-                  <td class="label">Return on Invest</td>
-                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Invest"] }}</span></td>
-                </tr>
-                <tr>
-                  <td class="label">Return on Equity</td>
-                  <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
-                </tr>
-                <tr>
-                  <td class="label">1 Month Return</td>
-                  <td class="data"><span class="">placeholder</span></td>
-                </tr>
-                <tr>
-                  <td class="label">3 Month Return</td>
-                  <td class="data"><span class="">placeholder</span></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+              <tr>
+                <td class="label">Price/Earnings</td>
+                <td class="data"><span class="">{{ stock?.fundamentalData["P/E"] }}</span></td>
+              </tr>
+              <tr>
+                <td class="label">PEG</td>
+                <td class="data"><span class="">placeholder</span></td>
+              </tr>
+              <tr>
+                <td class="label">Price to Book</td>
+                <td class="data"><span class="">{{ researchReport?.Valuation["Price/Book"] }}</span></td>
+              </tr>
+              <tr>
+                <td class="label">Price to Sales</td>
+                <td class="data"><span class="">{{ researchReport?.Valuation["Price/Sales"] }}</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="standardHeader">
+            <p class="headerLabel">DIVIDENDS:</p>
+          </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+              <tr>
+                <td class="label">Dividends per Share</td>
+                <td class="data"><span class="">placeholder</span></td>
+              </tr>
+              <tr>
+                <td class="label">Payout</td>
+                <td class="data"><span class="">placeholder</span></td>
+              </tr>
+              <tr>
+                <td class="label">Yield</td>
+                <td class="data"><span class="">placeholder</span></td>
+              </tr>
+              <tr>
+                <td class="label">Growth Rate</td>
+                <td class="data"><span class="">placeholder</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="standardHeader">
+            <p class="headerLabel">RETURNS:</p>
+          </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+              <tr>
+                <td class="label">Return on Invest</td>
+                <td class="data"><span class="">{{ researchReport?.Returns["Return on Invest"] }}</span></td>
+              </tr>
+              <tr>
+                <td class="label">Return on Equity</td>
+                <td class="data"><span class="">{{ researchReport?.Returns["Return on Equity"] }}</span></td>
+              </tr>
+              <tr>
+                <td class="label">1 Month Return</td>
+                <td class="data"><span class="">placeholder</span></td>
+              </tr>
+              <tr>
+                <td class="label">3 Month Return</td>
+                <td class="data"><span class="">placeholder</span></td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
 
-      <!-- EARNINGS -->
-      <div class="stock-summary stock-summary--earnings">
-        <!-- SUMMARY -->
-        <div class="col-lg-6 col-xl-6 stock__sentence">
+    <!-- EARNINGS -->
+      <div class="row stock__earnings">
+      <!-- SUMMARY -->
+        <div class="col-md-12 col-lg-12 col-xl-12 stock__sentence">
           <div class="stock__sentence-factor">EARNINGS: <span [ngClass]="earningsRatingClass">{{ contextSummary?.earningsContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.earningsContextSummary[0].generalSentence }}</div>
           <div>{{ contextSummary?.earningsContextSummary[0].explanatorySentence }}</div>
         </div>
         <!-- DATA -->
-        <div class="row">
-          <div class="col-md-6">
-            <div class="standardHeader">
-              <p class="headerLabel">5 YEAR REVENUE &amp; EARNINGS GROWTH:</p>
-            </div>
-            <div class="data-container" id="earningsGrowth-table">
-              <table>
-                <thead>
-                <tr>
-                  <th></th>
-                  <th *ngFor="let label of researchReport ? researchReport['Revenue&EarningsGrowth'].labels : null">
-                    <span>{{ label }}</span>
-                  </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th class="label" scope="row">Revenue (M)</th>
-                  <td
-                    *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['Revenue(M)'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th class="label" scope="row">Rev Growth</th>
-                  <td
-                    *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['Rev % Growth'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th class="label" scope="row">EPS</th>
-                  <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth'].EPS : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th class="label" scope="row">EPS Growth</th>
-                  <td
-                    *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['EPS % Growth'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+        <div class="col-md-6">
+          <div class="standardHeader">
+            <p class="headerLabel">5 YEAR REVENUE &amp; EARNINGS GROWTH:</p>
           </div>
-          <div class="col-md-6">
-            <div class="standardHeader">
-              <p class="headerLabel">EPS SURPRISE (By Qtr):</p>
-            </div>
-            <div class="data-container" id="earningsSurprise-table">
-              <table>
-                <thead>
-                <tr>
-                  <th></th>
-                  <th *ngFor="let label of researchReport ? researchReport['EPS Surprises'].labels : null">
-                    <span>{{ label }}</span>
-                  </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th scope="row" class="label">Latest Qtr</th>
-                  <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['Latest Qtr'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="label">1st Qtr</th>
-                  <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['1 Qtr Ago'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="label">2nd Qtr</th>
-                  <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['2 Qtr Ago'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="label">3rd Qtr</th>
-                  <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['3 Qtr Ago'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="data-container" id="earningsGrowth-table">
+            <table>
+              <thead>
+              <tr>
+                <th></th>
+                <th *ngFor="let label of researchReport ? researchReport['Revenue&EarningsGrowth'].labels : null">
+                  <span>{{ label }}</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th class="label" scope="row">Revenue (M)</th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['Revenue(M)'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="label" scope="row">Rev Growth</th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['Rev % Growth'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="label" scope="row">EPS</th>
+                <td *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth'].EPS : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="label" scope="row">EPS Growth</th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['Revenue&EarningsGrowth']['EPS % Growth'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="row" style="margin-bottom: 40px;">
-            <div class="col-sm-8 col-md-6">
-              <div class="standardHeader">
-                <p class="headerLabel">EPS QUARTERLY RESULTS (3yr):</p>
-              </div>
-              <div class="data-container" id="epsQuarterly-table">
-                <table>
-                  <thead>
-                  <tr>
-                    <th></th>
-                    <th *ngFor="let label of researchReport ? researchReport['EPS Quarterly Results'].FY : null">
-                      <span>{{ label }}</span>
-                    </th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <th scope="row" class="label">
-                      <span>{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[0][0] : null }}</span>
-                    </th>
-                    <td
-                      *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[0].slice(1) : null">
-                      <span>{{ data }}</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="label">
-                      <span>{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[1][0] : null }}</span>
-                    </th>
-                    <td
-                      *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[1].slice(1) : null">
-                      <span>{{ data }}</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="label">
-                      <span>{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[2][0] : null }}</span>
-                    </th>
-                    <td
-                      *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[2].slice(1) : null">
-                      <span>{{ data }}</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="5" class="FY-end-text">
-                      <span class="current_FY_end">Fiscal Year End Month: December</span>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="col-sm-4 col-md-3">
-              <div class="standardHeader">
-                <p class="headerLabel">EPS YEARLY RESULTS:</p>
-              </div>
-              <div class="data-container" id="epsYearly-table">
-                <table>
-                  <thead>
-                  <th>
-                  </th>
-                  <th>
-                    <span class="">Yearly Total</span>
-                  </th>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td class="label">12/14</td>
-                    <td><span class="weak 2_years_ago_total">$-0.35</span></td>
-                  </tr>
-                  <tr>
-                    <td class="label">12/15</td>
-                    <td><span class="strong 1_year_ago_total">$0.07</span></td>
-                  </tr>
-                  <tr>
-                    <td class="label">12/16</td>
-                    <td><span class="weak current_total">$0.54</span></td>
-                  </tr>
-                  <tr>
-                    <td colspan="2" class="FY-end-text">
-                      <span class="current_FY_end">Fiscal Year End Month: December</span>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
+        </div>
+        <div class="col-md-6">
+          <div class="standardHeader">
+            <p class="headerLabel">EPS SURPRISE (By Qtr):</p>
+          </div>
+          <div class="data-container" id="earningsSurprise-table">
+            <table>
+              <thead>
+              <tr>
+                <th></th>
+                <th *ngFor="let label of researchReport ? researchReport['EPS Surprises'].labels : null">
+                  <span>{{ label }}</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row" class="label">Latest Qtr</th>
+                <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['Latest Qtr'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="label">1st Qtr</th>
+                <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['1 Qtr Ago'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="label">2nd Qtr</th>
+                <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['2 Qtr Ago'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="label">3rd Qtr</th>
+                <td *ngFor="let data of researchReport ? researchReport['EPS Surprises']['3 Qtr Ago'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-8 col-md-6">
+          <div class="standardHeader">
+            <p class="headerLabel">EPS QUARTERLY RESULTS (3yr):</p>
+          </div>
+          <div class="data-container" id="epsQuarterly-table">
+            <table>
+              <thead>
+              <tr>
+                <th></th>
+                <th *ngFor="let label of researchReport ? researchReport['EPS Quarterly Results'].FY : null">
+                  <span>{{ label }}</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row" class="label">
+                  <span>{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[0][0] : null }}</span>
+                </th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[0].slice(1) : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="label">
+                  <span>{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[1][0] : null }}</span>
+                </th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[1].slice(1) : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="label">
+                  <span>{{ researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[2][0] : null }}</span>
+                </th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['EPS Quarterly Results'].quaterlyData[2].slice(1) : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5" class="FY-end-text">
+                  <span class="current_FY_end">Fiscal Year End Month: December</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="standardHeader">
+            <p class="headerLabel">EPS YEARLY RESULTS:</p>
+          </div>
+          <div class="data-container" id="epsYearly-table">
+            <table>
+              <thead>
+              <th>
+              </th>
+              <th>
+                <span class="">Yearly Total</span>
+              </th>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="label">12/14</td>
+                <td><span class="weak 2_years_ago_total">$-0.35</span></td>
+              </tr>
+              <tr>
+                <td class="label">12/15</td>
+                <td><span class="strong 1_year_ago_total">$0.07</span></td>
+              </tr>
+              <tr>
+                <td class="label">12/16</td>
+                <td><span class="weak current_total">$0.54</span></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="FY-end-text">
+                  <span class="current_FY_end">Fiscal Year End Month: December</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
 
-      <!-- TECHNICALS -->
-      <div class="stock-summary stock-summary--technicals">
-        <!-- SUMMARY -->
-        <div class="col-lg-6 col-xl-6 stock__sentence">
+    <!-- TECHNICALS -->
+      <div class="row stock__technicals">
+      <!-- SUMMARY -->
+        <div class="col-md-12 col-lg-12 col-xl-12 stock__sentence">
           <div class="stock__sentence-factor">TECHNICALS: <span [ngClass]="technicalRatingClass">{{ contextSummary?.priceVolumeContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.priceVolumeContextSummary[0].generalSentence }}</div>
           <div>{{ contextSummary?.priceVolumeContextSummary[0].explanatorySentence }}</div>
         </div>
         <!-- DATA -->
-        <div class="row" style="margin-bottom: 30px;">
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="standardHeader">
-              <p class="headerLabel">PRICE ACTIVITY:</p>
-            </div>
-            <div class="data-container">
-              <table class="table-2col">
-                <tbody>
-                <tr>
-                  <td class="label">%Chg - 4wk</td>
-                  <td class="data"><span
-                    class="">{{ researchReport?.PriceActivity2['% Change Price - 4 Weeks'] }}</span></td>
-                </tr>
-                <tr>
-                  <td class="label">%Chg - 24wk</td>
-                  <td class="data"><span
-                    class="">{{ researchReport?.PriceActivity2['% Change Price - 24 Weeks'] }}</span></td>
-                </tr>
-                <tr>
-                  <td class="label">%Chg 4wk Rel to S&amp;P</td>
-                  <td class="data"><span class="">{{ researchReport?.PriceActivity2['% Change Price - 4 Wks Rel to S&P'] }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">%Chg 24wk Rel to S&amp;P</td>
-                  <td class="data"><span class="">{{ researchReport?.PriceActivity2['% Change Price - 24 Wks Rel to S&P'] }}</span>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="standardHeader">
+            <p class="headerLabel">PRICE ACTIVITY:</p>
           </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="standardHeader">
-              <p class="headerLabel">VOLUME ACTIVITY:</p>
-            </div>
-            <div class="data-container">
-              <table class="table-2col">
-                <tbody>
-                <tr>
-                  <td class="label">Avg Vol 10 Days</td>
-                  <td class="data"><span class="">{{ researchReport?.VolumeActivity['Average Volume 20 Days'] }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">Avg Vol 20 Days</td>
-                  <td class="data"><span class="">4,797,900</span></td>
-                </tr>
-                <tr>
-                  <td class="label">Avg Vol 90 Days</td>
-                  <td class="data"><span class="">{{ researchReport?.VolumeActivity['Average Volume 90 Days'] }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">Money Flow Persistency</td>
-                  <td class="data"><span
-                    class="">{{ researchReport?.VolumeActivity['Chaikin Money Flow Persistency'] }}</span></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+              <tr>
+                <td class="label">%Chg - 4wk</td>
+                <td class="data"><span
+                  class="">{{ researchReport?.PriceActivity2['% Change Price - 4 Weeks'] }}</span></td>
+              </tr>
+              <tr>
+                <td class="label">%Chg - 24wk</td>
+                <td class="data"><span
+                  class="">{{ researchReport?.PriceActivity2['% Change Price - 24 Weeks'] }}</span></td>
+              </tr>
+              <tr>
+                <td class="label">%Chg 4wk Rel to S&amp;P</td>
+                <td class="data"><span class="">{{ researchReport?.PriceActivity2['% Change Price - 4 Wks Rel to S&P'] }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="label">%Chg 24wk Rel to S&amp;P</td>
+                <td class="data"><span class="">{{ researchReport?.PriceActivity2['% Change Price - 24 Wks Rel to S&P'] }}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-6">
-            <div class="standardHeader">
-              <p class="headerLabel">CHAIKIN MONEY FLOW:</p>
-            </div>
-            <div class="data-container">
-            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="standardHeader">
+            <p class="headerLabel">VOLUME ACTIVITY:</p>
+          </div>
+          <div class="data-container">
+            <table class="table-2col">
+              <tbody>
+              <tr>
+                <td class="label">Avg Vol 10 Days</td>
+                <td class="data"><span class="">{{ researchReport?.VolumeActivity['Average Volume 20 Days'] }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="label">Avg Vol 20 Days</td>
+                <td class="data"><span class="">4,797,900</span></td>
+              </tr>
+              <tr>
+                <td class="label">Avg Vol 90 Days</td>
+                <td class="data"><span class="">{{ researchReport?.VolumeActivity['Average Volume 90 Days'] }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="label">Money Flow Persistency</td>
+                <td class="data"><span
+                  class="">{{ researchReport?.VolumeActivity['Chaikin Money Flow Persistency'] }}</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-6">
+          <div class="standardHeader">
+            <p class="headerLabel">CHAIKIN MONEY FLOW:</p>
+          </div>
+          <div class="data-container">
           </div>
         </div>
       </div>
 
-      <!-- EXPERTS -->
-      <div class="stock-summary stock-summary--experts">
-        <!-- SUMMARY -->
-        <div class="col-lg-6 col-xl-6 stock__sentence">
+    <!-- EXPERTS -->
+      <div class="row stock__experts">
+      <!-- SUMMARY -->
+        <div class="col-md-12 col-lg-12 col-xl-12 stock__sentence">
           <div class="stock__sentence-factor">EXPERTS: <span [ngClass]="expertsRatingClass">{{ contextSummary?.expertOpnionsContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.expertOpnionsContextSummary[0].generalSentence }}</div>
           <div>{{ contextSummary?.expertOpnionsContextSummary[0].explanatorySentence }}</div>
         </div>
         <!-- DATA -->
-        <div class="row" style="margin-bottom: 30px;">
-          <div class="col-md-6" style="padding-bottom: 0px;">
-            <div class="standardHeader">
-              <p class="headerLabel">EARNINGS ESTIMATE REVISIONS:</p>
-            </div>
-            <div class="data-container" id="expertsEstimate-table">
-              <table>
-                <thead>
-                <tr>
-                  <th></th>
-                  <th *ngFor="let label of researchReport ? researchReport['Earning Estimate Revisions'].Labels : null">
-                    <span>{{ label }}</span>
-                  </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th class="label" scope="row">Current Qtr</th>
-                  <td
-                    *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Current Qtr'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th class="label" scope="row">Next Qtr</th>
-                  <td
-                    *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Next Qtr'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <th class="label" scope="row"></th>
-                  <th
-                    *ngFor="let label of researchReport ? researchReport['Earning Estimate Revisions'].labels2 : null">
-                    <span>{{ label }}</span>
-                  </th>
-                </tr>
-                <tr>
-                  <th class="label" scope="row">Current FY</th>
-                  <td
-                    *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Current FY'] : null">
-                    <span>{{ data }}</span>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+        <div class="col-md-6" style="padding-bottom: 0px;">
+          <div class="standardHeader">
+            <p class="headerLabel">EARNINGS ESTIMATE REVISIONS:</p>
           </div>
-
-          <div class="col-md-6" style="padding-bottom: 0px;">
-            <div class="standardHeader">
-              <p class="headerLabel">ANALYST RECOMMENDATIONS:</p>
-            </div>
-            <div class="data-container" id="expertsAnalyst-table">
-              <table>
-                <thead>
-                <th>
-                  <span>Factor</span>
+          <div class="data-container" id="expertsEstimate-table">
+            <table>
+              <thead>
+              <tr>
+                <th></th>
+                <th *ngFor="let label of researchReport ? researchReport['Earning Estimate Revisions'].Labels : null">
+                  <span>{{ label }}</span>
                 </th>
-                <th>
-                  <span>Value</span>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th class="label" scope="row">Current Qtr</th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Current Qtr'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="label" scope="row">Next Qtr</th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Next Qtr'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="label" scope="row"></th>
+                <th
+                  *ngFor="let label of researchReport ? researchReport['Earning Estimate Revisions'].labels2 : null">
+                  <span>{{ label }}</span>
                 </th>
-                <th>
-                  <span></span>
-                </th>
-                </thead>
-                <tbody>
-                <tr>
-                  <td class="label">Mean This Week</td>
-                  <td><span class="hold">{{ researchReport ? researchReport['Analyst Recommendations']['Mean this Week'] : null }}</span>
-                  </td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td class="label">Mean Last Week</td>
-                  <td><span class="hold">{{ researchReport ? researchReport['Analyst Recommendations']['Mean Last Week'] : null }}</span>
-                  </td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td class="label">Change</td>
-                  <td><span class="change">{{ researchReport ? researchReport['Analyst Recommendations']['Change'] : null }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">Mean 5 Wks Ago</td>
-                  <td><span class="strong">{{ researchReport ? researchReport['Analyst Recommendations']['Mean 5 Weeks Ago'] : null}}</span>
-                  </td>
-                  <td></td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+              </tr>
+              <tr>
+                <th class="label" scope="row">Current FY</th>
+                <td
+                  *ngFor="let data of researchReport ? researchReport['Earning Estimate Revisions']['Current FY'] : null">
+                  <span>{{ data }}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
+        </div>
 
-          <div class="col-md-5" style="padding-bottom: 0px;">
-            <div class="standardHeader">
-              <p class="headerLabel">COMPETITORS IN {{ researchReport?.Industry.toUpperCase() }}:</p>
-            </div>
-            <div class="data-container">
-              <table>
-                <thead>
-                <th>
-                </th>
-                <th>
-                  <span>Historic EPS Growth</span>
-                </th>
-                <th>
-                  <span>Projected EPS Growth</span>
-                </th>
-                <th>
-                  <span>Profit Margin</span>
-                </th>
-                <th>
-                  <span>P/E</span>
-                </th>
-                <th>
-                  <span>PEG</span>
-                </th>
-                <th>
-                  <span>Rev (M)</span>
-                </th>
-                </thead>
-                <tbody>
-                <tr *ngFor="let competitor of tickerCompetitors" style="border-bottom:1px solid #efefef;">
-                  <td class="label" style="padding-bottom:15px;">
-                    <span style="margin-right:5px;" class="current_rating">
-                      <img *ngIf="competitor.corrected_pgr_rate == 5" src="../../assets/imgs/pgr-small-verybullish.svg">
-                      <img *ngIf="competitor.corrected_pgr_rate == 4" src="../../assets/imgs/pgr-small-bullish.svg">
-                      <img *ngIf="competitor.corrected_pgr_rate == 3" src="../../assets/imgs/pgr-small-neutral.svg">
-                      <img *ngIf="competitor.corrected_pgr_rate == 2" src="../../assets/imgs/pgr-small-bearish.svg">
-                      <img *ngIf="competitor.corrected_pgr_rate == 1" src="../../assets/imgs/pgr-small-verybearish.svg">
-                    </span>
-                    <span class="current_ticker">{{ competitor.symbol }}</span>
-                  </td>
-                  <td style="padding-bottom:15px;"><span class="strong current_eps_growth">{{ competitor["Historic EPS growth"] }}</span>
-                  </td>
-                  <td style="padding-bottom:15px;"><span class="strong current_eps_growth">{{ competitor["Projected EPS growth"] }}</span>
-                  </td>
-                  <td style="padding-bottom:15px;"><span class="current_profit">{{ competitor["Profit Margin"] }}</span>
-                  </td>
-                  <td style="padding-bottom:15px;"><span class="current_PE">{{ competitor.PE }}</span></td>
-                  <td style="padding-bottom:15px;"><span class="current_PE">{{ competitor.PEG }}</span></td>
-                  <td style="padding-bottom:15px;"><span class="current_revenue">{{ competitor["Revenue(M)"] }}</span>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+        <div class="col-md-6" style="padding-bottom: 0px;">
+          <div class="standardHeader">
+            <p class="headerLabel">ANALYST RECOMMENDATIONS:</p>
+          </div>
+          <div class="data-container" id="expertsAnalyst-table">
+            <table>
+              <thead>
+              <th>
+                <span>Factor</span>
+              </th>
+              <th>
+                <span>Value</span>
+              </th>
+              <th>
+                <span></span>
+              </th>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="label">Mean This Week</td>
+                <td><span class="hold">{{ researchReport ? researchReport['Analyst Recommendations']['Mean this Week'] : null }}</span>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="label">Mean Last Week</td>
+                <td><span class="hold">{{ researchReport ? researchReport['Analyst Recommendations']['Mean Last Week'] : null }}</span>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="label">Change</td>
+                <td><span class="change">{{ researchReport ? researchReport['Analyst Recommendations']['Change'] : null }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="label">Mean 5 Wks Ago</td>
+                <td><span class="strong">{{ researchReport ? researchReport['Analyst Recommendations']['Mean 5 Weeks Ago'] : null}}</span>
+                </td>
+                <td></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-5" style="padding-bottom: 0px;">
+          <div class="standardHeader">
+            <p class="headerLabel">COMPETITORS IN {{ researchReport?.Industry.toUpperCase() }}:</p>
+          </div>
+          <div class="data-container">
+            <table>
+              <thead>
+              <th>
+              </th>
+              <th>
+                <span>Historic EPS Growth</span>
+              </th>
+              <th>
+                <span>Projected EPS Growth</span>
+              </th>
+              <th>
+                <span>Profit Margin</span>
+              </th>
+              <th>
+                <span>P/E</span>
+              </th>
+              <th>
+                <span>PEG</span>
+              </th>
+              <th>
+                <span>Rev (M)</span>
+              </th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let competitor of tickerCompetitors" style="border-bottom:1px solid #efefef;">
+                <td class="label" style="padding-bottom:15px;">
+                  <span style="margin-right:5px;" class="current_rating">
+                    <img *ngIf="competitor.corrected_pgr_rate == 5" src="../../assets/imgs/pgr-small-verybullish.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 4" src="../../assets/imgs/pgr-small-bullish.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 3" src="../../assets/imgs/pgr-small-neutral.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 2" src="../../assets/imgs/pgr-small-bearish.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 1" src="../../assets/imgs/pgr-small-verybearish.svg">
+                  </span>
+                  <span class="current_ticker">{{ competitor.symbol }}</span>
+                </td>
+                <td style="padding-bottom:15px;"><span class="strong current_eps_growth">{{ competitor["Historic EPS growth"] }}</span>
+                </td>
+                <td style="padding-bottom:15px;"><span class="strong current_eps_growth">{{ competitor["Projected EPS growth"] }}</span>
+                </td>
+                <td style="padding-bottom:15px;"><span class="current_profit">{{ competitor["Profit Margin"] }}</span>
+                </td>
+                <td style="padding-bottom:15px;"><span class="current_PE">{{ competitor.PE }}</span></td>
+                <td style="padding-bottom:15px;"><span class="current_PE">{{ competitor.PEG }}</span></td>
+                <td style="padding-bottom:15px;"><span class="current_revenue">{{ competitor["Revenue(M)"] }}</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>

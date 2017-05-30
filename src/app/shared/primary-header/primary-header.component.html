@@ -1,5 +1,6 @@
 <div class="row">
-  <div class="col-sm-7 col-md-8 col-lg-9 action-header">
+
+  <div class="col-sm-7 col-md-8 col-lg-9 main-search">
 
     <div class="action__alert" *ngFor="let alert of alerts">
       <div class="action__button">
@@ -7,6 +8,17 @@
       </div>
       <alert [type]="alert.type" dismissible="true">{{ alert.msg }}</alert>
     </div>
+    
+    <psp-symbol-search></psp-symbol-search>
+    
+    <div class="action__date">
+      <p>{{ day }} &nbsp; • &nbsp; {{ date }} &nbsp; • &nbsp; {{ time }}</p>
+    </div>
+  </div>
+
+  <div class="col-sm-5 col-md-4 col-lg-3 action-header">
+
+    
 
     <div class="action__switcher action__switcher--time">
       <div class="action__button action__button--morning"  *ngIf="this.greeting == 'morning'" >
@@ -29,17 +41,12 @@
         <img class="align-middle" src="../../../assets/imgs/icon-SPYup.svg">
       </div>
       <div class="action__headline">
-        <p><span class=""><strong>238.63</strong></span><span class="divider"> | </span><span class=""> +1.41 </span><span class=""> (0.59%) </span></p>
+        <p><strong>238.63</strong></p><p class="divider">|</p><p> +1.41 </p><p> (0.59%)</p>
       </div>
     </div>
 
-    <div class="action__date">
-      <p>{{ day }} &nbsp; • &nbsp; {{ date }} &nbsp; • &nbsp; {{ time }}</p>
-    </div>
+
   </div>
 
-  <div class="col-sm-5 col-md-4 col-lg-3 main-search">
-    <psp-symbol-search></psp-symbol-search>
-  </div>
 </div>
  

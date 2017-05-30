@@ -3,17 +3,16 @@
 
 
 .report-action__container {
-	background-color: $background-ltGrey;
+	background-color: $button-nav;
 	height: 40px;
-	box-shadow:  inset 0 -1px 0px 0px $line-grey;
 	overflow: hidden;
 	width:100%;  
 	padding:0;
-	border-left: 1px solid #cccccc;
+	border-left: 1px solid #ffffff;
 }
 
 .body__report-icon {
-	width: 60px;
+	width: 80px;
 	border-right: 1px solid #ffffff;
 	box-shadow:  inset 0 -3px 0px 0px $button-navDK;
 	float: left;
@@ -35,7 +34,7 @@
 	float:left;
 	margin-left: 4%;
 	font-size: 12px;
-	color: $font-color;
+	color: #ffffff;
 	font-style: italic;
 	line-height: 40px;
 	font-weight: 400;
@@ -49,7 +48,7 @@
 	margin-top: 0;
 	margin-left: -1px;
 	border-right: 1px solid $line-grey;
-	background-color: #EEEEEE;
+	background-color: $background-dkGrey;
 	float: left;
 	height: 100vh;
 	position: absolute;
@@ -58,18 +57,18 @@
 	.accordian__container {
 		width: 205px;
 		float: left;
-		border-left: 1px solid $line-grey;
 
 		.icon__learn-more {
 			position: absolute;
 			bottom: 136px;
 			right: 0;
 			font-size: 20px;
-			color: #666666;
+			color: $font-colorLT;
 		}
 	}
 	.pgr__learn-container {
 		float: left;
+		color: #ffffff;
 
 		.pgr__learn {
 			padding: 20px 30px;
@@ -104,83 +103,70 @@
 
 .stock-summary__container {
 	float: left;
-	overflow-y: scroll;
-	height: 100vh;
-	padding: 15px 30px 140px 30px;
+	padding: 15px 30px 0px 30px;
 	margin-left: 205px;
+	position: relative;
 
 	.stock__profile {
-		padding:0px 20px 0px 25px;
+		border-bottom: 1px solid $line-grey;
+		margin-bottom: 0px;
+		padding-bottom: 5px;
 
 		.stock__id {
-			width: 100%;
-			display:block;
-
 			p {
-				float: left;
 				font-size: 30px;
-				color: $font-color;
 				margin:0;
 				padding:0;
-				white-space: nowrap;
+				float: left;
+			} 
 
-				a {
-					margin-left:5px;
-					font-size: 20px;
-					color: $font-colorLT;
-
-					.iconInfo {
-						float:left;
-					}
-				}
-			}
 			.company {
-
-				.ticker {
-					font-weight: 700;
-					margin-left: 30px;
-				}	
+				font-weight: 600;
 			}
+
+			.ticker {
+				font-weight: 700;
+				margin-left: 30px;
+
+				span {
+					font-weight: 400;
+				}
+			}	
+
 			.action-buttons {
 				float:right;
-				margin-top:10px;
 
 				a {
-					font-size: 20px;
+					font-size: 30px;
 					color: $font-colorLT;
-					padding: 0px 8px 0 0;
+					padding: 0 15px 0 0;
 				}
 			}
 		}
-
 		.stock__price {
-			border-bottom: 1px solid $line-greyLT;
-			padding-bottom: 11px;
-			margin-bottom: 8px;
-
 			p {
-				font-size: 26px;
+				font-size: 28px;
 				margin:0;
 				padding:0;
-				white-space: nowrap;
+				line-height: 1.7;
 
 				span {
 					margin-right: 50px;
 					font-weight: 400;
-				}	
+				}
+
 				.Last_price {
 					font-weight: 600 !important;
 				}
 			}
 		}
-
 		.stock__main-data {
-			padding:4px 0;
+			padding: 2px 0;
 
 			p {
 				margin:0;
 			}
-
+			
 			.label {
 				font-size: 13px;
 				white-space: nowrap;
@@ -199,25 +185,37 @@
 		}
 	}
 
-	.stock__sentence {
-		border-left: 1px solid $line-greyLT;
-		font-size: 16px;
-		padding-left: 30px;
-		padding-right:20px;
+	.stock__summary {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		height: 100vh;
+		padding:40px 0 251px;
 
-		div {
-			margin-bottom: 10px;
-		}
-		.stock__sentence-factor {
-			font-size: 26px;
-			margin: 4px 0 10px;
-			padding: 0;
-			font-weight: 300;
+		.stock__sentence {
+			font-size: 16px;
+			margin-bottom: 30px;
 
-			span {
-				font-weight: 700;
-				margin-left: 15px;
+			div {
+				margin-bottom: 10px;
+				padding: 0 10px;
 			}
+			.stock__sentence-factor {
+				font-size: 26px;
+				margin: 0px 0 20px;
+				padding: 0 0 0 10px;
+				font-weight: 400;
+				line-height: 1;
+
+				span {
+					font-weight: 700;
+					margin-left: 15px;
+					text-transform: uppercase;
+					font-size: 32px;
+				}
+			}
+		}
+		.row {
+			margin-bottom: 50px;
 		}
 	}
 }
@@ -230,7 +228,7 @@
 	padding: 7px 0px 7px 10px;
 	width: 100%;
 	margin-bottom:15px;
-	border-bottom: 1px solid $background-grey;
+	border-bottom: 1px solid $line-grey;
 	position: relative;
 
 	p {
@@ -255,12 +253,12 @@
 
 
 .data-container {
-	padding:0 10px;
+	padding: 0 10px;
 	margin-top: -10px;
-	margin-bottom:20px;
+	margin-bottom: 40px;
 
 	p {
-		margin-bottom:4px;
+		margin-bottom: 4px;
 		font-size: 14px;
 	}
 
@@ -354,6 +352,7 @@
 	.chart__container {
 		border: 1px solid #cccccc;
 		padding-top:10px;
+		height: 250px;
 
 		#mainChart {
 			margin-top:15px;
@@ -393,7 +392,7 @@
 	padding:0 5px 0 0 !important;
 	margin-top:-5px !important;
 
-	.pgr-chart{
+	.pgr-chart {
 		display:block;
 		height: 12px;
 		float: left;
