@@ -1,7 +1,7 @@
 <form class="form-inline" (submit)="onSubmit($event)">
   <div class="form-group">
     <span (click)="gotoReport(searchResults && searchResults.length != 0 ? searchResults[0].Symbol : null)"  class="search-submit" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
-    <input [formControl]="symbolSearchForm" type="search" class="form-control search-box" placeholder="SEARCH A STOCK"
+    <input [formControl]="symbolSearchForm" type="search" class="form-control search-box" placeholder="Search a ticker or company"
            aria-describedby="basic-addon1">
     <button type="submit" style="display:none">hidden submit</button>
   </div>
