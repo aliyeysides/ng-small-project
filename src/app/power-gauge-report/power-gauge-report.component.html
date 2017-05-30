@@ -92,12 +92,12 @@
     <!-- OVERALL -->
       <div class="row  stock__overall">
         <div class="col-lg-6 col-xl-6 stock__sentence">
-          <div class="stock__sentence-factor">OVERALL: <span class="bullish" [ngClass]="overallRatingClass">{{ contextSummary?.pgrContextSummary[0].status }}</span>
+          <div class="stock__sentence-factor">OVERALL: <span [ngClass]="overallRatingClass">{{ contextSummary?.pgrContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.pgrContextSummary[0].mainSentence }}</div>
           <div>{{ contextSummary?.pgrContextSummary[0].additonalSentence }}</div>
         </div>
-        
+
         <div class="col-lg-6 col-xl-6 chart__yearly">
           <div class="chart__container">
           </div>
@@ -108,7 +108,7 @@
       <div class="row stock__financials">
       <!-- SUMMARY -->
         <div class="col-md-8 col-lg-6 col-xl-6 stock__sentence">
-          <div class="stock__sentence-factor">FINANCIALS: <span class="verybullish" [ngClass]="financialRatingClass">{{ contextSummary?.financialContextSummary[0].status }}</span>
+          <div class="stock__sentence-factor">FINANCIALS: <span [ngClass]="financialRatingClass">{{ contextSummary?.financialContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.financialContextSummary[0].generalSentence }}</div>
           <div>{{ contextSummary?.financialContextSummary[0].explanatorySentence }}</div>
@@ -232,7 +232,7 @@
       <div class="row stock__earnings">
       <!-- SUMMARY -->
         <div class="col-md-12 col-lg-12 col-xl-12 stock__sentence">
-          <div class="stock__sentence-factor">EARNINGS: <span class="bullish" [ngClass]="earningsRatingClass">{{ contextSummary?.earningsContextSummary[0].status }}</span>
+          <div class="stock__sentence-factor">EARNINGS: <span [ngClass]="earningsRatingClass">{{ contextSummary?.earningsContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.earningsContextSummary[0].generalSentence }}</div>
           <div>{{ contextSummary?.earningsContextSummary[0].explanatorySentence }}</div>
@@ -419,7 +419,7 @@
       <div class="row stock__technicals">
       <!-- SUMMARY -->
         <div class="col-md-12 col-lg-12 col-xl-12 stock__sentence">
-          <div class="stock__sentence-factor">TECHNICALS: <span class="neutral" [ngClass]="technicalRatingClass">{{ contextSummary?.priceVolumeContextSummary[0].status }}</span>
+          <div class="stock__sentence-factor">TECHNICALS: <span [ngClass]="technicalRatingClass">{{ contextSummary?.priceVolumeContextSummary[0].status }}</span>
           </div>
           <div>{{ contextSummary?.priceVolumeContextSummary[0].generalSentence }}</div>
           <div>{{ contextSummary?.priceVolumeContextSummary[0].explanatorySentence }}</div>
