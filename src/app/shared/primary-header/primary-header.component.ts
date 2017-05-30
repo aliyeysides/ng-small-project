@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import * as moment from 'moment';
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 import {SharedService} from "../shared.service";
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'psp-primary-header',
@@ -18,14 +19,17 @@ export class PrimaryHeaderComponent implements OnInit {
   public day: string;
   public time: string;
   public greeting: string;
+  public spy: any;
   public alerts: Array<any>;
 
   currentMoment$ = this.currentMoment.asObservable();
 
-  constructor(private sharedService: SharedService) {
+  constructor(private sharedService: SharedService,
+              private http: Http) {
   }
 
   ngOnInit() {
+    this.getDailySPY();
     this.greeting = this.getGreetingTime(moment());
     this.updateActionHeaderClassObject();
 
@@ -78,6 +82,18 @@ export class PrimaryHeaderComponent implements OnInit {
     }
 
     return greeting;
+  }
+
+  public getDailySPY() {
+    let spyPriceUrl = '/CPTRestSecure/app/price/getSymbolPrice?ticker=SPY';
+
+    this.http.get(spyPriceUrl, {
+      withCredentials: true
+    }).map(res => res.json())
+      .subscribe(
+        val => this.spy = val,
+        err => this.sharedService.handleError
+      )
   }
 
 }
