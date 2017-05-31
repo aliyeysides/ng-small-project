@@ -8,9 +8,9 @@
       </div>
       <alert [type]="alert.type" dismissible="true">{{ alert.msg }}</alert>
     </div>
-    
+
     <psp-symbol-search></psp-symbol-search>
-    
+
     <div class="action__date">
       <p>{{ day }} &nbsp; • &nbsp; {{ date }} &nbsp; • &nbsp; {{ time }}</p>
     </div>
@@ -18,7 +18,7 @@
 
   <div class="col-sm-5 col-md-4 col-lg-3 action-header">
 
-    
+
 
     <div class="action__switcher action__switcher--time">
       <div class="action__button action__button--morning"  *ngIf="this.greeting == 'morning'" >
@@ -36,12 +36,14 @@
         <p class="evening"  *ngIf="this.greeting == 'evening'" >Good {{ this.greeting }}. The market is closed.</p>
       </div>
     </div>
+
     <div class="action__switcher action__switcher--SP500-up">
       <div class="action__button">
-        <img class="align-middle" src="../../../assets/imgs/icon-SPYup.svg">
+        <img *ngIf="spy?.Change >= 0" class="align-middle" src="../../../assets/imgs/icon-SPYup.svg">
+        <img *ngIf="spy?.Change < 0" class="align-middle" src="../../../assets/imgs/icon-SPYdown.svg">
       </div>
       <div class="action__headline">
-        <p><strong>238.63</strong></p><p class="divider">|</p><p> +1.41 </p><p> (0.59%)</p>
+        <p><strong>{{ spy?.Last }}</strong></p><p class="divider">|</p><p>{{ spy?.Change }}</p><p>{{ spy ? spy["Percentage "] : null }}</p>
       </div>
     </div>
 
@@ -49,4 +51,3 @@
   </div>
 
 </div>
- 
