@@ -38,6 +38,10 @@ export class PrimaryHeaderComponent implements OnInit {
       this.updateActionHeaderClassObject();
     }, 1000);
 
+    setInterval(() => {
+      this.getDailySPY();
+    }, 60 * 1000);
+
     this.currentMoment$.subscribe(
       val => {
         this.year = val.year();
