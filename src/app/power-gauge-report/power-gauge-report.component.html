@@ -631,11 +631,11 @@
               <tr *ngFor="let competitor of tickerCompetitors" style="border-bottom:1px solid #efefef;">
                 <td class="label" style="padding-bottom:15px;">
                   <span style="margin-right:5px;" class="current_rating">
-                    <img *ngIf="competitor.corrected_pgr_rate == 5" src="../../assets/imgs/pgr-small-verybullish.svg">
-                    <img *ngIf="competitor.corrected_pgr_rate == 4" src="../../assets/imgs/pgr-small-bullish.svg">
-                    <img *ngIf="competitor.corrected_pgr_rate == 3" src="../../assets/imgs/pgr-small-neutral.svg">
-                    <img *ngIf="competitor.corrected_pgr_rate == 2" src="../../assets/imgs/pgr-small-bearish.svg">
-                    <img *ngIf="competitor.corrected_pgr_rate == 1" src="../../assets/imgs/pgr-small-verybearish.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 5" src="assets/imgs/pgr-small-verybullish.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 4" src="assets/imgs/pgr-small-bullish.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 3" src="assets/imgs/pgr-small-neutral.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 2" src="assets/imgs/pgr-small-bearish.svg">
+                    <img *ngIf="competitor.corrected_pgr_rate == 1" src="assets/imgs/pgr-small-verybearish.svg">
                   </span>
                   <span class="current_ticker">{{ competitor.symbol }}</span>
                 </td>
